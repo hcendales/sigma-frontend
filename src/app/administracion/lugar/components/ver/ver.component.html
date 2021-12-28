@@ -1,0 +1,56 @@
+<mat-card-header class="mat-card-header-umv">
+  <div class="mat-card-header-text">
+    <mat-card-subtitle>
+      <h2>{{titulo}}</h2>
+    </mat-card-subtitle>
+  </div>
+</mat-card-header>
+<mat-card-content>
+  <div class="contenido-seccion">
+    <div class="campo">
+      <div class="nombre"><strong>Tipo de Lugar</strong></div>
+      <div class="valor">{{entity.descripcion_tipo_lugar}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Tipo de Origen</strong></div>
+      <div class="valor">{{entity.descripcion_tipo_origen}}</div>
+  </div>
+  <div class="campo">
+    <div class="nombre"><strong>Nombre</strong></div>
+    <div class="valor">{{entity.nombre}}</div>
+  </div>
+  <div class="campo">
+    <div class="nombre"><strong>Descripción</strong></div>
+    <div class="valor">{{entity.descripcion}}</div>
+  </div>
+  <div class="campo">
+    <div class="nombre"><strong>Contacto Nombre</strong></div>
+    <div class="valor">{{entity.contacto_nombre}}</div>
+  </div>
+  <div class="campo">
+    <div class="nombre"><strong>Contacto Correo Electronico</strong></div>
+    <div class="valor">{{entity.contacto_correo_electronico}}</div>
+  </div>
+  <div class="campo">
+    <div class="nombre"><strong>Contacto Telefono</strong></div>
+    <div class="valor">{{entity.contacto_telefono}}</div>
+  </div>
+  <div class="campo">
+    <div class="nombre"><strong>Dirección</strong></div>
+    <div class="valor">{{entity.direccion}}</div>
+  </div>
+  <div class="campo">
+    <div class="nombre"><strong>Estado</strong></div>
+    <div class="valor">{{entity.descripcion_estado_lugar}}</div>
+  </div>
+  </div>
+</mat-card-content>
+<mat-card-actions>
+<div>
+  <button mat-flat-button color="primary" (click)="returnlist()">Regresar al listado</button>
+  <button mat-flat-button color="primary" (click)="onEdit()">Editar</button>
+</div>
+</mat-card-actions>
+
+
+

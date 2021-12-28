@@ -1,0 +1,81 @@
+<app-mapa-umv #mapa
+  [parent]="this"
+  [center]="mapCenter"
+  [basemap]="basemapType"
+  [zoom]="mapZoomLevel"
+  (pkSelected)="pkSelectedEvt($event)"
+  >
+</app-mapa-umv>
+<mat-card>
+    <mat-card-header class="mat-card-header-umv">
+      <div class="mat-card-header-text">
+        <mat-card-subtitle>
+          <h2>{{titulo}}</h2>
+        </mat-card-subtitle>
+      </div>
+    </mat-card-header>
+    <span>Diligencie los filtros para cargar la información</span>
+    <form [formGroup]="formFiltros">
+      <div class="contenido-seccion">
+        <mat-form-field appearance="outline" class = "campo">
+          <mat-label>PK ID</mat-label>
+          <input matInput formControlName="pkIdCalzada" autocomplete="off">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class = "campo">
+          <mat-label>Localidad</mat-label>
+          <mat-select formControlName="idLocalidad" (selectionChange)="localidadSelected()" >
+            <mat-option [value]="null"> -- </mat-option>
+            <mat-option *ngFor="let tipo of listas[7]" [value]="tipo">{{tipo.valor}} - {{tipo.descripcion}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class = "campo">
+          <mat-label>Barrio</mat-label>
+          <mat-select formControlName="idBarrio" [disabled]="consultaDivTerritorial" >
+            <mat-option [value]="null"> -- </mat-option>
+            <mat-option *ngFor="let tipo of barrios" [value]="tipo.id_barrio">{{tipo.nom_sector}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class = "campo">
+          <mat-label>Origen</mat-label>
+          <mat-select formControlName="idOrigen">
+            <mat-option [value]="null"> -- </mat-option>
+            <mat-option *ngFor="let tipo of listas[15]" [value]="tipo">{{tipo.descripcion}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class = "campo">
+          <mat-label>Actividad agrupada</mat-label>
+          <mat-select formControlName="codigoActividadAgrupada">
+            <mat-option [value]="null"> -- </mat-option>
+            <mat-option *ngFor="let tipo of listas[2001]" [value]="tipo">{{tipo}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+        <button type="button" [disabled]="cargandoComponente" mat-button mat-raised-button class="color-primary-100" (click)="ejecutarCargue()" style="margin-right: 0.5rem;"><mat-icon>download</mat-icon>Obtener datos</button>
+        <button type="button"  mat-raised-button class="color-warn-800" (click)="limpiarCampos()" ><mat-icon>clear</mat-icon> Limpiar campos</button>
+      </div>
+    </form>
+    <!--
+    <app-gestion-masiva #gestionMasivaComponent [cargueAutomatico] = "false" [idActividad] = "idActividad" *ngIf="idActividad != null && routeReady"
+     (ready)="componenteListo()" (cambioPestana)="cambioPestanaEvt()" (dataSource)="getDataSource($event)"
+     (selecteDataSource)="getSelecteDataSource($event)"
+     [selectedFeatures]="selectedFeatures">
+    </app-gestion-masiva>
+    -->
+    <!--el nuevo a ver-->
+    <app-gestion-masiva  #gestionMasivaComponent [cargueAutomatico] = "cargueAutomatico" [idActividad] = "idActividad" *ngIf="idActividad != null && routeReady" 
+    (ready)="componenteListo()" (cambioPestana)="cambioPestanaEvt()" (dataSource)="getDataSource($event)" 
+    (selecteDataSource)="getSelecteDataSource($event)"
+    [selectedFeatures]="selectedFeatures"
+    (gestionRealizada)="gestionRealizadaEvt($event)"
+    (onOpcionSelected)="onOpcionSelectedEvt($event)"
+    [acciones]="acciones" [mostrarOpcionDefaultTabla] = "mostrarOpcionDefaultTabla" [export_flag] = "export_flag"
+    >
+    </app-gestion-masiva>
+    <div *ngIf="cargandoComponente" class="nota-cargando">
+    <h2 >Cargando </h2> <mat-spinner diameter="20"></mat-spinner>
+    </div>
+</mat-card>

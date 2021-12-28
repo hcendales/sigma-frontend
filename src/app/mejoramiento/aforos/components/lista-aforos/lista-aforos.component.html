@@ -1,0 +1,85 @@
+<app-mapa-umv #mapa
+  [basemap]="'gray'"
+  [center]="[-74.113, 4.667]"
+  [zoom]="12"
+  (mapLoaded)="cargaMapa($event)"
+  (pkSelected)="pkSelectedEvt($event)"
+  (pkClicked)="pkClickedEvt($event)"
+  style="width: 100%;height: 700px; display:block; margin-bottom: -375px;"
+  *ngIf="mostrarMapa">
+</app-mapa-umv>
+<div style="overflow-x: scroll">
+    <div style="min-width: 800px;">
+        <mat-table [dataSource]="dataSourceSolicitudes" matSort >
+            
+           <!-- PK ID -->
+           <ng-container matColumnDef="pk_id_calzada">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> PK ID </mat-header-cell>
+              <mat-cell *matCellDef="let row" (click)="filaSelectedEvt(row.pk_id_calzada)"> {{row.pk_id_calzada}} </mat-cell>
+            </ng-container>
+    
+             <!-- Check PK aledaño -->
+             <ng-container matColumnDef="chkAledano">
+                <mat-header-cell *matHeaderCellDef>
+                    Aledaño
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                  <mat-checkbox  [ngModel]="row.aledanio" [disabled] = "true" [ngModelOptions]="{standalone: true}"></mat-checkbox>
+                </mat-cell>
+            </ng-container>
+    
+            <!-- CIV -->
+           <ng-container matColumnDef="civ">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> CIV </mat-header-cell>
+              <mat-cell *matCellDef="let row" (click)="filaSelectedEvt(row.pkIdCalzada)"> {{row.civ}} </mat-cell>
+            </ng-container>
+    
+            <!-- EJE VIAL -->
+           <ng-container matColumnDef="eje_vial">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Eje vial </mat-header-cell>
+              <mat-cell *matCellDef="let row" (click)="filaSelectedEvt(row.pk_id_calzada)"> {{row.eje_vial}} </mat-cell>
+            </ng-container>
+    
+             <!-- Desde -->
+           <ng-container matColumnDef="desde">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Desde </mat-header-cell>
+              <mat-cell *matCellDef="let row" (click)="filaSelectedEvt(row.pk_id_calzada)"> {{row.desde}} </mat-cell>
+            </ng-container>
+    
+             <!-- Hasta -->
+           <ng-container matColumnDef="hasta">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Hasta </mat-header-cell>
+              <mat-cell *matCellDef="let row" (click)="filaSelectedEvt(row.pk_id_calzada)"> {{row.hasta}} </mat-cell>
+            </ng-container>
+    
+              <!-- Descripcion Localidad -->
+           <ng-container matColumnDef="descripcion_localidad">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Localidad </mat-header-cell>
+              <mat-cell *matCellDef="let row" (click)="filaSelectedEvt(row.pk_id_calzada)"> {{row.descripcion_localidad}} </mat-cell>
+            </ng-container>
+    
+            <!-- Descripcion Tipo Superficie -->
+           <ng-container matColumnDef="descripcionTipoSuperficie">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Tipo superficie </mat-header-cell>
+              <mat-cell *matCellDef="let row" (click)="filaSelectedEvt(row.pk_id_calzada)"> {{row.descripcionTipoSuperficie}} </mat-cell>
+            </ng-container>
+    
+            <!-- Boton quitar de la lista -->
+            <ng-container matColumnDef="btnEliminar">
+                <mat-header-cell *matHeaderCellDef mat-sort-header disabled > Quitar </mat-header-cell>
+                <mat-cell *matCellDef="let row" >
+                    <a mat-icon-button color="accent" (click)="quitarPK(row.pk_id_calzada)" > <mat-icon>cancel</mat-icon> </a>
+                </mat-cell>
+            </ng-container>
+    
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;" [class.checked] = "row.checked">
+            </mat-row>
+          </mat-table>
+          <div *ngIf="dataSourceSolicitudes && dataSourceSolicitudes.data.length == 0" >
+            <span style="text-align:center">No se ha seleccionado ningún PK</span>
+          </div>
+          <mat-paginator #paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+    </div>
+    <span *ngIf="!hayPkPrincipal() && dataSourceSolicitudes && dataSourceSolicitudes.data.length > 0 " style="color:red"><mat-icon>error</mat-icon> La lista de Pks debe tener un Pk principal</span>
+</div>

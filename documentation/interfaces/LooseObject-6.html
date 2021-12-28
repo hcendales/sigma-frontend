@@ -1,0 +1,395 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>sigma2-frontend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">sigma2-frontend documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Interfaces</li>
+  <li
+  >
+  LooseObject</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/mejoramiento/registro-diario-por-cuadrilla/components/registro-diario/registro-diario.component.ts</code>
+        </p>
+
+
+
+
+
+
+            <section>
+    <h3 id="inputs">Indexable</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <code>[key: string]:        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/mejoramiento/registro-diario-por-cuadrilla/components/registro-diario/registro-diario.component.ts:13</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { FormControl } from &#x27;@angular/forms&#x27;;
+import { MatPaginator } from &#x27;@angular/material/paginator&#x27;;
+import { MatSort } from &#x27;@angular/material/sort&#x27;;
+import { MatTableDataSource } from &#x27;@angular/material/table&#x27;;
+import { SelectionModel } from &#x27;@angular/cdk/collections&#x27;;
+import { SolicitudEnsayoLaboratorioService } from &#x27;src/app/core/services/solicitud-ensayo-laboratorio.service&#x27;;
+import { MapaUmvComponent } from &#x27;src/app/shared/components/mapa-umv/mapa-umv.component&#x27;;
+import { RegistroProgramacionDiariaService } from &#x27;src/app/core/services/registro-programacion-diaria.service&#x27;;
+import { ActivatedRoute, Params } from &#x27;@angular/router&#x27;;
+
+
+interface LooseObject {
+  [key: string]: any
+}
+
+@Component({
+  selector: &#x27;app-registro-diario&#x27;,
+  templateUrl: &#x27;./registro-diario.component.html&#x27;,
+  styleUrls: [&#x27;./registro-diario.component.scss&#x27;]
+})
+export class RegistroDiarioComponent implements OnInit {
+
+
+  displayedColumns: string[] &#x3D; [
+    &#x27;descripcion_zona&#x27;,
+    &#x27;descripcion_localidad&#x27;,
+    &#x27;descripcion_upz&#x27;,
+    &#x27;descripcion_barrio&#x27;,
+    &#x27;descripcion_actividad_agrupada&#x27;,
+    &#x27;desde&#x27;,
+    &#x27;pk_id_calzada&#x27;,
+    &#x27;civ&#x27;,
+    &#x27;nombre_persona_elabora_progdiaria&#x27;,
+    &#x27;descripcion_estado_progdiaria&#x27;,
+    &#x27;max_fecha_progdiaria&#x27;,
+    &#x27;descripcion_jornada_progdiaria&#x27;,
+    &#x27;_CTRL_ACCION_TRABAJAR&#x27;];
+
+  filterValues &#x3D; {
+    descripcion_zona: &#x27;&#x27;,
+    descripcion_localidad: &#x27;&#x27;,
+    descripcion_upz: &#x27;&#x27;,
+    descripcion_barrio: &#x27;&#x27;,
+    descripcion_actividad_agrupada: &#x27;&#x27;,
+    desde: &#x27;&#x27;,
+    pk_id_calzada: &#x27;&#x27;,
+    civ: &#x27;&#x27;,
+    nombre_persona_elabora_progdiaria: &#x27;&#x27;,
+    descripcion_estado_progdiaria: &#x27;&#x27;,
+    max_fecha_progdiaria: &#x27;&#x27;,
+    descripcion_jornada_progdiaria: &#x27;&#x27;,
+  };
+
+
+  @ViewChild(&#x27;mapa&#x27;) mapElement!: MapaUmvComponent;
+  @ViewChild(MatPaginator) paginator: any;
+  @ViewChild(MatSort) sort: any;
+  basemapType &#x3D; &#x27;gray&#x27;;
+  dataSource: MatTableDataSource&lt;any&gt; &#x3D; new MatTableDataSource();
+  filterColumns: string[] &#x3D; [];
+  formControls: FormControl[] &#x3D; [];
+  inArr: Array&lt;any&gt; &#x3D; [];
+  mapCenter &#x3D; [-74.113, 4.667];
+  mapZoomLevel &#x3D; 12;
+  pageSize &#x3D; 20;
+  ready &#x3D; false;
+  search0 &#x3D; new FormControl(&#x27;&#x27;);
+  searchkey &#x3D; &#x27;&#x27;;
+  selection: any &#x3D; new SelectionModel&lt;any&gt;(true, []);
+  titulo: string &#x3D; &#x27;&#x27;;
+  idActividad:number&#x3D;0;
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private solicitudEnsayoLaboratorioService: SolicitudEnsayoLaboratorioService,
+    private programacionDiariaService: RegistroProgramacionDiariaService
+  ) { }
+
+  async ngOnInit(){
+    this.ready &#x3D; false;
+    this.activatedRoute.params.subscribe((params: Params) &#x3D;&gt; { this.idActividad &#x3D; +params[&#x27;idActividad&#x27;]; });
+
+    this.cargarColumnas().then(
+      () &#x3D;&gt; {
+        this.programacionDiariaService.listarBandejaGestionPendiente(this.idActividad.toString()).then(async (resp: any) &#x3D;&gt; {
+
+        this.inArr &#x3D; [];
+        resp.forEach((value: { descripcion_localidad: any; }) &#x3D;&gt; {
+          this.inArr.push(value.descripcion_localidad);
+        });
+        
+        this.dataSource &#x3D; new MatTableDataSource(resp);
+        this.dataSource.sort &#x3D; this.sort;
+        this.dataSource.paginator &#x3D; this.paginator;
+        this.creaFiltroXColumna();
+        this.onClearFilters();
+      });
+    });
+
+    this.search0.valueChanges
+      .subscribe(
+        valor0 &#x3D;&gt; {
+          this.filterValues.descripcion_zona &#x3D; valor0.toString().toLowerCase();;
+          this.filterValues.descripcion_localidad &#x3D; &#x27;&#x27;;
+          this.filterValues.descripcion_upz &#x3D; &#x27;&#x27;;
+          this.filterValues.descripcion_barrio &#x3D; &#x27;&#x27;;
+          this.filterValues.descripcion_actividad_agrupada &#x3D; &#x27;&#x27;;
+          this.filterValues.desde &#x3D; &#x27;&#x27;;
+          this.filterValues.pk_id_calzada &#x3D; &#x27;&#x27;;
+          this.filterValues.civ &#x3D; &#x27;&#x27;;
+          this.filterValues.nombre_persona_elabora_progdiaria &#x3D; &#x27;&#x27;;
+          this.filterValues.descripcion_estado_progdiaria &#x3D; &#x27;&#x27;;
+          this.filterValues.max_fecha_progdiaria &#x3D; &#x27;&#x27;;
+          this.filterValues.descripcion_jornada_progdiaria &#x3D; &#x27;&#x27;;
+          this.dataSource.filter &#x3D; JSON.stringify(this.filterValues);
+        }
+      );
+    
+    this.ready &#x3D; true;
+  }
+
+  
+  creaFiltroXColumna() {
+
+    let inArr: Array&lt;any&gt; &#x3D; [];
+    this.dataSource.filterPredicate &#x3D; ((data: any, filter: any) &#x3D;&gt; {
+      inArr.push(data.pk_id_calzada);
+      const searchTerms &#x3D; JSON.parse(filter);
+      return (data.descripcion_zona || &#x27;&#x27;).toString().toLowerCase().indexOf(searchTerms.descripcion_zona.toString().toLowerCase()) !&#x3D;&#x3D; -1
+        &amp;&amp; (data.descripcion_localidad || &#x27;&#x27;).toString().toLowerCase().indexOf(searchTerms.descripcion_localidad.toString().toLowerCase()) !&#x3D;&#x3D; -1
+        &amp;&amp; (data.descripcion_upz || &#x27;&#x27;).toString().toLowerCase().indexOf(searchTerms.descripcion_upz.toString().toLowerCase()) !&#x3D;&#x3D; -1
+        &amp;&amp; (data.descripcion_barrio || &#x27;&#x27;).toString().toLowerCase().indexOf(searchTerms.descripcion_barrio.toString().toLowerCase()) !&#x3D;&#x3D; -1
+        &amp;&amp; (data.descripcion_actividad_agrupada || &#x27;&#x27;).toString().toLowerCase().indexOf(searchTerms.descripcion_actividad_agrupada.toString().toLowerCase()) !&#x3D;&#x3D; -1
+        &amp;&amp; (data.desde || &#x27;&#x27;).toString().toLowerCase().indexOf(searchTerms.desde.toString().toLowerCase()) !&#x3D;&#x3D; -1
+        &amp;&amp; (data.pk_id_calzada || &#x27;&#x27;).toString().toLowerCase().indexOf(searchTerms.pk_id_calzada.toString().toLowerCase()) !&#x3D;&#x3D; -1
+        &amp;&amp; (data.civ || &#x27;&#x27;).toString().toLowerCase().indexOf(searchTerms.civ.toString().toLowerCase()) !&#x3D;&#x3D; -1
+        &amp;&amp; (data.nombre_persona_elabora_progdiaria || &#x27;&#x27;).toString().toLowerCase().indexOf(searchTerms.nombre_persona_elabora_progdiaria.toString().toLowerCase()) !&#x3D;&#x3D; -1
+        &amp;&amp; (data.descripcion_estado_progdiaria || &#x27;&#x27;).toString().toLowerCase().indexOf(searchTerms.descripcion_estado_progdiaria.toString().toLowerCase()) !&#x3D;&#x3D; -1
+        &amp;&amp; (data.max_fecha_progdiaria || &#x27;&#x27;).toString().toLowerCase().indexOf(searchTerms.max_fecha_progdiaria.toString().toLowerCase()) !&#x3D;&#x3D; -1
+        &amp;&amp; (data.descripcion_jornada_progdiaria || &#x27;&#x27;).toString().toLowerCase().indexOf(searchTerms.descripcion_jornada_progdiaria.toString().toLowerCase()) !&#x3D;&#x3D; -1;
+    });
+    setTimeout(() &#x3D;&gt; {
+      this.dataSource.paginator &#x3D; this.paginator;
+      this.dataSource.sort &#x3D; this.sort;
+    });
+  }
+
+
+  cargaMapa($event: boolean) {
+    if (!this.mapElement.PksFL || this.inArr.length &#x3D;&#x3D; 0)
+      return;
+    let scope &#x3D; this;
+    let inStr: string &#x3D; &#x27;&#x27;;
+    let count &#x3D; 0, pos &#x3D; 0;
+    if (this.inArr.length &gt; 999) {
+      count &#x3D; Math.ceil(this.inArr.length / 1000);
+      for (let i &#x3D; 0; i &lt; count; i++) {
+        pos &#x3D; i * 1000;
+        if (i &lt; count - 1)
+          inStr +&#x3D; &#x27;PK_ID_ELEMENTO in (&#x27; + this.inArr.slice(pos, 999 + pos).toString() + &#x27;) OR &#x27;;
+        else
+          inStr +&#x3D; &#x27;PK_ID_ELEMENTO in (&#x27; + this.inArr.slice(pos, 999 + pos).toString() + &#x27;)&#x27;;
+      }
+    } else
+      inStr +&#x3D; &#x27;PK_ID_ELEMENTO in (&#x27; + this.inArr.toString() + &#x27;)&#x27;;
+    scope.mapElement.queryFeatures(inStr);
+  }
+
+
+  irAPk(pk: number) {
+    this.mapElement.goTo(&quot;PK_ID_ELEMENTO &#x3D; &quot; + pk.toString());
+  }
+
+
+  public setValorBusqueda(attr: string, valor: string) {
+    let index &#x3D; this.displayedColumns.indexOf(attr);
+    this.formControls[index].setValue(valor);
+  }
+
+
+  filterDataPK($event: any) {
+    ////console.log(&#x27;filtrartabla&#x27;, $event);
+    this.setValorBusqueda(&#x27;pk_id_calzada&#x27;, String($event));
+  }
+
+  onSearchClear() {
+    this.searchkey &#x3D; &#x27;&#x27;;
+  }
+
+  mapClearFilters($event: any) {
+    this.onSearchClear();
+  }
+
+
+  public async cargarColumnas() {
+    this.filterColumns &#x3D; [];
+    this.formControls &#x3D; [];
+
+    //console.log(&quot;~&gt;&quot;+this.displayedColumns)
+    for (let a of this.displayedColumns) {
+      this.filterColumns.push(a + &#x27;_&#x27;);
+      if (!a.startsWith(&#x27;_CTRL_ACCION_&#x27;)) {
+        let formControl &#x3D; new FormControl(&#x27;&#x27;);
+        formControl.valueChanges
+          .subscribe(
+            valor &#x3D;&gt; {
+              const attr: string &#x3D; a as string;
+              (this.filterValues as LooseObject)[attr] &#x3D; valor;
+              this.dataSource.filter &#x3D; JSON.stringify(this.filterValues);
+              this.inArr &#x3D; [];
+              this.dataSource.filteredData.forEach((value: { pk_id_calzada: any; }) &#x3D;&gt; {
+                this.inArr.push(value.pk_id_calzada);
+              });
+              this.cargaMapa(true);
+            }
+          );
+        this.formControls.push(formControl);
+      }
+    }
+
+  }
+
+  onClearFilters() {
+    for (let c of this.formControls) {
+      c.setValue(&#x27;&#x27;);
+    }
+  }
+
+}</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'LooseObject-6.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

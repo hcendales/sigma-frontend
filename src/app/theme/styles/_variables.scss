@@ -1,0 +1,69 @@
+$font-family: 'Roboto', sans-serif;
+
+$toolbar-height: 56px; 
+$horizontal-menu-height: $toolbar-height;
+
+$sidenav-width: 300px;//250px;
+$sidenav-user-block-height: 156px;
+$mini-sidenav-user-block-height: 70px;
+
+$flex-distance: 8px;
+$inner-sidenav-content-padding: $flex-distance;
+
+$dev-color-green: #48cc90;
+$dev-color-black: #000;
+$dev-color-red: #dd2c00;
+$dev-color-orange: #fca130;
+$dev-color-white: #fff;
+$dev-color-grey: rgb(127, 127, 127);
+
+$dev-color-dark-blue: #004064;
+
+$primary-color:#004064;
+$primary-color-light:#3e6b92;
+$primary-color-dark:#001a39;
+
+$secondary-color: #b95219;
+$secondary-color-light:#f18146;
+$secondary-color-dark:#832400;
+
+$accent-color: #4192c0;
+$accent-color-light :#78c2f3;
+$accent-color-dark: #00648f;
+
+$umv-primary-pallete: (  
+            100: $primary-color-light,
+            500: $primary-color,
+            900: $primary-color-dark,
+            A100: $accent-color-light,
+            A500: $accent-color,
+            A900: $accent-color-dark,
+            contrast: (
+                    100: white,
+                    500: white,
+                    900: white,
+                    A100: black,
+                    A500: black,
+                    A900: white,
+            )
+    );
+
+    $umv-secondary-pallete: (  
+            100: $secondary-color-light,
+            500: $secondary-color,
+            900: $secondary-color-dark,
+            A100: $accent-color-light,
+            A500: $accent-color,
+            A900: $accent-color-dark,
+            contrast: (
+                    100: white,
+                    500: white,
+                    900: white,
+                    A100: black,
+                    A500: black,
+                    A900: white,
+            )
+    );
+
+
+

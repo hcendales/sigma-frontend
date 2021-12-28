@@ -1,0 +1,97 @@
+<mat-card >
+    <mat-card-header class="mat-card-header-umv">
+        <div class="mat-card-header-text">
+            <mat-card-subtitle>
+                <h2>Cargar resultado de laboratorio Ensayos - {{ titleCard }}</h2>
+            </mat-card-subtitle>
+        </div>
+    </mat-card-header>
+    <div *ngIf="loading" class="loading">Loading&#8230;</div>
+        <div class="action-buttons">
+            <button (click)="accordion.openAll()" mat-icon-button matTooltip="Expandir"><mat-icon>unfold_more</mat-icon></button>
+            <button (click)="accordion.closeAll()" mat-icon-button matTooltip="Contraer"><mat-icon>unfold_less</mat-icon></button>
+        </div>
+        <mat-accordion class="headers-align" multi dynamicHeight>
+            <!-- PANEL 1 INI -->
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Detalle de la solicitud 
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Tipo de servicio {{ titleCard }}
+                        <mat-icon>science</mat-icon>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <!-- CONTENT INI -->
+                <app-servicio-densidad *ngIf="id_tipo_servicio === 53"  [rowUpdate]="rowUpdate" [bloquear]="true"></app-servicio-densidad>
+                <app-servicio-apiques  *ngIf="id_tipo_servicio === 54"  [rowUpdate]="rowUpdate" [bloquear]="true"></app-servicio-apiques>
+                <app-servicio-nucleo   *ngIf="id_tipo_servicio === 55"  [rowUpdate]="rowUpdate" [bloquear]="true"></app-servicio-nucleo>
+                <app-servicio-formula  *ngIf="id_tipo_servicio === 56"  [rowUpdate]="rowUpdate" [bloquear]="true"></app-servicio-formula>
+                <app-servicio-otros    *ngIf="id_tipo_servicio === 109" [rowUpdate]="rowUpdate" [bloquear]="true"></app-servicio-otros>
+                <!-- CONTENT FIN -->
+            </mat-expansion-panel>
+            <!-- PANEL 1 FIN -->
+
+
+            <!-- PANEL 2 INI -->
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Gestion de Solicitud de Ensayo
+                    </mat-panel-title>
+                    <mat-panel-description>
+                    Tipo de servicio {{ titleCard }}
+                        <mat-icon>task</mat-icon>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+            <!-- CONTENT INI -->
+            <app-gestion-solicitud *ngIf="id_tipo_servicio !== 0" [rowUpdate]="rowUpdate" [bloquear]="situacion" ></app-gestion-solicitud>
+            <!-- CONTENT FIN -->
+            </mat-expansion-panel>
+            <!-- PANEL 2 FIN -->
+
+
+            <!-- PANEL 3 INI -->
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Lista de Informes Asociados
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Tipo de servicio {{ titleCard }}
+                        <mat-icon>feed</mat-icon>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <!-- CONTENT INI -->
+                <app-informe-solicitud *ngIf="id_tipo_servicio !== 0" [rowUpdate]="rowUpdate" [bloquear]="situacion"></app-informe-solicitud>
+                <!-- CONTENT FIN -->
+            </mat-expansion-panel>
+            <!-- PANEL 3 FIN -->
+        </mat-accordion>
+    </mat-card>
+<br>
+<div style="flex: 1; text-align: right; margin-right: 16px;">
+    <mat-action-row>
+        <button 
+            type="button" 
+            mat-raised-button 
+            class="color-primary-100"
+            [routerLink]="['../../']"
+            >
+            <mat-icon>close</mat-icon>
+            Cerrar
+        </button>   
+
+        <button 
+            type="button" 
+            mat-raised-button 
+            class="color-primary-100"
+            (click)="onFinalizar()"
+            [disabled]="situacion"
+            >
+            <mat-icon>done</mat-icon>
+            Finalizar
+        </button>   
+    </mat-action-row>
+</div>

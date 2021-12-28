@@ -1,0 +1,60 @@
+<div mat-dialog-content>
+<mat-card>
+  <mat-card-header class="mat-card-header-umv">
+    <div class="mat-card-header-text">
+      <mat-card-subtitle>
+        <h2>{{titulo}}</h2>
+      </mat-card-subtitle>
+    </div>
+  </mat-card-header>
+  <mat-card-content *ngIf="ready">
+      <form [formGroup]="formEntity" (ngSubmit)="onSubmit()">
+          <p>
+            <mat-form-field appearance="outline" >
+              <mat-label>Intervalo programación</mat-label>
+              <mat-select formControlName="intervalo">
+                <mat-option [value]="60">1 Hora</mat-option>
+                <mat-option [value]="120">2 Horas</mat-option>
+                <mat-option [value]="180">3 Horas</mat-option>
+                <mat-option [value]="240">4 Horas</mat-option>
+              </mat-select>
+              <mat-error *ngIf="intervaloField.hasError('required')">Campo requerido</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Rango de fechas</mat-label>
+              <mat-date-range-input [rangePicker]="picker">
+                <input matStartDate formControlName="fechaDesde" placeholder="Fecha desde">
+                <input matEndDate  formControlName="fechaHasta" placeholder="Fecha hasta">
+              </mat-date-range-input>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-date-range-picker #picker></mat-date-range-picker>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Hora inicio programación (HH:MM)</mat-label>
+              <input matInput type="time" formControlName="horaInicio" autocomplete="off">
+              <mat-error *ngIf="horaInicioField.hasError('required')">Campo requerido</mat-error>
+              <mat-error *ngIf="horaInicioField.hasError('maxlength')">Caracteres máximos 5</mat-error>
+              <mat-error *ngIf="horaInicioField.hasError('pattern')">Valor HH:MM incorrecto</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Hora fin programación</mat-label>
+              <input matInput type="time" formControlName="horaFin" autocomplete="off">
+              <mat-error *ngIf="horaFinField.hasError('required')">Campo requerido</mat-error>
+              <mat-error *ngIf="horaFinField.hasError('maxlength')">Caracteres máximos 5</mat-error>
+              <mat-error *ngIf="horaFinField.hasError('pattern')">Valor HH:MM incorrecto</mat-error>
+            </mat-form-field>
+          </p>
+      </form>
+    </mat-card-content>
+    <mat-card-actions align="start">
+      <div class="example-button-row">
+        <button mat-button mat-dialog-close (click)="cancel($event)">Cancel</button>
+        <button mat-flat-button color="primary" (click)="onSubmit()">Guardar</button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>
+

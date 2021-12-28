@@ -1,0 +1,115 @@
+<mat-card>
+  <mat-card-header class="mat-card-header-umv">
+    <div class="mat-card-header-text">
+      <mat-card-subtitle>
+        <h2>{{titulo}}</h2>
+      </mat-card-subtitle>
+    </div>
+  </mat-card-header>
+  <mat-card-content *ngIf="ready">
+    <form [formGroup]="formEntity" (ngSubmit)="save($event)" >
+
+      <mat-form-field appearance="outline" >
+        <mat-label>Tipo Recurso</mat-label>
+        <mat-select formControlName="idTipoRecurso">
+          <mat-option *ngFor="let tipo of listas[96]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="tipoRecursoField.hasError('required')">Campo requerido</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Identificación</mat-label>
+        <input matInput formControlName="identificador" autocomplete="off">
+        <mat-error *ngIf="identificadorField.hasError('required')">Campo requerido</mat-error>
+        <mat-error *ngIf="identificadorField.hasError('maxlength')">Caracteres máximos 100</mat-error>
+      </mat-form-field>
+      <div *ngIf="verTabs" >
+        <mat-tab-group [selectedIndex]="selectedTab">
+          <mat-tab label="Persona">
+            <div *ngIf="identificadorPersona!==''">
+              <app-ver-persona [identificadorPersona]="identificadorPersona" (idIdentificador)="idRetornoPersona=$event"></app-ver-persona>
+            </div>
+          </mat-tab>
+          <mat-tab label="Equipo">
+            <div *ngIf="identificadorEquipo!==''">
+              <app-ver-equipo [identificadorEquipo]="identificadorEquipo" (idIdentificador)="idRetornoEquipo=$event"></app-ver-equipo>
+            </div>
+          </mat-tab>
+          <mat-tab label="Lugar">
+            <div *ngIf="identificadorLugar!==''">
+              <app-ver-lugar [identificadorLugar]="identificadorLugar" (idIdentificador)="idRetornoLugar=$event"></app-ver-lugar>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+
+      </div>
+      <div formGroupName="recurso" class="contenedorFormGroup" id="seccionRecurso" *ngIf="verTabs">
+        <mat-form-field appearance="outline" >
+          <mat-label>Intervalo programación</mat-label>
+          <mat-select formControlName="intervaloProgramacion">
+            <mat-option [value]="60">1 Hora</mat-option>
+            <mat-option [value]="80">1 Hora 20 Min</mat-option>
+            <mat-option [value]="120">2 Horas</mat-option>
+            <mat-option [value]="180">3 Horas</mat-option>
+            <mat-option [value]="240">4 Horas</mat-option>
+          </mat-select>
+          <mat-error *ngIf="intervaloProgramacionField.hasError('required')">Campo requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Rango de fechas</mat-label>
+          <mat-date-range-input [rangePicker]="picker">
+            <input matStartDate formControlName="fechaInicio" placeholder="Fecha Inicial">
+            <input matEndDate  formControlName="fechaFin" placeholder="Fecha Final">
+          </mat-date-range-input>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Hora inicio programación (HH:MM)</mat-label>
+          <input matInput type="time" formControlName="horaInicioProgramacion" autocomplete="off">
+          <mat-error *ngIf="horaInicioProgramacionField.hasError('required')">Campo requerido</mat-error>
+          <mat-error *ngIf="horaInicioProgramacionField.hasError('maxlength')">Caracteres máximos 5</mat-error>
+          <mat-error *ngIf="horaInicioProgramacionField.hasError('pattern')">Valor HH:MM incorrecto</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Hora fin programación</mat-label>
+          <input matInput type="time" formControlName="horaFinProgramacion" autocomplete="off">
+          <mat-error *ngIf="horaFinProgramacionField.hasError('required')">Campo requerido</mat-error>
+          <mat-error *ngIf="horaFinProgramacionField.hasError('maxlength')">Caracteres máximos 5</mat-error>
+          <mat-error *ngIf="horaFinProgramacionField.hasError('pattern')">Valor HH:MM incorrecto</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Descripción</mat-label>
+          <input matInput formControlName="descripcion" autocomplete="off">
+          <mat-error *ngIf="horaFinProgramacionField.hasError('maxlength')">Caracteres máximos 100</mat-error>
+        </mat-form-field>
+      </div>
+      <div *ngIf="verTabs && idRecurso!==0" >
+        <mat-tab-group>
+          <mat-tab label="Novedades">
+            <div>
+              <app-listar-novedad [idRecurso]="idRecurso"></app-listar-novedad>
+            </div>
+          </mat-tab>
+          <mat-tab label="Disponibilidad">
+            <div>
+              <app-listar-franja [idRecurso]="idRecurso" [fechaDesde]="fecInicialNumero" [fechaHasta]="fecFinalNumero" [horaInicio]="horaInicio" [horaFin]="horaFin" [intervalo]="intervalo"></app-listar-franja>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+
+  </form>
+</mat-card-content>
+  <mat-card-actions align="start">
+    <div class="button-row">
+      <button mat-flat-button type="button" color="primary" (click)="returnlist()">Regresar al listado</button>
+      <button mat-flat-button type="button" color="primary" (click)="save($event)">Guardar</button>
+    </div>
+  </mat-card-actions>
+  <mat-card-footer>
+  </mat-card-footer>
+</mat-card>

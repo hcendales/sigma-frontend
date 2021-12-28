@@ -1,0 +1,55 @@
+<form [formGroup]="formGestion" (ngSubmit)="onSubmit()" *ngIf="ready">
+    <mat-form-field appearance="fill" style="width:100%">
+        <mat-label>Observaciones gestión</mat-label>
+        <textarea matInput formControlName="observaciones" #inputObservaciones maxlength="600" cdkTextareaAutosize cdkAutosizeMinRows="3"></textarea>
+        <mat-hint align="end">Máximo 300 caracteres: {{inputObservaciones.value?.length || 0}}/300</mat-hint>
+    </mat-form-field>
+    
+
+    <div class='opciones'>
+        <mat-form-field appearance="outline" *ngIf="actividadesDestino.length > 1">
+            <mat-label>Actividad destino</mat-label>
+            <mat-select formControlName="actividadDestino" required (selectionChange)="actividadDestinoSelected($event.value)">
+                <mat-option *ngFor="let tipo of actividadesDestino"[value]="tipo">{{tipo.nombre}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <!--
+        <mat-form-field appearance="outline" *ngIf="usuariosDestino.length > 0">
+            <mat-label>Usuario a asignar</mat-label>
+            <mat-select formControlName="usuarioDestino" required >
+                <mat-option [class.bajo]="usuario.gestiones_asignadas == 0" [class.alto]="usuario.gestiones_asignadas > 5" *ngFor="let usuario of usuariosDestino"[value]="usuario.id_usuario">{{usuario.nombre_usuario + ' (' + usuario.gestiones_asignadas + ')'}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        -->
+        <mat-form-field appearance="outline" class = "campo" *ngIf="usuariosDestino.length > 0">
+            <mat-label>Usuario a asignar</mat-label>
+            <input type="text" matInput [matAutocomplete]="auto" formControlName="usuarioDestino">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayUsuarioFn.bind(this,usuariosDestino)">
+              <!--<mat-option [value]="null"> -- </mat-option>-->
+              <mat-option *ngFor="let usuario of filteredUsuarios | async" [value]="usuario.id_usuario" [class.bajo]="usuario.gestiones_asignadas == 0" [class.alto]="usuario.gestiones_asignadas > 5">
+                {{usuario.nombre_usuario + ' (' + usuario.gestiones_asignadas + ')'}}
+              </mat-option>
+            </mat-autocomplete>
+            <mat-error *ngIf="formGestion.get('usuarioDestino')?.hasError('invalidAutocompleteObject')">
+              Elija un elemento de la lista.
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <button mat-raised-button color="primary" [disabled]="formGestion.status == 'INVALID' || loading || sending">
+        <div class='btn-text-spiner-container'>
+            <span  *ngIf="!sending">
+                {{'Enviar'+(actividadesDestino.length == 1?' a ' + actividadesDestino[0].nombre:'')}}&nbsp;
+            </span>
+            <span  *ngIf="sending">
+                Enviando
+            </span>
+            <mat-icon *ngIf="!sending">send</mat-icon>
+            <mat-spinner *ngIf="sending" diameter="20"></mat-spinner>
+        </div>
+    </button>
+    
+    <button *ngFor="let accion of acciones" type="button" (click)="opcionSeleccionada.emit({action:accion.action})"  mat-raised-button color="primary" [disabled]="sending">
+        {{accion.text}}
+    </button>
+</form>

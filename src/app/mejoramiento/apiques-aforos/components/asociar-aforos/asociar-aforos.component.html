@@ -1,0 +1,53 @@
+<h2>Aforos asociados</h2>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- fecha aforo -->
+    <ng-container matColumnDef="fecha_aforo">
+      <th mat-header-cell *matHeaderCellDef style ="min-width:6rem"> Fecha </th>
+      <td mat-cell *matCellDef="let element"> {{element.fecha_aforo}} </td>
+    </ng-container>
+  
+    <!-- tipo digital/manual -->
+    <ng-container matColumnDef="tipo_aforo">
+      <th mat-header-cell *matHeaderCellDef style ="min-width:5rem"> Tipo </th>
+      <td mat-cell *matCellDef="let element"> {{element.tipo_aforo}} </td>
+    </ng-container>
+
+    <!-- Ver Docs -->
+    <ng-container matColumnDef="verDocus" style ="min-width:5.5rem">
+      <th mat-header-cell *matHeaderCellDef> Documentos </th>
+      <td mat-cell *matCellDef="let element"> 
+        <button (click)="onVerDocus(element)" 
+            mat-raised-button class="btnOpciones color-primary-100" 
+            [matTooltipDisabled]="false" 
+            [matTooltip] = "'Ver aforo y Análisis'"
+            ><mat-icon>file_copy</mat-icon>
+        </button> 
+      </td>
+    </ng-container>
+
+    <!-- Vincular -->
+    <ng-container matColumnDef="vincular" style ="min-width:5rem">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element"> 
+            <button (click)="onVincularAforo(element)" 
+            mat-raised-button class="btnOpciones color-primary-100" 
+            [matTooltipDisabled]="false" 
+            [matTooltip] = "'Vincular este aforo'"
+            ><mat-icon>shuffle</mat-icon>
+            </button> 
+        </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <br>
+  <button (click)="cancelar()" 
+            mat-raised-button class="color-primary-100" 
+            [matTooltipDisabled]="false" 
+            [matTooltip] = "'Ver aforo y Análisis'"
+            > Cancelar
+    </button> 
+  

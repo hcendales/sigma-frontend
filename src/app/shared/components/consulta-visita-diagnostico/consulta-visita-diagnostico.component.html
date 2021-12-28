@@ -1,0 +1,314 @@
+<mat-accordion multi class="headers-align" *ngIf="ready">
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+              Encabezado 
+            </mat-panel-title>
+            <mat-panel-description>
+                <button *ngIf="!generandoFicha" mat-icon-button color="primary" class="ver-pdf" aria-label="Example icon button with a home icon" (click) ="generarDocumentoActa($event)">
+                    <mat-icon>picture_as_pdf</mat-icon>
+                </button>
+                <span *ngIf="generandoFicha">
+                    Generando ficha ...
+                </span>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="contenido-seccion">
+            <div class="campo">
+                <div class="nombre"><strong>Localidad</strong></div>
+                <div class="valor">{{mantenimientoVialEvento.valor_localidad +' - '+ mantenimientoVialEvento.descripcion_localidad}}</div>
+            </div>
+    
+            <div class="campo">
+                <div class="nombre"><strong>UPZ</strong></div>
+                <div class="valor">{{mantenimientoVialEvento.valor_upz +' - '+ mantenimientoVialEvento.descripcion_upz}}</div>
+            </div>
+    
+            <div class="campo">
+                <div class="nombre"><strong>Barrio</strong></div>
+                <div class="valor">{{mantenimientoVialEvento.descripcion_barrio}}</div>
+            </div>
+    
+            <div class="campo">
+                <div class="nombre"><strong>CIV</strong></div>
+                <div class="valor">{{mantenimientoVialEvento.civ}}</div>
+            </div>
+    
+            <div class="campo">
+                <div class="nombre"><strong>PK ID Calzada</strong></div>
+                <div class="valor">{{mantenimientoVialEvento.pk_id_calzada}}</div>
+            </div>
+    
+            <div class="campo">
+                <div class="nombre"><strong>Eje Vial</strong></div>
+                <div class="valor">{{mantenimientoVialEvento.eje_vial?(mantenimientoVialEvento.eje_vial == 'null'?'':mantenimientoVialEvento.eje_vial):''}}</div>
+            </div>
+    
+            <div class="campo">
+                <div class="nombre"><strong>Desde</strong></div>
+                <div class="valor">{{mantenimientoVialEvento.desde?(mantenimientoVialEvento.desde=='null'?'':mantenimientoVialEvento.desde):''}}</div>
+            </div>
+    
+            <div class="campo">
+                <div class="nombre"><strong>Hasta</strong></div>
+                <div class="valor">{{mantenimientoVialEvento.hasta?(mantenimientoVialEvento.hasta=='null'?'':mantenimientoVialEvento.hasta):''}}</div>
+            </div>
+    
+            <div class="campo">
+                <div class="nombre"><strong>Zona</strong></div>
+                <div class="valor">{{mantenimientoVialEvento.descripcion_zona}}</div>
+            </div>
+    
+            <div class="campo">
+                <div class="nombre"><strong>Fecha visita</strong></div>
+                <div class="valor">{{mantenimientoVialEvento.fecha_visita | date: 'dd/MM/yyyy' }}</div>
+            </div>
+    
+            <div class="campo">
+                <div class="nombre"><strong>Sección vial</strong></div>
+                <div class="valor">{{mantenimientoVialEvento.descripcion_seccion_vial }}</div>
+            </div>
+    
+            <div class="campo">
+                <div class="nombre"><strong>Fecha solicitud</strong></div>
+                <div class="valor">{{mantenimientoVialEvento.solicitud_fecha | date: 'dd/MM/yyyy' }}</div>
+            </div>
+
+            <div class="campo">
+                <div class="nombre"><strong>Origen</strong></div>
+                <div class="valor">{{mantenimientoVialEvento.descripcion_origen}}</div>
+            </div>
+    
+            <div class="campo">
+                <div class="nombre"><strong>Uso vía</strong></div>
+                <div class="valor">{{mantenimientoVialEvento.descripcion_uso_via}}</div>
+            </div>
+    
+            <div class="campo">
+                <div class="nombre"><strong>Tipo malla</strong></div>
+                <div class="valor">{{mantenimientoVialEvento.descripcion_malla}}</div>
+            </div>
+    
+            <div class="campo">
+                <div class="nombre"><strong>Rutas transporte</strong></div>
+                <div class="valor">{{mantenimientoVialEvento.rutas_transporte}}</div>
+            </div>
+    
+            <div class="campo">
+                <div class="nombre"><strong>Transitabilidad</strong></div>
+                <div class="valor">{{mantenimientoVialEvento.descripcion_transitabilidad}}</div>
+            </div>
+    
+            <div class="campo">
+                <div class="nombre"><strong>Area PK</strong></div>
+                <div class="valor">{{mantenimientoVialEvento.area_pk}}m2</div>
+            </div>
+    
+            <div class="campo">
+                <div class="nombre"><strong>Ancho PK</strong></div>
+                <div class="valor">{{mantenimientoVialEvento.ancho_pk}}m</div>
+            </div>
+    
+            <div class="campo">
+                <div class="nombre"><strong>Programa</strong></div>
+                <div class="valor">{{mantenimientoVialEvento.descripcion_programa?mantenimientoVialEvento.descripcion_programa:''}}</div>
+            </div>
+    
+            <div class="campo">
+                <div class="nombre"><strong>Superficie</strong></div>
+                <div class="valor">{{mantenimientoVialEvento.descripcion_superficie}}</div>
+            </div>
+    
+            <div class="campo">
+                <div class="nombre"><strong>Interveción Total</strong></div>
+                <div class="valor">{{mantenimientoVialEvento.descripcion_intervencion_total?mantenimientoVialEvento.descripcion_intervencion_total:''}}</div>
+            </div>
+            
+            <div class="campo">
+                <div class="nombre"><strong>PCI</strong></div>
+                <div class="valor">{{mantenimientoVialEvento.pci!=null?mantenimientoVialEvento.pci:''}}</div>
+            </div>
+        </div>
+    </mat-expansion-panel>
+    <mat-expansion-panel *ngIf="conUnidadesMuestreo" [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Unidades de muestreo ({{unidadesMantenimiento.length}})
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-card *ngFor="let unidad of unidadesMantenimiento; let i=index" class="contenido-seccion-unds">
+            <mat-card-subtitle>
+                Unidad {{i+1}}
+            </mat-card-subtitle>
+            <mat-card-content class="unidad-muestreo">
+                <div class="campo">
+                    <div class="nombre"><strong>Abscisa inicial</strong></div>
+                    <div class="valor">{{unidad.abscisaInicial}}</div>
+                </div>  
+                <div class="campo">
+                    <div class="nombre"><strong>Abscisa final</strong></div>
+                    <div class="valor">{{unidad.abscisaFinal}}</div>
+                </div> 
+                <div class="campo" *ngIf="mantenimientoVialEvento.id_tipo_superficie != 1102">
+                    <div class="nombre"><strong>Ancho</strong></div>
+                    <div class="valor">{{unidad.ancho}}</div>
+                </div>
+                <div class="campo">
+                    <div class="nombre"><strong>{{mantenimientoVialEvento.id_tipo_superficie == 1102?'Losas':'Area'}}</strong></div>
+                    <div class="valor">{{unidad.area}}</div>
+                </div> 
+                <div class="campo">
+                    <div class="nombre"><strong>PCI</strong></div>
+                    <div class="valor">{{unidad.pci!=null?unidad.pci:''}}</div>
+                </div>
+            </mat-card-content>
+        </mat-card>      
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Fallas ({{fallasMantenimiento.length}})
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-card *ngFor="let falla of fallasMantenimiento; let i=index" class="contenido-seccion-unds">
+            <mat-card-subtitle>
+                Falla {{i+1}}, Unidad {{falla.indexUnidadMuestreo + 1}}
+            </mat-card-subtitle>
+            <mat-card-content class="unidad-muestreo">
+                <div class="campo">
+                    <div class="nombre"><strong>Tipo falla</strong></div>
+                    <div class="valor">{{dictValores[falla.idTipoFalla]?.descripcion}}</div>
+                </div>
+                <div class="campo">
+                    <div class="nombre"><strong>Severidad</strong></div>
+                    <div class="valor">{{dictValores[falla.idTipoSeveridad]?.descripcion}}</div>
+                </div>  
+                <div class="campo">
+                    <div class="nombre"><strong>Longitud {{mantenimientoVialEvento.id_tipo_superficie == 1102?'losa':''}}</strong></div>
+                    <div class="valor">{{falla.longitud}}</div>
+                </div> 
+                <div class="campo" *ngIf="!esFallaLongitudinal(falla.idTipoFalla)">
+                    <div class="nombre"><strong>Ancho {{mantenimientoVialEvento.id_tipo_superficie == 1102?'losa':''}}</strong></div>
+                    <div class="valor">{{falla.ancho}}</div>
+                </div>  
+                <div class="campo" *ngIf="!esFallaLongitudinal(falla.idTipoFalla)">
+                    <div class="nombre"><strong>Area</strong></div>
+                    <div class="valor">{{falla.area}}</div>
+                </div>  
+                <div class="campo" *ngIf="mantenimientoVialEvento.id_tipo_superficie == 1102">
+                    <div class="nombre"><strong>Número de losas</strong></div>
+                    <div class="valor">{{falla.numeroLosas}}</div>
+                </div>
+                <div class="campo">
+                    <div class="nombre"><strong>Tipo intervención</strong></div>
+                    <div class="valor">{{dictValores[falla.idTipoIntervencion]?.descripcion?dictValores[falla.idTipoIntervencion]?.descripcion:''}}</div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Fotos ({{fotosMantenimiento.length}})
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-card *ngFor="let foto of fotosMantenimiento">
+            <img mat-card-image [src]="URL_FOTOS+foto.url">
+        </mat-card>
+        <mat-action-row>
+          <button type="button" mat-button color="primary" (click)="prevStep()"><mat-icon>keyboard_arrow_up</mat-icon></button>
+        </mat-action-row>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="step === 4" (opened)="setStep(4)" hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Otros factores ({{otrosFactoresMantenimiento.length}})
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <ul *ngFor="let ofactor of otrosFactoresMantenimiento" class="lista-otros-factores">
+            <li>{{dictValores[ofactor.tipoFactor]?.descripcion}}</li>
+        </ul>
+        <mat-action-row>
+          <button type="button" mat-button color="primary" (click)="prevStep()"><mat-icon>keyboard_arrow_up</mat-icon></button>
+        </mat-action-row>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel *ngIf="mostrarApiquesAforos()" [expanded]="step === 5" (opened)="setStep(5)" hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Apiques y aforos
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div class="contenido-seccion">
+            <div class="campo">
+                <div class="nombre"><strong>¿Requiere Apiques?</strong></div>
+                <div class="valor">{{mantenimientoVialEvento.requiere_apiques}}</div>
+            </div>
+            <div class="campo">
+                <div class="nombre"><strong>¿Requiere Aforos?</strong></div>
+                <div class="valor">{{mantenimientoVialEvento.requiere_aforo}}</div>
+            </div>
+        </div>
+
+        <br>
+        <div class="campo">
+            <div class="nombre"><strong>Solicitudes adicionales</strong></div>
+            <div class="valor">{{mantenimientoVialEvento.requiere_aforo}}</div>
+        </div>
+            
+        <div>
+            <div class="nombre"><strong>Observaciones</strong></div>
+            <div class="valor">{{mantenimientoVialEvento.observacion_adicionales}}</div>
+        </div>
+        <br>
+        <div class="campo">
+            <div class="nombre"><strong>¿Segmento viable para intervención?</strong></div>
+            <div class="valor">{{mantenimientoVialEvento.viable_intervencion}}</div>
+        </div>
+        <div>
+            <div class="nombre"><strong>Observaciones</strong></div>
+            <div class="valor">{{mantenimientoVialEvento.observacion_viable_intervencion}}</div>
+        </div>
+        <br>
+        <div class="nombre"><strong>Apiques</strong></div>
+        
+        <table mat-table [dataSource]="apiques" class="mat-elevation-z8 tabla-apiques" *ngIf="apiques.length>0">
+            <!-- Name Column -->
+            <ng-container matColumnDef="nomenclatura">
+                <th mat-header-cell *matHeaderCellDef> Nomenclatura </th>
+                <td mat-cell *matCellDef="let apique"> {{apique.nomenclatura}} </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="observacion">
+                <th mat-header-cell *matHeaderCellDef> Observacion </th>
+                <td mat-cell *matCellDef="let apique"> {{apique.observacion}} </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumnsApiques"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumnsApiques;"></tr>
+        </table>
+        <span *ngIf="apiques.length==0">No se ubicaron apiques</span>
+        <div *ngIf="aledanioDe" >
+            <p style="color:red">Este Pk fue incluido como aledaño de apiques del PK {{aledanioDe}}</p>
+        </div>
+    <!--
+        <ul *ngFor="let ofactor of otrosFactoresMantenimiento" class="lista-otros-factores">
+            <li>{{dictValores[ofactor.tipoFactor]?.descripcion}}</li>
+        </ul>
+    -->
+        <mat-action-row>
+          <button type="button" mat-button color="primary" (click)="prevStep()"><mat-icon>keyboard_arrow_up</mat-icon></button>
+        </mat-action-row>
+    </mat-expansion-panel>
+</mat-accordion>
+<div *ngIf="ready">
+    <div class="nombre"><strong>Observaciones</strong></div>
+    <div class="valor">{{mantenimientoVialEvento.observaciones?mantenimientoVialEvento.observaciones:''}}</div>
+</div>
+<app-historial-mantenimiento *ngIf="ready" [idMantenimiento]="idMantenimientoVial" [mostrarTitulo]="false" [scrollVertical]="true"></app-historial-mantenimiento>
+
+

@@ -1,0 +1,25 @@
+<h2>Confirmar solicitud</h2>
+
+<p>Total solicitudes apiques: {{totalApiques}} <span *ngIf="totalApiquesPrioritarios > 0">{{' (' + totalApiquesPrioritarios +' prioritarios)'}}</span></p>
+<p>Total aforos: {{totalAforos}} <span *ngIf="totalAforosPrioritarios > 0">{{' (' + totalApiquesPrioritarios +' prioritarios)'}}</span></p>
+<br>
+
+    <mat-label style="margin-right: 0.5rem;">Prioritario</mat-label>
+    <mat-checkbox  [(ngModel)]="esPrioritario" >
+    </mat-checkbox> 
+
+<br>
+<br>
+
+<button (click)="aceptar()" [disabled]="!controlPrioridad.valid"
+mat-raised-button class="color-primary-100" style="margin-right: 0.5rem;"
+> Aceptar
+</button>
+
+<button (click)="cancelar()" 
+mat-raised-button class="color-primary-100" 
+> Cancelar
+</button>
+
+
+

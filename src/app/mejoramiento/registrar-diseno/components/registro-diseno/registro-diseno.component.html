@@ -1,0 +1,414 @@
+<mat-card>
+    <mat-card-header class="mat-card-header-umv">
+      <div class="mat-card-header-text">
+        <mat-card-subtitle>
+          <h2>{{titulo}}</h2>
+        </mat-card-subtitle>
+      </div>
+    </mat-card-header>
+    <mat-card-content *ngIf="ready">
+    <mat-horizontal-stepper #stepper>
+      <mat-step [stepControl]="encabezadoFormGroup" *ngIf="ready" [editable]="isEditable">
+        <form [formGroup]="encabezadoFormGroup" >
+          <ng-template matStepLabel>Ficha de Diseño</ng-template>
+          <mat-accordion multi class="headers-align">
+            <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Encabezado
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-card>
+              <mat-form-field appearance="outline">
+                <mat-label>Localidad</mat-label>
+                <mat-select formControlName="id_localidad" [disabled]="true">
+                  <mat-option [value]="this.mantenimientoVialEvento.id_localidad">{{this.mantenimientoVialEvento.valor_localidad +' - '+ this.mantenimientoVialEvento.descripcion_localidad}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                  <mat-label>UPZ</mat-label>
+                  <mat-select formControlName="id_upz" [disabled]="true">
+                    <mat-option [value]="mantenimientoVialEvento.id_upz">{{mantenimientoVialEvento.valor_upz +' - '+ mantenimientoVialEvento.descripcion_upz}}</mat-option>
+                  </mat-select>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                  <mat-label>Barrio</mat-label>
+                  <mat-select formControlName="id_barrio" [disabled]="true">
+                    <mat-option [value]="mantenimientoVialEvento.id_barrio">{{mantenimientoVialEvento.descripcion_barrio}}</mat-option>
+                  </mat-select>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class = "mat-form-field-disabled">
+                  <mat-label>CIV</mat-label>
+                  <input matInput formControlName="civ" readonly >
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class = "mat-form-field-disabled">
+                <mat-label>PK ID Calzada</mat-label>
+                <input matInput formControlName="pk_id_calzada" readonly >
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                  <mat-label>Eje Vial</mat-label>
+                  <input matInput formControlName="eje_vial" autocomplete="off">
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                  <mat-label>desde</mat-label>
+                  <input matInput formControlName="desde" autocomplete="off">
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                  <mat-label>hasta</mat-label>
+                  <input matInput formControlName="hasta" autocomplete="off">
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                  <mat-label>Zona</mat-label>
+                  <mat-select formControlName="id_zona" [disabled]="true">
+                    <mat-option [value]="mantenimientoVialEvento.id_zona">{{mantenimientoVialEvento.descripcion_zona}}</mat-option>
+                  </mat-select>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class = "mat-form-field-disabled">
+                  <mat-label>Fecha visita</mat-label>
+                  <input matInput formControlName="fecha_visita_tecnica" readonly >
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                  <mat-label>Sección vial</mat-label>
+                  <mat-select formControlName="id_tipo_seccion_vial" [disabled]="true">
+                    <mat-option [value]="mantenimientoVialEvento.id_tipo_seccion_vial">{{mantenimientoVialEvento.descripcion_seccion_vial}}</mat-option>
+                  </mat-select>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class = "mat-form-field-disabled">
+                  <mat-label>Fecha solicitud</mat-label>
+                  <input matInput formControlName="solicitud_fecha" readonly >
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                  <mat-label>Uso via</mat-label>
+                  <mat-select formControlName="id_tipo_uso_via" [disabled]="true">
+                    <mat-option *ngFor="let tipo of listas[19]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+                  </mat-select>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                  <mat-label>Tipo malla vial</mat-label>
+                  <mat-select formControlName="id_tipo_malla" [disabled]="true">
+                    <mat-option>{{mantenimientoVialEvento.descripcion_tipo_malla}}</mat-option>
+                  </mat-select>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                  <mat-label>Rutas de transporte</mat-label>
+                  <mat-select formControlName="rutas_transporte" [disabled]="true">
+                    <mat-option [value]="'SI'">SI</mat-option>
+                    <mat-option [value]="'NO'">NO</mat-option>
+                  </mat-select>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                  <mat-label>Transitabilidad</mat-label>
+                  <mat-select formControlName="id_tipo_transitabilidad" [disabled]="true">
+                    <mat-option *ngFor="let tipo of listas[29]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+                  </mat-select>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class = "mat-form-field-disabled">
+                  <mat-label>Area (m2)</mat-label>
+                  <input matInput formControlName="area_pk" readonly >
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class = "mat-form-field-disabled">
+                  <mat-label>Ancho (m)</mat-label>
+                  <input matInput formControlName="ancho_pk" readonly >
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                  <mat-label>Programa</mat-label>
+                  <mat-select formControlName="id_tipo_programa" [disabled]="true">
+                    <mat-option [value]="null"> -- </mat-option>
+                    <mat-option *ngFor="let tipo of listas[20]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+                  </mat-select>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                  <mat-label>Superficie</mat-label>
+                  <mat-select formControlName="id_tipo_superficie" [disabled]="true">
+                    <mat-option *ngFor="let tipo of listas[42]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+                  </mat-select>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                  <mat-label>Interveción Total</mat-label>
+                  <mat-select formControlName="id_tipo_intervencion_total">
+                    <mat-option [value]="null"> -- </mat-option>
+                    <mat-option *ngFor="let tipo of listas[48]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+                  </mat-select>
+              </mat-form-field>
+              <mat-action-row>
+                <button type="button" mat-raised-button (click) = "saveEvento($event)" color="primary" [disabled]="encabezadoFormGroup.status == 'INVALID'">Guardar <mat-icon>save</mat-icon></button>
+              </mat-action-row>
+              </mat-card>
+          </mat-expansion-panel>
+          <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Fallas
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-ver-fallas [idMantenimientoEvento] = "idMantenimientoVialEvento"></app-ver-fallas>
+          </mat-expansion-panel>
+          <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Fotos
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="container-flex" *ngIf="verRegistro">
+              <app-registrar-insumos [idMantenimientoVial] ="idMantenimientoVialEvento" [idDocumento] = "idDocumento" [idTipoArchivo]="2051" [textoBtn]="'Fotos'" [idPermisos]="5"></app-registrar-insumos>
+            </div>
+          </mat-expansion-panel>
+          <mat-expansion-panel [expanded]="step === 4" (opened)="setStep(4)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Otros Factores
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div>
+              <app-ver-otro-factor [idMantenimientoVialEvento] = "idMantenimientoVialEvento"></app-ver-otro-factor>
+            </div>
+          </mat-expansion-panel>
+          <mat-expansion-panel [expanded]="step === 5" (opened)="setStep(5)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Apiques y Aforos
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-card>
+              <mat-card-content>
+                <div class="container-flex">
+                  <div class="campo">
+                    <div class="nombre"><strong>¿Requiere Apiques?</strong>  {{mantenimientoVialEvento.requiere_apiques}}</div>
+                    <div class="nombre"><strong>¿Requiere Aforos?</strong>  {{mantenimientoVialEvento.requiere_aforo}}</div>
+                    <div class="nombre"><strong>¿Solicitudes adicionales?</strong>  {{mantenimientoVialEvento.solicitudes_adicionales}}</div>
+                    <div class="nombre"><strong>Observaciones adicionales</strong>  {{mantenimientoVialEvento.observacion_adicionales}}</div>
+                    <div class="nombre"><strong>¿El segmento es viable para intervención?</strong>  {{mantenimientoVialEvento.viable_intervencion}}</div>
+                    <div class="nombre"><strong>Observaciones adicionales</strong>  {{mantenimientoVialEvento.observacion_viable_intervencion}}</div>
+                  </div>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </mat-expansion-panel>
+          </mat-accordion>
+        </form>
+        <div>
+          <button mat-button matStepperNext type="button">Siguiente</button>
+        </div>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Insumos Apiques y Aforos</ng-template>
+        <mat-accordion [multi]="true" [hideToggle]="false">
+          <mat-expansion-panel [expanded]="step === 7" (opened)="setStep(7)" hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>Apiques Detalle</mat-panel-title>
+              </mat-expansion-panel-header>
+                <div class="container-flex">
+                  <div>
+                    <app-consulta-apiques [idMantenimientoVialEvento] = "idMantenimientoVialEvento"></app-consulta-apiques>
+                  </div>
+                </div>
+              <mat-action-row>
+                <button type="button" mat-button color="primary" (click)="prevStep()"><mat-icon>keyboard_arrow_up</mat-icon></button>
+              </mat-action-row>
+          </mat-expansion-panel>
+          <mat-expansion-panel [expanded]="step === 8" (opened)="setStep(8)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>Insumo Gestión Apiques</mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="container-flex">
+              <app-registrar-insumos [idMantenimientoVial] ="idMantenimientoVialEvento" [idDocumento] = "idDocumento" [idTipoArchivo]="251"></app-registrar-insumos>
+            </div>
+            <mat-action-row>
+              <button type="button" mat-button color="primary" (click)="prevStep()"><mat-icon>keyboard_arrow_up</mat-icon></button>
+            </mat-action-row>
+          </mat-expansion-panel>
+          <mat-expansion-panel [expanded]="step === 9" (opened)="setStep(9)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>Insumo Gestión Aforos</mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="container-flex">
+              <app-registrar-insumos [idMantenimientoVial] ="idMantenimientoVialEvento" [idDocumento] = "idDocumento" [idTipoArchivo]="8038" [textoBtn]="'Descargar Aforo'"></app-registrar-insumos>
+              <app-registrar-insumos [idMantenimientoVial] ="idMantenimientoVialEvento" [idDocumento] = "idDocumento" [idTipoArchivo]="252" [textoBtn]="'Descargar Análisis tránsito'"></app-registrar-insumos>
+            </div>
+            <mat-action-row>
+              <button type="button" mat-button color="primary" (click)="prevStep()"><mat-icon>keyboard_arrow_up</mat-icon></button>
+            </mat-action-row>
+        </mat-expansion-panel>
+        </mat-accordion>
+        <div>
+          <button mat-button matStepperPrevious type="button">Regresar</button>
+          <button mat-button matStepperNext type="button">Siguiente</button>
+        </div>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Insumos</ng-template>
+        <mat-accordion [multi]="true" [hideToggle]="false">
+          <mat-expansion-panel [expanded]="step === 10" (opened)="setStep(10)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>Ficha Evaluación Estructural</mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="container-flex">
+              <app-registro-insumos [idMantenimientoVial] ="idMantenimientoVialEvento" [idDocumento] = "idDocumento" [idTipoArchivo]="2052"></app-registro-insumos>
+            </div>
+            <mat-action-row>
+              <button type="button" mat-button color="primary" (click)="prevStep()"><mat-icon>keyboard_arrow_up</mat-icon></button>
+          </mat-action-row>
+          </mat-expansion-panel>
+          <mat-expansion-panel [expanded]="step === 5" (opened)="setStep(5)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>Levantamiento Topografico</mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="container-flex">
+              <app-registro-insumos [idMantenimientoVial] ="idMantenimientoVialEvento" [idDocumento] = "idDocumento" [idTipoArchivo]="2053"></app-registro-insumos>
+            </div>
+            <mat-action-row>
+              <button type="button" mat-button color="primary" (click)="prevStep()"><mat-icon>keyboard_arrow_up</mat-icon></button>
+            </mat-action-row>
+          </mat-expansion-panel>
+          <mat-expansion-panel [expanded]="step === 11" (opened)="setStep(11)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>Modulación de Losas</mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="container-flex">
+              <app-registro-insumos [idMantenimientoVial] ="idMantenimientoVialEvento" [idDocumento] = "idDocumento" [idTipoArchivo]="2054"></app-registro-insumos>
+            </div>
+            <mat-action-row>
+              <button type="button" mat-button color="primary" (click)="prevStep()"><mat-icon>keyboard_arrow_up</mat-icon></button>
+          </mat-action-row>
+          </mat-expansion-panel>
+          <mat-expansion-panel [expanded]="step === 12" (opened)="setStep(12)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>Consulta de Redes</mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="container-flex">
+              <app-registro-insumos [idMantenimientoVial] ="idMantenimientoVialEvento" [idDocumento] = "idDocumento" [idTipoArchivo]="14520"></app-registro-insumos>
+            </div>
+            <mat-action-row>
+              <button type="button" mat-button color="primary" (click)="prevStep()"><mat-icon>keyboard_arrow_up</mat-icon></button>
+          </mat-action-row>
+          </mat-expansion-panel>
+          <mat-expansion-panel [expanded]="step === 13" (opened)="setStep(13)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>Otro</mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="container-flex">
+              <app-registro-insumos [idMantenimientoVial] ="idMantenimientoVialEvento" [idDocumento] = "idDocumento" [idTipoArchivo]="2055"></app-registro-insumos>
+            </div>
+            <mat-action-row>
+              <button type="button" mat-button color="primary" (click)="prevStep()"><mat-icon>keyboard_arrow_up</mat-icon></button>
+          </mat-action-row>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <div>
+          <button mat-button matStepperPrevious type="button">Regresar</button>
+          <button mat-button matStepperNext type="button">Siguiente</button>
+        </div>
+      </mat-step>
+      <mat-step [stepControl]="firstFormEntity" [editable]="isEditable">
+        <ng-template matStepLabel>Información de Diseño</ng-template>
+        <form [formGroup]="firstFormEntity">
+          <mat-accordion [multi]="true" [hideToggle]="false">
+            <mat-expansion-panel [expanded]="step === 13" (opened)="setStep(13)" hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>Insumos diseño</mat-panel-title>
+              </mat-expansion-panel-header>
+              <app-listar-alternativas [idMantenimientoVialEvento] = "idMantenimientoVialEvento"></app-listar-alternativas>
+            </mat-expansion-panel>
+            <mat-expansion-panel [expanded]="step === 14" (opened)="setStep(14)" hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>Parametros de Diseño</mat-panel-title>
+              </mat-expansion-panel-header>
+              <mat-card>
+                <mat-card-content *ngIf="ready">
+                  <p>
+                  <mat-form-field appearance="outline">
+                    <mat-label>Clasificación Subrasante</mat-label>
+                    <mat-select formControlName="id_tipo_clasificacion_subrasant">
+                      <mat-option *ngFor="let tipo of listas[109]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="tipoClasificacionSubrasantField.hasError('required')">Campo requerido</mat-error>
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">
+                    <mat-label>NEE</mat-label>
+                    <input matInput formControlName="nee_disenio" autocomplete="off">
+                    <mat-error *ngIf="neeDisenioField.hasError('required')">Campo requerido</mat-error>
+                    <mat-error *ngIf="neeDisenioField.hasError('maxlength')">Maximo de caracteres 20</mat-error>
+                    <mat-error *ngIf="neeDisenioField.hasError('pattern')">Solo numeros</mat-error>
+                    <mat-error *ngIf="neeDisenioField.hasError('min')">Valor minimo 50000</mat-error>
+                  </mat-form-field>
+                </p>
+                  <mat-form-field appearance="outline">
+                    <mat-label>CBR Diseño(%)</mat-label>
+                    <input matInput formControlName="cbr_disenio_pct" autocomplete="off">
+                    <mat-error *ngIf="cbrDisenioPctField.hasError('required')">Campo requerido</mat-error>
+                    <mat-error *ngIf="cbrDisenioPctField.hasError('maxlength')">Maximo de caracteres 4</mat-error>
+                    <mat-error *ngIf="cbrDisenioPctField.hasError('pattern')">Solo numeros</mat-error>
+                    <mat-error *ngIf="cbrDisenioPctField.hasError('min')">Valor minimo 0</mat-error>
+                    <mat-error *ngIf="cbrDisenioPctField.hasError('max')">Valor máximo 100</mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline">
+                    <mat-label>TPDvc</mat-label>
+                    <input matInput formControlName="tpdvc_disenio" autocomplete="off">
+                    <mat-error *ngIf="tpdvcDisenioField.hasError('maxlength')">Maximo de caracteres 20</mat-error>
+                    <mat-error *ngIf="tpdvcDisenioField.hasError('pattern')">Solo numeros</mat-error>
+                    <mat-error *ngIf="tpdvcDisenioField.hasError('min')">Valor minimo 1</mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline">
+                    <mat-label>Ks (Mpa/m)</mat-label>
+                    <input matInput formControlName="ks_disenio" autocomplete="off">
+                    <mat-error *ngIf="KsDisenioField.hasError('maxlength')">Maximo de caracteres 6</mat-error>
+                    <mat-error *ngIf="KsDisenioField.hasError('pattern')">Solo numeros</mat-error>
+                    <mat-error *ngIf="KsDisenioField.hasError('min')">Valor minimo 0</mat-error>
+                    <mat-error *ngIf="KsDisenioField.hasError('max')">Valor máximo 250</mat-error>
+                  </mat-form-field>
+                  <hr>
+                  <mat-form-field appearance="outline">
+                    <mat-label>Número Estructural Efectivo (Sne)</mat-label>
+                    <input matInput formControlName="numero_estructural_efectivo_disenio" autocomplete="off">
+                    <mat-error *ngIf="numeroEstructuralEfectivoField.hasError('maxlength')">Maximo de caracteres 5</mat-error>
+                    <mat-error *ngIf="numeroEstructuralEfectivoField.hasError('pattern')">Solo numeros</mat-error>
+                    <mat-error *ngIf="numeroEstructuralEfectivoField.hasError('min')">Valor minimo 0</mat-error>
+                    <mat-error *ngIf="numeroEstructuralEfectivoField.hasError('max')">Valor máximo 20</mat-error>
+                  </mat-form-field>
+                </mat-card-content>
+                <hr>
+                <mat-card-actions align="start">
+                  <button type="button" mat-flat-button color="primary" (click)="save($event)">Guardar</button>
+                </mat-card-actions>
+              </mat-card>
+            </mat-expansion-panel>
+          </mat-accordion>
+
+          </form>
+        <div>
+          <button mat-button matStepperPrevious type="button">Anterior</button>
+          <button mat-button matStepperNext type="button">Siguiente</button>
+        </div>
+      </mat-step>
+      <mat-step [editable]="isEditable">
+        <ng-template matStepLabel>Gestión</ng-template>
+        <div>
+          <app-avance-mantenimiento [idProcesoGestion]="idGestion" (gestionRealizada)="gestionRealizada()" (opcionSeleccionada)="accionGestion($event)" [acciones]="[{text:'cancelar',action:'cancel'}]"></app-avance-mantenimiento>
+          <button mat-button matStepperPrevious type="button">Anterior</button>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,113 @@
+@keyframes animacion-aparecer{
+
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+
+}
+
+@keyframes animacion-coso{
+
+	0% {scale: 0;}
+	100% {scale: 1;}
+
+}
+
+@-webkit-keyframes showSweetAlert {
+  0% {
+    transform: scale(0.7);
+    -webkit-transform: scale(0.7); }
+  45% {
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05); }
+  80% {
+    transform: scale(0.95);
+    -webkit-transform: scale(0.95); }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1); } }
+
+@keyframes showSweetAlert {
+  0% {
+    transform: scale(0.7);
+    -webkit-transform: scale(0.7); }
+  45% {
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05); }
+  80% {
+    transform: scale(0.95);
+    -webkit-transform: scale(0.95); }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1); } }
+
+.dark-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+  	background-color: rgba(0, 0, 0, 0.3);
+  	z-index: 100;
+  	animation-name: animacion-aparecer;
+	animation-duration: 200ms;
+
+}
+
+.wrapper-modal {
+
+  background-color: white;
+  font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+
+  border-radius: 5px;
+  text-align: center;
+
+  z-index: 101;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  max-width: 95%;
+  max-height: 95%;
+  padding: 0;
+  overflow-y: hidden;
+  color:#575757;
+  transform: translate3d(0,-50%,-50%);
+
+}
+
+
+
+.contenido-modal{
+	position: relative;
+	display: inline-block;
+  width:100%;
+  max-height: 85vh;
+	padding: 3%;
+	background: white;
+	overflow-y: auto;
+}
+
+ .botonCerrar{
+ 	float: right;
+   padding-top: 8px;
+   padding-right: 8px;
+   position: absolute;
+   top:0;
+   right:0;
+ }
+
+ .texto-titulo-modal h2 {
+  color: #575757;
+  font-size: 30px;
+  text-align: center;
+  font-weight: 600 !important;
+  text-transform: none;
+  position: relative;
+  margin: 25px 0;
+  padding: 0;
+  line-height: 40px;
+  display: block;
+}

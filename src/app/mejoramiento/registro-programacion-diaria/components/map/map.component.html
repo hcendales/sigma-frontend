@@ -1,0 +1,14 @@
+   <mat-accordion>
+        <mat-expansion-panel >
+            <mat-expansion-panel-header>
+            </mat-expansion-panel-header>
+             <app-mapa-umv 
+                #mapa 
+                [center]="mapCenter" 
+                [basemap]="basemapType" 
+                [zoom]="mapZoomLevel"
+                style="width: 100%;height: 500px; display:block; margin-bottom: -270px;"
+            >
+            </app-mapa-umv>
+        </mat-expansion-panel>
+    </mat-accordion>

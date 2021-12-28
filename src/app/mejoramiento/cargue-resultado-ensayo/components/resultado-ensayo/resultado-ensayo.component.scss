@@ -1,0 +1,93 @@
+@import "../../../../theme/styles/variables";
+
+
+.form-control{
+    margin-top: 10px;
+    mat-form-field{
+        margin-right: 5px;
+    }
+}
+
+.headers-align .mat-expansion-panel-header-title,
+.headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+  margin-right: 0;
+}
+
+.headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 1092px) {
+  #seccionFiltros{
+    mat-form-field{
+      min-width: calc(33% - 10px);
+    }
+  }
+}
+
+@media (max-width: 881px) {
+  #seccionFiltros{
+    mat-form-field{
+      min-width: calc(50% - 10px);
+    }
+  }
+}
+
+@media (max-width: 469px) {
+  #seccionFiltros{
+    mat-form-field{
+      min-width: calc(100% - 10px);
+    }
+  }
+}
+
+.campo{
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+table {
+  width: 100%;
+}
+
+td, th {
+  width: 20%;
+}
+
+.hide {
+  display: none;
+}
+
+/* mat-table */
+mat-footer-row mat-footer-cell{
+  justify-content: center;
+  font-style: italic;
+}
+/* Clear input */
+.search-form-field {
+  width: 200px;
+}
+
+.filter {
+  display: block;
+  width: 40px;
+}
+
+.retraso {
+  color: brown;
+}
+
+.undia {
+  color: orange;
+}
+.normal {
+  color: black;
+}
+#bookmark {
+     position: absolute;
+     top: 80px;
+     right: 20px;
+     z-level: 1000;
+}

@@ -1,0 +1,65 @@
+<mat-card>
+  <mat-card-header class="mat-card-header-umv">
+    <div class="mat-card-header-text">
+      <mat-card-subtitle>
+        <h2>Registro de aforos</h2>
+      </mat-card-subtitle>
+    </div>
+  </mat-card-header>
+    <mat-horizontal-stepper [linear]="true" (selectionChange)="selectionChanged($event)" #stepper>
+      <ng-template [matStepperIcon]="'edit'">
+        <mat-icon>check</mat-icon>
+      </ng-template>
+      <mat-step label="Seleccionar Pks"  [completed]="listaPks.getSeleccion().length > 0">
+        <mat-error *ngIf="listaPks.getSeleccion().length == 0" >Agregue pks para avanzar</mat-error>
+        <app-lista-aforos #listaPks></app-lista-aforos>
+      </mat-step>
+    
+      <mat-step label="Agregar datos" [completed]="datosAgregados()">
+        <mat-error *ngIf="!datosAgregados()" >Diligencie los datos obligatorios para poder avanzar</mat-error>
+        <mat-form-field appearance="outline">
+          <mat-label>Fecha aforo</mat-label>
+          <input matInput [matDatepicker]="picker" [(ngModel)]="fechaAforo" required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Tipo aforo</mat-label>
+          <mat-select [(ngModel)]="tipoAforo" required>
+            <mat-option value="digital">Digital</mat-option>
+            <mat-option value="manual">Manual</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" *ngIf="tipoAforo == 'manual'">
+          <mat-label>Tipo información</mat-label>
+          <mat-select [(ngModel)]="tipoInformacion" required>
+            <mat-option value="Primaria">Primaria</mat-option>
+            <mat-option value="Secundaria">Secundaria</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <app-registro-datos-aforo #datosAforoManual [datosAforo]="[]" *ngIf="tipoAforo == 'manual' && fechaAforo"></app-registro-datos-aforo>
+        <br>
+        <app-cargue-archivo #cargueArchivo [mostrarBtnPlanitlla]="false" [procesarCargueDirectamente]="false" (confirmacionAceptada)="confirmacionAceptada()" (confirmacionRealizada)="confirmacionTerminada($event)" *ngIf="tipoAforo == 'digital' && fechaAforo" [idTipoCargue]="'4'" ></app-cargue-archivo>
+        <br>
+        <mat-form-field class="field-full-width" style="width:100%">
+          <textarea matInput placeholder="Observaciones" rows="5" name="observacionAforo" [(ngModel)]="observacionesAforo"
+              maxlength="600"></textarea>
+          <mat-hint>Máximo 600 caracteres.
+          </mat-hint>
+        </mat-form-field>
+
+        <button *ngIf="tipoAforo == 'manual'" mat-raised-button color="primary" (click)="guardarAforo()" [disabled]="btnGenerarEstudioDisponible() || datosAgregados()">Guardar aforo</button>
+        <br>
+        <p *ngIf="datosAgregados()" >Haga click en la tercera pestaña de Análisis de tránsito para continuar</p>
+      </mat-step>
+      <mat-step label="Análisis de transito" state="t">
+        
+        <app-analisis-transito *ngIf="nuevoAforo" [aforo]="nuevoAforo" [listaMant]="listaMantenimientosSelected" (finProceso)="finProceso()"></app-analisis-transito>
+        
+      </mat-step>
+      
+    </mat-horizontal-stepper>
+  </mat-card>

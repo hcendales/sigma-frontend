@@ -1,0 +1,44 @@
+<h2 mat-dialog-title>Autoprogramar diagnóstico PK: {{solMant.pkIdCalzada}}</h2>
+<form [formGroup]="modalAutoprog" (ngSubmit)="onSubmit()" *ngIf="ready">
+  <ul>
+      <li *ngIf="pkAutoprogamable && !pkFueraRango">
+          <b>Seguro desea cargar diagnóstico del PK: {{solMant.pkIdCalzada}} a su asignación?</b>
+          <ul>
+              <li>
+                  <span>CIV:</span> {{solMant.civ}}
+              </li>
+              <li>
+                  <span>Eje vial:</span> {{solMant.ejeVial}}
+              </li>
+              <li>
+                  <span>Desde:</span> {{solMant.desde}}
+              </li>
+              <li>
+                  <span>Hasta:</span> {{solMant.hasta}}
+              </li>
+              <mat-form-field appearance="outline" *ngIf="entidadUsuario == 1">
+                  <mat-label>Tipo Origen</mat-label>
+                  <mat-select placeholder="Tipo Origen" #tipoOrigenSeleccionado id="tipoOrigenSeleccionado" name="tipoOrigenSeleccionado" formControlName="tipoOrigenSeleccionado">
+                      <mat-option>--</mat-option>
+                      <mat-option *ngFor="let tipo of origFilter" [value]="tipo.idTipo">
+                        {{tipo.valor}} - {{tipo.descripcion | titlecase}}
+                      </mat-option>
+                  </mat-select>
+              </mat-form-field>
+              <li [hidden]="modalAutoprog.get('tipoOrigenSeleccionado')?.value!=371">
+                  <app-buscar-radicado #buscarRadicado [tipoRad]="tipoRad" (radLoaded)="asignarRadicado($event)"></app-buscar-radicado>
+              </li>
+          </ul>
+      </li>
+      <li *ngIf="!pkAutoprogamable || pkFueraRango">
+          <b *ngIf="!pkAutoprogamable">El PKs {{solMant.pkIdCalzada}} tiene una gestión en curso.</b>
+          <br/>
+          <b *ngIf="pkFueraRango">El PKs {{solMant.pkIdCalzada}} esta fuera de su rango de Localidad.</b>
+      </li>
+  </ul>
+</form>
+<mat-dialog-actions align="end">
+    <span style="flex: 1 1 auto"></span>
+    <button type="button" mat-flat-button color="primary" [mat-dialog-close]="{value:solMant,action:'cancel'}"><mat-icon>undo</mat-icon>Cancelar</button>
+    <button *ngIf = "mostrarBotonOk()" type="button" [disabled]="modalAutoprog.status == 'INVALID'" mat-flat-button color="primary" [mat-dialog-close]="{action:'update',value:modalAutoprog.get('tipoOrigenSeleccionado')?.value,radicado:radicadoStr,status:modalAutoprog.status}"><mat-icon>check</mat-icon>Ok</button>
+</mat-dialog-actions>

@@ -1,0 +1,115 @@
+<form autocomplete="off" *ngIf="ready" [formGroup]="formOtros">
+
+    <div class="form-control" id="seccionOtros">
+        <div *ngIf="loading" class="loading">Loading&#8230;</div>
+        <mat-form-field appearance="outline" class="campo">
+            <mat-label>Material a Ensayar *</mat-label>
+            <mat-select placeholder="Material a Ensayar" formControlName="id_tipo_material_ensayo" *ngIf="!bloquear && !actualiza" >
+                <mat-option>--</mat-option>
+                <mat-option *ngFor="let tipo of listaTipoMaterial" [value]="tipo.id_tipo_material_ensayo">
+                    {{tipo.descripcion_tipo_grupo | titlecase}}
+                </mat-option>
+            </mat-select>
+            <input *ngIf="bloquear || actualiza" matInput readonly value="{{descripcion_tipo_grupo}}">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class = "campo">
+            <mat-label>Fecha Recepcion *</mat-label>
+            <input matInput formControlName="fecha_recepcion" [matDatepicker]="picker0" placeholder="DD/MM/YYYY" [readonly]="bloquear">
+            <mat-datepicker-toggle matSuffix [for]="picker0" [disabled]="bloquear"></mat-datepicker-toggle>
+            <mat-datepicker #picker0></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="width:40%" >
+            <mat-label>Descripcion *</mat-label>
+            <input matInput formControlName="descripcion" maxlength="200" [readonly]="bloquear"  >
+            <mat-hint align="end">Máximo 200 caracteres</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="campo">
+            <mat-label>Jornada </mat-label>
+            <mat-select placeholder="Jornada" formControlName="id_jornada" *ngIf="!bloquear">
+                <mat-option>--</mat-option>
+                <mat-option *ngFor="let tipo of lista[58]" [value]="tipo.id_tipo">
+                    {{tipo.descripcion | titlecase}}
+                </mat-option>
+            </mat-select>
+            <input *ngIf="bloquear" matInput readonly value="{{listaJornada}}">
+        </mat-form-field>
+
+        <!-- <mat-form-field appearance="outline" class="campo">
+            <mat-label>Tipo Observaciones </mat-label>
+            <mat-select placeholder="Tipo Observaciones" formControlName="id_tipo_observacion" *ngIf="!bloquear">
+                <mat-option>--</mat-option>
+                <mat-option *ngFor="let tipo of lista[107]" [value]="tipo.id_tipo">
+                    {{tipo.descripcion | titlecase}}
+                </mat-option>
+            </mat-select>
+            <input *ngIf="bloquear" matInput readonly value="{{listaObservacion}}">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="campo">
+            <mat-label>Quien recibe la muestra </mat-label>
+            <mat-select placeholder="Quien recibe la muestra" formControlName="id_usuario_recibe_muestra" *ngIf="!bloquear">
+                <mat-option>--</mat-option>
+                <ng-container *ngFor="let tipo of listaUsuarios">
+                    <mat-option [value]="tipo.id_usuario">
+                        {{tipo.nombre | titlecase}}
+                    </mat-option>
+                </ng-container>
+            </mat-select>
+            <input *ngIf="bloquear" matInput readonly value="{{listaRecibeMuestra}}">
+        </mat-form-field> -->
+        <mat-form-field appearance="outline" class="campo">
+            <mat-label>Fecha Programada *</mat-label>
+            <input matInput formControlName="fecha_programada" [matDatepicker]="picker1" placeholder="DD/MM/YYYY"
+                [readonly]="bloquear">
+            <mat-datepicker-toggle matSuffix [for]="picker1" [disabled]="bloquear"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" style="width:100%">
+            <mat-label>Observaciones</mat-label>
+            <textarea matInput formControlName="observacion" #inputObservaciones cdkTextareaAutosize cdkAutosizeMinRows="2"
+               maxlength="600" [readonly]="bloquear"  ></textarea>
+            <mat-hint align="end">Máximo 600 caracteres</mat-hint>
+        </mat-form-field>
+    </div>
+
+    <br *ngIf="!bloquear">
+
+        <button 
+            type="button" 
+            mat-raised-button 
+            class="color-primary-100"
+            (click)="openDialogAsociarPKs(88)"
+            >
+            Consulta PKs
+            <mat-icon>search</mat-icon>
+        </button> 
+        &nbsp;
+        <button 
+            type="button" 
+            mat-raised-button 
+            class="color-primary-100"
+            (click)="openDialogListasEnsayos(109)"
+            *ngIf="!bloquear"
+            >
+            Asociar Ensayos
+            <mat-icon>search</mat-icon>
+        </button>     
+        <br *ngIf="!bloquear"><br *ngIf="!bloquear">
+        <ul *ngIf="listaEnsayoSelected">
+            Ensayos Seleccionados <strong>({{listaEnsayolenth}})</strong>
+            <li *ngFor="let item of listaEnsayoSelected">{{ item.codigo_tipo_ensayo + ' ' + item.programado + ' ' + item.descripcion_tipo_ensayo}}</li>
+        </ul>
+        <br *ngIf="!bloquear">
+        <app-table-mantenimientos-activos
+        [pKsSelected]="pKsSelected"
+        (rowTotal)="updatelistaPKMantActivos($event)"
+        [bloquear]="bloquear"
+        >
+        </app-table-mantenimientos-activos>
+</form>
+<!-- <pre>{{ formOtros.value | json }}</pre>  -->
+

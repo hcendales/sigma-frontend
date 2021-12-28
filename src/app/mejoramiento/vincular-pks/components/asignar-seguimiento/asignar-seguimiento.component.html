@@ -1,0 +1,45 @@
+<app-mapa-umv #mapa
+  [basemap]="basemapType"
+  [center]="mapCenter"
+  [zoom]="mapZoomLevel"
+  (mapLoaded)="cargaMapa($event)"
+  (pkSelected)="pkSelectedEvt($event)">
+</app-mapa-umv>
+<mat-card>
+    <mat-card-header class="mat-card-header-umv">
+      <div class="mat-card-header-text">
+        <mat-card-subtitle>
+          <h2>Asignar PKs vinculados a Seguimiento</h2>
+        </mat-card-subtitle>
+      </div>
+    </mat-card-header>
+
+    <app-tabla-seguimientos [selectedFeatures]="selectedFeatures" (dataSourceEmiter)="getDataSource($event)"
+      (selecteDataSourceEmiter)="getSelecteDataSource($event)" (filterPKs)="filtrarMapa($event)" (irAPkEmiter)="irAPk($event)"
+       (registroSeleccionado)="registroSeleccionadoEvt($event)" #listaSeguimientos>
+    </app-tabla-seguimientos>
+    <mat-card>
+      <div>
+        <strong>Registros seleccionados:</strong> {{totalesKmCarrilImpacto.seleccionados}}
+      </div>
+      <div >
+        <strong>Total Km carril impacto: </strong>
+        {{totalesKmCarrilImpacto.total}}
+      </div>
+      <div *ngFor="let discriminado of totalesKmCarrilImpacto.discriminado">
+        <strong>{{discriminado.codigo_actividad_agrupada?discriminado.codigo_actividad_agrupada:'Sin nombre'}} :</strong>
+        {{discriminado.km_carril_impacto}}
+      </div>
+    </mat-card>
+    <button mat-raised-button color="primary" (click)="gestionar()" [disabled]="sending || selectedFeatures.length == 0">
+        <div class='btn-text-spiner-container'>
+            <span  *ngIf="!sending">
+                {{'Enviar a "' + strActividad + '" ('+selectedFeatures.length+' registros)'}}&nbsp;
+            </span>
+            <span  *ngIf="sending">
+                {{ strStep }}
+            </span>
+            <mat-spinner *ngIf="sending" diameter="20"></mat-spinner><mat-icon *ngIf="!sending">send</mat-icon>
+        </div>
+    </button>
+<mat-card>

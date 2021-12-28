@@ -1,0 +1,14 @@
+{
+    "/SIGMA-backend/*": {
+            "target": "http://129.213.171.5:8080",
+            "secure": false,
+            "logLevel": "debug",
+            "changeOrigin": true
+   },
+   "/Caliope-backend/*": {
+           "target": "http://129.213.171.5:8080",
+           "secure": false,
+           "logLevel": "debug",
+           "changeOrigin": true
+  }
+}

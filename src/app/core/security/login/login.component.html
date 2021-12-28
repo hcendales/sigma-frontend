@@ -1,0 +1,42 @@
+<mat-sidenav-container id="app">
+    <div class="h-100 container-center" >
+         <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" id="form-login">
+            <div *ngIf="validacion" id="contenedor-loader">
+                <mat-spinner [diameter]="50" color="primary"></mat-spinner>
+            </div>
+                <mat-card class="p-0 mat-elevation-z24 box">
+                    <div class="box-header container-center">
+                        <img class="m-10 logo-sigma" alt="logo-sigma" src="assets/img/app/logo_sigma.png">
+                    </div>
+                    <mat-card-content class="box-content" id="card-content">
+                        <mat-card class="mat-elevation-z12 box-content-inner" id="campos-container">
+                            <span class="box-content-header">USUARIO AUTORIZADO</span>
+                            <mat-form-field class="w-100">
+                                <input required matTooltip="Nombre de usuario para acceder a la plataforma" matTooltipPosition="above"
+                                matInput placeholder="Usuario" formControlName="username"
+                                autocomplete="username">
+                                <mat-error *ngIf="form.controls.username.errors?.required">EL usuario es necesario.</mat-error>
+                            </mat-form-field>
+                            <mat-form-field class="w-100">
+                                <input required matTooltip="Clave alfanumérica que se usa para validar el usuario" matTooltipPosition="above"
+                                 matInput [type]="hide ? 'password' : 'text'" placeholder="Clave" formControlName="password"
+                                 autocomplete="password">
+                                <mat-icon matSuffix (click)="hide = !hide" style="cursor: pointer" >{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                <mat-error *ngIf="form.controls.password.errors?.required">La contraseña es necesaria.</mat-error>
+                            </mat-form-field>
+                            <a href="https://www.umv.gov.co/portal" target="_blank" class="w-100 btn-olvido-clave">
+                                Olvidó clave?
+                            </a>
+                            <br/>
+
+                        </mat-card>
+                        <button mat-raised-button color="primary" class="mat-elevation-z12 box-button" [disabled]="disabledBtn_Login" type="submit">INGRESAR</button>
+                    </mat-card-content>
+                    <div class="msj_obligatorio" fxLayout="row" fxLayoutAlign="center">
+                        <h5 color="warn" style="margin:0" >Todos los campos con * son obligatorios</h5>
+                    </div>
+                </mat-card>
+          </form>
+    </div>
+  <span id="version">V 30/11/2021 21:30</span>
+  </mat-sidenav-container>

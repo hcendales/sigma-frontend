@@ -1,0 +1,111 @@
+<div class="mat-elevation-z8">
+    <div *ngIf="loading" class="loading">Loading&#8230;</div>
+    <table mat-table [dataSource]="dataSource" style="width: 100%;" matSort>
+
+
+        <ng-container matColumnDef="codigo_tipo_ensayo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>CODIGO</th>
+            <td mat-cell *matCellDef="let row"> {{row.codigo_tipo_ensayo}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="descripcion_tipo_ensayo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>DESCRIPCION</th>
+            <td mat-cell *matCellDef="let row"> {{row.descripcion_tipo_ensayo}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="programado">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>CANT PROGRAMADA</th>
+            <td mat-cell *matCellDef="let row">
+                <mat-form-field appearance="fill" cellspacing="0" floatLabel="never" style="width: 20%;">
+                    <input matInput type="number" maxlength="8" style="font-size: 15px;" [(ngModel)]="row.programado" #ctrl="ngModel"
+                        autocomplete="off" required [disabled]="bloquear">
+                </mat-form-field>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="ejecutado">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>CANT EJECUTADO</th>
+            <td mat-cell *matCellDef="let row">
+                <mat-form-field appearance="fill" cellspacing="0" floatLabel="never" style="width: 20%;">
+                    <input matInput type="number" maxlength="8" style="font-size: 15px;" [(ngModel)]="row.ejecutado"
+                        #ctrl="ngModel" autocomplete="off" required [disabled]="bloquear">
+                </mat-form-field>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="acciones">
+            <th mat-header-cell *matHeaderCellDef>ACCIONES </th>
+            <td mat-cell *matCellDef="let row; let i = index">
+                <button type="button" mat-icon-button matTooltip="Actualizar Registro" color="primary"
+                    (click)="onUpdateRow(row)" [disabled]="bloquear">
+                    <mat-icon>update</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+        <!--Campos de busqueda-->
+
+        <ng-container matColumnDef="search1">
+            <th mat-header-cell *matHeaderCellDef>
+                <mat-form-field class="filter" floatLabel="never">
+                    <mat-label>Buscar</mat-label>
+                    <input matInput [formControl]="search1">
+                </mat-form-field>
+        </ng-container>
+        <ng-container matColumnDef="search2">
+            <th mat-header-cell *matHeaderCellDef>
+                <mat-form-field class="filter" floatLabel="never">
+                    <mat-label>Buscar</mat-label>
+                    <input matInput [formControl]="search2">
+                </mat-form-field>
+        </ng-container>
+        <ng-container matColumnDef="search3">
+            <th mat-header-cell *matHeaderCellDef>
+                <mat-form-field class="filter" floatLabel="never">
+                    <mat-label>Buscar</mat-label>
+                    <input matInput [formControl]="search3">
+                </mat-form-field>
+        </ng-container>
+        <ng-container matColumnDef="search4">
+            <th mat-header-cell *matHeaderCellDef>
+                <mat-form-field class="filter" floatLabel="never">
+                    <mat-label>Buscar</mat-label>
+                    <input matInput [formControl]="search4">
+                </mat-form-field>
+        </ng-container>
+
+        <ng-container matColumnDef="search5">
+            <th mat-header-cell *matHeaderCellDef>
+                <button type="button" mat-icon-button matTooltip="Limpiar" color="primary" (click)="onClearFilters()">
+                    <mat-icon>backspace</mat-icon>
+                </button>
+                <button type="button" mat-icon-button matTooltip="SALVAR TODOS" color="primary" (click)="onUpdateAllRow()" [disabled]="bloquear">
+                    <mat-icon>save</mat-icon>
+                </button>
+        </ng-container>
+        <!--Fin campos de busqueda-->
+
+        <!-- No hay datos Column -->
+        <ng-container matColumnDef="noData">
+            <mat-footer-cell *matFooterCellDef colspan="6">
+                No hay datos
+            </mat-footer-cell>
+        </ng-container>
+
+        <!-- Cargando datos Column -->
+        <ng-container matColumnDef="Cargando">
+            <mat-footer-cell *matFooterCellDef colspan="6">
+                Cargando datos...
+            </mat-footer-cell>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-header-row *matHeaderRowDef="filterColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)"></tr>
+        <tr mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(dataSource==null)}"></tr>
+        <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No hay datos para filtro</td>
+        </tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[3, 5, 10, 20, 100]" [pageSize]="pageSize" showFirstLastButtons></mat-paginator>
+</div>

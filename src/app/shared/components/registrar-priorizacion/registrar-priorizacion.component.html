@@ -1,0 +1,75 @@
+<mat-dialog-content>
+  <mat-card>
+    <mat-card-header class="mat-card-header-umv">
+      <div class="mat-card-header-text">
+        <mat-card-subtitle>
+          <h2>{{titulo}}</h2>
+        </mat-card-subtitle>
+      </div>
+    </mat-card-header>
+    <mat-card-content *ngIf="ready">
+      <form [formGroup]="formEntity" (ngSubmit)="save($event)" >
+        <mat-form-field appearance="outline" >
+          <mat-label>Programa</mat-label>
+          <mat-select formControlName="id_tipo_programa">
+            <mat-option *ngFor="let tipo of listas[20]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="tipoProgramaField.hasError('required')">Campo requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" >
+          <mat-label>Requerimiento</mat-label>
+          <mat-select formControlName="id_tipo_requerimiento">
+            <mat-option *ngFor="let tipo of listas[46]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="tipoRequerimientoField.hasError('required')">Campo requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" >
+          <mat-label>Grupo</mat-label>
+          <mat-select formControlName="id_tipo_grupo">
+            <mat-option *ngFor="let tipo of listas[47]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="tipoGrupoField.hasError('required')">Campo requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" >
+          <mat-label>Estrategía</mat-label>
+          <mat-select formControlName="id_tipo_estrategia">
+            <mat-option *ngFor="let tipo of listas[21]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="tipoEstrategiaField.hasError('required')">Campo requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" >
+          <mat-label>Administración</mat-label>
+          <mat-select formControlName="id_tipo_administracion">
+            <mat-option *ngFor="let tipo of listas[1103]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="tipoAdministracionField.hasError('required')">Campo requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Priorización Trimestre</mat-label>
+          <input matInput formControlName="priorizacion_trimestre" autocomplete="off">
+          <mat-error *ngIf="priorizacionTrimestreField.hasError('required')">Campo requerido</mat-error>
+          <mat-error *ngIf="priorizacionTrimestreField.hasError('maxlength')">Maximo de caracteres 6</mat-error>
+          <mat-error *ngIf="priorizacionTrimestreField.hasError('pattern')">Formato [AAAA_T]</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Observaciones</mat-label>
+          <input matInput formControlName="observaciones_priorizacion" autocomplete="off">
+          <mat-error *ngIf="observacionesPriorizacionField.hasError('required')">Campo requerido</mat-error>
+          <mat-error *ngIf="observacionesPriorizacionField.hasError('maxlength')">Maximo de caracteres 30</mat-error>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  </mat-dialog-content>
+  <mat-dialog-actions align="start">
+    <div class="button-row">
+      <button mat-button mat-dialog-close>Cerrar</button>
+      <button mat-flat-button color="primary" [mat-dialog-close]="true" (click)="save($event)">Actualizar información</button>
+    </div>
+  </mat-dialog-actions>

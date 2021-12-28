@@ -1,0 +1,14 @@
+<mat-card class="large-card" style="overflow-y: auto; height: 90%;">
+    <mat-card-header class="mat-card-header-umv">
+        <div class="mat-card-header-text">
+            <mat-card-subtitle>
+                <h2>{{ title }}</h2>
+            </mat-card-subtitle>
+        </div>
+    </mat-card-header>
+    <app-servicio-densidad *ngIf="data.id_tipo_servicio === 53"  [rowUpdate]="data" [bloquear]="true"></app-servicio-densidad>
+    <app-servicio-apiques  *ngIf="data.id_tipo_servicio === 54"  [rowUpdate]="data" [bloquear]="true"></app-servicio-apiques>
+    <app-servicio-nucleo   *ngIf="data.id_tipo_servicio === 55"  [rowUpdate]="data" [bloquear]="true"></app-servicio-nucleo>
+    <app-servicio-formula  *ngIf="data.id_tipo_servicio === 56"  [rowUpdate]="data" [bloquear]="true"></app-servicio-formula>
+    <app-servicio-otros    *ngIf="data.id_tipo_servicio === 109" [rowUpdate]="data" [bloquear]="true"></app-servicio-otros>
+</mat-card>

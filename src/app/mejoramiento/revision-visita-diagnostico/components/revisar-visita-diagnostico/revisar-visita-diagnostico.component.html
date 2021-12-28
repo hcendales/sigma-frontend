@@ -1,0 +1,21 @@
+<mat-card *ngIf="ready">
+    <mat-card-header class="mat-card-header-umv">
+      <div class="mat-card-header-text">
+        <mat-card-subtitle>
+          <h2>{{titulo}}</h2>
+        </mat-card-subtitle>
+      </div>
+    </mat-card-header>
+
+    <app-consulta-visita-diagnostico  [idMantenimientoVial] = "idMantenimientoVial" [idMantenimientoEvento]="idMantenimientoEvento" [idDocumento]="idDocumento" [idActividad]="idActividad"></app-consulta-visita-diagnostico>
+</mat-card>
+<mat-card *ngIf="ready">
+  <mat-card-header class="mat-card-header-umv">
+    <div class="mat-card-header-text">
+      <mat-card-subtitle>
+        <h2>Gestión mantenimiento</h2>
+      </mat-card-subtitle>
+    </div>
+  </mat-card-header>
+  <app-avance-mantenimiento [idProcesoGestion]="idGestion" (gestionRealizada)="gestionRealizada()"></app-avance-mantenimiento>
+</mat-card>

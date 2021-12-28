@@ -1,0 +1,101 @@
+{
+    "8":[
+        "id_mantenimiento_vial", "pk_id_calzada", "descripcion_localidad", "descripcion_zona",
+        "descripcion_barrio", "descripcion_upz", "solicitud_radicado_entrada",
+        "descripcion_origen", "descripcion_estado_pk", "fecha_asignacion", "fecha_vencimiento",
+        "nombre_responsable_visita", "observaciones", "_CTRL_ACCION_TRABAJAR"],
+
+    "1500":["id_mantenimiento_vial", "pk_id_calzada", "descripcion_localidad", "descripcion_zona",
+        "descripcion_barrio", "descripcion_upz", "solicitud_radicado_entrada",
+        "descripcion_origen", "descripcion_estado_pk", "fecha_asignacion", "fecha_vencimiento",
+        "nombre_responsable_visita","requiere_actualizacion_diag","_CTRL_ACCION_TRABAJAR"],
+
+    "1521":["id_mantenimiento_vial", "pk_id_calzada", "descripcion_localidad", "descripcion_zona",
+        "descripcion_barrio", "descripcion_upz", "solicitud_radicado_entrada",
+        "descripcion_origen", "descripcion_estado_pk", "fecha_asignacion", "fecha_vencimiento",
+        "nombre_responsable_visita","requiere_actualizacion_diag","_CTRL_ACCION_TRABAJAR"],
+    "1540":["id_mantenimiento_vial", "pk_id_calzada", "descripcion_localidad", "descripcion_zona",
+          "descripcion_barrio", "descripcion_upz", "solicitud_radicado_entrada",
+          "descripcion_origen", "descripcion_estado_pk", "fecha_asignacion", "fecha_vencimiento",
+          "nombre_responsable_visita","requiere_actualizacion_diag","_CTRL_ACCION_TRABAJAR"],
+    "13":[
+        "id_mantenimiento_vial", "pk_id_calzada", "descripcion_localidad", "descripcion_zona",
+        "descripcion_barrio", "descripcion_upz", "solicitud_radicado_entrada",
+        "descripcion_origen", "descripcion_estado_pk", "fecha_asignacion", "fecha_vencimiento",
+        "requiere_actualizacion_diag", "_CTRL_ACCION_TRABAJAR"],
+    "15":[
+        "ch","id_mantenimiento_vial", "pk_id_calzada", "descripcion_localidad", "descripcion_zona",
+        "descripcion_barrio", "descripcion_upz", "solicitud_radicado_entrada",
+        "descripcion_origen", "descripcion_estado_pk", "fecha_asignacion", "fecha_vencimiento",
+        "nombre_responsable_predise","requiere_actualizacion_diag", "_CTRL_ACCION_TRABAJAR"],
+    "25":[
+        "id_mantenimiento_vial", "pk_id_calzada", "descripcion_localidad", "descripcion_zona",
+        "descripcion_barrio", "descripcion_upz", "solicitud_radicado_entrada",
+        "descripcion_origen", "descripcion_estado_pk", "fecha_asignacion", "fecha_vencimiento",
+        "nombre_responsable_predise","requiere_actualizacion_diag", "_CTRL_ACCION_TRABAJAR"],
+    "1561":[
+        "ch","id_mantenimiento_vial", "pk_id_calzada", "descripcion_localidad", "descripcion_zona",
+        "descripcion_barrio", "descripcion_upz", "solicitud_radicado_entrada",
+        "descripcion_origen", "descripcion_estado_pk", "fecha_asignacion", "fecha_vencimiento",
+        "nombre_responsable_predise", "_CTRL_ACCION_TRABAJAR"],
+    "14":[
+        "id_mantenimiento_vial", "pk_id_calzada", "descripcion_localidad", "descripcion_zona",
+        "descripcion_barrio", "descripcion_upz", "solicitud_radicado_entrada",
+        "descripcion_origen", "descripcion_estado_pk", "fecha_asignacion", "fecha_vencimiento",
+        "nombre_responsable_predise","requiere_actualizacion_diag", "_CTRL_ACCION_TRABAJAR"],
+    "1602":{
+            "pendientes":[
+                {"tipo":"check", "attr":"check","ancho":"5rem","label":"Seleccion"},
+                {"attr":"id_mantenimiento_vial","label":"Id","ancho":"5rem"},
+                {"attr":"pk_id_calzada","label":"Pk id","ancho":"7rem"},
+                {"attr":"descripcion_localidad","label":"Localidad","ancho":"8rem"},
+                {"attr":"descripcion_zona","label":"Zona", "ancho":"7rem"},
+                {"attr":"descripcion_barrio","label":"Barrio","ancho":"12rem"},
+                {"attr":"descripcion_upz","label":"UPZ","ancho":"10rem"},
+                {"attr":"solicitud_radicado_entrada","label":"Radicado entrada","ancho":"10rem"},
+                {"attr":"descripcion_origen","label":"Origen","ancho":"8rem"},
+                {"attr":"descripcion_estado_pk","label":"Estado","ancho":"7rem"},
+                {"attr":"fecha_asignacion","label":"Fecha asignacion","tipo":"Fecha", "ancho":"12rem"},
+                {"attr":"fecha_vencimiento","label":"Fecha Vencimiento","tipo":"Fecha", "ancho":"12rem"},
+                {"attr":"requiere_aforo","label":"Aforo","ancho":"6rem"},
+                {"attr":"requiere_apiques","label":"Apiques","ancho":"6rem"},
+                {"attr":"trabajar","label":"Acciones","tipo":"Accion"}
+            ],
+            "progreso":[
+                {"attr":"id_mantenimiento_vial","label":"Id","ancho":"5rem"},
+                {"attr":"pk_id_calzada","label":"Pk id","ancho":"7rem"},
+                {"attr":"descripcion_localidad","label":"Localidad","ancho":"8rem"},
+                {"attr":"descripcion_zona","label":"Zona", "ancho":"7rem"},
+                {"attr":"descripcion_barrio","label":"Barrio","ancho":"12rem"},
+                {"attr":"descripcion_upz","label":"UPZ","ancho":"10rem"},
+                {"attr":"solicitud_radicado_entrada","label":"Radicado entrada","ancho":"10rem"},
+                {"attr":"descripcion_origen","label":"Origen","ancho":"8rem"},
+                {"attr":"descripcion_estado_pk","label":"Estado","ancho":"7rem"},
+                {"attr":"fecha_asignacion","label":"Fecha asignacion","tipo":"Fecha", "ancho":"12rem"},
+                {"attr":"fecha_vencimiento","label":"Fecha Vencimiento","tipo":"Fecha", "ancho":"12rem"},
+                {"attr":"respuesta_aforo","label":"Res Aforo","ancho":"6rem"},
+                {"attr":"respuesta_apiques","label":"Res Apiques","ancho":"6rem"},
+                {"attr":"trabajar","label":"Acciones","tipo":"Accion"}
+            ],
+            "realizado":[
+                {"tipo":"check", "attr":"check","ancho":"5rem","label":"Seleccion"},
+                {"attr":"id_mantenimiento_vial","label":"Id","ancho":"5rem"},
+                {"attr":"pk_id_calzada","label":"Pk id","ancho":"7rem"},
+                {"attr":"descripcion_localidad","label":"Localidad","ancho":"8rem"},
+                {"attr":"descripcion_zona","label":"Zona", "ancho":"7rem"},
+                {"attr":"descripcion_barrio","label":"Barrio","ancho":"12rem"},
+                {"attr":"descripcion_upz","label":"UPZ","ancho":"10rem"},
+                {"attr":"solicitud_radicado_entrada","label":"Radicado entrada","ancho":"10rem"},
+                {"attr":"descripcion_origen","label":"Origen","ancho":"8rem"},
+                {"attr":"descripcion_estado_pk","label":"Estado","ancho":"7rem"},
+                {"attr":"fecha_asignacion","label":"Fecha asignacion","tipo":"Fecha", "ancho":"12rem"},
+                {"attr":"fecha_vencimiento","label":"Fecha Vencimiento","tipo":"Fecha", "ancho":"12rem"},
+                {"attr":"respuesta_aforo","label":"Res Aforo","ancho":"6rem"},
+                {"attr":"respuesta_apiques","label":"Res Apiques","ancho":"6rem"},
+                {"attr":"trabajar","label":"Acciones","tipo":"Accion"}
+            ]
+        },
+    "1620":[
+        "ch","id_mantenimiento_vial", "pk_id_calzada", "civ", "descripcion_localidad", "descripcion_zona",
+            "descripcion_barrio", "descripcion_actividad_agrupada", "priorizacion_trimestre", "eje_vial", "_CTRL_ACCION_TRABAJAR"]
+}

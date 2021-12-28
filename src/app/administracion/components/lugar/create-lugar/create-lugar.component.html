@@ -1,0 +1,90 @@
+<mat-card>
+  <mat-card-header class="mat-card-header-umv">
+    <div class="mat-card-header-text">
+      <mat-card-title>{{titulo}}</mat-card-title>
+    </div>
+  </mat-card-header>
+  <form [formGroup]="formEntity" (ngSubmit)="save($event)" >
+    <p>
+      <mat-form-field appearance="fill" >
+        <mat-label>Tipo Lugar</mat-label>
+        <mat-select formControlName="idTipoLugar" required>
+          <mat-option [value]="1">BODEGA</mat-option>
+          <mat-option [value]="2">SALON</mat-option>
+          <mat-option [value]="3">TALLER</mat-option>
+        </mat-select>
+        <mat-error *ngIf="tipoLugarField.hasError('required')">Campo requerido</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Tipo Origen</mat-label>
+        <mat-select formControlName="idTipoOrigen" required>
+          <mat-option [value]="1">PROPIO</mat-option>
+          <mat-option [value]="2">ALQUILADO</mat-option>
+        </mat-select>
+        <mat-error *ngIf="tipoOrigenField.hasError('required')">Campo requerido</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre Contacto</mat-label>
+        <input matInput formControlName="contactoNombre" autocomplete="off">
+        <!--
+        <mat-error *ngIf="contactoNombreField.hasError('maxlength')">Caracteres máximos 100</mat-error>
+        -->
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Contacto Correo</mat-label>
+        <input matInput formControlName="contactoCorreoElectronico" placeholder="correo@ejemplo.com" autocomplete="off">
+        <mat-error *ngIf="contactoCorreoField.hasError('email')">Correo invalido</mat-error>
+        <mat-error *ngIf="contactoCorreoField.hasError('maxlength')">Caracteres máximos 100</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Contacto telefono</mat-label>
+        <input matInput formControlName="contactoTelefono" autocomplete="off">
+        <mat-error *ngIf="contactoTelefonoField.hasError('maxlength')">Caracteres máximo 20</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Dirección</mat-label>
+        <input matInput formControlName="direccion" autocomplete="off">
+        <mat-error *ngIf="direccionField.hasError('maxlength')">Caracteres máximos 100</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombre" autocomplete="off">
+        <mat-error *ngIf="nombreField.hasError('required')">Campo requerido</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Descripción</mat-label>
+        <input matInput formControlName="descripcion" autocomplete="off">
+        <mat-error *ngIf="descripcionField.hasError('required')">Campo requerido</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Estado</mat-label>
+        <mat-select formControlName="idTipoEstadoLugar" required>
+          <mat-option [value]="14335">ACTIVO</mat-option>
+          <mat-option [value]="14335">INACTIVO</mat-option>
+        </mat-select>
+       <mat-error *ngIf="estadoField.hasError('required')">Campo requerido</mat-error>
+      </mat-form-field>
+    </p>
+
+  </form>
+  <mat-card-actions align="start">
+    <div class="example-button-row">
+      <button mat-flat-button color="primary" (click)="cancel($event)">Cancelar</button>
+      <button mat-flat-button color="primary" (click)="save($event)">Guardar</button>
+    </div>
+  </mat-card-actions>
+  <mat-card-footer>
+  </mat-card-footer>
+</mat-card>
+

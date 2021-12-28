@@ -1,0 +1,80 @@
+mat-footer-row mat-footer-cell{
+    justify-content: center;
+    font-style: italic;
+}
+
+.mat-cell{
+    min-width: 6rem;
+    border-right: 1px solid lightgray;
+}
+
+.mat-header-cell{
+    min-width: 6rem;
+}
+
+.mat-form-field {
+    font-size: 12px;
+    width: 100%;
+}
+
+.hide {
+    display: none;
+}
+
+.search-form-field {
+    width: 200px;
+}
+
+.filter {
+    display: block;
+    width: 50px;
+}
+
+.filter {
+    display: block;
+    width: 40px;
+}
+
+.retraso {
+    color: brown;
+}
+
+.undia {
+    color: orange;
+}
+.normal {
+    color: black;
+}
+
+.footerCargando {
+    overflow: visible;
+    z-index: 999;
+}
+
+.exp-btn {
+    margin-top: 1rem;
+}
+
+.cnl-btn {
+    margin-left: 0.5rem;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-column-descripcion_fallo {
+    width: 45%;
+}
+
+.mat-column-variable_control_fallo {
+    width: 15%;
+}
+
+.mat-column-valor_var_fallo {
+    width: 15%;
+}
+
+.mat-column-ubicacion {
+    width: 25%;
+}

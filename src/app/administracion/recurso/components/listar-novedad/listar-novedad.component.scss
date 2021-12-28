@@ -1,0 +1,70 @@
+table {
+  width: 100%;
+}
+
+.mat-cell{
+  min-width: 5rem;
+  border-right: 1px solid lightgray;
+}
+
+.mat-form-field {
+  font-size: 12px;
+  width: 100%;
+}
+
+td, th {
+  width: 20%;
+}
+
+.hide {
+  display: none;
+}
+
+/* mat-table */
+mat-footer-row mat-footer-cell{
+  justify-content: center;
+  font-style: italic;
+}
+/* Clear input */
+.search-form-field {
+  width: 200px;
+}
+
+.filter {
+  display: block;
+  width: 60px;
+}
+
+.mat-column-identificacion{
+  min-width: 5rem;
+}
+
+.mat-column-nombre{
+  min-width: 10rem;
+}
+
+.mat-column-email{
+  min-width: 10rem;
+  width: 40px;
+}
+
+.retraso {
+  color: brown;
+}
+
+.undia {
+  color: orange;
+}
+.normal {
+  color: black;
+}
+
+.boton-nuevo{
+  padding: 10px 10px;
+  text-align: right;
+}
+
+.button-row{
+  padding: 10px 10px;
+
+}

@@ -1,0 +1,110 @@
+<form autocomplete="off" [formGroup]="formGestion">
+
+    <div class="form-control" id="seccionGestion" *ngIf="ready">
+        <div *ngIf="loading" class="loading">Loading&#8230;</div>
+        <mat-form-field appearance="outline" class="campo">
+            <mat-label>Codigo Ensayo </mat-label>
+            <input matInput formControlName="codigo_ensayo" readonly> 
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="campo">
+            <mat-label>Fecha Solicitud </mat-label>
+            <input matInput formControlName="fecha_solicitud" [matDatepicker]="picker0" readonly>
+            <mat-datepicker-toggle matSuffix [for]="picker0" disabled></mat-datepicker-toggle>
+            <mat-datepicker #picker0></mat-datepicker>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline" class="campo">
+            <mat-label>Fecha de Toma</mat-label>
+            <input matInput formControlName="fecha_toma" [matDatepicker]="picker1" placeholder="DD/MM/YYYY" [readonly]="bloquear">
+            <mat-datepicker-toggle matSuffix [for]="picker1" [disabled]="bloquear"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="campo">
+            <mat-label>Responsable de la toma *</mat-label>
+            <mat-select placeholder="Responsable de la toma" formControlName="id_responsable_toma" *ngIf="!bloquear">
+                <mat-option>--</mat-option>
+                <ng-container *ngFor="let tipo of listaPersonas">
+                    <mat-option *ngIf="tipo.id_tipo_rol === 3157" [value]="tipo.id_persona">
+                        {{tipo.nombre | titlecase}}
+                    </mat-option>
+                </ng-container>
+            </mat-select>
+            <input *ngIf="bloquear" matInput readonly value="{{listaResponsableToma}}">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="campo">
+            <mat-label>Fecha Programacion  *</mat-label>
+            <input matInput formControlName="fecha_programada" [matDatepicker]="picker2" placeholder="DD/MM/YYYY" [readonly]="bloquear">
+            <mat-datepicker-toggle matSuffix [for]="picker2" [disabled]="bloquear"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+       
+        <mat-form-field appearance="outline" class = "campo" style="width:40%">
+            <mat-label>Novedades *</mat-label>
+            <input matInput formControlName="novedades" maxlength="50" [readonly]="bloquear">
+        </mat-form-field>  
+        <mat-form-field appearance="outline" class="campo">
+            <mat-label>Quien recibe la muestra </mat-label>
+            <mat-select placeholder="Quien recibe la muestra" formControlName="id_usuario_recibe_muestra" *ngIf="!bloquear">
+                <mat-option>--</mat-option>
+                <ng-container *ngFor="let tipo of listaUsuarios">
+                    <mat-option [value]="tipo.id_usuario">
+                        {{tipo.nombre | titlecase}}
+                    </mat-option>
+                </ng-container>
+            </mat-select>
+            <!-- <input *ngIf="bloquear" matInput readonly value="{{listaRecibeMuestra}}"> -->
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="campo">
+            <mat-label>Tipo Observaciones </mat-label>
+            <mat-select placeholder="Tipo Observaciones" formControlName="id_tipo_observacion" *ngIf="!bloquear">
+                <mat-option>--</mat-option>
+                <mat-option *ngFor="let tipo of lista[107]" [value]="tipo.id_tipo">
+                    {{tipo.descripcion | titlecase}}
+                </mat-option>
+            </mat-select>
+            <!-- <input *ngIf="bloquear" matInput readonly value="{{listaObservacion}}"> -->
+        </mat-form-field>
+        <br><br><br>
+        <mat-accordion>
+            <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <mat-icon>history</mat-icon>
+                        &nbsp;Versiones
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-card>
+                    <app-table-version-solicitud
+                    [codigo_ensayo]="codigo_ensayo"
+                    >
+                    </app-table-version-solicitud>
+                </mat-card>
+            </mat-expansion-panel>    
+        </mat-accordion>
+        <br>
+        <div style="flex: 1; text-align: right; margin-right: 16px;">
+            <mat-action-row>
+                <button type="button" mat-raised-button color="primary" (click)="bloquearSolicitud()" [disabled]="bloquear">
+                    {{ botonBloqueo ? "Desbloquear" : "Bloquear" }}
+                    <mat-icon>{{ botonBloqueo ? 'lock_open' : 'lock' }} </mat-icon>
+                </button>
+                &nbsp;
+                <button type="button" mat-raised-button color="primary" (click)="notificarSolicitud()" [disabled]="bloquear" >
+                    Enviar Notificacion
+                    <mat-icon>send</mat-icon>
+                </button>
+                &nbsp;
+                <button type="button" mat-raised-button color="primary" (click)="guardarGestion()" [disabled]="!formGestion.valid || bloquear" >
+                    Guardar
+                    <mat-icon>save</mat-icon>
+                </button>
+            </mat-action-row>
+        </div>
+    </div>
+</form>
+<!-- <pre>{{ formGestion.value | json }}</pre> -->

@@ -1,0 +1,56 @@
+<ng-container *ngIf="modo == 'salida'">
+    <mat-card>
+        <mat-card-header class="mat-card-header-umv">
+          <div class="mat-card-header-text">
+            <mat-card-subtitle>
+              <h2>Fallo de Maquinaria o Equipo</h2>
+            </mat-card-subtitle>
+          </div>
+        </mat-card-header>
+        <app-lista-maq-equ-vigentes
+          (opcionSeleccionada)="opcionSeleccionadaEvt($event)"
+          (registroSeleccionado)="registroSeleccionadoEvt($event)"
+          [actualizador]="updateSubject.asObservable()">
+        </app-lista-maq-equ-vigentes>
+        <div>
+          <button 
+            mat-flat-button
+            class="nuevo-btn color-primary-100" 
+            (click)="modo = 'consultar_reportes'">
+            <mat-icon>search</mat-icon>
+            Consultar Reportes de Fallo
+          </button>
+        </div>
+        <div *ngIf="cargandoComponente" class="nota-cargando">
+          <h2 >Cargando</h2> <mat-spinner diameter="20"></mat-spinner>
+        </div>
+    </mat-card>
+</ng-container>
+<ng-container *ngIf="modo == 'falla'">
+  <app-editar-reporte-fallo 
+    [edit_flag]=false
+    [reg]="row"
+    (almacenadoEvent)="modo = 'salida'"
+    (regresarEvent)="modo = 'salida'"
+  ></app-editar-reporte-fallo>
+</ng-container>
+<ng-container *ngIf="modo == 'consultar_reportes'">
+  <mat-card>
+    <mat-card-header class="mat-card-header-umv">
+      <div class="mat-card-header-text">
+        <mat-card-subtitle>
+          <h2>Lista de Fallas</h2>
+        </mat-card-subtitle>
+      </div>
+    </mat-card-header>
+    <app-lista-fallos
+      (opcionSeleccionada)="opcionSeleccionadaEvt($event)"
+      (registroSeleccionado)="registroSeleccionadoEvt($event)"
+      [actualizador]="updateSubject.asObservable()">
+    </app-lista-fallos>
+    <div *ngIf="cargandoComponente" class="nota-cargando">
+      <h2>Cargando</h2> 
+      <mat-spinner diameter="20"></mat-spinner>
+    </div>
+  </mat-card>
+</ng-container>

@@ -1,0 +1,7 @@
+<mat-card>
+  <mat-card-content *ngIf="ready">
+    <ul *ngFor="let ofactor of otrosFactoresMantenimiento" class="lista-otros-factores">
+      <li>{{dictValores[ofactor.tipoFactor]?.descripcion}}</li>
+    </ul>
+  </mat-card-content>
+</mat-card>

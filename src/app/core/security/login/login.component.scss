@@ -1,0 +1,147 @@
+@import "../../../theme/styles/variables";
+
+
+#form-login{
+    flex: 1 1 100%;
+    box-sizing: border-box;
+    max-width: 30%;
+}
+
+@media screen and (max-width: 960px) {
+    #form-login{
+        max-width: 60%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #form-login{
+        max-width: 80%;
+    }
+}
+
+.container-center{
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    place-content: center;
+    align-items: center;
+}
+
+#card-content {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    place-content: flex-end;
+    align-items: center;
+}
+
+#campos-container{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    place-content: center;
+    align-items: center;
+}
+
+#contenedor-loader{
+    margin-left: auto;
+    margin-right: auto;
+    width: 56px;
+}
+
+///////////////////////////////////////////////////////
+.mat-drawer-container {
+    background-image: url("../../../../assets/img/app/login-bg.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+.logo-sigma{
+    width: 226px;
+    height: auto;
+    position: relative;
+    top: -18px;
+    margin:10px;
+}
+
+
+
+.btn-olvido-clave{
+    color: $secondary-color;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: right;
+}
+
+//Login, Register, Errors box
+.box{
+    border-radius: 0;
+    overflow: hidden;
+    //height: $box-height; 
+    .box-header{
+        height: 186px;
+        .mat-fab{
+            margin-bottom: 8px;
+        }
+        .error{
+            font-size: 46px;
+        }
+    }
+    .box-content{
+        position: relative;    
+        .box-content-inner{
+            position: absolute;
+            top: -34px;
+            left: 34px;
+            right: 34px;
+            height: 300px;
+            overflow: hidden;
+        }
+        .box-content-header{
+            font-size: 16px; 
+            text-transform: uppercase;
+            font-weight:500;
+            &.server-error{
+                margin-bottom: 36px;
+            }
+        }
+        .box-text{
+            margin-bottom: 10px;
+            &::last-child{
+                margin-bottom: 15px;
+            }
+        }
+        .box-button{
+            bottom: 16px;
+            width: 40%;
+            border-radius: 20px;
+            overflow: hidden; 
+        }
+    }
+}
+
+.box-header{
+    background-color: $primary-color;
+}
+
+.box {
+    .box-content {
+        height: 206px;
+        .box-content-inner{
+            height: 206px;
+        }
+    }
+}
+
+#version{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: $dev-color-white;
+    padding-left: 5px;
+    padding-right: 5px;
+}

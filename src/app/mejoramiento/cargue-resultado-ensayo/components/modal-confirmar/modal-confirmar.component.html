@@ -1,0 +1,18 @@
+
+<h1 mat-dialog-title></h1>
+<div mat-dialog-content style="text-align: center; overflow: hidden">
+        <p *ngIf="data.action==='I'">Confirme que desea guardar?</p>
+        <p *ngIf="data.action==='U'">Confirme que desea actualizar?</p>
+        <p *ngIf="data.action==='D'">Confirme que desea eliminar?</p>
+        <p *ngIf="data.action==='P'">Confirme que desea Notificar?</p>
+</div>
+<div mat-dialog-actions style="flex: 1 1 auto; justify-content: center">
+    <button type="button" class="color-primary-100" mat-raised-button mat-dialog-close>Cancelar<mat-icon>clear</mat-icon></button>&nbsp;
+    <button type="button"  mat-raised-button cdkFocusInitial [ngClass]="{'color-warn-800':data.action==='D','color-primary-100':data.action!=='D'}"[mat-dialog-close]="true">
+        Aceptar
+        <mat-icon *ngIf="data.action==='I' || data.action==='U'">save</mat-icon>
+        <mat-icon *ngIf="data.action==='D'">delete</mat-icon>
+        <mat-icon *ngIf="data.action==='P'">email</mat-icon>
+    </button>
+</div>
+

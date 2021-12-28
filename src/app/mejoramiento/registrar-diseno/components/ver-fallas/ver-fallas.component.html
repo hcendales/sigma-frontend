@@ -1,0 +1,35 @@
+<mat-card *ngFor="let falla of fallasMantenimiento; let i=index" class="contenido-seccion-unds">
+  <mat-card-subtitle>
+      Falla {{i+1}}, Unidad {{falla.indexUnidadMuestreo + 1}}
+  </mat-card-subtitle>
+  <mat-card-content class="unidad-muestreo" *ngIf="ready">
+      <div class="campo">
+          <div class="nombre"><strong>Tipo falla</strong></div>
+          <div class="valor">{{dictValores[falla.idTipoFalla]?.descripcion}}</div>
+      </div>
+      <div class="campo">
+          <div class="nombre"><strong>Severidad</strong></div>
+          <div class="valor">{{dictValores[falla.idTipoSeveridad]?.descripcion}}</div>
+      </div>
+      <div class="campo">
+          <div class="nombre"><strong>Longitud {{mantenimientoVialEvento.id_tipo_superficie == 1102?'losa':''}}</strong></div>
+          <div class="valor">{{falla.longitud}}</div>
+      </div>
+      <div class="campo" *ngIf="!esFallaLongitudinal(falla.idTipoFalla)">
+          <div class="nombre"><strong>Ancho {{mantenimientoVialEvento.id_tipo_superficie == 1102?'losa':''}}</strong></div>
+          <div class="valor">{{falla.ancho}}</div>
+      </div>
+      <div class="campo" *ngIf="!esFallaLongitudinal(falla.idTipoFalla)">
+          <div class="nombre"><strong>Area</strong></div>
+          <div class="valor">{{falla.area}}</div>
+      </div>
+      <div class="campo" *ngIf="mantenimientoVialEvento.id_tipo_superficie == 1102">
+          <div class="nombre"><strong>Número de losas</strong></div>
+          <div class="valor">{{falla.numeroLosas}}</div>
+      </div>
+      <div class="campo">
+          <div class="nombre"><strong>Tipo intervención</strong></div>
+          <div class="valor">{{dictValores[falla.idTipoIntervencion]?.descripcion}}</div>
+      </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,112 @@
+<ng-container *ngIf="modo == 'edicion'">
+    <mat-card>
+        <mat-card-header class="mat-card-header-umv">
+        <div class="mat-card-header-text">
+            <mat-card-subtitle>
+            <h2 *ngIf = "!edit_flag">Nuevo Registro de Mantenimiento </h2>
+            <h2 *ngIf = "edit_flag">Editar Registro de Mantenimiento </h2>
+            </mat-card-subtitle>
+        </div>
+        </mat-card-header>
+        <form [formGroup]="formEditar" (ngSubmit)="onSubmit()" class="editar-frm">
+            <mat-form-field appearance="outline" class = "campo">
+                <mat-label>Tipo de Mamtenimiento *</mat-label>
+                <mat-select formControlName="tipo_mantenimiento">
+                    <mat-option [value]="null"> -- </mat-option>
+                    <mat-option *ngFor="let opcion of listas[90]" [value]="opcion.id_tipo">{{ opcion.descripcion }}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="formEditar.get('tipo_mantenimiento')!.hasError('required')">
+                    (!) Campo requerido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class = "campo">
+                <mat-label>Fecha *</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="fecha">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="formEditar.get('fecha')!.hasError('required')">
+                    (!) Campo requerido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class = "campo">
+                <mat-label>Variable de Control *</mat-label>
+                <mat-select formControlName="variable_control">
+                    <mat-option [value]="null"> -- </mat-option>
+                    <mat-option *ngFor="let opcion of listas[98]" [value]="opcion.id_tipo">{{ opcion.descripcion }}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="formEditar.get('variable_control')!.hasError('required')">
+                    (!) Campo requerido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class = "campo">
+                <mat-label>Valor *</mat-label>
+                <input matInput type="number" formControlName="valor_control" autocomplete="off">
+                <mat-error *ngIf="formEditar.get('valor_control')!.hasError('required')">
+                    (!) Campo requerido
+                </mat-error>
+                <mat-error *ngIf="formEditar.get('valor_control')!.hasError('maxlength')">
+                    (!) Campo supera la cantidad límite de carácteres de 6
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class = "campo" *ngIf="formEditar.get('persona')?.value">
+                <mat-label>Persona que reporta</mat-label>
+                <input matInput type="text" formControlName="persona">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class = "campo">
+                <mat-label>No. Contrato *</mat-label>
+                <input matInput type="text" formControlName="contratoctr">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class = "campo" *ngIf="formEditar.get('desctr')?.value">
+                <mat-label>Resp. Contrato *</mat-label>
+                <input matInput type="text" formControlName="desctr">
+            </mat-form-field>
+            <button
+                type="button"
+                mat-raised-button 
+                class="ctr-btn color-primary-100" 
+                (click)="modo='contrato'">
+                <mat-icon>search</mat-icon>
+                Seleccionar contrato
+            </button>
+            <mat-form-field appearance="outline" class = "campo campo-are">
+                <mat-label>Descripcion *</mat-label>
+                <textarea matInput type="text" formControlName="descripcion" autocomplete="off" rows="10" cols="50"></textarea>
+                <mat-error *ngIf="formEditar.get('descripcion')!.hasError('required')">
+                    (!) Campo requerido
+                </mat-error>
+                <mat-error *ngIf="formEditar.get('descripcion')!.hasError('maxlength')">
+                    (!) Campo supera la cantidad límite de carácteres de 250
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class = "campo campo-are" *ngIf="formEditar.get('ubicacion')?.value">
+                <mat-label>Ubicación</mat-label>
+                <textarea matInput type="text" formControlName="ubicacion" autocomplete="off" rows="10" cols="50"></textarea>
+            </mat-form-field>
+            <button 
+                mat-raised-button class="color-primary-100" 
+                [disabled]="formEditar.invalid || realizandoCounsulta || contrato == 'No seleccionado'"
+                class = "ctr-btn color-primary-100">
+                <mat-icon>save</mat-icon>
+                <mat-icon *ngIf="realizandoCounsulta">
+                    <mat-spinner diameter="20"></mat-spinner>
+                </mat-icon>
+                Guardar
+            </button>
+            <button 
+                type="button"
+                mat-raised-button 
+                class="color-warn-800 ctr-btn" 
+                (click)="regresarEvent.emit()">
+                <mat-icon>cancel</mat-icon>
+                Cerrar
+            </button>
+        </form>
+    </mat-card>
+</ng-container>
+<ng-container *ngIf="modo == 'contrato'">
+    <app-lista-contratos-mqeq
+        (opcionSeleccionada)="opcionSeleccionadaEvt($event)"
+        (registroSeleccionado)="registroSeleccionadoEvt($event)"
+        (regresarEvent)="modo = 'edicion'">
+    </app-lista-contratos-mqeq>
+</ng-container>

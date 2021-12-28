@@ -1,0 +1,18 @@
+<div id="overlay" class="dark-overlay"></div>
+<div class="wrapper-modal" >
+
+	<h2 class ="texto-titulo-modal" >{{titulo}}</h2>
+
+	<button mat-icon-button class="botonCerrar" (click)="cerrarModal();" color="primary" *ngIf="btnCerrar">
+		<mat-icon>cancel</mat-icon>
+	</button>
+    <div class ="contenido-modal" [style.height] = "maxSize?'85vh':'unset'">
+		<ng-content></ng-content>
+		</div>
+		<button mat-raised-button (click)="cerrarModal();" color="primary" *ngIf="btnOk">
+				ok
+		</button>
+		<button mat-raised-button (click)="cancelModal();" color="primary" *ngIf="btnCancel">
+				cancelar
+		</button>
+</div>

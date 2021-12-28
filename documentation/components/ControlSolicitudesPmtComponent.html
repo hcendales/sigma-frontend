@@ -1,0 +1,2339 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>sigma2-frontend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">sigma2-frontend documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  ControlSolicitudesPmtComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/produccion/intervencion/components/control-solicitudes-pmt/control-solicitudes-pmt.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componenete para gestionar las solicitudes pmt.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-control-solicitudes-pmt</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./control-solicitudes-pmt.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./control-solicitudes-pmt.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#arrayChecked" >arrayChecked</a>
+                            </li>
+                            <li>
+                                <a href="#basemapType" >basemapType</a>
+                            </li>
+                            <li>
+                                <a href="#cargandoComponente" >cargandoComponente</a>
+                            </li>
+                            <li>
+                                <a href="#inStr" >inStr</a>
+                            </li>
+                            <li>
+                                <a href="#listaTransicion" >listaTransicion</a>
+                            </li>
+                            <li>
+                                <a href="#mapCenter" >mapCenter</a>
+                            </li>
+                            <li>
+                                <a href="#mapElement" >mapElement</a>
+                            </li>
+                            <li>
+                                <a href="#mapZoomLevel" >mapZoomLevel</a>
+                            </li>
+                            <li>
+                                <a href="#modo" >modo</a>
+                            </li>
+                            <li>
+                                <a href="#row" >row</a>
+                            </li>
+                            <li>
+                                <a href="#row_selected" >row_selected</a>
+                            </li>
+                            <li>
+                                <a href="#selectedFeatures" >selectedFeatures</a>
+                            </li>
+                            <li>
+                                <a href="#updateSubject" >updateSubject</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#buscarRegistros" >buscarRegistros</a>
+                            </li>
+                            <li>
+                                <a href="#cargaMapa" >cargaMapa</a>
+                            </li>
+                            <li>
+                                <a href="#filterDataPK" >filterDataPK</a>
+                            </li>
+                            <li>
+                                <a href="#filtrarMapa" >filtrarMapa</a>
+                            </li>
+                            <li>
+                                <a href="#getDataSource" >getDataSource</a>
+                            </li>
+                            <li>
+                                <a href="#getSelecteDataSource" >getSelecteDataSource</a>
+                            </li>
+                            <li>
+                                <a href="#getWhereString" >getWhereString</a>
+                            </li>
+                            <li>
+                                <a href="#irAPk" >irAPk</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#opcionSeleccionadaEvt" >opcionSeleccionadaEvt</a>
+                            </li>
+                            <li>
+                                <a href="#pkSelectedEvt" >pkSelectedEvt</a>
+                            </li>
+                            <li>
+                                <a href="#queryPKs" >queryPKs</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#registroSeleccionadoEvt" >registroSeleccionadoEvt</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/produccion/intervencion/components/control-solicitudes-pmt/control-solicitudes-pmt.component.ts:85</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Constructor por defecto.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="buscarRegistros"></a>
+                    <span class="name">
+                        <span ><b>buscarRegistros</b></span>
+                        <a href="#buscarRegistros"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>buscarRegistros(filaSelecionada: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="256"
+                            class="link-to-prism">src/app/produccion/intervencion/components/control-solicitudes-pmt/control-solicitudes-pmt.component.ts:256</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>filaSelecionada</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargaMapa"></a>
+                    <span class="name">
+                        <span ><b>cargaMapa</b></span>
+                        <a href="#cargaMapa"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cargaMapa($event: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="169"
+                            class="link-to-prism">src/app/produccion/intervencion/components/control-solicitudes-pmt/control-solicitudes-pmt.component.ts:169</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Permite cargar los datos del mapa.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>$event</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Evento.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Salida anticipada</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterDataPK"></a>
+                    <span class="name">
+                        <span ><b>filterDataPK</b></span>
+                        <a href="#filterDataPK"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>filterDataPK($event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="118"
+                            class="link-to-prism">src/app/produccion/intervencion/components/control-solicitudes-pmt/control-solicitudes-pmt.component.ts:118</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Filtra los datos de la tabla.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>$event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Evento de filtro.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filtrarMapa"></a>
+                    <span class="name">
+                        <span ><b>filtrarMapa</b></span>
+                        <a href="#filtrarMapa"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>filtrarMapa($event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="205"
+                            class="link-to-prism">src/app/produccion/intervencion/components/control-solicitudes-pmt/control-solicitudes-pmt.component.ts:205</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Actualiza el foco del mapa con el cambio de los
+filtros.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>$event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Evento</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDataSource"></a>
+                    <span class="name">
+                        <span ><b>getDataSource</b></span>
+                        <a href="#getDataSource"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getDataSource($event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="180"
+                            class="link-to-prism">src/app/produccion/intervencion/components/control-solicitudes-pmt/control-solicitudes-pmt.component.ts:180</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Obtiene la locacion del pK.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>$event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>PK.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSelecteDataSource"></a>
+                    <span class="name">
+                        <span ><b>getSelecteDataSource</b></span>
+                        <a href="#getSelecteDataSource"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSelecteDataSource($event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="215"
+                            class="link-to-prism">src/app/produccion/intervencion/components/control-solicitudes-pmt/control-solicitudes-pmt.component.ts:215</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Actualiza el mapa con la seleccion de la lista.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>$event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>PK seleccionado.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getWhereString"></a>
+                    <span class="name">
+                        <span ><b>getWhereString</b></span>
+                        <a href="#getWhereString"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getWhereString(inArr: any[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="129"
+                            class="link-to-prism">src/app/produccion/intervencion/components/control-solicitudes-pmt/control-solicitudes-pmt.component.ts:129</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Obtiene el identificador de la calsada.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>inArr</td>
+                                    <td>
+                                            <code>any[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Datos del PK.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Identificador de calsada.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="irAPk"></a>
+                    <span class="name">
+                        <span ><b>irAPk</b></span>
+                        <a href="#irAPk"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>irAPk(pk: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="110"
+                            class="link-to-prism">src/app/produccion/intervencion/components/control-solicitudes-pmt/control-solicitudes-pmt.component.ts:110</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>pk</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="95"
+                            class="link-to-prism">src/app/produccion/intervencion/components/control-solicitudes-pmt/control-solicitudes-pmt.component.ts:95</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Metodo de carga del componente.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="opcionSeleccionadaEvt"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>opcionSeleccionadaEvt</b></span>
+                        <a href="#opcionSeleccionadaEvt"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>opcionSeleccionadaEvt(opcion: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="238"
+                            class="link-to-prism">src/app/produccion/intervencion/components/control-solicitudes-pmt/control-solicitudes-pmt.component.ts:238</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Manejador de los eventos de la lista.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>opcion</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Evento de la lista.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pkSelectedEvt"></a>
+                    <span class="name">
+                        <span ><b>pkSelectedEvt</b></span>
+                        <a href="#pkSelectedEvt"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>pkSelectedEvt($event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="103"
+                            class="link-to-prism">src/app/produccion/intervencion/components/control-solicitudes-pmt/control-solicitudes-pmt.component.ts:103</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>PKs seleccionados.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>$event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Evento</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="queryPKs"></a>
+                    <span class="name">
+                        <span ><b>queryPKs</b></span>
+                        <a href="#queryPKs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>queryPKs($event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="192"
+                            class="link-to-prism">src/app/produccion/intervencion/components/control-solicitudes-pmt/control-solicitudes-pmt.component.ts:192</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Carga los PKs para visulizar en el mapa.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>$event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Evento</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registroSeleccionadoEvt"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>registroSeleccionadoEvt</b></span>
+                        <a href="#registroSeleccionadoEvt"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>registroSeleccionadoEvt(row: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="154"
+                            class="link-to-prism">src/app/produccion/intervencion/components/control-solicitudes-pmt/control-solicitudes-pmt.component.ts:154</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Manejador del evento de registro seleccionado.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>row</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="arrayChecked"></a>
+                    <span class="name">
+                        <span ><b>arrayChecked</b></span>
+                        <a href="#arrayChecked"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/produccion/intervencion/components/control-solicitudes-pmt/control-solicitudes-pmt.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Registros asigandos.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="basemapType"></a>
+                    <span class="name">
+                        <span ><b>basemapType</b></span>
+                        <a href="#basemapType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;gray&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/produccion/intervencion/components/control-solicitudes-pmt/control-solicitudes-pmt.component.ts:50</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Tipo de mapa.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargandoComponente"></a>
+                    <span class="name">
+                        <span ><b>cargandoComponente</b></span>
+                        <a href="#cargandoComponente"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/produccion/intervencion/components/control-solicitudes-pmt/control-solicitudes-pmt.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Bandera para señalar que se esta cargando
+el componenete.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="inStr"></a>
+                    <span class="name">
+                        <span ><b>inStr</b></span>
+                        <a href="#inStr"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/produccion/intervencion/components/control-solicitudes-pmt/control-solicitudes-pmt.component.ts:85</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Input de los PKs a proyectar en el mapa.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listaTransicion"></a>
+                    <span class="name">
+                        <span ><b>listaTransicion</b></span>
+                        <a href="#listaTransicion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../components/GestionMasivaComponent.html" target="_self" >GestionMasivaComponent</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;listaTransicion&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/produccion/intervencion/components/control-solicitudes-pmt/control-solicitudes-pmt.component.ts:70</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Lista de PKs.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapCenter"></a>
+                    <span class="name">
+                        <span ><b>mapCenter</b></span>
+                        <a href="#mapCenter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[-74.113, 4.667]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/produccion/intervencion/components/control-solicitudes-pmt/control-solicitudes-pmt.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Centra el mapa.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapElement"></a>
+                    <span class="name">
+                        <span ><b>mapElement</b></span>
+                        <a href="#mapElement"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../components/MapaUmvComponent.html" target="_self" >MapaUmvComponent</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;mapa&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/produccion/intervencion/components/control-solicitudes-pmt/control-solicitudes-pmt.component.ts:65</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Referencia de mapa.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapZoomLevel"></a>
+                    <span class="name">
+                        <span ><b>mapZoomLevel</b></span>
+                        <a href="#mapZoomLevel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>12</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/produccion/intervencion/components/control-solicitudes-pmt/control-solicitudes-pmt.component.ts:55</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Zoom del mapa.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modo"></a>
+                    <span class="name">
+                        <span ><b>modo</b></span>
+                        <a href="#modo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;salida&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/produccion/intervencion/components/control-solicitudes-pmt/control-solicitudes-pmt.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Modo de visualizacion de la vista.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="row"></a>
+                    <span class="name">
+                        <span ><b>row</b></span>
+                        <a href="#row"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/produccion/intervencion/components/control-solicitudes-pmt/control-solicitudes-pmt.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Referencia al registro seleccionado en la lista.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="row_selected"></a>
+                    <span class="name">
+                        <span ><b>row_selected</b></span>
+                        <a href="#row_selected"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/produccion/intervencion/components/control-solicitudes-pmt/control-solicitudes-pmt.component.ts:75</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Bandera para indicar si fue seleccionado un registro.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedFeatures"></a>
+                    <span class="name">
+                        <span ><b>selectedFeatures</b></span>
+                        <a href="#selectedFeatures"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/produccion/intervencion/components/control-solicitudes-pmt/control-solicitudes-pmt.component.ts:60</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>PKs seleccionados</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateSubject"></a>
+                    <span class="name">
+                        <span ><b>updateSubject</b></span>
+                        <a href="#updateSubject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subject&lt;void&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;void&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/produccion/intervencion/components/control-solicitudes-pmt/control-solicitudes-pmt.component.ts:80</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Emisor del evento de actualizacion de la lista.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Subject } from &#x27;rxjs&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { Component, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { MapaUmvComponent } from &#x27;src/app/shared/components/mapa-umv/mapa-umv.component&#x27;;
+import { GestionMasivaComponent } from &#x27;src/app/shared/components/gestion-masiva/gestion-masiva.component&#x27;;
+
+/**
+ * Componenete para gestionar las solicitudes pmt.
+ */
+@Component({
+  selector: &#x27;app-control-solicitudes-pmt&#x27;,
+  templateUrl: &#x27;./control-solicitudes-pmt.component.html&#x27;,
+  styleUrls: [&#x27;./control-solicitudes-pmt.component.scss&#x27;]
+})
+export class ControlSolicitudesPmtComponent implements OnInit {
+
+  /**
+   * Modo de visualizacion de la vista.
+   */
+  modo &#x3D; &#x27;salida&#x27;;
+
+  /**
+   * Referencia al registro seleccionado en la lista.
+   */
+  row:any &#x3D; null;
+
+  /**
+   * Registros asigandos.
+   */
+  arrayChecked:any &#x3D; []
+
+  /**
+   * Bandera para señalar que se esta cargando 
+   * el componenete.
+   */
+  cargandoComponente :boolean &#x3D; false;
+
+  //------------------------------------------------------
+  // Define las propiedades del mapa.
+  //------------------------------------------------------
+  
+  /**
+  * Centra el mapa.
+  */
+  mapCenter &#x3D; [-74.113, 4.667];
+ 
+  /**
+  * Tipo de mapa.
+  */
+  basemapType &#x3D; &#x27;gray&#x27;;
+ 
+  /**
+  * Zoom del mapa.
+  */
+  mapZoomLevel &#x3D; 12;
+
+  /**
+   * PKs seleccionados
+   */
+  selectedFeatures:any[]&#x3D;[];
+
+  /**
+   * Referencia de mapa.
+   */
+  @ViewChild(&#x27;mapa&#x27;) mapElement!: MapaUmvComponent;
+
+  /**
+   * Lista de PKs.
+   */
+  @ViewChild(&#x27;listaTransicion&#x27;) listaTransicion!: GestionMasivaComponent;
+  
+  /**
+   * Bandera para indicar si fue seleccionado un registro. 
+   */
+  row_selected &#x3D; false;
+
+  /**
+   * Emisor del evento de actualizacion de la lista.
+   */
+  updateSubject: Subject&lt;void&gt; &#x3D; new Subject&lt;void&gt;();
+
+  /**
+   * Input de los PKs a proyectar en el mapa.
+   */
+  inStr:string &#x3D; &#x27;&#x27;;
+
+  /**
+   * Constructor por defecto.
+   */
+  constructor(private router: Router) { }
+
+  /**
+   * Metodo de carga del componente.
+   */
+  ngOnInit(): void {
+    this.cargaMapa(true);
+  }
+
+  /**
+   * PKs seleccionados.
+   * @param $event Evento
+   */
+  pkSelectedEvt($event:any){
+    if ($event.length &gt; 0)
+      this.irAPk($event.join())
+
+    this.selectedFeatures &#x3D; $event;
+  }
+
+  irAPk(pk: number) {
+    this.mapElement.goTo(&quot;PK_ID_ELEMENTO IN (&quot; + pk.toString() + &quot;)&quot;);
+  }
+
+  /**
+   * Filtra los datos de la tabla.
+   * @param $event Evento de filtro.
+   */
+  filterDataPK($event:any){
+    console.log(&#x27;filtrartabla&#x27;,$event);
+    console.log(this.listaTransicion?.tabTransicion);
+    this.listaTransicion.tabTransicion.setValorBusqueda(&#x27;pk_id_calzada&#x27;,String($event));
+  }
+
+  /**
+   * Obtiene el identificador de la calsada.
+   * @param inArr Datos del PK.
+   * @returns Identificador de calsada.
+   */
+   getWhereString(inArr:any[]){
+    let inStr &#x3D; &#x27;&#x27;;
+    let M:any[] &#x3D; [];
+    let count &#x3D; 0, pos &#x3D; 0;
+    inArr.forEach((val)&#x3D;&gt;{
+      if(!(M.includes(val.pk_id_calzada)))M.push(val.pk_id_calzada);
+    });
+    if(inArr.length&gt;999){
+        count &#x3D; Math.ceil(inArr.length/1000);
+        for (let i &#x3D; 0; i&lt;count; i++){
+          pos &#x3D; i*1000;
+          if(i&lt;count-1)
+            inStr +&#x3D; &#x27;PK_ID_ELEMENTO in (&#x27; + M.slice(pos,999+pos).toString() + &#x27;) OR &#x27;;
+          else
+            inStr +&#x3D; &#x27;PK_ID_ELEMENTO in (&#x27; + M.slice(pos,999+pos).toString() + &#x27;)&#x27;;
+        }
+      } else
+        inStr +&#x3D; &#x27;PK_ID_ELEMENTO in (&#x27; + M.toString() + &#x27;)&#x27;;
+    return inStr;
+  }
+
+  /**
+   * Manejador del evento de registro seleccionado.
+   * @param id_equipo ID del equipo seleccionado. 
+   */
+  async registroSeleccionadoEvt(row:any) {
+    if (row) {
+      this.row &#x3D; row;
+      this.row_selected &#x3D; true;
+    } else {
+      this.row_selected &#x3D; false;
+    }
+    this.getSelecteDataSource(row)
+  }
+
+  /**
+   * Permite cargar los datos del mapa.
+   * @param $event Evento.
+   * @returns Salida anticipada
+   */
+  cargaMapa($event:boolean) {
+      //debugger;
+      if(!(this.mapElement?.PksFL) || this.inStr &#x3D;&#x3D; &#x27;&#x27;)
+        return;
+      this.mapElement.queryFeatures(this.inStr);
+  }
+
+  /**
+   * Obtiene la locacion del pK.
+   * @param $event PK.
+   */
+  getDataSource($event:any) {
+    let inArr &#x3D; $event;
+    this.inStr &#x3D; this.getWhereString(inArr);
+    console.log(&#x27;pks&#x27;,this.inStr);
+    //if(!this.cargandoComponente)
+    //  this.queryPKs(true);
+  }
+
+  /**
+   * Carga los PKs para visulizar en el mapa.
+   * @param $event Evento
+   */
+  queryPKs($event:any){
+    let scope &#x3D; this;
+    this.mapElement.PksFL.load().then(()&#x3D;&gt;{
+      scope.mapElement.queryFeatures(this.inStr);
+    });
+    //this.componenteListo();
+  }
+
+  /**
+   * Actualiza el foco del mapa con el cambio de los 
+   * filtros.
+   * @param $event Evento
+   */
+  filtrarMapa($event:any){
+    //debugger;
+    this.inStr &#x3D; this.getWhereString($event);
+    this.cargaMapa(true);
+  }
+
+  /**
+   * Actualiza el mapa con la seleccion de la lista.
+   * @param $event PK seleccionado.
+   */
+  getSelecteDataSource($event:any){
+    try{
+      let inArr &#x3D; $event;
+      console.log(inArr);
+      if (inArr &#x3D;&#x3D; undefined) return
+      let inStr &#x3D; &#x27;1&lt;1&#x27;;
+      if (inArr.length &gt; 0){
+         inStr &#x3D; this.getWhereString(inArr);
+      }
+      let scope &#x3D; this;
+      this.mapElement.PksFL.load().then(()&#x3D;&gt;{
+        console.log(inStr);
+        scope.mapElement.selectFeatures(inStr);
+      });
+    }catch(e:any){
+      console.error(e.error?.msgError ? &#x27;Error:&#x27; + e.error.msgError : e.message ? &#x27;Error:&#x27; + e.message : &#x27;Error interno&#x27;)
+    }
+  }
+
+  /**
+   * Manejador de los eventos de la lista.
+   * @param opcion Evento de la lista.
+   */
+  async opcionSeleccionadaEvt(opcion:any) {
+    console.info(opcion);
+    switch (opcion.accion) {
+      case &#x27;solicitud&#x27;:
+        this.arrayChecked &#x3D; opcion.arrayChecked;
+        this.modo &#x3D; opcion.accion;
+        break;
+      case &#x27;coi&#x27;:
+        this.arrayChecked &#x3D; opcion.arrayChecked;
+        this.modo &#x3D; opcion.accion;
+        break;
+      default:
+        this.row &#x3D; opcion.row;
+        this.modo &#x3D; opcion.accion;
+        break;
+    }
+  }
+
+  buscarRegistros(filaSelecionada:any){
+    this.arrayChecked &#x3D; filaSelecionada
+    this.modo &#x3D; &quot;radicados&quot;;
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;mat-card&gt;
+  &lt;mat-card-header class&#x3D;&quot;mat-card-header-umv&quot;&gt;
+    &lt;div class&#x3D;&quot;mat-card-header-text&quot;&gt;
+      &lt;mat-card-subtitle&gt;
+        &lt;h2&gt;Control Solicitudes PMT&lt;/h2&gt;
+      &lt;/mat-card-subtitle&gt;
+    &lt;/div&gt;
+  &lt;/mat-card-header&gt;
+&lt;/mat-card&gt;
+
+&lt;ng-container *ngIf&#x3D;&quot;modo &#x3D;&#x3D; &#x27;salida&#x27;&quot;&gt;
+  &lt;app-mapa-umv #mapa
+    [center]&#x3D;&quot;mapCenter&quot;
+    [basemap]&#x3D;&quot;basemapType&quot;
+    [zoom]&#x3D;&quot;mapZoomLevel&quot;
+    (pkSelected)&#x3D;&quot;pkSelectedEvt($event)&quot;
+    (filterPK)&#x3D;&quot;filterDataPK($event)&quot;
+    (mapLoaded)&#x3D;&quot;cargaMapa($event)&quot;&gt;
+  &lt;/app-mapa-umv&gt;
+&lt;/ng-container&gt;
+&lt;ng-container *ngIf&#x3D;&quot;modo &#x3D;&#x3D; &#x27;salida&#x27;&quot;&gt;
+  &lt;mat-card&gt;
+    &lt;app-lista-programacion-sinpmt
+      (dataSourceEmiter)&#x3D;&quot;getDataSource($event)&quot;
+      (filterPKs)&#x3D;&quot;filtrarMapa($event)&quot;
+      (opcionSeleccionada)&#x3D;&quot;opcionSeleccionadaEvt($event)&quot;
+      (registroSeleccionado)&#x3D;&quot;registroSeleccionadoEvt($event)&quot;
+      (irPK)&#x3D;&quot;irAPk($event)&quot;
+      (modal)&#x3D;&quot;buscarRegistros($event)&quot;
+      &gt;
+    &lt;/app-lista-programacion-sinpmt&gt;
+    &lt;div *ngIf&#x3D;&quot;cargandoComponente&quot; class&#x3D;&quot;nota-cargando&quot;&gt;
+      &lt;h2 &gt;Cargando&lt;/h2&gt; &lt;mat-spinner diameter&#x3D;&quot;20&quot;&gt;&lt;/mat-spinner&gt;
+    &lt;/div&gt;
+  &lt;/mat-card&gt;
+&lt;/ng-container&gt;
+&lt;ng-container *ngIf&#x3D;&quot;modo &#x3D;&#x3D; &#x27;solicitud&#x27;&quot;&gt;
+  &lt;app-editar-asociar-solicitud 
+    [edit_flag]&#x3D;false
+    [arrayChecked]&#x3D;&quot;arrayChecked&quot;
+    (almacenadoEvent)&#x3D;&quot;modo &#x3D; &#x27;salida&#x27;&quot;
+    (regresarEvent)&#x3D;&quot;modo &#x3D; &#x27;salida&#x27;&quot;
+  &gt;&lt;/app-editar-asociar-solicitud&gt;
+&lt;/ng-container&gt;
+&lt;ng-container *ngIf&#x3D;&quot;modo &#x3D;&#x3D; &#x27;coi&#x27;&quot;&gt;
+  &lt;app-editar-asociar-coi 
+    [edit_flag]&#x3D;false
+    [arrayChecked]&#x3D;&quot;arrayChecked&quot;
+    (almacenadoEvent)&#x3D;&quot;modo &#x3D; &#x27;salida&#x27;&quot;
+    (regresarEvent)&#x3D;&quot;modo &#x3D; &#x27;salida&#x27;&quot;
+  &gt;&lt;/app-editar-asociar-coi&gt;
+&lt;/ng-container&gt;
+
+&lt;ng-container *ngIf&#x3D;&quot;modo &#x3D;&#x3D; &#x27;radicados&#x27;&quot;&gt;
+    &lt;app-lista-radicados 
+        [arrayChecked]&#x3D;&quot;arrayChecked&quot;
+        (opcionSeleccionada)&#x3D;&quot;opcionSeleccionadaEvt($event)&quot;
+        (registroSeleccionado)&#x3D;&quot;registroSeleccionadoEvt($event)&quot;
+        [actualizador]&#x3D;&quot;updateSubject.asObservable()&quot;&gt;
+    &lt;/app-lista-radicados&gt;
+&lt;/ng-container&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./control-solicitudes-pmt.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.contenido-seccion {
+    display: grid;
+    margin-top: 1rem;
+}
+
+@media (min-width: 895px) {
+    .contenido-seccion {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 699px) and (max-width: 894px) {
+    .contenido-seccion {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 690px) {
+    .contenido-seccion {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 465px) {
+    .contenido-seccion {
+        grid-template-columns: 1fr;
+    }
+}
+
+.campo {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+mat-table {
+    min-width: 3200px;
+}
+
+.mat-cell {
+    min-width: 100px;
+}
+
+.mat-header-cell {
+    min-width: 100px;
+    margin-right: 5px;
+    border-right: 1px solid lightgray;
+}
+
+.mat-column-observaciones_diagnostico, .mat-cell-observaciones_diagnostico {
+    min-width: 200px;
+    max-width: 15%;
+    flex: 0 0 15%;
+}
+
+.mat-column-FALLAS, .mat-cell-FALLAS {
+    min-width: 80px;
+    flex: 0 0 5%;
+}
+
+.mat-column-OTROS_FACTORES, .mat-cell-OTROS_FACTORES {
+    min-width: 80px;
+    flex: 0 0 7%;
+}
+
+.mat-column-observacion_gestion, .mat-cell-observacion_gestion {
+    min-width: 250px;
+    max-width: 15%;
+    flex: 0 0 15%;
+}
+
+.mat-column-fecha_fin, .mat-cell-fecha_fin {
+    min-width: 80px;
+}
+
+.mat-column-fecha_inicio, .mat-cell-fecha_inicio {
+    min-width: 80px;
+}
+
+.mat-column-fecha_visita_tecnica, .mat-cell-fecha_visita_tecnica {
+    min-width: 80px;
+}
+
+.mat-column-pk_id_calzada, .mat-cell-pk_id_calzada {
+    min-width: 70px;
+}
+
+.mat-column-civ, .mat-cell-civ {
+    min-width: 70px;
+}
+
+.mat-column-descripcion_localidad, .mat-cell-descripcion_localidad {
+    min-width: 102px;
+}
+
+.mat-cell {
+    margin-right: 5px;
+    border-right: 1px solid lightgray;
+}
+
+@media (min-width: 645px) {
+    .contenedor-controles-datatable {
+        display:flex;
+        align-items:center;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        mat-paginator{
+            margin-left: auto;
+        }
+    }
+}  
+
+.contenedor-controles-datatable{
+    button{
+        overflow: hidden;
+    }
+}
+
+mat-table {
+    width:100%;
+}
+
+::ng-deep .mat-tooltip {
+    white-space: pre-line !important;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.editar-frm {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 620px;
+    margin-top: 1rem;
+}
+
+.act-btns {
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.campo {
+    min-width: 291px;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.file-box {
+    padding-left: 0.5rem;
+}
+
+.btn-box {
+    padding-left: 0.5rem;
+}
+
+.label-box {
+    margin-left: 0.5rem;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mat-card>  <mat-card-header class="mat-card-header-umv">    <div class="mat-card-header-text">      <mat-card-subtitle>        <h2>Control Solicitudes PMT</h2>      </mat-card-subtitle>    </div>  </mat-card-header></mat-card><ng-container *ngIf="modo == \'salida\'">  <app-mapa-umv #mapa    [center]="mapCenter"    [basemap]="basemapType"    [zoom]="mapZoomLevel"    (pkSelected)="pkSelectedEvt($event)"    (filterPK)="filterDataPK($event)"    (mapLoaded)="cargaMapa($event)">  </app-mapa-umv></ng-container><ng-container *ngIf="modo == \'salida\'">  <mat-card>    <app-lista-programacion-sinpmt      (dataSourceEmiter)="getDataSource($event)"      (filterPKs)="filtrarMapa($event)"      (opcionSeleccionada)="opcionSeleccionadaEvt($event)"      (registroSeleccionado)="registroSeleccionadoEvt($event)"      (irPK)="irAPk($event)"      (modal)="buscarRegistros($event)"      >    </app-lista-programacion-sinpmt>    <div *ngIf="cargandoComponente" class="nota-cargando">      <h2 >Cargando</h2> <mat-spinner diameter="20"></mat-spinner>    </div>  </mat-card></ng-container><ng-container *ngIf="modo == \'solicitud\'">  <app-editar-asociar-solicitud     [edit_flag]=false    [arrayChecked]="arrayChecked"    (almacenadoEvent)="modo = \'salida\'"    (regresarEvent)="modo = \'salida\'"  ></app-editar-asociar-solicitud></ng-container><ng-container *ngIf="modo == \'coi\'">  <app-editar-asociar-coi     [edit_flag]=false    [arrayChecked]="arrayChecked"    (almacenadoEvent)="modo = \'salida\'"    (regresarEvent)="modo = \'salida\'"  ></app-editar-asociar-coi></ng-container><ng-container *ngIf="modo == \'radicados\'">    <app-lista-radicados         [arrayChecked]="arrayChecked"        (opcionSeleccionada)="opcionSeleccionadaEvt($event)"        (registroSeleccionado)="registroSeleccionadoEvt($event)"        [actualizador]="updateSubject.asObservable()">    </app-lista-radicados></ng-container></div>'
+    var COMPONENTS = [{'name': 'ActualizarAlternativaComponent', 'selector': 'app-actualizar-alternativa'},{'name': 'ActualizarApiquesComponent', 'selector': 'app-actualizar-apiques'},{'name': 'ActualizarComponent', 'selector': 'app-actualizar'},{'name': 'ActualizarComponent', 'selector': 'app-actualizar'},{'name': 'ActualizarComponent', 'selector': 'app-actualizar'},{'name': 'ActualizarComponent', 'selector': 'app-actualizar'},{'name': 'ActualizarComponent', 'selector': 'app-actualizar'},{'name': 'ActualizarNovedadComponent', 'selector': 'app-actualizar-novedad'},{'name': 'AforosComponent', 'selector': 'app-aforos'},{'name': 'AgendaVisitasComponent', 'selector': 'app-agenda-visitas'},{'name': 'AlcaldiasComponent', 'selector': 'app-alcaldias'},{'name': 'AnalisisTransitoComponent', 'selector': 'app-analisis-transito'},{'name': 'ApiquesAforosComponent', 'selector': 'app-apiques-aforos'},{'name': 'ApiquesAledaniosComponent', 'selector': 'app-apiques-aledanios'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AreaIntervencionComponent', 'selector': 'app-area-intervencion'},{'name': 'AsignarConductorOperarioComponent', 'selector': 'app-asignar-conductor-operario'},{'name': 'AsignarMisionalidadComponent', 'selector': 'app-asignar-misionalidad'},{'name': 'AsignarRecursoComponent', 'selector': 'app-asignar-recurso'},{'name': 'AsignarSeguimientoComponent', 'selector': 'app-asignar-seguimiento'},{'name': 'AsignarVisitasComponent', 'selector': 'app-asignar-visitas'},{'name': 'AsociarAforosComponent', 'selector': 'app-asociar-aforos'},{'name': 'AutoprogramarVisitaComponent', 'selector': 'app-autoprogramar-visita'},{'name': 'AvanceMantenimientoComponent', 'selector': 'app-avance-mantenimiento'},{'name': 'AvanceMasivoMantenimientoComponent', 'selector': 'app-avance-masivo-mantenimiento'},{'name': 'BuscarRadicadoComponent', 'selector': 'app-buscar-radicado'},{'name': 'BusquedaMantenimientosComponent', 'selector': 'app-busqueda-mantenimientos'},{'name': 'CalendarioAsignacionCoComponent', 'selector': 'app-calendario-asignacion-co'},{'name': 'CambioContraseniaComponent', 'selector': 'app-cambio-contrasenia'},{'name': 'CargueArchivoComponent', 'selector': 'app-cargue-archivo'},{'name': 'CargueDocumentosComponent', 'selector': 'app-cargue-documentos'},{'name': 'CarguesMejoramientoComponent', 'selector': 'app-cargues-mejoramiento'},{'name': 'ConsultaAlternativaComponent', 'selector': 'app-consulta-alternativa'},{'name': 'ConsultaApiquesComponent', 'selector': 'app-consulta-apiques'},{'name': 'ConsultaDisenioComponent', 'selector': 'app-consulta-disenio'},{'name': 'ConsultaGeneralGestionComponent', 'selector': 'app-consulta-general-gestion'},{'name': 'ConsultaHistorialComponent', 'selector': 'app-consulta-historial'},{'name': 'ConsultarApiquesComponent', 'selector': 'app-consultar-apiques'},{'name': 'ConsultasMejoramientoComponent', 'selector': 'app-consultas-mejoramiento'},{'name': 'ConsultaVisitaDiagnosticoComponent', 'selector': 'app-consulta-visita-diagnostico'},{'name': 'ConsultaVisitaEncabezadoComponent', 'selector': 'app-consulta-visita-encabezado'},{'name': 'ControlSolicitudesPmtComponent', 'selector': 'app-control-solicitudes-pmt'},{'name': 'CreateLugarComponent', 'selector': 'app-create-lugar'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DetalleDocumentosComponent', 'selector': 'app-detalle-documentos'},{'name': 'DialogConfirmComponent', 'selector': 'app-dialog-confirm'},{'name': 'DialogConfirmComponent', 'selector': 'app-dialog-confirm'},{'name': 'DialogConfirmComponent', 'selector': 'app-dialog-confirm'},{'name': 'DialogoMotivoCancelacionComponent', 'selector': 'app-dialogo-motivo-cancelacion'},{'name': 'DialogVerVisitaDiagnostico', 'selector': 'dialog-ver-visita-diagnostico'},{'name': 'DialogVerVisitaDisenioComponent', 'selector': 'app-dialog-ver-visita-disenio'},{'name': 'DialogVerVisitaDiseno', 'selector': 'dialog-ver-visita-diseno'},{'name': 'DropZoneDocumentosComponent', 'selector': 'app-drop-zone-documentos'},{'name': 'EditarAsignacionComponent', 'selector': 'app-editar-asignacion'},{'name': 'EditarAsociarCoiComponent', 'selector': 'app-editar-asociar-coi'},{'name': 'EditarAsociarSolicitudComponent', 'selector': 'app-editar-asociar-solicitud'},{'name': 'EditarProgramacionComponent', 'selector': 'app-editar-programacion'},{'name': 'EditarProgramacionPeriodicaComponent', 'selector': 'app-editar-programacion-periodica'},{'name': 'EditarReporteFalloComponent', 'selector': 'app-editar-reporte-fallo'},{'name': 'EliminarComponent', 'selector': 'app-eliminar'},{'name': 'EliminarComponent', 'selector': 'app-eliminar'},{'name': 'EliminarComponent', 'selector': 'app-eliminar'},{'name': 'EliminarComponent', 'selector': 'app-eliminar'},{'name': 'EnEsperaComponent', 'selector': 'app-en-espera'},{'name': 'GestionarMisionalidadComponent', 'selector': 'app-gestionar-misionalidad'},{'name': 'GestionarPeticionarioComponent', 'selector': 'app-gestionar-peticionario'},{'name': 'GestionarReservaComponent', 'selector': 'app-gestionar-reserva'},{'name': 'GestionarSeguimientoComponent', 'selector': 'app-gestionar-seguimiento'},{'name': 'GestionMasivaComponent', 'selector': 'app-gestion-masiva'},{'name': 'GestionMisionalidadComponent', 'selector': 'app-gestion-misionalidad'},{'name': 'GestionSolicitudComponent', 'selector': 'app-gestion-solicitud'},{'name': 'HistorialMantenimientoComponent', 'selector': 'app-historial-mantenimiento'},{'name': 'InformeDetalleComponent', 'selector': 'app-informe-detalle'},{'name': 'InformeSolicitudComponent', 'selector': 'app-informe-solicitud'},{'name': 'InsertarComponent', 'selector': 'app-insertar'},{'name': 'InsertarComponent', 'selector': 'app-insertar'},{'name': 'InsertarComponent', 'selector': 'app-insertar'},{'name': 'InsertarComponent', 'selector': 'app-insertar'},{'name': 'InsertarComponent', 'selector': 'app-insertar'},{'name': 'InsertarFranjaComponent', 'selector': 'app-insertar-franja'},{'name': 'InsertarNovedadComponent', 'selector': 'app-insertar-novedad'},{'name': 'ListaAforosComponent', 'selector': 'app-lista-aforos'},{'name': 'ListaAlternativaComponent', 'selector': 'app-lista-alternativa'},{'name': 'ListaContratosMqeqComponent', 'selector': 'app-lista-contratos-mqeq'},{'name': 'ListaFallosComponent', 'selector': 'app-lista-fallos'},{'name': 'ListaFranjasComponent', 'selector': 'app-lista-franjas'},{'name': 'ListaLugarComponent', 'selector': 'app-lista-lugar'},{'name': 'ListaMaqEquDisponiblesComponent', 'selector': 'app-lista-maq-equ-disponibles'},{'name': 'ListaMaqEquVigentesComponent', 'selector': 'app-lista-maq-equ-vigentes'},{'name': 'ListaMaquinariaEquiposComponent', 'selector': 'app-lista-maquinaria-equipos'},{'name': 'ListaPendientesComponent', 'selector': 'app-lista-pendientes'},{'name': 'ListaPksActaComponent', 'selector': 'app-lista-pks-acta'},{'name': 'ListaPksAsociarComponent', 'selector': 'app-lista-pks-asociar'},{'name': 'ListaProgramacionPeriocidadComponent', 'selector': 'app-lista-programacion-periocidad'},{'name': 'ListaProgramacionSinpmtComponent', 'selector': 'app-lista-programacion-sinpmt'},{'name': 'ListaRadicadosComponent', 'selector': 'app-lista-radicados'},{'name': 'ListarAlternativasComponent', 'selector': 'app-listar-alternativas'},{'name': 'ListarApiquesComponent', 'selector': 'app-listar-apiques'},{'name': 'ListarComponent', 'selector': 'app-listar'},{'name': 'ListarComponent', 'selector': 'app-listar'},{'name': 'ListarComponent', 'selector': 'app-listar'},{'name': 'ListarComponent', 'selector': 'app-listar'},{'name': 'ListarComponent', 'selector': 'app-listar'},{'name': 'ListarFranjaComponent', 'selector': 'app-listar-franja'},{'name': 'ListarNovedadComponent', 'selector': 'app-listar-novedad'},{'name': 'ListaSeguimientoComponent', 'selector': 'app-lista-seguimiento'},{'name': 'ListaTransicionComponent', 'selector': 'app-lista-transicion'},{'name': 'ListaVerificacionComponent', 'selector': 'app-lista-verificacion'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapaSeleccionComponent', 'selector': 'app-mapa-seleccion'},{'name': 'MapaUmvComponent', 'selector': 'app-mapa-umv'},{'name': 'MapComponent', 'selector': 'app-map'},{'name': 'MenuItemComponent', 'selector': 'app-menu-item'},{'name': 'ModalAutoprogramarComponent', 'selector': 'app-modal-autoprogramar'},{'name': 'ModalCargueArchivoComponent', 'selector': 'app-modal-cargue-archivo'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'ModalConfirmarComponent', 'selector': 'app-modal-confirmar'},{'name': 'ModalConfirmarComponent', 'selector': 'app-modal-confirmar'},{'name': 'ModalConfirmarComponent', 'selector': 'app-modal-confirmar'},{'name': 'ModalDescargaArchivoComponent', 'selector': 'app-modal-descarga-archivo'},{'name': 'ModalListaEnsayosComponent', 'selector': 'app-modal-lista-ensayos'},{'name': 'ModalListaMaterialesComponent', 'selector': 'app-modal-lista-materiales'},{'name': 'ModalTableAsociarComponent', 'selector': 'app-modal-table-asociar'},{'name': 'ModalVersionComponent', 'selector': 'app-modal-version'},{'name': 'NotAuthorizedComponent', 'selector': 'app-not-authorized'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NovedadadesIntervencionComponent', 'selector': 'app-novedadades-intervencion'},{'name': 'ProgramacionPeriodicaIntervencionComponent', 'selector': 'app-programacion-periodica-intervencion'},{'name': 'ProgramacionVisitaTecnicaComponent', 'selector': 'app-programacion-visita-tecnica'},{'name': 'ProgramarComponent', 'selector': 'app-programar'},{'name': 'ProgressComponent', 'selector': 'app-progress'},{'name': 'RealizarSolicitudesComponent', 'selector': 'app-realizar-solicitudes'},{'name': 'RegistrarInsumosComponent', 'selector': 'app-registrar-insumos'},{'name': 'RegistrarPriorizacionComponent', 'selector': 'app-registrar-priorizacion'},{'name': 'RegistrarServicioComponent', 'selector': 'app-registrar-servicio'},{'name': 'RegistroAforosComponent', 'selector': 'app-registro-aforos'},{'name': 'RegistroAlternativaComponent', 'selector': 'app-registro-alternativa'},{'name': 'RegistroApiqueComponent', 'selector': 'app-registro-apique'},{'name': 'RegistroCapaComponent', 'selector': 'app-registro-capa'},{'name': 'RegistroDatosAforoComponent', 'selector': 'app-registro-datos-aforo'},{'name': 'RegistroDiarioComponent', 'selector': 'app-registro-diario'},{'name': 'RegistroDiarioComponent', 'selector': 'app-registro-diario'},{'name': 'RegistroDisenoComponent', 'selector': 'app-registro-diseno'},{'name': 'RegistroFallasComponent', 'selector': 'app-registro-fallas'},{'name': 'RegistroFotoComponent', 'selector': 'app-registro-foto'},{'name': 'RegistroInsumosComponent', 'selector': 'app-registro-insumos'},{'name': 'RegistroOtrosFactoresComponent', 'selector': 'app-registro-otros-factores'},{'name': 'RegistroUnidadMuestreoComponent', 'selector': 'app-registro-unidad-muestreo'},{'name': 'RegistroVisitaComponent', 'selector': 'app-registro-visita'},{'name': 'RegistroVisitaDiagnosticoComponent', 'selector': 'app-registro-visita-diagnostico'},{'name': 'RegistroVisitaVerificacionComponent', 'selector': 'app-registro-visita-verificacion'},{'name': 'ReportarFalloComponent', 'selector': 'app-reportar-fallo'},{'name': 'ResultadoEnsayoComponent', 'selector': 'app-resultado-ensayo'},{'name': 'RevisarDisenoComponent', 'selector': 'app-revisar-diseno'},{'name': 'RevisarVisitaDiagnosticoComponent', 'selector': 'app-revisar-visita-diagnostico'},{'name': 'RevisionVisitaDiagnosticoComponent', 'selector': 'app-revision-visita-diagnostico'},{'name': 'SeccionCantidadesDeObraComponent', 'selector': 'app-seccion-cantidades-de-obra'},{'name': 'SeccionControlDeCalidadComponent', 'selector': 'app-seccion-control-de-calidad'},{'name': 'SeccionEquipoPortatilComponent', 'selector': 'app-seccion-equipo-portatil'},{'name': 'SeccionInformacionDelPersonalComponent', 'selector': 'app-seccion-informacion-del-personal'},{'name': 'SeccionInformacionGeneralComponent', 'selector': 'app-seccion-informacion-general'},{'name': 'SeccionInspeccionYOficialCuadrillaComponent', 'selector': 'app-seccion-inspeccion-y-oficial-cuadrilla'},{'name': 'SeccionMaquinariaComponent', 'selector': 'app-seccion-maquinaria'},{'name': 'SeccionMaquinariaComponent', 'selector': 'app-seccion-maquinaria'},{'name': 'SeccionMaterialComponent', 'selector': 'app-seccion-material'},{'name': 'SeccionMaterialesComponent', 'selector': 'app-seccion-materiales'},{'name': 'SeccionMezclaAsfalticasConcretosComponent', 'selector': 'app-seccion-mezcla-asfalticas-concretos'},{'name': 'SeccionObservacionesGeneralesComponent', 'selector': 'app-seccion-observaciones-generales'},{'name': 'SeccionPersonalComponent', 'selector': 'app-seccion-personal'},{'name': 'SeccionProgramacionDiariaComponent', 'selector': 'app-seccion-programacion-diaria'},{'name': 'SeccionRetiroMaterialesEscombrosComponent', 'selector': 'app-seccion-retiro-materiales-escombros'},{'name': 'SegMapaUmvComponent', 'selector': 'app-seg-mapa-umv'},{'name': 'ServicioApiquesComponent', 'selector': 'app-servicio-apiques'},{'name': 'ServicioDensidadComponent', 'selector': 'app-servicio-densidad'},{'name': 'ServicioFormulaComponent', 'selector': 'app-servicio-formula'},{'name': 'ServicioNucleoComponent', 'selector': 'app-servicio-nucleo'},{'name': 'ServicioOtrosComponent', 'selector': 'app-servicio-otros'},{'name': 'SimpleDialogComponent', 'selector': 'app-simple-dialog'},{'name': 'SincroniacionSPIComponent', 'selector': 'app-sincroniacion-spi'},{'name': 'SolicitudDialogComponent', 'selector': 'app-solicitud-dialog'},{'name': 'SolicitudEnsayoLaboratorioComponent', 'selector': 'app-solicitud-ensayo-laboratorio'},{'name': 'SolicitudesApiquesAforosComponent', 'selector': 'app-solicitudes-apiques-aforos'},{'name': 'TablaFiltrosComponent', 'selector': 'app-tabla-filtros'},{'name': 'TablaGestionPendienteComponent', 'selector': 'app-tabla-gestion-pendiente'},{'name': 'TablaPendientesApiquesComponent', 'selector': 'app-tabla-pendientes-apiques'},{'name': 'TablaRadicadoVinculadoComponent', 'selector': 'app-tabla-radicado-vinculado'},{'name': 'TablaSeguimientosComponent', 'selector': 'app-tabla-seguimientos'},{'name': 'TablaVincularComponent', 'selector': 'app-tabla-vincular'},{'name': 'TableDocumentosComponent', 'selector': 'app-table-documentos'},{'name': 'TableEnsayoComponent', 'selector': 'app-table-ensayo'},{'name': 'TableInformeComponent', 'selector': 'app-table-informe'},{'name': 'TableMantenimientosActivosComponent', 'selector': 'app-table-mantenimientos-activos'},{'name': 'TableNomenclaturaApiqueComponent', 'selector': 'app-table-nomenclatura-apique'},{'name': 'TableVersionSolicitudComponent', 'selector': 'app-table-version-solicitud'},{'name': 'TabsDistribuidorComponent', 'selector': 'app-tabs-distribuidor'},{'name': 'TabSeccionesComponent', 'selector': 'app-tab-secciones'},{'name': 'TabSeccionesComponent', 'selector': 'app-tab-secciones'},{'name': 'UbicarApiqueComponent', 'selector': 'app-ubicar-apique'},{'name': 'ValidacionVisitaDiagnosticoComponent', 'selector': 'app-validacion-visita-diagnostico'},{'name': 'ValidarDisenoComponent', 'selector': 'app-validar-diseno'},{'name': 'ValidarVisitaDiagnosticoComponent', 'selector': 'app-validar-visita-diagnostico'},{'name': 'VerAlternativaComponent', 'selector': 'app-ver-alternativa'},{'name': 'VerComponent', 'selector': 'app-ver'},{'name': 'VerComponent', 'selector': 'app-ver'},{'name': 'VerComponent', 'selector': 'app-ver'},{'name': 'VerComponent', 'selector': 'app-ver'},{'name': 'VerComponent', 'selector': 'app-ver'},{'name': 'VerDetalleMantenimientoComponent', 'selector': 'app-ver-detalle-mantenimiento'},{'name': 'VerEquipoComponent', 'selector': 'app-ver-equipo'},{'name': 'VerFallasComponent', 'selector': 'app-ver-fallas'},{'name': 'VerFotosComponent', 'selector': 'app-ver-fotos'},{'name': 'VerGrupoComponent', 'selector': 'app-ver-grupo'},{'name': 'VerLugarComponent', 'selector': 'app-ver-lugar'},{'name': 'VerOtroFactorComponent', 'selector': 'app-ver-otro-factor'},{'name': 'VerParametrosDisenioComponent', 'selector': 'app-ver-parametros-disenio'},{'name': 'VerPersonaComponent', 'selector': 'app-ver-persona'},{'name': 'VincularPeticionarioComponent', 'selector': 'app-vincular-peticionario'},{'name': 'VisorFotosComponent', 'selector': 'app-visor-fotos'},{'name': 'WebMapaUmvComponent', 'selector': 'app-web-mapa-umv'},{'name': 'WelcomeComponent', 'selector': 'app-welcome'}];
+    var DIRECTIVES = [{'name': 'DndDirective', 'selector': '[appDnd]'},{'name': 'MsgErrorDirective', 'selector': '[msg-error]'},{'name': 'MsgErrorDirective', 'selector': '[msg-error]'}];
+    var ACTUAL_COMPONENT = {'name': 'ControlSolicitudesPmtComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ControlSolicitudesPmtComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

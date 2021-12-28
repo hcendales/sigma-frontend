@@ -1,0 +1,92 @@
+<!--Input pra le archivo-->
+<input #fileInput type="file" accept=".csv" (change)="change($event)" style="display:none;" id="fileInput"/>
+<!--Btn cargue archivo-->
+<button mat-raised-button class="color-primary-100" onclick="document.getElementById('fileInput').click()" [disabled] = "validado" style="margin-bottom: 1rem;">
+    <mat-icon>upload_file</mat-icon> Cargar un archivo
+</button>
+
+<button *ngIf="idTipoCargue == '1' && mostrarBtnPlanitlla" mat-raised-button class="color-primary-100" style="margin-bottom: 1rem; margin-left: 1rem;" (click)="obtenerPlantilla(idTipoCargue)">
+  <mat-icon>download</mat-icon> Descargar plantilla
+</button>
+
+<br>
+<span *ngIf="validado">Registros procesados: {{numLineas}}</span>
+<br>
+<span *ngIf="validado">Registros erroneos: {{totalRegistrosErroneos}}</span>
+
+<div class="contenedor-informe-errores" *ngIf="erroresValidacion.length" style="margin-top: 1rem;">
+    <mat-accordion class="example-headers-align" multi>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Reporte de errores
+            </mat-panel-title>
+            <mat-panel-description>
+              Click para ver los errores
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+      
+          <table mat-table [dataSource]="erroresValidacion" class="mat-elevation-z8" style="width: 100%;">
+
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+          
+            <!-- Linea -->
+            <ng-container matColumnDef="linea">
+              <th mat-header-cell *matHeaderCellDef> Linea </th>
+              <td mat-cell *matCellDef="let element"> {{element.linea}} </td>
+            </ng-container>
+          
+            <!-- PK_id -->
+            <ng-container matColumnDef="pk_id">
+              <th mat-header-cell *matHeaderCellDef> PK ID Calzada </th>
+              <td mat-cell *matCellDef="let element"> {{element.pkIdCalzada}} </td>
+            </ng-container>
+          
+            <!-- tipoError -->
+            <ng-container matColumnDef="tipoError">
+              <th mat-header-cell *matHeaderCellDef> Tipo error </th>
+              <td mat-cell *matCellDef="let element"> {{element.tipoError}} </td>
+            </ng-container>
+
+            <!-- nombreCampo -->
+            <ng-container matColumnDef="nombreCampo">
+              <th mat-header-cell *matHeaderCellDef> Columna </th>
+              <td mat-cell *matCellDef="let element"> {{element.nombreCampo}} </td>
+            </ng-container>
+
+            <!-- descripcion Error -->
+            <ng-container matColumnDef="descripcionError">
+              <th mat-header-cell *matHeaderCellDef> Descripción </th>
+              <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+            </ng-container>
+          
+                   
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          
+          <button mat-raised-button class="color-primary-100" (click)="generarReporte()" style="margin-top: 1rem;" >
+            <mat-icon>download</mat-icon> Descargar reporte
+          </button>
+          
+        
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
+
+<div *ngIf="validado" style="margin-top: 1rem;">
+  <button  mat-raised-button class="color-primary-100" style="margin-bottom: 5px;" (click)="clickConfirmarCargue()" [disabled] = "numLineas - erroresValidacion.length < 1" *ngIf="!cargueConfirmado">Confirmar cargue</button>
+  &nbsp;
+  <button  mat-raised-button class="color-primary-100" style="margin-bottom: 5px;" (click)="Cancelar()">Cancelar</button>
+  <br>
+  <span *ngIf = "erroresValidacion.length > 0">Solo se realizará el cargue de los registros validos ({{numLineas - totalRegistrosErroneos}} registros).</span>
+</div>
+
+<div *ngIf="enEspera">
+        Enviando solicitud...
+</div>
+
+<div *ngIf="cargueExitoso">
+  Cargue exitoso
+</div>

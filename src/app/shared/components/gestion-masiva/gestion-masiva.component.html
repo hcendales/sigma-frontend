@@ -1,0 +1,36 @@
+<p *ngIf="transicionesConsultadas && transiciones.length == 0">No hay gestiones pendientes en esta actividad.</p>
+<mat-tab-group [selectedIndex]="active" (selectedIndexChange)="onTabChange($event)">
+  <mat-tab *ngFor="let tabItem of transiciones">
+    <ng-template mat-tab-label>
+      {{title}} {{tabItem.actividad_destino}}
+    </ng-template>
+    <div *ngIf="verPriorizar">
+      <button type="button" color="primary" (click)="openDialogPriorizacion()">Información Priorización</button>
+    </div>
+    <app-lista-transicion [idActividad]=idActividad [idActividadTransicion]=tabItem.id_actividad_transicion
+     (registroSeleccionado)="registroSeleccionadoEvt($event,tabItem.id_actividad_transicion)"
+     (dataSourceEmiter)="dataSourceEvt($event)"
+     (selecteDataSourceEmiter)="selecteDataSourceEvt($event)"
+     (onOpcionSelected) = "onOpcionSelectedEvt($event)"
+     [selectedFeatures]="selectedFeatures"
+     [mostrarOpcionDefault]="mostrarOpcionDefaultTabla"
+     [selectedFeatures]="selectedFeatures" #listaTransicion
+     [opciones]="acciones"
+     [displayedColumns] = "columnas"
+     [export_flag]="export_flag"></app-lista-transicion>
+    <mat-card>
+      <div>
+        <strong>Registros seleccionados:</strong> {{totalesKmCarrilImpacto[tabItem.id_actividad_transicion].seleccionados}}
+      </div>
+      <div >
+        <strong>Total Km carril impacto: </strong>
+        {{totalesKmCarrilImpacto[tabItem.id_actividad_transicion].total}}
+      </div>
+      <div *ngFor="let discriminado of totalesKmCarrilImpacto[tabItem.id_actividad_transicion].discriminado">
+        <strong>{{discriminado.codigo_actividad_agrupada?discriminado.codigo_actividad_agrupada:'Sin nombre'}} :</strong>
+        {{discriminado.km_carril_impacto}}
+      </div>
+    </mat-card>
+    <app-avance-masivo-mantenimiento [actividadDestino] = "tabItem" [idsProcesoGestion]="idsProcesoGestion[tabItem.id_actividad_transicion]" (gestionRealizada)="gestionRealizadaEvt(tabItem.id_actividad_transicion)"></app-avance-masivo-mantenimiento>
+  </mat-tab>
+</mat-tab-group>

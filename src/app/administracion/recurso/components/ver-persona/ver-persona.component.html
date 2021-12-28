@@ -1,0 +1,92 @@
+<mat-card>
+  <mat-card-header class="mat-card-header-umv">
+    <div class="mat-card-header-text">
+      <mat-card-subtitle>
+        <h2>{{titulo}}</h2>
+      </mat-card-subtitle>
+    </div>
+  </mat-card-header>
+  <mat-card-content *ngIf="readyPersona">
+    <form [formGroup]="formEntity" (ngSubmit)="save($event)" >
+      <mat-form-field appearance="outline">
+        <mat-label>Identificación</mat-label>
+        <input matInput formControlName="identificacion" autocomplete="off" readonly>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" >
+        <mat-label>Categoría</mat-label>
+        <mat-select formControlName="idTipoCategoriaPersona" required>
+          <mat-option *ngFor="let tipo of listas[14]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="tipoCategoriaField.hasError('required')">Campo requerido</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombre" autocomplete="off">
+        <mat-error *ngIf="nombreField.hasError('required')">Campo requerido</mat-error>
+        <mat-error *ngIf="nombreField.hasError('maxlength')">Caracteres máximos 100</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Regimen</mat-label>
+        <mat-select formControlName="idTipoRegimen" required>
+          <mat-option *ngFor="let tipo of listas[13]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="tipoRegimenField.hasError('required')">Campo requerido</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Correo Electronico</mat-label>
+        <input matInput formControlName="email" autocomplete="off">
+        <mat-error *ngIf="emailField.hasError('email')">Campo invalido correo</mat-error>
+        <mat-error *ngIf="emailField.hasError('maxlength')">Caracteres máximo 100</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Area</mat-label>
+        <mat-select formControlName="idTipoArea" required>
+          <mat-option *ngFor="let tipo of listas[3]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="tipoAreaField.hasError('required')">Campo requerido</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Télefono</mat-label>
+        <input matInput formControlName="telefono" autocomplete="off">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" style="width: 400px;" >
+        <mat-label>Cargo</mat-label>
+        <mat-select formControlName="idTipoCargo" required>
+          <mat-option *ngFor="let tipo of listas[2271]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="tipoCargoField.hasError('required')">Campo requerido</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Usuario</mat-label>
+        <mat-select formControlName="idUsuario">
+            <mat-option *ngFor="let tipo of listaUsuarios.respuesta" [value]="tipo.id_usuario">{{tipo.identificacion}} - {{tipo.nombre}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Rol</mat-label>
+        <mat-select formControlName="idTipoRol" required>
+          <mat-option *ngFor="let tipo of listas[82]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+        </mat-select>
+       <mat-error *ngIf="estadoField.hasError('required')">Campo requerido</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Estado</mat-label>
+        <mat-select formControlName="idTipoEstadoPersona" required>
+          <mat-option *ngFor="let tipo of listas[67]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+        </mat-select>
+       <mat-error *ngIf="estadoField.hasError('required')">Campo requerido</mat-error>
+      </mat-form-field>
+  </form>
+</mat-card-content>
+</mat-card>
+

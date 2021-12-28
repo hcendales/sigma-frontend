@@ -1,0 +1,2089 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>sigma2-frontend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">sigma2-frontend documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  EditarAsociarSolicitudComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/produccion/intervencion/components/editar-asociar-solicitud/editar-asociar-solicitud.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente: EditarAsociarSolicitudComponent</p>
+<p>Permite crear o editar un registro de .</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                                <code><a href="https://angular.io/api/common/DatePipe" target="_blank" >DatePipe</a></code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-editar-asociar-solicitud</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./editar-asociar-solicitud.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./editar-asociar-solicitud.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#fb" >fb</a>
+                            </li>
+                            <li>
+                                <a href="#formEditar" >formEditar</a>
+                            </li>
+                            <li>
+                                <a href="#radicado" >radicado</a>
+                            </li>
+                            <li>
+                                <a href="#radicados" >radicados</a>
+                            </li>
+                            <li>
+                                <a href="#realizandoCounsulta" >realizandoCounsulta</a>
+                            </li>
+                            <li>
+                                <a href="#row" >row</a>
+                            </li>
+                            <li>
+                                <a href="#row_selected" >row_selected</a>
+                            </li>
+                            <li>
+                                <a href="#updateSubject" >updateSubject</a>
+                            </li>
+                            <li>
+                                <a href="#validNumeroRadicado" >validNumeroRadicado</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#buscarRadicadoOrfeo" >buscarRadicadoOrfeo</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#enviar" >enviar</a>
+                            </li>
+                            <li>
+                                <a href="#handleError" >handleError</a>
+                            </li>
+                            <li>
+                                <a href="#limpiarCampos" >limpiarCampos</a>
+                            </li>
+                            <li>
+                                <a href="#LimpiarNumeroRadicado" >LimpiarNumeroRadicado</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSubmit" >onSubmit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#opcionSeleccionadaEvt" >opcionSeleccionadaEvt</a>
+                            </li>
+                            <li>
+                                <a href="#operationSuccess" >operationSuccess</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#registroSeleccionadoEvt" >registroSeleccionadoEvt</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#arrayChecked" >arrayChecked</a>
+                            </li>
+                            <li>
+                                <a href="#edit_flag" >edit_flag</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#almacenadoEvent" >almacenadoEvent</a>
+                            </li>
+                            <li>
+                                <a href="#regresarEvent" >regresarEvent</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, gestionService: <a href="../injectables/GestionService.html" target="_self">GestionService</a>, listasService: <a href="../injectables/ConsultaListasService.html" target="_self">ConsultaListasService</a>, procesoIntervencion: <a href="../injectables/ProcesoIntervencionService.html" target="_self">ProcesoIntervencionService</a>, buscarRadicadoService: <a href="../injectables/BuscarRadicadoOrfeoService.html" target="_self">BuscarRadicadoOrfeoService</a>, datePipe: <a href="https://angular.io/api/common/DatePipe" target="_blank">DatePipe</a>, dialog: MatDialog, snackBar: MatSnackBar)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="116" class="link-to-prism">src/app/produccion/intervencion/components/editar-asociar-solicitud/editar-asociar-solicitud.component.ts:116</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Define el contrucutor del componenete.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Constructor de utilidades.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>gestionService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/GestionService.html" target="_self" >GestionService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>listasService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ConsultaListasService.html" target="_self" >ConsultaListasService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio de listas.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>procesoIntervencion</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ProcesoIntervencionService.html" target="_self" >ProcesoIntervencionService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio de ProcesoIntervencionService.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>buscarRadicadoService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/BuscarRadicadoOrfeoService.html" target="_self" >BuscarRadicadoOrfeoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>datePipe</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/DatePipe" target="_blank" >DatePipe</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>snackBar</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatSnackBar</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Scancbar.</p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="arrayChecked"></a>
+                        <b>arrayChecked</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="102" class="link-to-prism">src/app/produccion/intervencion/components/editar-asociar-solicitud/editar-asociar-solicitud.component.ts:102</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>ID del registros a procesar.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="edit_flag"></a>
+                        <b>edit_flag</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/produccion/intervencion/components/editar-asociar-solicitud/editar-asociar-solicitud.component.ts:82</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Bandera que indica cuando el componente debe
+regsitrar un nuevo registro (true) o actualizar un
+registro (false).</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="almacenadoEvent"></a>
+                        <b>almacenadoEvent</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="116" class="link-to-prism">src/app/produccion/intervencion/components/editar-asociar-solicitud/editar-asociar-solicitud.component.ts:116</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Define el emisor del evento de regreso por
+submit.
+See app-programar</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="regresarEvent"></a>
+                        <b>regresarEvent</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;void&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="109" class="link-to-prism">src/app/produccion/intervencion/components/editar-asociar-solicitud/editar-asociar-solicitud.component.ts:109</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Define el emisor del evento de regreso por
+cancelacion.
+See app-programar</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="buscarRadicadoOrfeo"></a>
+                    <span class="name">
+                        <span ><b>buscarRadicadoOrfeo</b></span>
+                        <a href="#buscarRadicadoOrfeo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>buscarRadicadoOrfeo()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="162"
+                            class="link-to-prism">src/app/produccion/intervencion/components/editar-asociar-solicitud/editar-asociar-solicitud.component.ts:162</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Obtiene datos consultados en Orfeo con el campo numero_radicado</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enviar"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>enviar</b></span>
+                        <a href="#enviar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>enviar()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="274"
+                            class="link-to-prism">src/app/produccion/intervencion/components/editar-asociar-solicitud/editar-asociar-solicitud.component.ts:274</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Envia el nuevo registro al backend.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleError"></a>
+                    <span class="name">
+                        <span ><b>handleError</b></span>
+                        <a href="#handleError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>handleError(msjError: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, volver: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="193"
+                            class="link-to-prism">src/app/produccion/intervencion/components/editar-asociar-solicitud/editar-asociar-solicitud.component.ts:193</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Maneja el error de las peticiones.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>msjError</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>&quot;Error al realizar la operacion&quot;</code>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>volver</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>true</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="limpiarCampos"></a>
+                    <span class="name">
+                        <span ><b>limpiarCampos</b></span>
+                        <a href="#limpiarCampos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>limpiarCampos()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="204"
+                            class="link-to-prism">src/app/produccion/intervencion/components/editar-asociar-solicitud/editar-asociar-solicitud.component.ts:204</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Limpia los campos del formualrio.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="LimpiarNumeroRadicado"></a>
+                    <span class="name">
+                        <span ><b>LimpiarNumeroRadicado</b></span>
+                        <a href="#LimpiarNumeroRadicado"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>LimpiarNumeroRadicado()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="220"
+                            class="link-to-prism">src/app/produccion/intervencion/components/editar-asociar-solicitud/editar-asociar-solicitud.component.ts:220</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Metodo para limpiar el campo en el html</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="147"
+                            class="link-to-prism">src/app/produccion/intervencion/components/editar-asociar-solicitud/editar-asociar-solicitud.component.ts:147</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Metodo de carga del componente.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmit"></a>
+                    <span class="name">
+                        <span ><b>onSubmit</b></span>
+                        <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSubmit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="254"
+                            class="link-to-prism">src/app/produccion/intervencion/components/editar-asociar-solicitud/editar-asociar-solicitud.component.ts:254</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="opcionSeleccionadaEvt"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>opcionSeleccionadaEvt</b></span>
+                        <a href="#opcionSeleccionadaEvt"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>opcionSeleccionadaEvt(opcion: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="243"
+                            class="link-to-prism">src/app/produccion/intervencion/components/editar-asociar-solicitud/editar-asociar-solicitud.component.ts:243</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Manejador de los eventos de la lista.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>opcion</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Evento de la lista.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="operationSuccess"></a>
+                    <span class="name">
+                        <span ><b>operationSuccess</b></span>
+                        <a href="#operationSuccess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>operationSuccess()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="183"
+                            class="link-to-prism">src/app/produccion/intervencion/components/editar-asociar-solicitud/editar-asociar-solicitud.component.ts:183</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Maneja la respuesta con exito de las peticiones.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registroSeleccionadoEvt"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>registroSeleccionadoEvt</b></span>
+                        <a href="#registroSeleccionadoEvt"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>registroSeleccionadoEvt(arrayChecked: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="230"
+                            class="link-to-prism">src/app/produccion/intervencion/components/editar-asociar-solicitud/editar-asociar-solicitud.component.ts:230</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Manejador del evento de registro seleccionado.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>arrayChecked</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Registro seleccionado.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fb"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>fb</b></span>
+                        <a href="#fb"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="126" class="link-to-prism">src/app/produccion/intervencion/components/editar-asociar-solicitud/editar-asociar-solicitud.component.ts:126</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description">Constructor de utilidades.</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formEditar"></a>
+                    <span class="name">
+                        <span ><b>formEditar</b></span>
+                        <a href="#formEditar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/produccion/intervencion/components/editar-asociar-solicitud/editar-asociar-solicitud.component.ts:50</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Define formulario de usqueda</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="radicado"></a>
+                    <span class="name">
+                        <span ><b>radicado</b></span>
+                        <a href="#radicado"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/produccion/intervencion/components/editar-asociar-solicitud/editar-asociar-solicitud.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Value del campo numero_radicado</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="radicados"></a>
+                    <span class="name">
+                        <span ><b>radicados</b></span>
+                        <a href="#radicados"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/produccion/intervencion/components/editar-asociar-solicitud/editar-asociar-solicitud.component.ts:60</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Define la lista de programas.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="realizandoCounsulta"></a>
+                    <span class="name">
+                        <span ><b>realizandoCounsulta</b></span>
+                        <a href="#realizandoCounsulta"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">src/app/produccion/intervencion/components/editar-asociar-solicitud/editar-asociar-solicitud.component.ts:88</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Bandera que indica el procesamiento de una
+peticion.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="row"></a>
+                    <span class="name">
+                        <span ><b>row</b></span>
+                        <a href="#row"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/produccion/intervencion/components/editar-asociar-solicitud/editar-asociar-solicitud.component.ts:65</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Referencia al registro seleccionado en la lista.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="row_selected"></a>
+                    <span class="name">
+                        <span ><b>row_selected</b></span>
+                        <a href="#row_selected"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/produccion/intervencion/components/editar-asociar-solicitud/editar-asociar-solicitud.component.ts:70</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Bandera para indicar si fue seleccionado un registro.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateSubject"></a>
+                    <span class="name">
+                        <span ><b>updateSubject</b></span>
+                        <a href="#updateSubject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subject&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;any&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">src/app/produccion/intervencion/components/editar-asociar-solicitud/editar-asociar-solicitud.component.ts:93</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p> Emisor del evento de actualizacion de la lista.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validNumeroRadicado"></a>
+                    <span class="name">
+                        <span ><b>validNumeroRadicado</b></span>
+                        <a href="#validNumeroRadicado"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/produccion/intervencion/components/editar-asociar-solicitud/editar-asociar-solicitud.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Habilita el boton de busqueda de Numero Radicado Orfeo</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Observable} from &#x27;rxjs&#x27;;
+import { Subject } from &#x27;rxjs&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import {map, startWith} from &#x27;rxjs/operators&#x27;;
+import { MatSnackBar } from &#x27;@angular/material/snack-bar&#x27;;
+import { GestionService } from &#x27;src/app/core/services/gestion.service&#x27;;
+import { Component, OnInit, Input, Output, EventEmitter } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormControl, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { ConsultaListasService } from &#x27;../../../../core/services/consulta-listas.service&#x27;;
+import { ProcesoIntervencionService } from &#x27;../../../../core/services/proceso-intervencion.service&#x27;;
+import { BuscarRadicadoOrfeoService } from &#x27;src/app/core/services/buscar-radicado-orfeo.service&#x27;;
+import { DatePipe } from &#x27;@angular/common&#x27;;
+import { MatDialog } from &#x27;@angular/material/dialog&#x27;;
+import { DialogConfirmComponent } from &#x27;src/app/shared/components/dialog-confirm/dialog-confirm.component&#x27;;
+
+/**
+ * Componente: EditarAsociarSolicitudComponent
+ * 
+ * Permite crear o editar un registro de . 
+ * 
+ * @version 1.0
+ * @revision 07-07-21
+ */
+@Component({
+  selector: &#x27;app-editar-asociar-solicitud&#x27;,
+  templateUrl: &#x27;./editar-asociar-solicitud.component.html&#x27;,
+  styleUrls: [&#x27;./editar-asociar-solicitud.component.scss&#x27;],
+  providers: [DatePipe]
+})
+export class EditarAsociarSolicitudComponent implements OnInit {
+
+  //------------------------------------------------------
+  // Define formularios
+  //------------------------------------------------------
+
+  /**
+   * Value del campo numero_radicado
+   */
+  radicado &#x3D; &#x27;&#x27;;
+
+
+  /**
+   * Habilita el boton de busqueda de Numero Radicado Orfeo
+   */
+  validNumeroRadicado: boolean &#x3D; false;
+
+  /**
+   * Define formulario de usqueda
+   */
+  formEditar:FormGroup;
+  
+
+  //------------------------------------------------------
+  // Define propiedades de listas
+  //------------------------------------------------------
+  
+  /**
+   * Define la lista de programas.
+   */
+  radicados: any &#x3D; {};
+
+  /**
+   * Referencia al registro seleccionado en la lista.
+   */
+  row:any &#x3D; null;
+
+  /**
+   * Bandera para indicar si fue seleccionado un registro. 
+   */
+  row_selected &#x3D; false;
+
+  //------------------------------------------------------
+  // Define propiedades de bandera de control del 
+  // componenete.
+  //------------------------------------------------------
+  
+  /**
+   * Bandera que indica cuando el componente debe
+   * regsitrar un nuevo registro (true) o actualizar un
+   * registro (false).
+   */
+  @Input() edit_flag &#x3D; false;
+
+  /**
+   * Bandera que indica el procesamiento de una
+   * peticion.
+   */
+  realizandoCounsulta: boolean &#x3D; false;
+
+  /**
+   *  Emisor del evento de actualizacion de la lista.
+   */
+  updateSubject: Subject&lt;any&gt; &#x3D; new Subject&lt;any&gt;();
+
+  //------------------------------------------------------
+  // Define propiedades de componente.
+  //------------------------------------------------------
+  
+  /**
+   * ID del registros a procesar.
+   */
+  @Input() arrayChecked: any &#x3D; [];
+
+  /**
+   * Define el emisor del evento de regreso por 
+   * cancelacion.
+   * @see app-programar
+   */
+  @Output() regresarEvent: EventEmitter&lt;void&gt; &#x3D; new EventEmitter();
+
+  /**
+   * Define el emisor del evento de regreso por 
+   * submit.
+   * @see app-programar
+   */
+  @Output() almacenadoEvent: EventEmitter&lt;any&gt; &#x3D; new EventEmitter();
+
+  /**
+   * Define el contrucutor del componenete.
+   * @param fb Constructor de utilidades.
+   * @param listasService Servicio de listas.
+   * @param procesoIntervencion Servicio de ProcesoIntervencionService.
+   * @param snackBar  Scancbar. 
+   */
+  constructor(
+    public fb:FormBuilder,  
+    private router: Router,
+    private gestionService: GestionService,
+    private listasService: ConsultaListasService, 
+    private procesoIntervencion: ProcesoIntervencionService, 
+    private buscarRadicadoService: BuscarRadicadoOrfeoService,
+    private datePipe: DatePipe,
+    private dialog: MatDialog,
+    private snackBar:MatSnackBar
+  ) {
+    // Define el formulario principal del componente.
+    this.formEditar &#x3D; this.fb.group({
+      radicado: new FormControl(&#x27;&#x27;, [Validators.required,Validators.maxLength(14)]),
+      asunto: new FormControl(&#x27;&#x27;, [Validators.required,]),
+      fechaRadicado: new FormControl(&#x27;&#x27;, [Validators.required,]),
+    });
+  }
+
+  /**
+   * Metodo de carga del componente.
+   */
+   async ngOnInit() {
+     this.formEditar.get(&quot;radicado&quot;)?.valueChanges.subscribe(element &#x3D;&gt; {
+       
+      this.radicado &#x3D; element;
+       /**
+        * validador de numero para el campo de numero de radicado
+        */
+       this.validNumeroRadicado &#x3D; (!isNaN(parseInt(element))) ? true : false;
+
+     });
+   }
+  
+  /**
+   * Obtiene datos consultados en Orfeo con el campo numero_radicado
+   */
+  buscarRadicadoOrfeo() {
+    this.buscarRadicadoService.get(this.radicado).then((resp: any) &#x3D;&gt; {
+      if (resp.respuesta &amp;&amp; resp.respuesta.length &gt; 0) {
+
+        this.formEditar.get(&quot;asunto&quot;)?.setValue(resp.respuesta[0].ra_asun);
+        this.formEditar.get(&quot;fechaRadicado&quot;)?.setValue(this.datePipe.transform(resp.respuesta[0].radi_fech_radi, &#x27;yyyy-MM-dd&#x27;) + &#x27;T05:00:00.000Z&#x27;);
+        this.formEditar.get(&quot;radicado&quot;)?.setValue(resp.respuesta[0].radi_nume_radi);
+        this.operationSuccess()
+        this.realizandoCounsulta &#x3D; false;
+      } else {
+        this.radicado &#x3D; &quot;&quot;;
+        this.LimpiarNumeroRadicado();
+        this.handleError(&#x27;No se encontró el número de radicado, por favor intente nuevamente&#x27;, false)
+      }
+    });
+  }
+
+
+  /**
+   * Maneja la respuesta con exito de las peticiones.
+   */
+  operationSuccess() {
+    this.snackBar.open(&#x27;Consulta Realizada&#x27;, &#x27;X&#x27;, {
+      duration: 5000,
+      panelClass: [&#x27;success-snackbar&#x27;]
+    });
+  }
+
+  /**
+   * Maneja el error de las peticiones.
+   */
+  handleError(msjError: string &#x3D; &quot;Error al realizar la operacion&quot;, volver: boolean &#x3D; true) {
+    this.snackBar.open(msjError, &#x27;X&#x27;, {
+      duration: 5000,
+      panelClass: [&#x27;error-snackbar&#x27;]
+    });
+    if (volver)this.almacenadoEvent.emit(false);
+  }
+
+  /**
+   * Limpia los campos del formualrio.
+   */
+  limpiarCampos() {
+    if(this.formEditar) {
+      for(let c in this.formEditar.controls) {
+        if(c &#x3D;&#x3D; &#x27;fechas&#x27;) {
+          this.formEditar.get(c)?.get(&#x27;desde&#x27;)?.setValue(null);
+          this.formEditar.get(c)?.get(&#x27;hasta&#x27;)?.setValue(null);
+        } else {
+          this.formEditar.get(c)?.setValue(null);
+        }
+      }
+    }
+  }
+
+  /**
+  * Metodo para limpiar el campo en el html
+  */
+  LimpiarNumeroRadicado() {
+    this.formEditar.get(&quot;radicado&quot;)?.setValue(&quot;&quot;);
+    this.formEditar.get(&quot;fechaRadicado&quot;)?.setValue(&quot;&quot;);
+    this.formEditar.get(&quot;asunto&quot;)?.setValue(&quot;&quot;);
+  }
+  
+  /**
+   * Manejador del evento de registro seleccionado.
+   * @param arrayChecked Registro seleccionado. 
+   */
+   async registroSeleccionadoEvt(arrayChecked:any) {
+    if (arrayChecked &amp;&amp; arrayChecked.length &gt; 0) {
+      this.row &#x3D; arrayChecked[0];
+      this.row_selected &#x3D; true;
+    } else {
+      this.row_selected &#x3D; false;
+    }
+  }
+
+  /**
+   * Manejador de los eventos de la lista.
+   * @param opcion Evento de la lista.
+   */
+  async opcionSeleccionadaEvt(opcion:any) {
+    console.info(opcion);
+    switch (opcion.accion) {
+      case &#x27;eliminar&#x27;:
+        break;
+      default:
+        this.row &#x3D; opcion.row;
+        break;
+    }
+  }
+
+  onSubmit() {
+    let valueForm &#x3D; this.formEditar.value;
+    //debugger;
+    if(!this.formEditar.invalid) {
+      let idMantenimientoVial &#x3D; &quot;&quot;;
+      for (let index &#x3D; 0; index &lt; this.arrayChecked.length; index++) {
+        if(index+1 &lt; this.arrayChecked.length) {
+          idMantenimientoVial +&#x3D; this.arrayChecked[index].id_mantenimiento_vial + &quot;,&quot;;
+        } else {
+          idMantenimientoVial +&#x3D; this.arrayChecked[index].id_mantenimiento_vial
+        }
+      }
+      // @TODO valueForm.radicado
+      this.updateSubject.next({mantenimientoIDsString: idMantenimientoVial});
+    }
+  }
+
+  /**
+   * Envia el nuevo registro al backend.
+   */
+  async enviar() {
+    let respServ &#x3D; null;
+    let idMantenimientoVial &#x3D; &quot;&quot;;
+    let idPkSendList: number[] &#x3D; [];
+    let valueForm &#x3D; this.formEditar.value;
+    this.realizandoCounsulta &#x3D; true;
+    
+    try {
+
+      const dialogRef &#x3D; this.dialog.open(DialogConfirmComponent, {
+        width: &quot;25%&quot;,
+        height: &#x27;25%&#x27;,
+        panelClass: &#x27;custom-dialog-container&#x27;,
+        autoFocus: false,
+        data: { accion: &quot;A&quot;, mensaje: &quot;Se actualizarán los datos. ¿Desea de continuar con la operación? &quot;}
+      });
+      dialogRef.afterClosed().subscribe(async result &#x3D;&gt; {
+        if (result) {
+          for (let index &#x3D; 0; index &lt; this.arrayChecked.length; index++) {
+            idPkSendList.push(this.arrayChecked[index].id_proceso_gestion);
+            if(index+1 &lt; this.arrayChecked.length) {
+              idMantenimientoVial +&#x3D; this.arrayChecked[index].id_mantenimiento_vial + &quot;,&quot;;
+            } else {
+              idMantenimientoVial +&#x3D; this.arrayChecked[index].id_mantenimiento_vial
+            }
+          }
+          //debugger;
+          let solicitud:any &#x3D; {
+            radicado: valueForm.radicado,
+            idMantenimientoVial: idMantenimientoVial,
+            fechaRadicadoUMV: new Date().getTime(),
+            idDocumento: await this.procesoIntervencion.obtenerIdDocumento(1463)
+          }
+          if (this.edit_flag) {
+            respServ &#x3D; await this.procesoIntervencion.actualizarSolicitud(solicitud);
+          } else {
+            respServ &#x3D; await this.procesoIntervencion.insertarSolicitud(solicitud);
+          }
+          if(respServ &amp;&amp; respServ.codError &#x3D;&#x3D; 0) {
+            this.operationSuccess();
+            this.realizandoCounsulta &#x3D; true;
+            let currentUrl &#x3D; this.router.url;
+            this.router.navigateByUrl(&#x27;/&#x27;, {skipLocationChange: true}).then(() &#x3D;&gt; {
+                this.router.navigate([currentUrl]);
+            });
+          } else {
+            this.handleError();
+          }
+          this.realizandoCounsulta &#x3D; false;
+        }
+        this.realizandoCounsulta &#x3D; false;
+      });
+    } catch(e) {
+      console.log(e);
+      this.handleError();
+      this.realizandoCounsulta &#x3D; false;
+    }  
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;mat-card&gt;
+    &lt;mat-card-header class&#x3D;&quot;mat-card-header-umv&quot;&gt;
+      &lt;div class&#x3D;&quot;mat-card-header-text&quot;&gt;
+        &lt;mat-card-subtitle&gt;
+          &lt;h2 *ngIf &#x3D; &quot;!edit_flag&quot;&gt;Asociar Solicitud&lt;/h2&gt;
+          &lt;h2 *ngIf &#x3D; &quot;edit_flag&quot;&gt;Editar Solicitud&lt;/h2&gt;
+        &lt;/mat-card-subtitle&gt;
+      &lt;/div&gt;
+    &lt;/mat-card-header&gt;
+    &lt;form [formGroup]&#x3D;&quot;formEditar&quot; (ngSubmit)&#x3D;&quot;onSubmit()&quot; class&#x3D;&quot;form-box&quot;&gt;
+      &lt;mat-form-field appearance&#x3D;&quot;outline&quot; class &#x3D; &quot;campo&quot;&gt;
+        &lt;mat-label&gt;Radicado *&lt;/mat-label&gt;
+        &lt;input matInput formControlName&#x3D;&quot;radicado&quot; type&#x3D;&quot;number&quot; autocomplete&#x3D;&quot;off&quot;&gt;
+        &lt;mat-error *ngIf&#x3D;&quot;!validNumeroRadicado&quot;&gt;
+            (!) Campo requerido
+        &lt;/mat-error&gt;
+        &lt;button *ngIf&#x3D;&quot;radicado&quot; matSuffix mat-icon-button aria-label&#x3D;&quot;Clear&quot; (click)&#x3D;&quot;LimpiarNumeroRadicado()&quot;&gt;
+          &lt;mat-icon&gt;close&lt;/mat-icon&gt;
+        &lt;/button&gt;
+      &lt;/mat-form-field&gt;
+      &lt;mat-form-field appearance&#x3D;&quot;outline&quot; class&#x3D;&quot;campo&quot; style&#x3D;&quot;width: 40%;&quot;&gt;
+        &lt;mat-label&gt;Asunto&lt;/mat-label&gt;
+        &lt;input matInput formControlName&#x3D;&quot;asunto&quot; maxlength&#x3D;&quot;100&quot; readonly&gt;
+      &lt;/mat-form-field&gt;
+      &lt;mat-form-field appearance&#x3D;&quot;outline&quot; class&#x3D;&quot;campo&quot;&gt;
+        &lt;mat-label&gt;Fecha de Radicado&lt;/mat-label&gt;
+        &lt;input matInput formControlName&#x3D;&quot;fechaRadicado&quot; [matDatepicker]&#x3D;&quot;picker0&quot; placeholder&#x3D;&quot;DD/MM/YYYY&quot; readonly&gt;
+        &lt;mat-datepicker-toggle matSuffix [for]&#x3D;&quot;picker0&quot; disabled&gt;&lt;/mat-datepicker-toggle&gt;
+        &lt;mat-datepicker #picker0&gt;&lt;/mat-datepicker&gt;
+      &lt;/mat-form-field&gt;
+      &lt;button 
+        mat-raised-button 
+        class&#x3D;&quot;color-primary-100 act-btn-2&quot;
+         [disabled]&#x3D;&quot;!validNumeroRadicado&quot;
+        (click)&#x3D;&quot;buscarRadicadoOrfeo()&quot;
+        &gt;
+        &lt;mat-icon&gt;search&lt;/mat-icon&gt;
+        Buscar
+      &lt;/button&gt;
+    &lt;/form&gt;
+    &lt;app-lista-radicados *ngIf&#x3D;&quot;false&quot;
+        (opcionSeleccionada)&#x3D;&quot;opcionSeleccionadaEvt($event)&quot;
+        (registroSeleccionado)&#x3D;&quot;registroSeleccionadoEvt($event)&quot;
+        [actualizador]&#x3D;&quot;updateSubject.asObservable()&quot;&gt;
+    &lt;/app-lista-radicados&gt;
+    &lt;div class&#x3D;&quot;btn-box&quot;&gt;
+      &lt;button type&#x3D;&quot;button&quot; mat-raised-button class&#x3D;&quot;color-primary-100 act-btn&quot; [disabled]&#x3D;&quot;formEditar.invalid || realizandoCounsulta&quot; (click)&#x3D;&quot;enviar()&quot;&gt;
+        &lt;mat-icon&gt;check&lt;/mat-icon&gt;
+        &lt;mat-icon *ngIf&#x3D;&quot;realizandoCounsulta&quot;&gt;
+            &lt;mat-spinner diameter&#x3D;&quot;20&quot;&gt;&lt;/mat-spinner&gt;
+        &lt;/mat-icon&gt;
+        Asociar
+      &lt;/button&gt;
+      &lt;button type&#x3D;&quot;button&quot; mat-raised-button class&#x3D;&quot;color-primary-100 act-btn-2&quot; (click)&#x3D;&quot;regresarEvent.emit()&quot;&gt;
+        &lt;mat-icon&gt;cancel&lt;/mat-icon&gt;
+        Cerrar
+      &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/mat-card&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./editar-asociar-solicitud.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.contenido-seccion {
+    display: grid;
+    margin-top: 1rem;
+}
+
+@media (min-width: 895px) {
+    .contenido-seccion {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 699px) and (max-width: 894px) {
+    .contenido-seccion {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 690px) {
+    .contenido-seccion {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 465px) {
+    .contenido-seccion {
+        grid-template-columns: 1fr;
+    }
+}
+
+.campo {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+mat-table {
+    min-width: 3200px;
+}
+
+.mat-cell {
+    min-width: 100px;
+}
+
+.mat-header-cell {
+    min-width: 100px;
+    margin-right: 5px;
+    border-right: 1px solid lightgray;
+}
+
+.mat-column-observaciones_diagnostico, .mat-cell-observaciones_diagnostico {
+    min-width: 200px;
+    max-width: 15%;
+    flex: 0 0 15%;
+}
+
+.mat-column-FALLAS, .mat-cell-FALLAS {
+    min-width: 80px;
+    flex: 0 0 5%;
+}
+
+.mat-column-OTROS_FACTORES, .mat-cell-OTROS_FACTORES {
+    min-width: 80px;
+    flex: 0 0 7%;
+}
+
+.mat-column-observacion_gestion, .mat-cell-observacion_gestion {
+    min-width: 250px;
+    max-width: 15%;
+    flex: 0 0 15%;
+}
+
+.mat-column-fecha_fin, .mat-cell-fecha_fin {
+    min-width: 80px;
+}
+
+.mat-column-fecha_inicio, .mat-cell-fecha_inicio {
+    min-width: 80px;
+}
+
+.mat-column-fecha_visita_tecnica, .mat-cell-fecha_visita_tecnica {
+    min-width: 80px;
+}
+
+.mat-column-pk_id_calzada, .mat-cell-pk_id_calzada {
+    min-width: 70px;
+}
+
+.mat-column-civ, .mat-cell-civ {
+    min-width: 70px;
+}
+
+.mat-column-descripcion_localidad, .mat-cell-descripcion_localidad {
+    min-width: 102px;
+}
+
+.mat-cell {
+    margin-right: 5px;
+    border-right: 1px solid lightgray;
+}
+
+@media (min-width: 645px) {
+    .contenedor-controles-datatable {
+        display:flex;
+        align-items:center;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        mat-paginator{
+            margin-left: auto;
+        }
+    }
+}  
+
+.contenedor-controles-datatable{
+    button{
+        overflow: hidden;
+    }
+}
+
+mat-table {
+    width:100%;
+}
+
+::ng-deep .mat-tooltip {
+    white-space: pre-line !important;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.form-box {
+    margin-top: 1rem;
+}
+
+.btn-box {
+    display: block;
+    padding-left: 0.5rem;
+}
+
+.act-btn {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.act-btn-2 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mat-card>    <mat-card-header class="mat-card-header-umv">      <div class="mat-card-header-text">        <mat-card-subtitle>          <h2 *ngIf = "!edit_flag">Asociar Solicitud</h2>          <h2 *ngIf = "edit_flag">Editar Solicitud</h2>        </mat-card-subtitle>      </div>    </mat-card-header>    <form [formGroup]="formEditar" (ngSubmit)="onSubmit()" class="form-box">      <mat-form-field appearance="outline" class = "campo">        <mat-label>Radicado *</mat-label>        <input matInput formControlName="radicado" type="number" autocomplete="off">        <mat-error *ngIf="!validNumeroRadicado">            (!) Campo requerido        </mat-error>        <button *ngIf="radicado" matSuffix mat-icon-button aria-label="Clear" (click)="LimpiarNumeroRadicado()">          <mat-icon>close</mat-icon>        </button>      </mat-form-field>      <mat-form-field appearance="outline" class="campo" style="width: 40%;">        <mat-label>Asunto</mat-label>        <input matInput formControlName="asunto" maxlength="100" readonly>      </mat-form-field>      <mat-form-field appearance="outline" class="campo">        <mat-label>Fecha de Radicado</mat-label>        <input matInput formControlName="fechaRadicado" [matDatepicker]="picker0" placeholder="DD/MM/YYYY" readonly>        <mat-datepicker-toggle matSuffix [for]="picker0" disabled></mat-datepicker-toggle>        <mat-datepicker #picker0></mat-datepicker>      </mat-form-field>      <button         mat-raised-button         class="color-primary-100 act-btn-2"         [disabled]="!validNumeroRadicado"        (click)="buscarRadicadoOrfeo()"        >        <mat-icon>search</mat-icon>        Buscar      </button>    </form>    <app-lista-radicados *ngIf="false"        (opcionSeleccionada)="opcionSeleccionadaEvt($event)"        (registroSeleccionado)="registroSeleccionadoEvt($event)"        [actualizador]="updateSubject.asObservable()">    </app-lista-radicados>    <div class="btn-box">      <button type="button" mat-raised-button class="color-primary-100 act-btn" [disabled]="formEditar.invalid || realizandoCounsulta" (click)="enviar()">        <mat-icon>check</mat-icon>        <mat-icon *ngIf="realizandoCounsulta">            <mat-spinner diameter="20"></mat-spinner>        </mat-icon>        Asociar      </button>      <button type="button" mat-raised-button class="color-primary-100 act-btn-2" (click)="regresarEvent.emit()">        <mat-icon>cancel</mat-icon>        Cerrar      </button>    </div></mat-card></div>'
+    var COMPONENTS = [{'name': 'ActualizarAlternativaComponent', 'selector': 'app-actualizar-alternativa'},{'name': 'ActualizarApiquesComponent', 'selector': 'app-actualizar-apiques'},{'name': 'ActualizarComponent', 'selector': 'app-actualizar'},{'name': 'ActualizarComponent', 'selector': 'app-actualizar'},{'name': 'ActualizarComponent', 'selector': 'app-actualizar'},{'name': 'ActualizarComponent', 'selector': 'app-actualizar'},{'name': 'ActualizarComponent', 'selector': 'app-actualizar'},{'name': 'ActualizarNovedadComponent', 'selector': 'app-actualizar-novedad'},{'name': 'AforosComponent', 'selector': 'app-aforos'},{'name': 'AgendaVisitasComponent', 'selector': 'app-agenda-visitas'},{'name': 'AlcaldiasComponent', 'selector': 'app-alcaldias'},{'name': 'AnalisisTransitoComponent', 'selector': 'app-analisis-transito'},{'name': 'ApiquesAforosComponent', 'selector': 'app-apiques-aforos'},{'name': 'ApiquesAledaniosComponent', 'selector': 'app-apiques-aledanios'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AreaIntervencionComponent', 'selector': 'app-area-intervencion'},{'name': 'AsignarConductorOperarioComponent', 'selector': 'app-asignar-conductor-operario'},{'name': 'AsignarMisionalidadComponent', 'selector': 'app-asignar-misionalidad'},{'name': 'AsignarRecursoComponent', 'selector': 'app-asignar-recurso'},{'name': 'AsignarSeguimientoComponent', 'selector': 'app-asignar-seguimiento'},{'name': 'AsignarVisitasComponent', 'selector': 'app-asignar-visitas'},{'name': 'AsociarAforosComponent', 'selector': 'app-asociar-aforos'},{'name': 'AutoprogramarVisitaComponent', 'selector': 'app-autoprogramar-visita'},{'name': 'AvanceMantenimientoComponent', 'selector': 'app-avance-mantenimiento'},{'name': 'AvanceMasivoMantenimientoComponent', 'selector': 'app-avance-masivo-mantenimiento'},{'name': 'BuscarRadicadoComponent', 'selector': 'app-buscar-radicado'},{'name': 'BusquedaMantenimientosComponent', 'selector': 'app-busqueda-mantenimientos'},{'name': 'CalendarioAsignacionCoComponent', 'selector': 'app-calendario-asignacion-co'},{'name': 'CambioContraseniaComponent', 'selector': 'app-cambio-contrasenia'},{'name': 'CargueArchivoComponent', 'selector': 'app-cargue-archivo'},{'name': 'CargueDocumentosComponent', 'selector': 'app-cargue-documentos'},{'name': 'CarguesMejoramientoComponent', 'selector': 'app-cargues-mejoramiento'},{'name': 'ConsultaAlternativaComponent', 'selector': 'app-consulta-alternativa'},{'name': 'ConsultaApiquesComponent', 'selector': 'app-consulta-apiques'},{'name': 'ConsultaDisenioComponent', 'selector': 'app-consulta-disenio'},{'name': 'ConsultaGeneralGestionComponent', 'selector': 'app-consulta-general-gestion'},{'name': 'ConsultaHistorialComponent', 'selector': 'app-consulta-historial'},{'name': 'ConsultarApiquesComponent', 'selector': 'app-consultar-apiques'},{'name': 'ConsultasMejoramientoComponent', 'selector': 'app-consultas-mejoramiento'},{'name': 'ConsultaVisitaDiagnosticoComponent', 'selector': 'app-consulta-visita-diagnostico'},{'name': 'ConsultaVisitaEncabezadoComponent', 'selector': 'app-consulta-visita-encabezado'},{'name': 'ControlSolicitudesPmtComponent', 'selector': 'app-control-solicitudes-pmt'},{'name': 'CreateLugarComponent', 'selector': 'app-create-lugar'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DetalleDocumentosComponent', 'selector': 'app-detalle-documentos'},{'name': 'DialogConfirmComponent', 'selector': 'app-dialog-confirm'},{'name': 'DialogConfirmComponent', 'selector': 'app-dialog-confirm'},{'name': 'DialogConfirmComponent', 'selector': 'app-dialog-confirm'},{'name': 'DialogoMotivoCancelacionComponent', 'selector': 'app-dialogo-motivo-cancelacion'},{'name': 'DialogVerVisitaDiagnostico', 'selector': 'dialog-ver-visita-diagnostico'},{'name': 'DialogVerVisitaDisenioComponent', 'selector': 'app-dialog-ver-visita-disenio'},{'name': 'DialogVerVisitaDiseno', 'selector': 'dialog-ver-visita-diseno'},{'name': 'DropZoneDocumentosComponent', 'selector': 'app-drop-zone-documentos'},{'name': 'EditarAsignacionComponent', 'selector': 'app-editar-asignacion'},{'name': 'EditarAsociarCoiComponent', 'selector': 'app-editar-asociar-coi'},{'name': 'EditarAsociarSolicitudComponent', 'selector': 'app-editar-asociar-solicitud'},{'name': 'EditarProgramacionComponent', 'selector': 'app-editar-programacion'},{'name': 'EditarProgramacionPeriodicaComponent', 'selector': 'app-editar-programacion-periodica'},{'name': 'EditarReporteFalloComponent', 'selector': 'app-editar-reporte-fallo'},{'name': 'EliminarComponent', 'selector': 'app-eliminar'},{'name': 'EliminarComponent', 'selector': 'app-eliminar'},{'name': 'EliminarComponent', 'selector': 'app-eliminar'},{'name': 'EliminarComponent', 'selector': 'app-eliminar'},{'name': 'EnEsperaComponent', 'selector': 'app-en-espera'},{'name': 'GestionarMisionalidadComponent', 'selector': 'app-gestionar-misionalidad'},{'name': 'GestionarPeticionarioComponent', 'selector': 'app-gestionar-peticionario'},{'name': 'GestionarReservaComponent', 'selector': 'app-gestionar-reserva'},{'name': 'GestionarSeguimientoComponent', 'selector': 'app-gestionar-seguimiento'},{'name': 'GestionMasivaComponent', 'selector': 'app-gestion-masiva'},{'name': 'GestionMisionalidadComponent', 'selector': 'app-gestion-misionalidad'},{'name': 'GestionSolicitudComponent', 'selector': 'app-gestion-solicitud'},{'name': 'HistorialMantenimientoComponent', 'selector': 'app-historial-mantenimiento'},{'name': 'InformeDetalleComponent', 'selector': 'app-informe-detalle'},{'name': 'InformeSolicitudComponent', 'selector': 'app-informe-solicitud'},{'name': 'InsertarComponent', 'selector': 'app-insertar'},{'name': 'InsertarComponent', 'selector': 'app-insertar'},{'name': 'InsertarComponent', 'selector': 'app-insertar'},{'name': 'InsertarComponent', 'selector': 'app-insertar'},{'name': 'InsertarComponent', 'selector': 'app-insertar'},{'name': 'InsertarFranjaComponent', 'selector': 'app-insertar-franja'},{'name': 'InsertarNovedadComponent', 'selector': 'app-insertar-novedad'},{'name': 'ListaAforosComponent', 'selector': 'app-lista-aforos'},{'name': 'ListaAlternativaComponent', 'selector': 'app-lista-alternativa'},{'name': 'ListaContratosMqeqComponent', 'selector': 'app-lista-contratos-mqeq'},{'name': 'ListaFallosComponent', 'selector': 'app-lista-fallos'},{'name': 'ListaFranjasComponent', 'selector': 'app-lista-franjas'},{'name': 'ListaLugarComponent', 'selector': 'app-lista-lugar'},{'name': 'ListaMaqEquDisponiblesComponent', 'selector': 'app-lista-maq-equ-disponibles'},{'name': 'ListaMaqEquVigentesComponent', 'selector': 'app-lista-maq-equ-vigentes'},{'name': 'ListaMaquinariaEquiposComponent', 'selector': 'app-lista-maquinaria-equipos'},{'name': 'ListaPendientesComponent', 'selector': 'app-lista-pendientes'},{'name': 'ListaPksActaComponent', 'selector': 'app-lista-pks-acta'},{'name': 'ListaPksAsociarComponent', 'selector': 'app-lista-pks-asociar'},{'name': 'ListaProgramacionPeriocidadComponent', 'selector': 'app-lista-programacion-periocidad'},{'name': 'ListaProgramacionSinpmtComponent', 'selector': 'app-lista-programacion-sinpmt'},{'name': 'ListaRadicadosComponent', 'selector': 'app-lista-radicados'},{'name': 'ListarAlternativasComponent', 'selector': 'app-listar-alternativas'},{'name': 'ListarApiquesComponent', 'selector': 'app-listar-apiques'},{'name': 'ListarComponent', 'selector': 'app-listar'},{'name': 'ListarComponent', 'selector': 'app-listar'},{'name': 'ListarComponent', 'selector': 'app-listar'},{'name': 'ListarComponent', 'selector': 'app-listar'},{'name': 'ListarComponent', 'selector': 'app-listar'},{'name': 'ListarFranjaComponent', 'selector': 'app-listar-franja'},{'name': 'ListarNovedadComponent', 'selector': 'app-listar-novedad'},{'name': 'ListaSeguimientoComponent', 'selector': 'app-lista-seguimiento'},{'name': 'ListaTransicionComponent', 'selector': 'app-lista-transicion'},{'name': 'ListaVerificacionComponent', 'selector': 'app-lista-verificacion'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapaSeleccionComponent', 'selector': 'app-mapa-seleccion'},{'name': 'MapaUmvComponent', 'selector': 'app-mapa-umv'},{'name': 'MapComponent', 'selector': 'app-map'},{'name': 'MenuItemComponent', 'selector': 'app-menu-item'},{'name': 'ModalAutoprogramarComponent', 'selector': 'app-modal-autoprogramar'},{'name': 'ModalCargueArchivoComponent', 'selector': 'app-modal-cargue-archivo'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'ModalConfirmarComponent', 'selector': 'app-modal-confirmar'},{'name': 'ModalConfirmarComponent', 'selector': 'app-modal-confirmar'},{'name': 'ModalConfirmarComponent', 'selector': 'app-modal-confirmar'},{'name': 'ModalDescargaArchivoComponent', 'selector': 'app-modal-descarga-archivo'},{'name': 'ModalListaEnsayosComponent', 'selector': 'app-modal-lista-ensayos'},{'name': 'ModalListaMaterialesComponent', 'selector': 'app-modal-lista-materiales'},{'name': 'ModalTableAsociarComponent', 'selector': 'app-modal-table-asociar'},{'name': 'ModalVersionComponent', 'selector': 'app-modal-version'},{'name': 'NotAuthorizedComponent', 'selector': 'app-not-authorized'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NovedadadesIntervencionComponent', 'selector': 'app-novedadades-intervencion'},{'name': 'ProgramacionPeriodicaIntervencionComponent', 'selector': 'app-programacion-periodica-intervencion'},{'name': 'ProgramacionVisitaTecnicaComponent', 'selector': 'app-programacion-visita-tecnica'},{'name': 'ProgramarComponent', 'selector': 'app-programar'},{'name': 'ProgressComponent', 'selector': 'app-progress'},{'name': 'RealizarSolicitudesComponent', 'selector': 'app-realizar-solicitudes'},{'name': 'RegistrarInsumosComponent', 'selector': 'app-registrar-insumos'},{'name': 'RegistrarPriorizacionComponent', 'selector': 'app-registrar-priorizacion'},{'name': 'RegistrarServicioComponent', 'selector': 'app-registrar-servicio'},{'name': 'RegistroAforosComponent', 'selector': 'app-registro-aforos'},{'name': 'RegistroAlternativaComponent', 'selector': 'app-registro-alternativa'},{'name': 'RegistroApiqueComponent', 'selector': 'app-registro-apique'},{'name': 'RegistroCapaComponent', 'selector': 'app-registro-capa'},{'name': 'RegistroDatosAforoComponent', 'selector': 'app-registro-datos-aforo'},{'name': 'RegistroDiarioComponent', 'selector': 'app-registro-diario'},{'name': 'RegistroDiarioComponent', 'selector': 'app-registro-diario'},{'name': 'RegistroDisenoComponent', 'selector': 'app-registro-diseno'},{'name': 'RegistroFallasComponent', 'selector': 'app-registro-fallas'},{'name': 'RegistroFotoComponent', 'selector': 'app-registro-foto'},{'name': 'RegistroInsumosComponent', 'selector': 'app-registro-insumos'},{'name': 'RegistroOtrosFactoresComponent', 'selector': 'app-registro-otros-factores'},{'name': 'RegistroUnidadMuestreoComponent', 'selector': 'app-registro-unidad-muestreo'},{'name': 'RegistroVisitaComponent', 'selector': 'app-registro-visita'},{'name': 'RegistroVisitaDiagnosticoComponent', 'selector': 'app-registro-visita-diagnostico'},{'name': 'RegistroVisitaVerificacionComponent', 'selector': 'app-registro-visita-verificacion'},{'name': 'ReportarFalloComponent', 'selector': 'app-reportar-fallo'},{'name': 'ResultadoEnsayoComponent', 'selector': 'app-resultado-ensayo'},{'name': 'RevisarDisenoComponent', 'selector': 'app-revisar-diseno'},{'name': 'RevisarVisitaDiagnosticoComponent', 'selector': 'app-revisar-visita-diagnostico'},{'name': 'RevisionVisitaDiagnosticoComponent', 'selector': 'app-revision-visita-diagnostico'},{'name': 'SeccionCantidadesDeObraComponent', 'selector': 'app-seccion-cantidades-de-obra'},{'name': 'SeccionControlDeCalidadComponent', 'selector': 'app-seccion-control-de-calidad'},{'name': 'SeccionEquipoPortatilComponent', 'selector': 'app-seccion-equipo-portatil'},{'name': 'SeccionInformacionDelPersonalComponent', 'selector': 'app-seccion-informacion-del-personal'},{'name': 'SeccionInformacionGeneralComponent', 'selector': 'app-seccion-informacion-general'},{'name': 'SeccionInspeccionYOficialCuadrillaComponent', 'selector': 'app-seccion-inspeccion-y-oficial-cuadrilla'},{'name': 'SeccionMaquinariaComponent', 'selector': 'app-seccion-maquinaria'},{'name': 'SeccionMaquinariaComponent', 'selector': 'app-seccion-maquinaria'},{'name': 'SeccionMaterialComponent', 'selector': 'app-seccion-material'},{'name': 'SeccionMaterialesComponent', 'selector': 'app-seccion-materiales'},{'name': 'SeccionMezclaAsfalticasConcretosComponent', 'selector': 'app-seccion-mezcla-asfalticas-concretos'},{'name': 'SeccionObservacionesGeneralesComponent', 'selector': 'app-seccion-observaciones-generales'},{'name': 'SeccionPersonalComponent', 'selector': 'app-seccion-personal'},{'name': 'SeccionProgramacionDiariaComponent', 'selector': 'app-seccion-programacion-diaria'},{'name': 'SeccionRetiroMaterialesEscombrosComponent', 'selector': 'app-seccion-retiro-materiales-escombros'},{'name': 'SegMapaUmvComponent', 'selector': 'app-seg-mapa-umv'},{'name': 'ServicioApiquesComponent', 'selector': 'app-servicio-apiques'},{'name': 'ServicioDensidadComponent', 'selector': 'app-servicio-densidad'},{'name': 'ServicioFormulaComponent', 'selector': 'app-servicio-formula'},{'name': 'ServicioNucleoComponent', 'selector': 'app-servicio-nucleo'},{'name': 'ServicioOtrosComponent', 'selector': 'app-servicio-otros'},{'name': 'SimpleDialogComponent', 'selector': 'app-simple-dialog'},{'name': 'SincroniacionSPIComponent', 'selector': 'app-sincroniacion-spi'},{'name': 'SolicitudDialogComponent', 'selector': 'app-solicitud-dialog'},{'name': 'SolicitudEnsayoLaboratorioComponent', 'selector': 'app-solicitud-ensayo-laboratorio'},{'name': 'SolicitudesApiquesAforosComponent', 'selector': 'app-solicitudes-apiques-aforos'},{'name': 'TablaFiltrosComponent', 'selector': 'app-tabla-filtros'},{'name': 'TablaGestionPendienteComponent', 'selector': 'app-tabla-gestion-pendiente'},{'name': 'TablaPendientesApiquesComponent', 'selector': 'app-tabla-pendientes-apiques'},{'name': 'TablaRadicadoVinculadoComponent', 'selector': 'app-tabla-radicado-vinculado'},{'name': 'TablaSeguimientosComponent', 'selector': 'app-tabla-seguimientos'},{'name': 'TablaVincularComponent', 'selector': 'app-tabla-vincular'},{'name': 'TableDocumentosComponent', 'selector': 'app-table-documentos'},{'name': 'TableEnsayoComponent', 'selector': 'app-table-ensayo'},{'name': 'TableInformeComponent', 'selector': 'app-table-informe'},{'name': 'TableMantenimientosActivosComponent', 'selector': 'app-table-mantenimientos-activos'},{'name': 'TableNomenclaturaApiqueComponent', 'selector': 'app-table-nomenclatura-apique'},{'name': 'TableVersionSolicitudComponent', 'selector': 'app-table-version-solicitud'},{'name': 'TabsDistribuidorComponent', 'selector': 'app-tabs-distribuidor'},{'name': 'TabSeccionesComponent', 'selector': 'app-tab-secciones'},{'name': 'TabSeccionesComponent', 'selector': 'app-tab-secciones'},{'name': 'UbicarApiqueComponent', 'selector': 'app-ubicar-apique'},{'name': 'ValidacionVisitaDiagnosticoComponent', 'selector': 'app-validacion-visita-diagnostico'},{'name': 'ValidarDisenoComponent', 'selector': 'app-validar-diseno'},{'name': 'ValidarVisitaDiagnosticoComponent', 'selector': 'app-validar-visita-diagnostico'},{'name': 'VerAlternativaComponent', 'selector': 'app-ver-alternativa'},{'name': 'VerComponent', 'selector': 'app-ver'},{'name': 'VerComponent', 'selector': 'app-ver'},{'name': 'VerComponent', 'selector': 'app-ver'},{'name': 'VerComponent', 'selector': 'app-ver'},{'name': 'VerComponent', 'selector': 'app-ver'},{'name': 'VerDetalleMantenimientoComponent', 'selector': 'app-ver-detalle-mantenimiento'},{'name': 'VerEquipoComponent', 'selector': 'app-ver-equipo'},{'name': 'VerFallasComponent', 'selector': 'app-ver-fallas'},{'name': 'VerFotosComponent', 'selector': 'app-ver-fotos'},{'name': 'VerGrupoComponent', 'selector': 'app-ver-grupo'},{'name': 'VerLugarComponent', 'selector': 'app-ver-lugar'},{'name': 'VerOtroFactorComponent', 'selector': 'app-ver-otro-factor'},{'name': 'VerParametrosDisenioComponent', 'selector': 'app-ver-parametros-disenio'},{'name': 'VerPersonaComponent', 'selector': 'app-ver-persona'},{'name': 'VincularPeticionarioComponent', 'selector': 'app-vincular-peticionario'},{'name': 'VisorFotosComponent', 'selector': 'app-visor-fotos'},{'name': 'WebMapaUmvComponent', 'selector': 'app-web-mapa-umv'},{'name': 'WelcomeComponent', 'selector': 'app-welcome'}];
+    var DIRECTIVES = [{'name': 'DndDirective', 'selector': '[appDnd]'},{'name': 'MsgErrorDirective', 'selector': '[msg-error]'},{'name': 'MsgErrorDirective', 'selector': '[msg-error]'}];
+    var ACTUAL_COMPONENT = {'name': 'EditarAsociarSolicitudComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'EditarAsociarSolicitudComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

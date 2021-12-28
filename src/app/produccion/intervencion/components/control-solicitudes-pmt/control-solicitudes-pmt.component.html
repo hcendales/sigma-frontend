@@ -1,0 +1,61 @@
+<mat-card>
+  <mat-card-header class="mat-card-header-umv">
+    <div class="mat-card-header-text">
+      <mat-card-subtitle>
+        <h2>Control Solicitudes PMT</h2>
+      </mat-card-subtitle>
+    </div>
+  </mat-card-header>
+</mat-card>
+
+<ng-container *ngIf="modo == 'salida'">
+  <app-mapa-umv #mapa
+    [center]="mapCenter"
+    [basemap]="basemapType"
+    [zoom]="mapZoomLevel"
+    (pkSelected)="pkSelectedEvt($event)"
+    (filterPK)="filterDataPK($event)"
+    (mapLoaded)="cargaMapa($event)">
+  </app-mapa-umv>
+</ng-container>
+<ng-container *ngIf="modo == 'salida'">
+  <mat-card>
+    <app-lista-programacion-sinpmt
+      (dataSourceEmiter)="getDataSource($event)"
+      (filterPKs)="filtrarMapa($event)"
+      (opcionSeleccionada)="opcionSeleccionadaEvt($event)"
+      (registroSeleccionado)="registroSeleccionadoEvt($event)"
+      (irPK)="irAPk($event)"
+      (modal)="buscarRegistros($event)"
+      >
+    </app-lista-programacion-sinpmt>
+    <div *ngIf="cargandoComponente" class="nota-cargando">
+      <h2 >Cargando</h2> <mat-spinner diameter="20"></mat-spinner>
+    </div>
+  </mat-card>
+</ng-container>
+<ng-container *ngIf="modo == 'solicitud'">
+  <app-editar-asociar-solicitud 
+    [edit_flag]=false
+    [arrayChecked]="arrayChecked"
+    (almacenadoEvent)="modo = 'salida'"
+    (regresarEvent)="modo = 'salida'"
+  ></app-editar-asociar-solicitud>
+</ng-container>
+<ng-container *ngIf="modo == 'coi'">
+  <app-editar-asociar-coi 
+    [edit_flag]=false
+    [arrayChecked]="arrayChecked"
+    (almacenadoEvent)="modo = 'salida'"
+    (regresarEvent)="modo = 'salida'"
+  ></app-editar-asociar-coi>
+</ng-container>
+
+<ng-container *ngIf="modo == 'radicados'">
+    <app-lista-radicados 
+        [arrayChecked]="arrayChecked"
+        (opcionSeleccionada)="opcionSeleccionadaEvt($event)"
+        (registroSeleccionado)="registroSeleccionadoEvt($event)"
+        [actualizador]="updateSubject.asObservable()">
+    </app-lista-radicados>
+</ng-container>

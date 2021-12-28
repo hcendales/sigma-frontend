@@ -1,0 +1,61 @@
+//@import "app/theme/styles/variables";
+
+.contenido-seccion{
+    display: grid;
+  }
+  
+  .campo{
+  
+  padding: 0.5rem;
+  }
+  
+  mat-card{
+  margin-bottom: 1rem;
+  }
+  
+  
+  @media (min-width: 1001px) {
+    .contenido-seccion{
+        grid-template-columns: repeat(5, 1fr);
+  
+    }
+  }
+  
+  @media (max-width: 1000px) {
+  
+    .contenido-seccion{
+        grid-template-columns: repeat(4, 1fr);
+  
+    }
+  }
+  
+  @media (max-width: 690px) {
+    .contenido-seccion{
+        grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (max-width: 430px) {
+    .contenido-seccion{
+        grid-template-columns: 1fr;
+    }
+  }
+  
+  .contenido-seccion-unds{
+    .unidad-muestreo{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      .titulo{
+        grid-column: 1 / -1;
+      }
+    }
+  }
+  
+  .nombre{
+    color: blue;
+    font-size: 1em;
+  }
+  
+  mat-card-subtitle{
+    color: green;
+  }  

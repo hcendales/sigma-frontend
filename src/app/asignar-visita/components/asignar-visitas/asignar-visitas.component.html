@@ -1,0 +1,33 @@
+<app-mapa-umv #mapa
+  [parent]="this"
+  [center]="mapCenter"
+  [basemap]="basemapType"
+  [zoom]="mapZoomLevel"
+  (pkSelected)="pkSelectedEvt($event)"
+  (filterPK)="filterDataPK($event)"
+  >
+</app-mapa-umv>
+<mat-card>
+    <mat-card-header class="mat-card-header-umv">
+      <div class="mat-card-header-text">
+        <mat-card-subtitle>
+          <h2>{{title}}</h2>
+        </mat-card-subtitle>
+      </div>
+    </mat-card-header>
+    <app-gestion-masiva [cargueAutomatico] = "true" [idActividad] = "idActividad"
+    [mostrarOpcionDefaultTabla]="false"
+     *ngIf="idActividad != null && routeReady" (ready)="componenteListo()"
+     (dataSource)="getDataSource($event)"
+     (selecteDataSource)="getSelecteDataSource($event)"
+     [selectedFeatures]="selectedFeatures" #listaTransicion
+     (gestionRealizada)="gestionRealizadaEvt($event)"
+     [acciones]="acciones"
+     (onOpcionSelected)="onOpcionSelectedEvt($event)"
+     [export_flag]="export_flag"
+     [columnas]="displayedColumns">
+    </app-gestion-masiva>
+    <div *ngIf="cargandoComponente" class="nota-cargando">
+    <h2 >Cargando </h2> <mat-spinner diameter="20"></mat-spinner>
+    </div>
+</mat-card>

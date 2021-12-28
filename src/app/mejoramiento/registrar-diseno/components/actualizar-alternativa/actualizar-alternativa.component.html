@@ -1,0 +1,142 @@
+<h2 mat-dialog-title>Gestionar Diseño</h2>
+<div mat-dialog-content>
+<mat-card>
+  <mat-card-header class="mat-card-header-umv">
+    <div class="mat-card-header-text">
+      <mat-card-subtitle>
+        <h2>{{titulo}} {{numeroAlternativa}}</h2>
+      </mat-card-subtitle>
+    </div>
+  </mat-card-header>
+  <mat-card-content *ngIf="ready">
+      <form [formGroup]="formEntity" (ngSubmit)="onSubmit()">
+      <div formGroupName="alternativa" class="contenedorFormGroup" id="seccionAlternativa">
+        <h3>Información de Diseño</h3>
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Tipo de Superficie de Diseño</mat-label>
+            <mat-select formControlName="idTipoSuperficieDisenio">
+              <mat-option *ngFor="let tipo of listas[88]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="tipoSuperficieField.hasError('required')">Campo requerido</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Material Granular</mat-label>
+            <mat-select formControlName="idTipoMaterialGranular">
+              <mat-option *ngFor="let tipo of listas[85]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="materialGranularField.hasError('required')">Campo requerido</mat-error>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Tipo de Intervención Final</mat-label>
+            <mat-select formControlName="idTipoIntervencionFinalDisenio">
+              <mat-option *ngFor="let tipo of listas[84]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="tipoIntervencionFinalField.hasError('required')">Campo requerido</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Espesor (m)</mat-label>
+            <input matInput formControlName="espesorDisenio" autocomplete="off">
+            <mat-error *ngIf="espesorField.hasError('required')">Campo requerido</mat-error>
+            <mat-error *ngIf="espesorField.hasError('maxlength')">Maximo de caracteres 4</mat-error>
+            <mat-error *ngIf="espesorField.hasError('pattern')">Solo numeros</mat-error>
+            <mat-error *ngIf="espesorField.hasError('min')">Valor minimo 0</mat-error>
+            <mat-error *ngIf="espesorField.hasError('max')">Valor máximo 2</mat-error>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Metodología de Diseño</mat-label>
+            <mat-select formControlName="idTipoMetodologiaDisenio">
+              <mat-option *ngFor="let tipo of listas[86]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="tipoMetodologiaField.hasError('required')">Campo requerido</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>CBR inicial (%)</mat-label>
+            <input matInput formControlName="cbrInicialPct" autocomplete="off">
+            <mat-error *ngIf="cbrInicialPctField.hasError('required')">Campo requerido</mat-error>
+            <mat-error *ngIf="cbrInicialPctField.hasError('maxlength')">Maximo de caracteres 10</mat-error>
+            <mat-error *ngIf="cbrInicialPctField.hasError('pattern')">Solo numeros</mat-error>
+            <mat-error *ngIf="cbrInicialPctField.hasError('min')">Valor minimo 0</mat-error>
+            <mat-error *ngIf="cbrInicialPctField.hasError('max')">Valor maximo 100</mat-error>
+          </mat-form-field>
+        </p>
+      </div>
+      <div>
+        <ng-container formArrayName="capas">
+          <h3>Capas</h3>
+          <ng-container *ngFor="let capaForm of capas.controls; let i = index">
+            <div [formGroupName]="i">
+              <mat-form-field appearance="outline">
+                <mat-label>Tipo {{i+1}}</mat-label>
+                <mat-select formControlName="idTipoCapa">
+                  <mat-option *ngFor="let tipo of listas[89]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="capaForm.get('idTipoCapa')?.hasError('required')">Campo requerido</mat-error>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>Espesor(m)</mat-label>
+                <input matInput formControlName="espesor" autocomplete="off">
+                <mat-error *ngIf="capaForm.get('espesor')?.hasError('required')">Campo requerido</mat-error>
+                <mat-error *ngIf="capaForm.get('espesor')?.hasError('min')">Valor minimo 0</mat-error>
+                <mat-error *ngIf="capaForm.get('espesor')?.hasError('max')">Valor máximo 50</mat-error>
+                <mat-error *ngIf="capaForm.get('espesor')?.hasError('pattern')">Solo numeros</mat-error>
+              </mat-form-field>
+                <button type="button" mat-mini-fab color="primary" (click)="deleteCapa(i)"><mat-icon class="mat-18">delete</mat-icon></button>
+            </div>
+          </ng-container>
+          <button type="button" mat-mini-fab (click)="addCapa()">
+            <mat-icon class="mat-18">add</mat-icon>
+          </button>
+        </ng-container>
+      </div>
+      <div>
+        <h3>Complementarios</h3>
+        <mat-card-content>
+          <mat-form-field appearance="outline">
+            <mat-label>Geosinteticos</mat-label>
+            <mat-select formControlName="idTipoGeosinteticos">
+              <mat-option *ngFor="let tipo of listas[83]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="tipoGeosinteticosField.hasError('required')">Campo requerido</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Sistema de Drenaje</mat-label>
+            <mat-select formControlName="idTipoSistemaDrenaje">
+              <mat-option *ngFor="let tipo of listas[87]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="tipoSistemaDrenajeField.hasError('required')">Campo requerido</mat-error>
+          </mat-form-field>
+        </mat-card-content>
+      </div>
+      <div>
+        <h3>Observaciones de Información de Diseño</h3>
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Observaciones</mat-label>
+            <input matInput formControlName="observaciones" autocomplete="off">
+            <mat-error *ngIf="observacionesField.hasError('required')">Campo requerido</mat-error>
+            <mat-error *ngIf="observacionesField.hasError('maxlength')">Maximo de caracteres 300</mat-error>
+          </mat-form-field>
+        </p>
+      </div>
+      </form>
+  </mat-card-content>
+  <mat-card-actions align="start">
+    <div class="example-button-row">
+      <button mat-button mat-dialog-close (click)="cancel($event)">Cancel</button>
+      <button mat-flat-button color="primary" (click)="onSubmit()">Guardar</button>
+    </div>
+  </mat-card-actions>
+</mat-card>
+</div>
+
+

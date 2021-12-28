@@ -1,0 +1,9 @@
+.nota-cargando {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    margin-top: 1rem;
+    mat-spinner{
+        margin-left: 0.5rem;
+    }
+  }

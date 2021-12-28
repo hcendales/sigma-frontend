@@ -1,0 +1,51 @@
+<ng-container *ngIf="modo == 'salida'">
+  <mat-card>
+      <mat-card-header class="mat-card-header-umv">
+        <div class="mat-card-header-text">
+          <mat-card-subtitle>
+            <h2>Calendario de Asignación</h2>
+          </mat-card-subtitle>
+        </div>
+      </mat-card-header>
+      <div class="calendar">
+        <div class="ampm-box">
+          <button type="button" (click)="horario('am')" [ngClass]="{'green' : diurno_toggle, 'red': !diurno_toggle}">
+            Diurno
+          </button>
+          <button type="button" (click)="horario('pm')" [ngClass]="{'green' : nocturno_toggle, 'red': !nocturno_toggle}">
+            Nocturno
+          </button>
+        </div>
+        <mat-calendar #calendar
+        [dateClass]="dateClass()"
+        
+        (selectedChange)="getChangedValue($event)">
+        </mat-calendar>
+        <div>
+          <button type="button" mat-raised-button class="color-warn-800 cnl-btn" (click)="volver()">
+            <mat-icon>cancel</mat-icon>
+            Cerrar
+          </button>
+          <button type="button" mat-raised-button class="exp-btn color-primary-100" (click)="exportexcel()">
+            <mat-icon>download</mat-icon>
+            Exportar Reporte
+          </button>
+          <button type="button" mat-raised-button class="exp-btn" (click)="reasignar()">
+            <mat-icon>reply</mat-icon>
+            Reasignar
+          </button>
+        </div>
+      </div>
+      <div *ngIf="cargandoComponente" class="nota-cargando">
+        <h2 >Cargando</h2> <mat-spinner diameter="20"></mat-spinner>
+      </div>
+  </mat-card>
+</ng-container>
+<ng-container *ngIf="modo == 'franjas'">
+  <app-lista-franjas
+    [relaciones]="row"
+    (opcionSeleccionada)="opcionSeleccionadaEvt($event)"
+    (registroSeleccionado)="registroSeleccionadoEvt($event)"
+    [actualizador]="updateSubject.asObservable()">
+  </app-lista-franjas>
+</ng-container>

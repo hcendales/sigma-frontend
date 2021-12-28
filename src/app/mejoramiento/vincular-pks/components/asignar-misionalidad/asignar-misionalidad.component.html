@@ -1,0 +1,36 @@
+<app-web-mapa-umv #mapa
+  [center]="mapCenter"
+  [zoom]="mapZoomLevel"
+  (addMant)="addMantenimientoPk($event)">
+</app-web-mapa-umv>
+<mat-card>
+    <mat-card-header class="mat-card-header-umv">
+      <div class="mat-card-header-text">
+        <mat-card-subtitle>
+          <h2>Asignar PKs para Misionalidad</h2>
+        </mat-card-subtitle>
+      </div>
+    </mat-card-header>
+    <mat-radio-group placeholder="Seleccione origen" [(ngModel)]="tipoOrigen" (change)="selTipoOrigen()" required>
+     <mat-radio-button value=373>
+       Origen: Misionalidad
+     </mat-radio-button>
+     <mat-radio-button value=374>
+       Origen: Otros
+     </mat-radio-button>
+    </mat-radio-group>
+    <app-tabla-vincular #tablaPks>
+    </app-tabla-vincular>
+
+    <button mat-raised-button color="primary" (click)="processData()" [disabled]="dataVinc.length == 0 || routeReady">
+          <div class='btn-text-spiner-container'>
+              <span  *ngIf="!routeReady">
+                  {{'Gestionar mantenimiento' + ' ('+dataVinc.length+' registros)'}}&nbsp;
+              </span>
+              <span  *ngIf="routeReady">
+                  Enviando
+              </span>
+              <mat-spinner *ngIf="routeReady" diameter="20"></mat-spinner><mat-icon *ngIf="!routeReady">send</mat-icon>
+          </div>
+    </button>
+<mat-card>

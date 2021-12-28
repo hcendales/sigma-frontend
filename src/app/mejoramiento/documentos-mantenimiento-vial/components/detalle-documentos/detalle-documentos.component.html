@@ -1,0 +1,12 @@
+
+<app-table-documentos [idMantenimiento]="0" (actualizar)="filaTabla($event)" [notificador]="notificador" ></app-table-documentos>
+<app-drop-zone-documentos [idMantenimiento]="0" [actualizarArchivo]="actualizarArchivo" (reCargar)="reCargar($event)"></app-drop-zone-documentos>
+
+<div style="flex: 1; text-align: right; margin-right: 16px;">
+    <mat-action-row>
+        <button type="button" mat-raised-button class="color-primary-100" [routerLink]="['../../']">
+            <mat-icon>close</mat-icon>
+            Cerrar
+        </button>
+    </mat-action-row>
+</div>

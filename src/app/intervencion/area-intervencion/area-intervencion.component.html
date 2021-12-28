@@ -1,0 +1,41 @@
+<h2 mat-dialog-title>Área {{data.indexAreraIntervencion + 1}}</h2>
+<form [formGroup]="formAreaIntervencion" (ngSubmit)="onSubmit()" *ngIf="ready">
+  <mat-form-field *ngIf ="formAreaIntervencion.get('elemento')" appearance="outline">
+      <mat-label>Elemento</mat-label>
+      <mat-select formControlName="elemento">
+        <mat-option [value]="null"> -- </mat-option>
+        <mat-option *ngFor="let tipo of tipoElemento_lista" [value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+      </mat-select>
+  </mat-form-field>
+  <mat-form-field *ngIf ="formAreaIntervencion.get('idTipoSuperficie')" appearance="outline">
+      <mat-label>Tipo superficie</mat-label>
+      <mat-select formControlName="idTipoSuperficie">
+        <mat-option [value]="null"> -- </mat-option>
+        <mat-option *ngFor="let tipo of listas[42]" [value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+      </mat-select>
+  </mat-form-field>
+  <mat-form-field *ngIf ="formAreaIntervencion.get('longitud')" appearance="outline">
+      <mat-label>Longitud</mat-label>
+      <input matInput formControlName="longitud" type="number" required autocomplete="off">
+  </mat-form-field>
+  <mat-form-field *ngIf ="formAreaIntervencion.get('ancho')" appearance="outline">
+      <mat-label>Ancho</mat-label>
+      <input matInput formControlName="ancho" type="number" required autocomplete="off">
+  </mat-form-field>
+  <mat-form-field *ngIf ="formAreaIntervencion.get('area')" appearance="outline">
+      <mat-label>Area</mat-label>
+      <input matInput formControlName="area" type="number" required autocomplete="off">
+  </mat-form-field>
+  <mat-form-field *ngIf ="formAreaIntervencion.get('idTipoIntervencion')" appearance="outline">
+      <mat-label>Tipo intervención</mat-label>
+      <mat-select formControlName="idTipoIntervencion">
+        <mat-option [value]="null"> -- </mat-option>
+        <mat-option *ngFor="let tipo of listaF" [value]="tipo.id_tipo_intervencion">{{tipo.descripcion_tipo_intervencion}}</mat-option>
+      </mat-select>
+  </mat-form-field>
+</form>
+<mat-dialog-actions align="end">
+  <button *ngIf = "!data.nuevo" type="button" mat-mini-fab color="warn" [mat-dialog-close]="{action:'delete',index:data.indexAreraIntervencion}" > <mat-icon>delete</mat-icon></button>
+  <button type="button" mat-mini-fab color="primary" [mat-dialog-close]="{index:data.indexAreraIntervencion,value:anteriorValor,action:accion}"><mat-icon>undo</mat-icon></button>
+  <button type="button" [disabled]="formAreaIntervencion.status == 'INVALID'" mat-mini-fab color="primary" [mat-dialog-close]="{action:'update',index:data.indexAreraIntervencion,data:formAreaIntervencion,status:formAreaIntervencion.status}"><mat-icon>check</mat-icon></button>
+</mat-dialog-actions>

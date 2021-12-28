@@ -1,0 +1,88 @@
+table {
+  min-width: 100rem;
+}
+
+.mat-cell{
+  min-width: 4rem;
+  border-right: 1px solid lightgray;
+}
+
+.mat-column-descripcion_localidad{
+  min-width: 8rem;
+}
+
+.mat-column-descripcion_barrio{
+  min-width: 12rem;
+}
+
+.mat-column-descripcion_upz{
+  min-width: 10rem;
+}
+
+.mat-column-solicitud_radicado_entrada{
+  min-width: 10rem;
+}
+
+.mat-column-descripcion_origen{
+  min-width: 8rem;
+}
+.mat-column-descripcion_estado_pk{
+  min-width: 7rem;
+}
+
+.mat-column-nombre_responsable_visita{
+  min-width: 8rem;
+}
+
+.mat-column-nombre_responsable_predise{
+  min-width: 8rem;
+}
+
+.mat-column-nombre_responsable_disenio{
+  min-width: 8rem;
+}
+
+.mat-header-cell{
+  min-width: 6rem;
+}
+
+.mat-form-field {
+  font-size: 9px;
+  width: 100%;
+}
+
+.hide {
+  display: none;
+}
+
+/* mat-table */
+mat-footer-row mat-footer-cell{
+  justify-content: center;
+  font-style: italic;
+}
+/* Clear input */
+.search-form-field {
+  width: 200px;
+}
+
+.filter {
+  display: block;
+  width: 40px;
+}
+
+.retraso {
+  color: brown;
+}
+
+.undia {
+  color: orange;
+}
+.normal {
+  color: black;
+}
+#bookmark {
+     position: absolute;
+     top: 80px;
+     right: 20px;
+     z-level: 1000;
+}

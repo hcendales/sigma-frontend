@@ -1,0 +1,181 @@
+<article>
+    <article class="table-header" style="flex: 1; text-align: right; margin-right: 16px;">
+        <button mat-raised-button class="color-primary-100" (click)="removeSelectedRows()">
+            ELIMINAR
+            <mat-icon>delete</mat-icon>
+        </button> &nbsp;
+        <button mat-raised-button class="color-primary-100" (click)="addRow()">
+            NUEVO
+            <mat-icon>add</mat-icon>
+        </button>
+    </article><br>
+    <div class="mat-elevation-z8">
+        <div style="overflow-x: scroll;">
+            <table mat-table [dataSource]="dataSource" matSort>
+                <ng-container [matColumnDef]="col" *ngFor="let col of displayedColumns">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                        <span *ngIf="col !== 'isEdit' && col !== 'isSelected'">
+                            <span *ngIf="col === 'id_tipo_actividad'">TIPO ACTIVIDAD</span>
+                            <span *ngIf="col === 'id_tipo_material'">TIPO MATERIAL</span>
+                            <span *ngIf="col === 'id_tipo_clase_material'">CLASE MATERIAL</span>
+                            <span *ngIf="col === 'id_tipo_unidad_medida'">UNIDAD DE MEDIDA</span>
+                            <span *ngIf="col === 'cantidad'">CANTIDAD</span>
+                            <span *ngIf="col === 'largo'">LARGO</span>
+                            <span *ngIf="col === 'ancho'">ANCHO</span>
+                            <span *ngIf="col === 'espesor'">ESPESOR</span>
+                            <span *ngIf="col === 'volumen_material_compacto'">VOLUMEN MATERIAL COMPACTO</span>
+                            <span *ngIf="col === 'porcentaje_compactacion'">PORCENTAJE COMPACTACION</span>
+                            <span *ngIf="col === 'manual'">MANUAL</span>
+                            <span *ngIf="col === 'mecanica'">MECANICA</span>
+                        </span>
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+
+                        <!-- ****************VISTA POR DEFECTO DE LA TABLA*********** -->
+                        <div [ngSwitch]="dataSchema[col]" *ngIf="!element.isEdit">
+
+                            <div *ngSwitchCase="'id_tipo_actividad'">
+                                {{element.descripcion_tipo_actividad}}
+                            </div>
+                            <div *ngSwitchCase="'id_tipo_material'">
+                                {{element.descripcion_tipo_material}}
+                            </div>
+                            <div *ngSwitchCase="'id_tipo_clase_material'">
+                                {{element.descripcion_clase_material}}
+                            </div>
+                            <div *ngSwitchCase="'id_tipo_unidad_medida'">
+                                {{element.descripcion_unidad_medida}}
+                            </div>
+                            <!-- label por defecto -->
+                            <span *ngSwitchDefault>
+                                {{element[col]}}
+                            </span>
+
+                            <!-- checkbox para seleccionar y eliminar en grupos -->
+                            <ng-container *ngSwitchCase="'isSelected'">
+                                <mat-checkbox (change)="element.isSelected = $event.checked"></mat-checkbox>
+                            </ng-container>
+
+                            <!-- botoneria -->
+                            <div *ngSwitchCase="'isEdit'">
+                                <button mat-icon-button (click)="removeRow(element.id_infdiacua_cant_obra)">
+                                    <mat-icon>delete</mat-icon>
+                                </button>
+                                <button mat-icon-button (click)="element.isEdit = !element.isEdit">
+                                    <mat-icon>edit</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- *************VISTA AL AGREGAR o EDITAR*****************  -->
+                        <div [ngSwitch]="dataSchema[col]" *ngIf="element.isEdit">
+
+                            <ng-container *ngSwitchCase="'id_tipo_actividad'">
+                                <mat-form-field appearance="fill">
+                                    <mat-select [(ngModel)]="element[col]">
+                                        <mat-option>--</mat-option>
+                                        <mat-option *ngFor="let tipo of listas[122]" style="font-size: 18;"
+                                            [value]="tipo.id_tipo">
+                                            {{tipo.descripcion | titlecase}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field><br>
+                                <span msg-error [valido]="element[col]" style="font-size: 8px;"></span>
+                            </ng-container>
+
+                            <ng-container *ngSwitchCase="'id_tipo_material'">
+                                <mat-form-field appearance="fill">
+                                    <mat-select [(ngModel)]="element[col]">
+                                        <mat-option>--</mat-option>
+                                        <mat-option *ngFor="let tipo of listas[122]" style="font-size: 18;"
+                                            [value]="tipo.id_tipo">
+                                            {{tipo.descripcion | titlecase}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field><br>
+                                <span msg-error [valido]="element[col]" style="font-size: 8px;"></span>
+                            </ng-container>
+
+                            <ng-container *ngSwitchCase="'id_tipo_clase_material'">
+                                <mat-form-field appearance="fill">
+                                    <mat-select [(ngModel)]="element[col]">
+                                        <mat-option>--</mat-option>
+                                        <mat-option *ngFor="let tipo of listas[123]" style="font-size: 18;"
+                                            [value]="tipo.id_tipo">
+                                            {{tipo.descripcion | titlecase}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field><br>
+                                <span msg-error [valido]="element[col]" style="font-size: 8px;"></span>
+                            </ng-container>
+
+                            <ng-container *ngSwitchCase="'id_tipo_unidad_medida'">
+                                <mat-form-field appearance="fill">
+                                    <mat-select [(ngModel)]="element[col]">
+                                        <mat-option>--</mat-option>
+                                        <mat-option *ngFor="let tipo of listas[130]" style="font-size: 18;"
+                                            [value]="tipo.id_tipo">
+                                            {{tipo.descripcion | titlecase}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field><br>
+                                <span msg-error [valido]="element[col]" style="font-size: 8px;"></span>
+                            </ng-container>
+
+                            <ng-container *ngSwitchCase="'manual'">
+                                <mat-form-field appearance="fill">
+                                    <mat-select [(ngModel)]="element[col]">
+                                        <mat-option value="SI">SI</mat-option>
+                                        <mat-option value="NO">NO</mat-option>
+                                    </mat-select>
+                                </mat-form-field><br>
+                                <span msg-error [valido]="element[col]" style="font-size: 8px;"></span>
+                            </ng-container>
+
+                            <ng-container *ngSwitchCase="'mecanica'">
+                                <mat-form-field appearance="fill">
+                                    <mat-select [(ngModel)]="element[col]">
+                                        <mat-option value="SI">SI</mat-option>
+                                        <mat-option value="NO">NO</mat-option>
+                                    </mat-select>
+                                </mat-form-field><br>
+                                <span msg-error [valido]="element[col]" style="font-size: 8px;"></span>
+                            </ng-container>
+
+                            <ng-container *ngSwitchCase="'cantidad'">
+                                <mat-form-field appearance="fill">
+                                    <input matInput [(ngModel)]="element[col]" type="number">
+                                </mat-form-field><br>
+                                <br><span msg-error [valido]="element[col]" style="font-size: 8px;"></span>
+                            </ng-container>
+  
+                            <!-- Campos por defectos -->
+                            <mat-form-field *ngSwitchDefault>
+                                <mat-label>{{col}}</mat-label>
+                                <input style="font-size: 15px;" autocomplete="off" [type]="dataSchema[col]" matInput
+                                    [(ngModel)]="element[col]">
+                                <span msg-error [valido]="element[col]" style="font-size: 8px;"></span>
+                            </mat-form-field>
+
+                            <!-- Campos no editables -->
+                            <div *ngSwitchCase="'isSelected'"></div>
+
+                            <!-- botoneria -->
+                            <div class="btn-edit" *ngSwitchCase="'isEdit'">
+                                <button mat-button (click)="editRow(element)">
+                                    <mat-icon>save</mat-icon>
+                                </button>
+                                <button mat-button (click)="searchDataTable()">
+                                    <mat-icon>cancel</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20, 100]" [pageSize]="pageSize" showFirstLastButtons></mat-paginator>
+    </div>
+</article>

@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Cancelación de Mantenimiento</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="outline" class = "campo-are">
+      <mat-label>Motivo de cancelación *</mat-label>
+      <textarea matInput type="text" [(ngModel)]="data.motivo_cancelacion" autocomplete="off" rows="10" cols="50"></textarea>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button 
+    mat-raised-button 
+    class="color-primary-100" 
+    [disabled]="data.motivo_cancelacion == ''" 
+    [mat-dialog-close]="data.motivo_cancelacion">
+    <mat-icon>check</mat-icon>
+    Aceptar
+  </button>
+  <button type="button" mat-raised-button class="color-warn-800" (click)="cancelar()">
+    <mat-icon>cancel</mat-icon>
+    Cerrar
+  </button>
+</div>

@@ -1,0 +1,181 @@
+<mat-card>
+  <mat-card-header class="mat-card-header-umv">
+    <div class="mat-card-header-text">
+      <mat-card-subtitle>
+        <h2>{{titulo}}</h2>
+      </mat-card-subtitle>
+    </div>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-horizontal-stepper #stepper>
+      <mat-step>
+        <ng-template matStepLabel>Ficha de Diseño</ng-template>
+        <div class="container-flex" *ngIf="idMantenimientoEvento!=0">
+          <app-consulta-visita-diagnostico [idMantenimientoEvento]="idMantenimientoEvento"></app-consulta-visita-diagnostico>
+        </div>
+        <div>
+          <button mat-button matStepperNext type="button">Siguiente</button>
+        </div>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Insumos Apiques y Aforos</ng-template>
+        <mat-accordion multi class="headers-align">
+          <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>Apiques Detalle</mat-panel-title>
+            </mat-expansion-panel-header>
+              <div class="container-flex">
+                <div>
+                  <app-consultar-apiques [idMantenimientoVialEvento] = "idMantenimientoEvento"></app-consultar-apiques>
+                </div>
+              </div>
+            <mat-action-row>
+              <button type="button" mat-button color="primary" (click)="prevStep()"><mat-icon>keyboard_arrow_up</mat-icon></button>
+            </mat-action-row>
+        </mat-expansion-panel>
+
+          <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Adjuntos Apique
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="container-flex">
+                <app-registrar-insumos [idMantenimientoVial] ="idMantenimientoEvento" [idDocumento] = "idDocumento" [idTipoArchivo]="251" [idPermisos]="0"></app-registrar-insumos>
+              </div>
+              <mat-action-row>
+                <button type="button" mat-button color="primary" (click)="prevStep()"><mat-icon>keyboard_arrow_up</mat-icon></button>
+              </mat-action-row>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Adjuntos Aforos
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="container-flex">
+                <app-registrar-insumos [idMantenimientoVial] ="idMantenimientoEvento" [idDocumento] = "idDocumento" [idTipoArchivo]="252" [idPermisos]="0"></app-registrar-insumos>
+              </div>
+              <mat-action-row>
+                <button type="button" mat-button color="primary" (click)="prevStep()"><mat-icon>keyboard_arrow_up</mat-icon></button>
+              </mat-action-row>
+            </mat-expansion-panel>
+            </mat-accordion>
+            <div>
+              <button mat-button matStepperPrevious type="button">Regresar</button>
+              <button mat-button matStepperNext type="button">Siguiente</button>
+            </div>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Insumos</ng-template>
+            <mat-accordion multi class="headers-align">
+              <mat-expansion-panel [expanded]="step === 4" (opened)="setStep(4)" hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Levantamiento Topográfico
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="container-flex">
+                  <app-registrar-insumos [idMantenimientoVial] ="idMantenimientoEvento" [idDocumento] = "idDocumento" [idTipoArchivo]="2053" [idPermisos]="0"></app-registrar-insumos>
+                </div>
+                <mat-action-row>
+                  <button type="button" mat-button color="primary" (click)="prevStep()"><mat-icon>keyboard_arrow_up</mat-icon></button>
+                </mat-action-row>
+              </mat-expansion-panel>
+
+              <mat-expansion-panel [expanded]="step === 5" (opened)="setStep(5)" hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Modulación de Losas
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="container-flex">
+                  <app-registrar-insumos [idMantenimientoVial] ="idMantenimientoEvento" [idDocumento] = "idDocumento" [idTipoArchivo]="2054" [idPermisos]="0"></app-registrar-insumos>
+                </div>
+                <mat-action-row>
+                  <button type="button" mat-button color="primary" (click)="prevStep()"><mat-icon>keyboard_arrow_up</mat-icon></button>
+                </mat-action-row>
+              </mat-expansion-panel>
+
+              <mat-expansion-panel [expanded]="step === 5" (opened)="setStep(5)" hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Consulta de Redes
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="container-flex">
+                  <app-registrar-insumos [idMantenimientoVial] ="idMantenimientoEvento" [idDocumento] = "idDocumento" [idTipoArchivo]="14520" [idPermisos]="0"></app-registrar-insumos>
+                </div>
+                <mat-action-row>
+                  <button type="button" mat-button color="primary" (click)="prevStep()"><mat-icon>keyboard_arrow_up</mat-icon></button>
+                </mat-action-row>
+              </mat-expansion-panel>
+
+
+              <mat-expansion-panel [expanded]="step === 6" (opened)="setStep(6)" hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Otros
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="container-flex">
+                  <app-registrar-insumos [idMantenimientoVial] ="idMantenimientoEvento" [idDocumento] = "idDocumento" [idTipoArchivo]="2055" [idPermisos]="0"></app-registrar-insumos>
+                </div>
+                <mat-action-row>
+                  <button type="button" mat-button color="primary" (click)="prevStep()"><mat-icon>keyboard_arrow_up</mat-icon></button>
+                </mat-action-row>
+              </mat-expansion-panel>
+            </mat-accordion>
+            <div>
+              <button mat-button matStepperPrevious type="button">Regresar</button>
+              <button mat-button matStepperNext type="button">Siguiente</button>
+            </div>
+          </mat-step>
+
+          <mat-step>
+            <ng-template matStepLabel>Insumos de Diseño</ng-template>
+            <mat-accordion multi class="headers-align">
+              <mat-expansion-panel [expanded]="step === 8" (opened)="setStep(8)" hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Ficha de Evaluación Estructural
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="container-flex">
+                  <app-registrar-insumos [idMantenimientoVial] ="idMantenimientoEvento" [idDocumento] = "idDocumento" [idTipoArchivo]="2052" [idPermisos]="0"></app-registrar-insumos>
+                </div>
+                <mat-action-row>
+                  <button type="button" mat-button color="primary" (click)="prevStep()"><mat-icon>keyboard_arrow_up</mat-icon></button>
+                </mat-action-row>
+              </mat-expansion-panel>
+              <mat-expansion-panel [expanded]="step === 9" (opened)="setStep(9)" hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Información Diseño
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="container-flex">
+                  <app-lista-alternativa [idMantenimientoVialEvento] ="idMantenimientoEvento"></app-lista-alternativa>
+                  <app-ver-parametros-disenio  [idMantenimientoVialEvento] ="idMantenimientoEvento"></app-ver-parametros-disenio>
+                </div>
+                <mat-action-row>
+                  <button type="button" mat-button color="primary" (click)="prevStep()"><mat-icon>keyboard_arrow_up</mat-icon></button>
+                </mat-action-row>
+              </mat-expansion-panel>
+            </mat-accordion>
+            <div>
+              <button mat-button matStepperPrevious type="button">Regresar</button>
+              <button mat-button matStepperNext type="button">Siguiente</button>
+            </div>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Gestión</ng-template>
+            <div>
+              <app-avance-mantenimiento [idProcesoGestion]="idGestion" (gestionRealizada)="gestionRealizada()"></app-avance-mantenimiento>
+              <button mat-button matStepperPrevious type="button">Anterior</button>
+            </div>
+          </mat-step>
+        </mat-horizontal-stepper>
+</mat-card-content>
+</mat-card>

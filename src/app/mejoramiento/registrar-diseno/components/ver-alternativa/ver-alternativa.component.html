@@ -1,0 +1,61 @@
+<mat-card-header class="mat-card-header-umv">
+  <div class="mat-card-header-text">
+    <mat-card-subtitle>
+      <h2>{{titulo}}</h2>
+    </mat-card-subtitle>
+  </div>
+</mat-card-header>
+<mat-card-content>
+  <div class="contenido-seccion">
+    <div class="campo">
+        <div class="nombre"><strong>Alternativa</strong></div>
+        <div class="valor">{{entity.alternativa}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Tipo Superficie</strong></div>
+      <div class="valor">{{entity.desc_superficie_disenio}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Tipo intervención Final</strong></div>
+      <div class="valor">{{entity.desc_intervencion_final_disenio}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Tipo de Metodología</strong></div>
+      <div class="valor">{{entity.desc_metodologia_disenio}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Material Granular</strong></div>
+      <div class="valor">{{entity.desc_material_granular}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Espesor</strong></div>
+      <div class="valor">{{entity.espesor_disenio}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Cbr Inicial</strong></div>
+      <div class="valor">{{entity.cbr_inicial_pct}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Tipo Geosinteticos</strong></div>
+      <div class="valor">{{entity.desc_geosinteticos}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Tipo Estado</strong></div>
+      <div class="valor">{{entity.descripcion_estado_persona}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Sistema Drenaje</strong></div>
+      <div class="valor">{{entity.desc_sistema_drenaje}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Observaciones</strong></div>
+      <div class="valor">{{entity.observaciones}}</div>
+    </div>
+  </div>
+</mat-card-content>
+<mat-card-actions>
+  <div>
+    <button mat-flat-button color="primary" (click)="returnlist()">Regresar al listado</button>
+  </div>
+  </mat-card-actions>
+

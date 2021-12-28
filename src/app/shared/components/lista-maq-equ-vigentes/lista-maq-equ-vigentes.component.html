@@ -1,0 +1,161 @@
+<mat-card>
+    <div class="mat-elevation-z8" style="overflow-x: scroll;">
+        <table mat-table [dataSource]="dataSource" matSort>
+            <!-- Columna de Check -->
+            <ng-container matColumnDef="checks">
+                <th mat-header-cell *matHeaderCellDef>Check</th>
+                <td mat-cell *matCellDef="let row">
+                    <mat-checkbox [(ngModel)]="row.checks" (change)=updateCheckedList($event,row)></mat-checkbox>  
+                </td>
+            </ng-container>
+            <!-- Columna de No. Interno -->
+            <ng-container matColumnDef="numero_interno">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>No. Interno</th>
+                <td mat-cell *matCellDef="let row">{{row.numero_interno}}</td>
+            </ng-container>
+            <!-- Columna de Placa Inventario -->
+            <ng-container matColumnDef="placa_inventario">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Placa Inventario</th>
+                <td mat-cell *matCellDef="let row">{{row.placa_inventario}}</td>
+            </ng-container>
+            <!-- Columna de Placa -->
+            <ng-container matColumnDef="placa">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Placa</th>
+                <td mat-cell *matCellDef="let row">{{row.placa}}</td>
+            </ng-container>
+            <!-- Columna de Móvil -->
+            <ng-container matColumnDef="movil">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Móvil</th>
+                <td mat-cell *matCellDef="let row">{{row.movil}}</td>
+            </ng-container>
+            <!-- Columna de Clase de equipo -->
+            <ng-container matColumnDef="clase_equipo">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Clase de equipo</th>
+                <td mat-cell *matCellDef="let row">{{row.clase_equipo}}</td>
+            </ng-container>
+            <!-- Columna de Tipo -->
+            <ng-container matColumnDef="tipo_equipo">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Tipo</th>
+                <td mat-cell *matCellDef="let row">{{row.tipo_equipo}}</td>
+            </ng-container>
+            <!-- Columna de Placa/N. inventario -->
+            <ng-container matColumnDef="placa_n_inventario">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Placa/N. inventario</th>
+                <td mat-cell *matCellDef="let row">{{row.placa_n_inventario}}</td>
+            </ng-container>
+            <!-- Columna de Marca -->
+            <ng-container matColumnDef="marca_equipo">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Marca</th>
+                <td mat-cell *matCellDef="let row">{{row.marca_equipo}}</td>
+            </ng-container>
+            <ng-container matColumnDef="opciones">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Opciones</th>
+                <td mat-cell *matCellDef="let row">
+                    <div class="example-button-row">
+                        <button 
+                            mat-flat-button 
+                            color="primary"
+                            [disabled]="checkBtn(row)" 
+                            (click)="falla(row)">
+                            Reportar Fallo
+                        </button>
+                    </div>
+                </td>
+            </ng-container>
+            <!--Inicio campos de busqueda-->
+            <ng-container matColumnDef="numero_interno_filtro">
+                <th mat-header-cell *matHeaderCellDef>
+                    <mat-form-field class="filter" floatLabel="never">
+                        <mat-label>Buscar</mat-label>
+                        <input matInput autocomplete="off" [formControl]="numero_interno_filtro">
+                    </mat-form-field>
+                </th>
+            </ng-container>
+            <ng-container matColumnDef="placa_inventario_filtro">
+                <th mat-header-cell *matHeaderCellDef>
+                    <mat-form-field class="filter" floatLabel="never">
+                        <mat-label>Buscar</mat-label>
+                        <input matInput autocomplete="off" [formControl]="placa_inventario_filtro">
+                    </mat-form-field>
+                </th>
+            </ng-container>
+            <ng-container matColumnDef="placa_filtro">
+                <th mat-header-cell *matHeaderCellDef>
+                    <mat-form-field class="filter" floatLabel="never">
+                        <mat-label>Buscar</mat-label>
+                        <input matInput autocomplete="off" [formControl]="placa_filtro">
+                    </mat-form-field>
+                </th>
+            </ng-container>
+            <ng-container matColumnDef="movil_filtro">
+                <th mat-header-cell *matHeaderCellDef>
+                    <mat-form-field class="filter" floatLabel="never">
+                        <mat-label>Buscar</mat-label>
+                        <input matInput autocomplete="off" [formControl]="movil_filtro">
+                    </mat-form-field>
+                </th>
+            </ng-container>
+            <ng-container matColumnDef="clase_equipo_filtro">
+                <th mat-header-cell *matHeaderCellDef>
+                    <mat-form-field class="filter" floatLabel="never">
+                        <mat-label>Buscar</mat-label>
+                        <input matInput autocomplete="off" [formControl]="clase_equipo_filtro">
+                    </mat-form-field>
+                </th>
+            </ng-container>
+            <ng-container matColumnDef="tipo_equipo_filtro">
+                <th mat-header-cell *matHeaderCellDef>
+                    <mat-form-field class="filter" floatLabel="never">
+                        <mat-label>Buscar</mat-label>
+                        <input matInput autocomplete="off" [formControl]="tipo_equipo_filtro">
+                    </mat-form-field>
+                </th>
+            </ng-container>
+            <ng-container matColumnDef="placa_n_inventario_filtro">
+                <th mat-header-cell *matHeaderCellDef>
+                    <mat-form-field class="filter" floatLabel="never">
+                        <mat-label>Buscar</mat-label>
+                        <input matInput autocomplete="off" [formControl]="placa_n_inventario_filtro">
+                    </mat-form-field>
+                </th>
+            </ng-container>
+            <ng-container matColumnDef="marca_equipo_filtro">
+                <th mat-header-cell *matHeaderCellDef>
+                    <mat-form-field class="filter" floatLabel="never">
+                        <mat-label>Buscar</mat-label>
+                        <input matInput autocomplete="off" [formControl]="marca_equipo_filtro">
+                    </mat-form-field>
+                </th>
+            </ng-container>
+            <ng-container matColumnDef="space_2">
+                <th mat-header-cell *matHeaderCellDef>
+                    <button mat-flat-button class="action-btn" color="primary" (click)="onClearFilters()">Limpiar</button>
+                </th>
+            </ng-container>
+
+            <!--Fin campos de busqueda-->
+            <!-- No hay datos de Columna -->
+            <ng-container matColumnDef="noData">
+                <mat-footer-cell *matFooterCellDef colspan="6">
+                    No hay datos
+                </mat-footer-cell>
+            </ng-container>
+            <!-- Cargando datos de Columna -->
+            <ng-container matColumnDef="Cargando">
+                <mat-footer-cell *matFooterCellDef colspan="10" class="footerCargando">
+                    <small>Cargando datos</small> <mat-spinner diameter="20"></mat-spinner>
+                </mat-footer-cell>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef= "displayedColumns"></tr>
+            <tr mat-header-row *matHeaderRowDef= "filterColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            <tr mat-footer-row *matFooterRowDef= "['Cargando']" [ngClass]="{'hide':!loadingData}"></tr>
+            <tr mat-footer-row *matFooterRowDef= "['noData']" [ngClass]="{'hide':(!(dataSource==null)) && (dataSource.filteredData.length > 0)}"></tr>
+            <!-- Caso: sin datos -->
+            <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No hay datos para filtro</td>
+            </tr>
+        </table>
+    </div>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+</mat-card>

@@ -1,0 +1,34 @@
+<mat-card *ngIf="ready">
+  <div [formGroup]="form">
+    <mat-card-title>Novedades de Intervención</mat-card-title>
+    <mat-card-content>
+    <mat-selection-list #shoes formControlName="activity">
+
+        <mat-list-option *ngFor="let shoe of listas[116]" [value]="shoe">
+            {{shoe.descripcion}}
+        </mat-list-option>
+
+    </mat-selection-list>
+    </mat-card-content>
+    <br>
+    <mat-card-actions>
+    <p>
+        Novedades seleccionadas:
+    </p>
+    <!-- {{datos}} -->
+    <div style="flex: 1; text-align: right; margin-right: 16px;">
+        <button matTooltip="ASOCIAR" color="primary" mat-raised-button aria-label="Clear" color="primary"
+            (click)="onNoClick()">
+            CANCELAR
+            <mat-icon>close</mat-icon>
+        </button>
+        <button matTooltip="ASOCIAR" color="primary" mat-raised-button aria-label="Clear" color="primary"
+            (click)="onAsociar()">
+            ASOCIAR
+            <mat-icon>done_all</mat-icon>
+        </button>
+    </div>
+    </mat-card-actions>
+
+    </div>
+</mat-card>

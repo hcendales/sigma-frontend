@@ -1,0 +1,90 @@
+<h2 mat-dialog-title>Falla {{data.indexFalla + 1}}</h2>
+<form [formGroup]="formFalla" (ngSubmit)="onSubmit()" *ngIf="ready">
+
+    <mat-form-field *ngIf ="formFalla.get('indexUnidadMuestreo') && data.aplicaUnidadesMuestreo" appearance="outline">
+        <mat-label>Unidad muestreo</mat-label>
+        <mat-select formControlName="indexUnidadMuestreo" (selectionChange)="unidadSelected()" required>
+          <mat-option [value]="null"> -- </mat-option>
+          <mat-option *ngFor="let und of listaUnidades"[value]="und.value">{{und.text}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field *ngIf ="formFalla.get('idTipoFalla')" appearance="outline">
+        <mat-label>Tipo falla</mat-label>
+        <mat-select formControlName="idTipoFalla" (selectionChange)="tipoFallaSelected()" required>
+          <mat-option [value]="null"> -- </mat-option>
+          <mat-option *ngFor="let tipo of listaFallas" [value]="tipo.id_tipo">{{tipo.valor+' - '+tipo.descripcion}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field *ngIf ="formFalla.get('idTipoSeveridad')" appearance="outline">
+        <mat-label>Severidad</mat-label>
+        <mat-select formControlName="idTipoSeveridad" required>
+          <mat-option [value]="null"> -- </mat-option>
+          <mat-option *ngFor="let tipo of listaSeveridades" [value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field *ngIf ="formFalla.get('longitud')" appearance="outline" class = "mat-form-field-disabled">
+        <mat-label>Longitud</mat-label>
+        <input matInput formControlName="longitud" type="number" required autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field *ngIf ="formFalla.get('longitudLosa')" appearance="outline" class = "mat-form-field-disabled">
+        <mat-label>Longitud losa</mat-label>
+        <input matInput formControlName="longitudLosa" type="number" required autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field *ngIf ="formFalla.get('anchoLosa')" appearance="outline" class = "mat-form-field-disabled">
+        <mat-label>Ancho losa</mat-label>
+        <input matInput formControlName="anchoLosa" type="number" required autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field *ngIf ="formFalla.get('ancho')" appearance="outline" class = "mat-form-field-disabled">
+        <mat-label>Ancho</mat-label>
+        <input matInput formControlName="ancho" type="number" required autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field *ngIf ="formFalla.get('numeroLosas')" appearance="outline" class = "mat-form-field-disabled">
+        <mat-label>Numero de losas</mat-label>
+        <input matInput formControlName="numeroLosas" type="number" required autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field *ngIf ="formFalla.get('area')" appearance="outline" class = "mat-form-field-disabled">
+        <mat-label>Area</mat-label>
+        <input matInput formControlName="area" type="number" required autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field *ngIf ="formFalla.get('idTipoIntervencion')" appearance="outline">
+        <mat-label>Tipo Intervención</mat-label>
+        <mat-select formControlName="idTipoIntervencion">
+          <mat-option [value]="null"> -- </mat-option>
+          <mat-option *ngFor="let tipo of listaintervenciones" [value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <!--
+    <div>
+        {{formFalla.value | json}}
+    </div>
+    -->
+</form>
+<span *ngIf="formFalla.errors?.MaxAreaFalla">
+    <span style="color:red">El area no puede ser mayor al area de la unidad de muestreo.</span>
+    <br/>
+    <span style="color:red">Area falla: {{getAreaFalla()}}</span>
+    <br/>
+    <span style="color:red">Area unidad: {{getAreaUnidad()}}</span>
+</span>
+<span *ngIf="formFalla.errors?.MaxLosasFalla">
+    <span style="color:red">El número de losas no puede ser mayor al número de losas de la unidad de muestreo.</span>
+    <br/>
+    <span style="color:red">Losas falla: {{getLosasFalla()}}</span>
+    <br/>
+    <span style="color:red">Losas unidad: {{getLosasUnidad()}}</span>
+</span>
+
+<mat-dialog-actions align="end">
+    <button *ngIf = "!data.nuevo" type="button" mat-mini-fab color="warn" [mat-dialog-close]="{action:'delete',index:data.indexFalla}" > <mat-icon>delete</mat-icon></button>
+    <button type="button" mat-mini-fab color="primary" [mat-dialog-close]="{action:'cancel',index:data.indexFalla,value:anteriorValor}"><mat-icon>undo</mat-icon></button>
+    <button type="button" [disabled]="formFalla.status == 'INVALID'" mat-mini-fab color="primary" [mat-dialog-close]="{action:'update',index:data.indexFalla,data:formFalla,status:formFalla.status}"><mat-icon>check</mat-icon></button>
+</mat-dialog-actions>

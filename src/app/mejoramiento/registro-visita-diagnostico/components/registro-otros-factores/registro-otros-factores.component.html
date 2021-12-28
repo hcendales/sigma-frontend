@@ -1,0 +1,41 @@
+<h2 mat-dialog-title>Otros Factor {{data.indexOtroFactor + 1}}</h2>
+<form [formGroup]="formOtrosFactores" (ngSubmit)="onSubmit()" *ngIf="ready">
+    <!--
+        <mat-form-field *ngIf ="formOtrosFactores.get('tipoFactor')" appearance="outline">
+            <mat-label>Tipo Otro Factor</mat-label>
+            <mat-select formControlName="tipoFactor">
+              <mat-option [value]="null"> -- </mat-option>
+              <mat-option *ngFor="let tipo of listas[11]" [value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    -->
+        <mat-form-field appearance="outline" class = "campo">
+            <mat-label>Tipo Otro Factor</mat-label>
+            <input type="text" matInput [matAutocomplete]="auto" formControlName="tipoFactor">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayOtroFactorFn.bind(this,listas[11])">
+              <!--<mat-option [value]="null"> -- </mat-option>-->
+              <mat-option *ngFor="let of of filteredOtrosFactores | async" [value]="of.id_tipo">
+                {{of.descripcion}}
+              </mat-option>
+            </mat-autocomplete>
+            <mat-error *ngIf="formOtrosFactores.get('tipoFactor')?.hasError('invalidAutocompleteObject')">
+              Elija un elemento de la lista.
+            </mat-error>
+        </mat-form-field>
+
+
+</form>
+<div *ngIf="formOtrosFactores.get('tipoFactor')?.errors?.ofRepetido" style="color:red">
+    Ya existe otro factor con el mismo valor
+</div>
+<mat-dialog-actions align="end">
+    <!--
+    <div class = "coso">
+        <strong>Tipo Otro Factor:</strong>{{data.indexOtroFactor+1}}<br>
+    </div>
+    -->
+    <span style="flex: 1 1 auto"></span>
+    <button *ngIf = "!data.nuevo" type="button" mat-mini-fab color="warn" [mat-dialog-close]="{action:'delete',index:data.indexOtroFactor}" > <mat-icon>delete</mat-icon></button>
+    <button type="button" mat-mini-fab color="primary" [mat-dialog-close]="{index:data.indexOtroFactor,value:anteriorValor,action:accion}"><mat-icon>undo</mat-icon></button>
+    <button type="button" [disabled]="formOtrosFactores.status == 'INVALID'" mat-mini-fab color="primary" [mat-dialog-close]="{action:'update',index:data.indexOtroFactor,data:formOtrosFactores,status:formOtrosFactores.status}"><mat-icon>check</mat-icon></button>
+</mat-dialog-actions>

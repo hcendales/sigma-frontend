@@ -1,0 +1,209 @@
+<article>
+    <article class="table-header" style="flex: 1; text-align: right; margin-right: 16px;">
+        <button mat-raised-button class="color-primary-100" *ngIf="idProgramacionDiaria > 0"
+            (click)="removeSelectedRows()">
+            ELIMINAR
+            <mat-icon>delete</mat-icon>
+        </button> &nbsp;
+        <button mat-raised-button class="color-primary-100" *ngIf="idProgramacionDiaria > 0" (click)="addRow()">
+            NUEVO
+            <mat-icon>add</mat-icon>
+        </button>
+    </article><br>
+    <div class="mat-elevation-z8">
+        <div style="overflow-x: scroll;">
+            <table mat-table [dataSource]="dataSource" matSort>
+                <ng-container [matColumnDef]="col" *ngFor="let col of displayedColumns">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                        <span *ngIf="col !== 'isEdit' && col !== 'isSelected'">
+                            <span *ngIf="col === 'id_tipo_origen'">TIPO ORIGEN*</span>
+                            <span *ngIf="col === 'id_tipo_clase_equipo'">CLASE DE EQUIPO*</span>
+                            <span *ngIf="col === 'id_tipo_equipo'">TIPO DE EQUIPO*</span>
+                            <span *ngIf="col === 'movil'">MOVIL</span>
+                            <span *ngIf="col === 'hora'">HORA*</span>
+                            <span *ngIf="col === 'id_tipo_unidadejecutora'">UNIDAD EJECUTORA*</span>
+                            <span *ngIf="col === 'descripcion_maquina'">DESCRIPCION</span>
+                        </span>
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+
+                        <!-- ****************VISTA POR DEFECTO DE LA TABLA*********** -->
+                        <div [ngSwitch]="dataSchema[col]" *ngIf="!element.isEdit">
+
+                            <div *ngSwitchCase="'listaTipoOrigen'">
+                                {{element.descripcion_tipo_origen}}
+                            </div>
+
+                            <!-- TIPO MATERIAL -->
+                            <div *ngSwitchCase="'listaTipoClaseEquipo'">
+                                {{element.descripcion_clase_equipo}}
+                            </div>
+
+                            <!-- TIPO CLASE MATERIAL -->
+                            <div *ngSwitchCase="'listaTipoEquipo'">
+                                {{element.descripcion_tipo_equipo}}
+                            </div>
+
+                            <div *ngSwitchCase="'listaTipoOrigen'">
+                                {{element.descripcion_origen}}
+                            </div>
+
+                            <div *ngSwitchCase="'listaUnidadEjecutora'">
+                                {{element.nombre_unidadejecutora}}
+                            </div>
+
+                            <div *ngSwitchCase="'descripcion_maquina'">
+                                {{element.descripcion_maquina}}
+                            </div>
+
+                            <!-- label por defecto -->
+                            <span *ngSwitchDefault>
+                                {{element[col]}}
+                            </span>
+
+                            <!-- checkbox para seleccionar y eliminar en grupos -->
+                            <ng-container *ngSwitchCase="'isSelected'">
+                                <mat-checkbox (change)="element.isSelected = $event.checked"></mat-checkbox>
+                            </ng-container>
+
+                            <!-- botoneria -->
+                            <div *ngSwitchCase="'isEdit'">
+                                <button mat-icon-button (click)="removeRow(element.id_progdiaria_maquinaria)">
+                                    <mat-icon>delete</mat-icon>
+                                </button>
+                                <button mat-icon-button (click)="element.isEdit = !element.isEdit;
+                                updateListaClase(element);
+                                    updateListaEquipo(element); 
+                                            updateListaMovil(element);
+                                                updateDescripcionMaquina(element);
+                                ">
+                                    <mat-icon>edit</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- *************VISTA AL AGREGAR o EDITAR*****************  -->
+                        <div [ngSwitch]="dataSchema[col]" *ngIf="element.isEdit">
+
+
+                            <!-- Tipo Origen -->
+                            <ng-container *ngSwitchCase="'listaTipoOrigen'">
+                                <mat-form-field appearance="fill">
+                                    <mat-select [(ngModel)]="element[col]"
+                                        (selectionChange)="updateListaClase(element)">
+                                        <mat-option>--</mat-option>
+                                        <mat-option *ngFor="let tipo of listaOrigen" style="font-size: 18;"
+                                            [value]="tipo.id_tipo">
+                                            {{tipo.descripcion | titlecase}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field><br>
+                                <span msg-error [valido]="element[col]" style="font-size: 8px;"></span>
+                            </ng-container>
+
+                            <!-- Tipo Material -->
+                            <ng-container *ngSwitchCase="'listaTipoClaseEquipo'">
+                                <mat-form-field appearance="fill">
+                                    <mat-select [(ngModel)]="element[col]"
+                                        (selectionChange)="updateListaEquipo(element)">
+                                        <mat-option>--</mat-option>
+                                        <mat-option *ngFor="let tipo of listaClases" style="font-size: 18;"
+                                            [value]="tipo.id_tipo">
+                                            {{tipo.descripcion | titlecase}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field><br>
+                                <span msg-error [valido]="element[col]" style="font-size: 8px;"></span>
+                            </ng-container>
+
+                            <!-- Tipo Clase Material -->
+                            <ng-container *ngSwitchCase="'listaTipoEquipo'">
+                                <mat-form-field appearance="fill">
+                                    <mat-select [(ngModel)]="element[col]"
+                                        (selectionChange)="updateListaMovil(element)">
+                                        <mat-option>--</mat-option>
+                                        <mat-option *ngFor="let tipo of listaEquipos" style="font-size: 18;"
+                                            [value]="tipo.id_tipo">
+                                            {{tipo.descripcion | titlecase}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field><br>
+                                <span msg-error [valido]="element[col]" style="font-size: 8px;"></span>
+                            </ng-container>
+
+                            <!-- Cantidad -->
+                            <ng-container *ngSwitchCase="'cantidad'">
+                                <mat-form-field appearance="fill">
+                                    <input matInput [(ngModel)]="element[col]" type="number">
+                                </mat-form-field><br>
+                                <span msg-error [valido]="element[col]" style="font-size: 8px;"></span>
+                            </ng-container>
+
+                            <!-- Hora -->
+                            <ng-container *ngSwitchCase="'hora'">
+                                <mat-form-field appearance="fill">
+                                    <input matInput [(ngModel)]="element[col]" type="time" min="01:00" max="24:00">
+                                </mat-form-field><br>
+                                <span msg-error [valido]="element[col]" style="font-size: 8px;"></span>
+                            </ng-container>
+
+                            <!-- Movil -->
+                            <ng-container *ngSwitchCase="'movil'">
+                                <mat-form-field appearance="fill">
+                                    <mat-select [(ngModel)]="element[col]"
+                                        (selectionChange)="updateDescripcionMaquina(element)">
+                                        <mat-option>--</mat-option>
+                                        <mat-option *ngFor="let tipo of listaMoviles" style="font-size: 18;"
+                                            [value]="tipo.id_tipo">
+                                            {{tipo.descripcion | titlecase}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field><br>
+                                <span msg-error [valido]="element[col]" style="font-size: 8px;"></span>
+                            </ng-container>
+
+                            <!-- Tipo Unidad Ejecutora -->
+                            <ng-container *ngSwitchCase="'listaUnidadEjecutora'">
+                                <mat-form-field appearance="fill">
+                                    <mat-select [(ngModel)]="element[col]">
+                                        <mat-option>--</mat-option>
+                                        <mat-option *ngFor="let tipo of unidadEjecutora" style="font-size: 18;"
+                                            [value]="tipo.id_persona">
+                                            {{tipo.nombre | titlecase}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field><br>
+                                <span msg-error [valido]="element[col]" style="font-size: 8px;"></span>
+                            </ng-container>
+
+                            <!-- Campos por defectos -->
+                            <mat-form-field *ngSwitchDefault>
+                                <mat-label>{{col}}</mat-label>
+                                <input style="font-size: 15px;" autocomplete="off" [type]="dataSchema[col]" matInput
+                                    [(ngModel)]="element[col]">
+                            </mat-form-field>
+
+                            <!-- Campos no editables -->
+                            <div *ngSwitchCase="'isSelected'"></div>
+                            <div *ngSwitchCase="'descripcion_maquina'">{{ descripcion_maquina }}</div>
+
+
+                            <!-- botoneria -->
+                            <div class="btn-edit" *ngSwitchCase="'isEdit'">
+                                <button mat-button (click)="editRow(element)">
+                                    <mat-icon>save</mat-icon>
+                                </button>
+                                <button mat-button (click)="searchDataTable()">
+                                    <mat-icon>cancel</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20, 100]" [pageSize]="pageSize" showFirstLastButtons></mat-paginator>
+    </div>
+</article>

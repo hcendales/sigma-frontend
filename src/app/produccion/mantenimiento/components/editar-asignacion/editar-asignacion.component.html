@@ -1,0 +1,56 @@
+<mat-card>
+    <mat-card-header class="mat-card-header-umv">
+      <div class="mat-card-header-text">
+        <mat-card-subtitle>
+          <h2 *ngIf = "!edit_flag">Asignar Periodo</h2>
+          <h2 *ngIf = "edit_flag">Editar Registro de Asignacion </h2>
+        </mat-card-subtitle>
+      </div>
+    </mat-card-header>
+    <div class="form-box">
+      <form [formGroup]="formEditar" (ngSubmit)="onSubmit()">
+          <mat-form-field appearance="outline" class = "campo">
+              <mat-label>Conductor/Operario *</mat-label>
+              <mat-select formControlName="conductor">
+                  <mat-option [value]="null"> -- </mat-option>
+                  <mat-option *ngFor="let opcion of listas" [value]="opcion.id_recurso_persona">{{ opcion.nombre }}</mat-option>
+              </mat-select>
+              <mat-error *ngIf="formEditar.get('conductor')!.hasError('required')">
+                  (!) Campo requerido
+              </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class = "campo">
+              <mat-label>Periodo de asignación *</mat-label>
+              <mat-date-range-input
+                  [formGroup]="formFechas"
+                  [rangePicker]="picker"
+                  [comparisonStart]="formFechas.value.desde"
+                  [comparisonEnd]="formFechas.value.hasta">
+                  <input matStartDate placeholder="Desde" formControlName="desde">
+                  <input matEndDate placeholder="Hasta" formControlName="hasta">
+              </mat-date-range-input>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker-toggle matSuffix (click)="clearDate()">
+                  <mat-icon matDatepickerToggleIcon>clear</mat-icon>
+              </mat-datepicker-toggle>
+              <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class = "campo">
+            <input matInput type="text" placeholder="Hora inicial *" aria-label="24hr format" [ngxTimepicker]="fullTime" [format]="24" formControlName="inicio" readonly>
+            <ngx-material-timepicker #fullTime></ngx-material-timepicker>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class = "campo">
+            <input matInput type="text" placeholder="Hora fin *" aria-label="24hr format" [ngxTimepicker]="fullTimeEnd" [format]="24" formControlName="fin" readonly>
+            <ngx-material-timepicker #fullTimeEnd></ngx-material-timepicker>
+          </mat-form-field>
+          <button mat-raised-button class="action-btn color-primary-100" [disabled]="formEditar.invalid">
+            <mat-icon>check</mat-icon>
+            Aceptar
+          </button>
+          <button type="button" mat-raised-button class="action-btn color-warn-800" (click)="regresarEvent.emit()">
+            <mat-icon>cancel</mat-icon>
+            Cerrar
+          </button>
+      </form>
+    </div>
+</mat-card>

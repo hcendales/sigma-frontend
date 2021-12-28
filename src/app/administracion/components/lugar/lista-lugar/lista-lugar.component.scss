@@ -1,0 +1,49 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 9px;
+  width: 100%;
+}
+
+td, th {
+  width: 20%;
+}
+
+.hide {
+  display: none;
+}
+
+/* mat-table */
+mat-footer-row mat-footer-cell{
+  justify-content: center;
+  font-style: italic;
+}
+/* Clear input */
+.search-form-field {
+  width: 200px;
+}
+
+.filter {
+  display: block;
+  width: 40px;
+}
+
+.retraso {
+  color: brown;
+}
+
+.undia {
+  color: orange;
+}
+.normal {
+  color: black;
+}
+
+.button-row{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 8px;
+}

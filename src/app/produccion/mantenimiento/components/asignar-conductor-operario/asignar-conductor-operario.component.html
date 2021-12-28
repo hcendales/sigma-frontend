@@ -1,0 +1,37 @@
+<ng-container *ngIf="modo == 'salida'">
+    <mat-card>
+        <mat-card-header class="mat-card-header-umv">
+          <div class="mat-card-header-text">
+            <mat-card-subtitle>
+              <h2>Asignar Conductor / Operario</h2>
+            </mat-card-subtitle>
+          </div>
+        </mat-card-header>
+        <app-lista-maq-equ-disponibles
+          (opcionSeleccionada)="opcionSeleccionadaEvt($event)"
+          (registroSeleccionado)="registroSeleccionadoEvt($event)"
+          [actualizador]="updateSubject.asObservable()">
+        </app-lista-maq-equ-disponibles>
+        <div>
+        </div>
+        <div *ngIf="cargandoComponente" class="nota-cargando">
+          <h2 >Cargando</h2> <mat-spinner diameter="20"></mat-spinner>
+        </div>
+    </mat-card>
+</ng-container>
+<ng-container *ngIf="modo == 'nueva'">
+  <app-editar-asignacion 
+    [edit_flag]=false 
+    [reg]="row"
+    (almacenadoEvent)="almacenado($event)"
+    (regresarEvent)="modo = 'salida'"
+  ></app-editar-asignacion>
+</ng-container>
+<ng-container *ngIf="modo == 'calendario'">
+  <app-calendario-asignacion-co
+    [reg]="row"  
+    [placa]="row.placa"
+    [relaciones]="relaciones"
+    (opcionSeleccionada)="opcionSeleccionadaEvt($event)">
+  </app-calendario-asignacion-co>
+</ng-container>

@@ -1,0 +1,30 @@
+<h1 mat-dialog-title></h1>
+<div mat-dialog-content style="text-align: center; overflow: hidden">
+    <p> {{ data.mensaje }} </p>
+</div>
+<div mat-dialog-actions style="flex: 1 1 auto; justify-content: center">
+
+    <button type="button" mat-raised-button cdkFocusInitial
+        class="color-warn-800" [mat-dialog-close]="true" *ngIf="(data.accion === 'E')">
+        <mat-icon>delete</mat-icon>
+        ELIMINAR
+    </button>
+
+    <button type="button" mat-raised-button cdkFocusInitial
+        class="color-warn-800" [mat-dialog-close]="true" *ngIf="(data.accion === 'G')">
+        <mat-icon>save</mat-icon>
+        GUARDAR
+    </button>
+    
+    <button type="button" mat-raised-button cdkFocusInitial
+        class="color-warn-800" [mat-dialog-close]="true" *ngIf="(data.accion === 'A')">
+        <mat-icon>update</mat-icon>
+        ACTUALIZAR
+    </button>
+    
+    
+    <button type="button" class="color-primary-100" mat-raised-button [mat-dialog-close]>
+        Cancelar
+        <mat-icon>clear</mat-icon>
+    </button>&nbsp;
+</div>

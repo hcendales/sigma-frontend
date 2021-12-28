@@ -1,0 +1,64 @@
+<form [formGroup]="formEntity" (ngSubmit)="save($event)" >
+  <mat-form-field appearance="outline" style="width: 50%;">
+    <mat-label>El segmento es viable para intervención?</mat-label>
+    <mat-select formControlName="viable_intervencion" required (selectionChange)="viableSelected($event)">
+      <mat-option [value]="'SI'">Si</mat-option>
+      <mat-option [value]="'NO'">No</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="container-flex">
+    <div style="width: 20%;">
+      <mat-form-field appearance="outline">
+        
+        <mat-label>Requiere Apiques?</mat-label>
+          <mat-select formControlName="requiere_apiques" required [(value)]="selected">
+          <mat-option [value]="'SI'">Si</mat-option>
+          <mat-option [value]="'NO'">No</mat-option>
+          <!--
+          <mat-option [value]="'AL'">ALEDAÑO</mat-option>
+          -->
+        </mat-select>
+      </mat-form-field>
+      <p>
+        <mat-form-field appearance="outline">
+        <mat-label>Requiere Aforos?</mat-label>
+        <mat-select formControlName="requiere_aforo">
+          <mat-option [value]="'SI'">Si</mat-option>
+          <mat-option [value]="'NO'">No</mat-option>
+        </mat-select>
+        </mat-form-field>
+      </p>
+
+    </div>
+    <div *ngIf="selected =='SI'" style="width: 60%;">
+      <app-listar-apiques [idMantenimientoVialEvento] = "idMantenimientoVialEvento" [requiereApiques]="selected" [idPkCalzada]="idPkCalzada"></app-listar-apiques>
+    </div>
+    <div *ngIf="aledanioDe" >
+      <p style="color:red">Este Pk fue incluido como aledaño de apiques del PK {{aledanioDe}}</p>
+    </div>
+
+  </div>
+  <p>
+    <mat-form-field appearance="outline"  style="width: 50%;">
+      <mat-label>Solicitudes Adicionales</mat-label>
+      <mat-select formControlName="solicitudes_adicionales" required>
+        <mat-option [value]="'SI'">Si</mat-option>
+        <mat-option [value]="'NO'">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+</p>
+  <p>
+    <mat-form-field appearance="fill" style="width:100%">
+      <mat-label>Observación solicitudes adicionales</mat-label>
+      <textarea matInput formControlName="observacion_adicionales" #inputObservaciones maxlength="100" cdkTextareaAutosize cdkAutosizeMinRows="2" autocomplete="off"></textarea>
+      <mat-hint align="end">Máximo 100 caracteres: {{inputObservaciones.value?.length || 0}}/100</mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill" style="width:100%">
+      <mat-label>Observación viabilidad intervención</mat-label>
+      <textarea matInput formControlName="observacion_viable_intervencion" #inputObservacionesIntervencion maxlength="100" cdkTextareaAutosize cdkAutosizeMinRows="2" autocomplete="off"></textarea>
+      <mat-hint align="end">Máximo 100 caracteres: {{inputObservacionesIntervencion.value?.length || 0}}/100</mat-hint>
+    </mat-form-field>
+  </p>
+</form>

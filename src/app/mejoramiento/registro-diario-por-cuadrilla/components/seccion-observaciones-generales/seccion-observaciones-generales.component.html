@@ -1,0 +1,24 @@
+<form autocomplete="off" [formGroup]="formObservaciones">
+    <div class="form-control" id="formObservaciones">
+        <div *ngIf="loading" class="loading">Loading&#8230;</div>
+
+        <mat-form-field appearance="fill" style="width:100%" class="campo">
+            <mat-label>Observaciones*</mat-label>
+            <textarea matInput formControlName="observaciones" #inputObservaciones cdkTextareaAutosize
+                cdkAutosizeMinRows="3" maxlength="600"></textarea>
+            <mat-hint align="end">Máximo 600 caracteres</mat-hint>
+        </mat-form-field>
+
+    </div>
+</form>
+
+<div style="flex: 1; text-align: right; margin-right: 16px;">
+    <mat-action-row>
+        <button type="button" mat-raised-button color="primary" (click)="guardaSolicitud()" [disabled]="!formObservaciones.valid">
+            Guardar
+            <mat-icon>save</mat-icon>
+        </button>
+    </mat-action-row>
+</div>
+
+<pre>{{ formObservaciones.value | json }}</pre>

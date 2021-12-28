@@ -1,0 +1,276 @@
+<app-mapa-umv #mapa
+  [parent]="this"
+  [center]="mapCenter"
+  [basemap]="basemapType"
+  [zoom]="mapZoomLevel"
+  (ready)="onSubmit()">
+</app-mapa-umv>
+<mat-card>
+    <mat-card-header class="mat-card-header-umv">
+      <div class="mat-card-header-text">
+        <mat-card-subtitle>
+          <h2>Consultar historial de actividades mejoramiento</h2>
+        </mat-card-subtitle>
+      </div>
+    </mat-card-header>
+    <br>
+    <h3>Consulta por listado de Pks</h3>
+    <button mat-raised-button class="color-primary-100" style="margin-bottom: 1rem;" [disabled]="realizandoCounsulta || archivoEnProceso" onclick="document.getElementById('fileInput').click()">
+      <mat-icon>upload_file</mat-icon>
+      Cargar archivo de Pks
+    </button>
+    <input #fileInput type="file" accept=".csv" (change)="change($event)" style="display:none;" id="fileInput"/>
+    <mat-divider></mat-divider>
+  <mat-accordion multi class="headers-align">
+    <mat-expansion-panel [expanded]="step" (opened)="setStep(true)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h3>Consulta por filtros</h3>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+    <form [formGroup]="formBusqueda" (ngSubmit)="onSubmit()">
+      <div class="contenido-seccion">
+
+
+        <!--*ngIf="tipoConsulta == 'seguimiento' || tipoConsulta == 'seguimiento-ult'"-->
+
+        <mat-form-field appearance="outline" class = "campo">
+          <mat-label>PK ID</mat-label>
+          <input matInput formControlName="pk_id_calzada">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class = "campo">
+          <mat-label>Localidad</mat-label>
+          <mat-select formControlName="id_localidad" (selectionChange)="localidadSelected()" >
+            <mat-option [value]="null"> -- </mat-option>
+            <mat-option *ngFor="let tipo of listas[7]" [value]="tipo.valor">{{tipo.valor}} - {{tipo.descripcion}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class = "campo">
+          <mat-label>UPZ</mat-label>
+          <mat-select formControlName="id_upz" [disabled]="consultaDivTerritorial" (selectionChange)="upzSelected()">
+            <mat-option [value]="null"> -- </mat-option>
+            <mat-option *ngFor="let tipo of upz" [value]="tipo.cod_upl">{{tipo.cod_upl}} - {{tipo.nom_upl}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class = "campo">
+          <mat-label>Barrio</mat-label>
+          <mat-select formControlName="id_barrio" [disabled]="consultaDivTerritorial" >
+            <mat-option [value]="null"> -- </mat-option>
+            <mat-option *ngFor="let tipo of barrios" [value]="tipo.id_barrio">{{tipo.nom_sector}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class = "campo">
+          <mat-label>Zona</mat-label>
+          <mat-select formControlName="id_zona" >
+            <mat-option [value]="null"> -- </mat-option>
+            <mat-option *ngFor="let tipo of listas[27]" [value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class = "campo">
+          <mat-label>Programa</mat-label>
+          <mat-select formControlName="id_programa" >
+            <mat-option [value]="null"> -- </mat-option>
+            <mat-option *ngFor="let tipo of listas[2002]" [value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class = "campo">
+          <mat-label>Persona</mat-label>
+          <input type="text" matInput [matAutocomplete]="auto" formControlName="id_persona">
+          <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayContactFn">
+            <!--<mat-option [value]="null"> -- </mat-option>-->
+            <mat-option *ngFor="let persona of filteredPersonas | async" [value]="persona">
+              {{persona.nombre}}
+            </mat-option>
+          </mat-autocomplete>
+          <mat-error *ngIf="formBusqueda.get('id_persona')!.hasError('invalidAutocompleteObject')">
+            Elija un elemento de la lista.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class = "campo">
+          <mat-label>Actividad</mat-label>
+          <mat-select formControlName="id_actividad" >
+            <mat-option [value]="null"> -- </mat-option>
+            <mat-option *ngFor="let actividad of actividades" [value]="actividad.id_actividad">{{actividad.nombre}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+        <mat-form-field appearance="outline" class = "campo">
+          <mat-label>Fechas</mat-label>
+          <mat-date-range-input
+            [formGroup]="formFechas"
+            [rangePicker]="picker"
+            [comparisonStart]="formFechas.value.desde"
+            [comparisonEnd]="formFechas.value.hasta">
+            <input matStartDate placeholder="Desde" formControlName="desde">
+            <input matEndDate placeholder="Hasta" formControlName="hasta">
+          </mat-date-range-input>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker-toggle matSuffix (click)="clearDate()">
+            <mat-icon matDatepickerToggleIcon>clear</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field>
+
+        <button type="button"  mat-raised-button class="color-warn-800" (click)="limpiarCampos()" ><mat-icon>clear</mat-icon> Limpiar campos</button>
+      <br>
+      <button #buscarBtn mat-raised-button class="color-primary-100" [disabled]="formBusqueda.invalid || realizandoCounsulta || archivoEnProceso" >
+        <mat-icon *ngIf="!realizandoCounsulta">search</mat-icon>
+        <mat-icon *ngIf="realizandoCounsulta"><mat-spinner diameter="20">
+        </mat-spinner></mat-icon>
+        Buscar
+      </button>
+    </form>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+<mat-card class="contenedor-controles-datatable">
+
+  <button type="button"  mat-raised-button class="color-primary-100" (click)="exportar()" [disabled]="dataSourceConsulta.data.length == 0 || archivoEnProceso" >
+    <mat-icon  *ngIf="!archivoEnProceso">download</mat-icon>
+    <mat-icon *ngIf="archivoEnProceso"><mat-spinner diameter="20">
+    </mat-spinner></mat-icon>
+    Guardar ({{dataSourceConsulta.data.length}} registros)
+  </button>
+  <mat-paginator  #pag [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+</mat-card>
+<div style="overflow-x: scroll; ">
+
+<mat-table [dataSource]="dataSourceConsulta" #tablaReporte >
+
+
+  <!-- ID MANTENIMIENTO -->
+ <ng-container matColumnDef="ID_MANTENIMIENTO_VIAL" >
+   <mat-header-cell *matHeaderCellDef>ID MANT</mat-header-cell>
+   <mat-cell *matCellDef="let row" (click)="irAPk(row.pk_id_calzada)"> {{row.id_mantenimiento_vial}} </mat-cell>
+ </ng-container>
+
+  <!-- TIPO SUPERFICIE -->
+  <ng-container matColumnDef="TIPO DE SUPERFICIE">
+    <mat-header-cell *matHeaderCellDef >TIPO DE SUPERFICIE</mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.descripcionTipoSuperficie}} </mat-cell>
+  </ng-container>
+
+   <!-- SEGUIMIENTO -->
+   <ng-container matColumnDef="NO_DE_SEGUIMIENTO">
+    <mat-header-cell *matHeaderCellDef >EN SEGUIMIENTO</mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.en_seguimiento}} </mat-cell>
+  </ng-container>
+
+ <!-- CIV-->
+ <ng-container matColumnDef="CIV" >
+   <mat-header-cell *matHeaderCellDef >CIV </mat-header-cell>
+   <mat-cell *matCellDef="let row"  (click)="irAPk(row.pk_id_calzada)"> {{row.civ}} </mat-cell>
+ </ng-container>
+
+ <!-- PK ID CALZADA -->
+ <ng-container matColumnDef="PK_ID" >
+   <mat-header-cell *matHeaderCellDef > PK_ID </mat-header-cell>
+   <mat-cell *matCellDef="let row;let i = index" (click)="irAPk(row.pk_id_calzada)"> {{row.pk_id_calzada}} </mat-cell>
+ </ng-container>
+
+ <!-- TIPO_ELEMENTO -->
+ <ng-container matColumnDef="TIPO_ELEMENTO" >
+   <mat-header-cell *matHeaderCellDef > TIPO ELEMENTO </mat-header-cell>
+   <mat-cell *matCellDef="let row" > {{row.descripcion_elemento}} </mat-cell>
+ </ng-container>
+
+ <!-- LOCALIDAD -->
+ <ng-container matColumnDef="LOCALIDAD">
+   <mat-header-cell *matHeaderCellDef > LOCALIDAD </mat-header-cell>
+   <mat-cell *matCellDef="let row"> {{row.descripcion_localidad?row.descripcion_localidad:row.id_localidad}} </mat-cell>
+ </ng-container>
+
+ <!-- BARRIO -->
+ <ng-container matColumnDef="BARRIO" >
+   <mat-header-cell *matHeaderCellDef > BARRIO </mat-header-cell>
+   <mat-cell *matCellDef="let row"> {{row.descripcion_barrio?row.descripcion_barrio:row.id_barrio}} </mat-cell>
+ </ng-container>
+
+ <!-- EJE VIAL -->
+ <ng-container matColumnDef="EJE_VIAL" >
+   <mat-header-cell *matHeaderCellDef > EJE VIAL </mat-header-cell>
+   <mat-cell *matCellDef="let row"> {{row.eje_vial}} </mat-cell>
+ </ng-container>
+
+ <!-- DESDE -->
+ <ng-container matColumnDef="DESDE" >
+   <mat-header-cell *matHeaderCellDef > DESDE </mat-header-cell>
+   <mat-cell *matCellDef="let row"> {{row.desde}} </mat-cell>
+ </ng-container>
+
+  <!-- HASTA -->
+  <ng-container matColumnDef="HASTA" >
+   <mat-header-cell *matHeaderCellDef > HASTA </mat-header-cell>
+   <mat-cell *matCellDef="let row"> {{row.hasta}} </mat-cell>
+ </ng-container>
+
+  <!-- Fecha inicio actividad -->
+ <ng-container matColumnDef="FECHA_DE_VISITA">
+   <mat-header-cell *matHeaderCellDef > Fecha de visita </mat-header-cell>
+   <mat-cell *matCellDef="let row"> {{row.fecha_visita_tecnica | date:'d/MM/yyyy'}} </mat-cell>
+ </ng-container>
+
+ <!-- KM-CARRIL IMPACTO -->
+ <ng-container matColumnDef="KM-CARRIL_IMPACTO">
+   <mat-header-cell *matHeaderCellDef > KM-CARRIL IMPACTO </mat-header-cell>
+   <mat-cell *matCellDef="let row"> {{row.km_carril_impacto}} </mat-cell>
+ </ng-container>
+
+ <!-- OBSERVACION -->
+ <ng-container matColumnDef="OBSERVACION">
+   <mat-header-cell *matHeaderCellDef > OBSERVACION </mat-header-cell>
+   <mat-cell *matCellDef="let row"> {{row.observaciones_diagnostico}} </mat-cell>
+ </ng-container>
+
+
+ <!-- RESPONSABLE DE VISITA -->
+ <ng-container matColumnDef="RESPONSABLE_DE_VISITA">
+   <mat-header-cell *matHeaderCellDef > RESPONSABLE DE VISITA (USUARIO) </mat-header-cell>
+   <mat-cell *matCellDef="let row"> {{row.nombre_responsable_visita}} </mat-cell>
+ </ng-container>
+
+ <!-- ACTIVIDAD DE SIGMA -->
+ <ng-container matColumnDef="ACTIVIDAD">
+   <mat-header-cell *matHeaderCellDef > ACTIVIDAD AGRUPADA </mat-header-cell>
+   <mat-cell *matCellDef="let row"> {{row.descripcion_actividad}} </mat-cell>
+ </ng-container>
+
+ <!-- RESPONSABLE DE LA ACTIVIDAD -->
+ <ng-container matColumnDef="RESPONSABLE ACTIVIDAD">
+   <mat-header-cell *matHeaderCellDef > RESPONSABLE ACTIVIDAD </mat-header-cell>
+   <mat-cell *matCellDef="let row"> {{row.auditoria_usuario}} </mat-cell>
+ </ng-container>
+
+ <!-- ORIGEN -->
+ <ng-container matColumnDef="ORIGEN">
+   <mat-header-cell *matHeaderCellDef > ORIGEN </mat-header-cell>
+   <mat-cell *matCellDef="let row"> {{row.descripcion_origen}} </mat-cell>
+ </ng-container>
+
+ <!-- ESTADO_PK -->
+ <ng-container matColumnDef="ESTADO_PK" >
+   <mat-header-cell *matHeaderCellDef > ESTADO DEL PK </mat-header-cell>
+   <mat-cell *matCellDef="let row"> {{row.descripcion_estado_pk}} </mat-cell>
+ </ng-container>
+
+ <ng-container matColumnDef="DETALLE">
+   <mat-header-cell *matHeaderCellDef >ACCIONES</mat-header-cell>
+   <mat-cell *matCellDef="let row">
+       <button mat-flat-button color="primary" (click)="onRegistroVisita(row)">VER DETALLE</button>
+    </mat-cell>
+ </ng-container>
+
+ <mat-header-row *matHeaderRowDef="campos_columnas;  sticky: true"></mat-header-row>
+ <mat-row *matRowDef="let row; columns: campos_columnas"></mat-row>
+
+</mat-table>
+<span *ngIf="dataSourceConsulta.data.length == 0"> &nbsp; {{realizandoCounsulta?'Consultando...':'No hay resultados'}}</span>
+</div>

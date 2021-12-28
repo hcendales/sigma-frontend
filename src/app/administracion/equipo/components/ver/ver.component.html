@@ -1,0 +1,146 @@
+<mat-card-header class="mat-card-header-umv">
+  <div class="mat-card-header-text">
+    <mat-card-subtitle>
+      <h2>{{titulo}}</h2>
+    </mat-card-subtitle>
+  </div>
+</mat-card-header>
+<mat-card-content>
+  <div class="contenido-seccion">
+    <div class="campo">
+      <div class="nombre"><strong>Numero Interno</strong></div>
+      <div class="valor">{{entity.numero_interno}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Placa Inventario</strong></div>
+      <div class="valor">{{entity.placa_inventario}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Placa</strong></div>
+      <div class="valor">{{entity.placa}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Movil</strong></div>
+      <div class="valor">{{entity.movil}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Clase</strong></div>
+      <div class="valor">{{entity.descripcion_clase_equipo}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Tipo equipo</strong></div>
+      <div class="valor">{{entity.descripcion_tipo_equipo}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Pico y placa</strong></div>
+      <div class="valor">{{entity.pico_y_placa}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Origen equipo</strong></div>
+      <div class="valor">{{entity.descripcion_origen_equipo}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Plazo días mantenimiento</strong></div>
+      <div class="valor">{{entity.plazo_dias_mantenimiento}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Horas mantenimiento</strong></div>
+      <div class="valor">{{entity.horas_mantenimiento}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Kilomentros mantenimiento</strong></div>
+      <div class="valor">{{entity.kilometros_mantenimiento}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Fecha ultimo mantenimiento</strong></div>
+      <div class="valor">{{entity.fecha_ultimo_mantenimiento | date: 'dd/MM/yyyy'}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Fecha siguiente mantenimiento</strong></div>
+      <div class="valor">{{entity.fecha_siguiente_mantenimiento | date: 'dd/MM/yyyy'}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Estado equipo</strong></div>
+      <div class="valor">{{entity.descripcion_estado_equipo}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Marca</strong></div>
+      <div class="valor">{{entity.descripcion_marca_equipo}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Linea</strong></div>
+      <div class="valor">{{entity.linea}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Cilindraje</strong></div>
+      <div class="valor">{{entity.cilindraje}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Numero motor</strong></div>
+      <div class="valor">{{entity.numero_motor}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Numero chasis</strong></div>
+      <div class="valor">{{entity.numero_chasis}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Combustible</strong></div>
+      <div class="valor">{{entity.descripcion_combustible}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Modelo</strong></div>
+      <div class="valor">{{entity.modelo}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Color</strong></div>
+      <div class="valor">{{entity.color}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Area</strong></div>
+      <div class="valor">{{entity.descripcion_area}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Fecha inicio</strong></div>
+      <div class="valor">{{entity.fecha_inicio | date: 'dd/MM/yyyy'}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Fecha Fin</strong></div>
+      <div class="valor">{{entity.fecha_fin | date: 'dd/MM/yyyy'}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Toneladas</strong></div>
+      <div class="valor">{{entity.toneladas}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Pasajeros</strong></div>
+      <div class="valor">{{entity.pasajeros}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Numero serial</strong></div>
+      <div class="valor">{{entity.numero_serial}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Referencia</strong></div>
+      <div class="valor">{{entity.referencia}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Descripción</strong></div>
+      <div class="valor">{{entity.descripcion}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Volumen</strong></div>
+      <div class="valor">{{entity.volumen_m3}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Unidad de uso</strong></div>
+      <div class="valor">{{entity.descripcion_unidad_uso}}</div>
+    </div>
+  </div>
+</mat-card-content>
+<mat-card-actions>
+<div>
+  <button mat-flat-button color="primary" (click)="returnlist()">Regresar al listado</button>
+  <button mat-flat-button color="primary" (click)="onEdit()">Editar</button>
+</div>
+</mat-card-actions>
+

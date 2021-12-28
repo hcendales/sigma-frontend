@@ -1,0 +1,167 @@
+.contenido-seccion {
+    display: grid;
+    margin-top: 1rem;
+}
+
+@media (min-width: 895px) {
+    .contenido-seccion {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 699px) and (max-width: 894px) {
+    .contenido-seccion {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 690px) {
+    .contenido-seccion {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 465px) {
+    .contenido-seccion {
+        grid-template-columns: 1fr;
+    }
+}
+
+.campo {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+mat-table {
+    min-width: 3200px;
+}
+
+.mat-cell {
+    min-width: 100px;
+}
+
+.mat-header-cell {
+    min-width: 100px;
+    margin-right: 5px;
+    border-right: 1px solid lightgray;
+}
+
+.mat-column-observaciones_diagnostico, .mat-cell-observaciones_diagnostico {
+    min-width: 200px;
+    max-width: 15%;
+    flex: 0 0 15%;
+}
+
+.mat-column-FALLAS, .mat-cell-FALLAS {
+    min-width: 80px;
+    flex: 0 0 5%;
+}
+
+.mat-column-OTROS_FACTORES, .mat-cell-OTROS_FACTORES {
+    min-width: 80px;
+    flex: 0 0 7%;
+}
+
+.mat-column-observacion_gestion, .mat-cell-observacion_gestion {
+    min-width: 250px;
+    max-width: 15%;
+    flex: 0 0 15%;
+}
+
+.mat-column-fecha_fin, .mat-cell-fecha_fin {
+    min-width: 80px;
+}
+
+.mat-column-fecha_inicio, .mat-cell-fecha_inicio {
+    min-width: 80px;
+}
+
+.mat-column-fecha_visita_tecnica, .mat-cell-fecha_visita_tecnica {
+    min-width: 80px;
+}
+
+.mat-column-pk_id_calzada, .mat-cell-pk_id_calzada {
+    min-width: 70px;
+}
+
+.mat-column-civ, .mat-cell-civ {
+    min-width: 70px;
+}
+
+.mat-column-descripcion_localidad, .mat-cell-descripcion_localidad {
+    min-width: 102px;
+}
+
+.mat-cell {
+    margin-right: 5px;
+    border-right: 1px solid lightgray;
+}
+
+@media (min-width: 645px) {
+    .contenedor-controles-datatable {
+        display:flex;
+        align-items:center;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        mat-paginator{
+            margin-left: auto;
+        }
+    }
+}  
+
+.contenedor-controles-datatable{
+    button{
+        overflow: hidden;
+    }
+}
+
+mat-table {
+    width:100%;
+}
+
+::ng-deep .mat-tooltip {
+    white-space: pre-line !important;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.editar-frm {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+
+.campo-are {
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.act-btn {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+}
+
+.act-btn-2 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+}
+
+.campo {
+    min-width: 291px;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.file-box {
+    padding-left: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.label-box {
+    padding-left: 0.5rem;
+}

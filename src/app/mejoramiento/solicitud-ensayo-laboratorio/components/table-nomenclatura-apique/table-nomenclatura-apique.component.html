@@ -1,0 +1,26 @@
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+        <ng-container matColumnDef="id_mantenimiento_vial_evento">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>MANTENIMIENTO&nbsp;EVENTO </th>
+            <td mat-cell *matCellDef="let row"> {{row.id_mantenimiento_vial_evento}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="observacion">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>OBSERVACIONES </th>
+            <td mat-cell *matCellDef="let row"> {{row.observacion}}</td>
+        </ng-container>
+
+
+        <!-- Cargando datos Column -->
+        <ng-container matColumnDef="Cargando">
+            <mat-footer-cell *matFooterCellDef colspan="6">
+                Cargando datos...
+            </mat-footer-cell>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)"></tr>
+        
+    </table>
+</div>

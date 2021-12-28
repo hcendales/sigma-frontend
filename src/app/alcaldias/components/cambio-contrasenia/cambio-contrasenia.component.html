@@ -1,0 +1,36 @@
+<mat-card class="contenedor-campos">
+    <br>
+    <form #form (ngSubmit)="submit()" [formGroup]="formGroup">
+      <mat-form-field class="example-full-width" class="input">
+        <input matInput type="password" formControlName="actualPassword" placeholder="Clave actual" >
+        <mat-error *ngIf="actualPassword?.hasError('required')">Ingrese la contraseña</mat-error>
+      </mat-form-field>
+      <br>
+      <br>
+      <mat-form-field class="example-full-width" class="input" >
+        <input matInput type="password" formControlName="newPassword" placeholder="Nueva clave" >
+        <mat-error *ngIf="newPassword?.hasError('required')">Ingrese la nueva clave</mat-error>
+        <mat-error *ngIf="newPassword?.hasError('minlength') && !newPassword?.hasError('required')">Mínimo 6 caracteres</mat-error>
+        <mat-error *ngIf="formGroup.hasError('igualActualPass') && !newPassword?.hasError('required')">No debe ser igual al password anterior</mat-error>
+      </mat-form-field>
+      <br>
+      <br>
+      <mat-form-field class="example-full-width" class="input">
+        <input matInput type="password" formControlName="confirmNewPassword" placeholder="Confirmar nueva clave" #input>
+        <mat-error *ngIf="confirmNewPassword?.hasError('required')">Confirme la nueva clave</mat-error>
+        <mat-error *ngIf="!newPassword?.hasError('required') && formGroup.hasError('clavesNoCoinciden') && input.value.length > 0">Las claves no coinciden</mat-error>
+      </mat-form-field>
+      <br>
+      <br>
+      <button *ngIf="!enProceso" mat-raised-button color="primary" [disabled]="!formGroup.valid">
+        Cambiar
+      </button>
+      <span *ngIf="enProceso">
+        <img  src="assets/Loading_icon.gif" width="25" height="25">		
+        Cambiando contraseña...
+      </span>
+      <br>
+      <br>
+      <label *ngIf="msjRes" class="{{tipoMsj == ('ERR')?'alert alert-danger':'alert alert-info'}}" >{{msjRes}}</label>
+    </form>
+  </mat-card>

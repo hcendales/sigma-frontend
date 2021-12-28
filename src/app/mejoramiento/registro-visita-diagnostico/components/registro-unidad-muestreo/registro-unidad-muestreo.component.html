@@ -1,0 +1,38 @@
+<h2 mat-dialog-title>Unidad de muestreo {{data.indexUnidad + 1}}</h2>
+<form [formGroup]="formUnidadMuestreo" (ngSubmit)="onSubmit()">
+    <mat-form-field *ngIf ="formUnidadMuestreo.get('abscisaInicial')" appearance="outline" class = "mat-form-field-disabled">
+        <mat-label>Desde</mat-label>
+        <input matInput formControlName="abscisaInicial" type="number" required>
+    </mat-form-field>
+    <mat-form-field *ngIf ="formUnidadMuestreo.get('abscisaFinal')" appearance="outline" class = "mat-form-field-disabled">
+        <mat-label>Hasta</mat-label>
+        <input matInput formControlName="abscisaFinal" type="number" required>
+    </mat-form-field>
+    <mat-form-field *ngIf ="formUnidadMuestreo.get('ancho')" appearance="outline" class = "mat-form-field-disabled">
+        <mat-label>Anchos</mat-label>
+        <input matInput formControlName="ancho" type="number" required>
+    </mat-form-field>
+    <mat-form-field *ngIf ="formUnidadMuestreo.get('nLosas')" appearance="outline" class = "mat-form-field-disabled">
+        <mat-label>Numero de losas</mat-label>
+        <input matInput formControlName="nLosas" type="number" required>
+    </mat-form-field>
+    <!--
+    <div>{{formUnidadMuestreo.value | json}}</div>
+    -->
+</form>
+<span style="color:red" *ngIf="formUnidadMuestreo.errors?.MaxAreaUnidad">El area no puede ser mayor de 315m2, area actual: {{(formUnidadMuestreo.get('abscisaFinal')?.value - formUnidadMuestreo.get('abscisaInicial')?.value) * formUnidadMuestreo.get('ancho')?.value}}</span>
+<span style="color:red" *ngIf="formUnidadMuestreo.errors?.MinAreaUnidad && this.formUnidadMuestreo.get('ancho')?.touched">El area debe ser mayor de 0, area actual: {{(formUnidadMuestreo.get('abscisaFinal')?.value - formUnidadMuestreo.get('abscisaInicial')?.value) * formUnidadMuestreo.get('ancho')?.value}}</span>
+<span style="color:red" *ngIf="formUnidadMuestreo.errors?.abscisadoIncorrecto && this.formUnidadMuestreo.get('abscisaFinal')?.touched">La abscisa final debe ser mayor a la La abscisa inicial</span>
+
+<mat-dialog-actions align="end">
+    <div class = "coso">
+        <strong>Longitud PK:</strong>{{data.longituPk}}<br>
+        <strong>Ancho PK:</strong>{{data.anchoPk}}
+    </div>
+    <span style="flex: 1 1 auto"></span>
+    <button *ngIf = "!data.nuevo" type="button" mat-mini-fab color="warn" [mat-dialog-close]="{action:'delete',index:data.indexUnidad}" > <mat-icon>delete</mat-icon></button>
+    <button type="button" mat-mini-fab color="primary" [mat-dialog-close]="{action:'cancel',index:data.indexUnidad,value:anteriorValor}"><mat-icon>undo</mat-icon></button>
+    <button [disabled]="formUnidadMuestreo.status == 'INVALID'" type="button" mat-mini-fab color="primary" [mat-dialog-close]="{action:'update',index:data.indexUnidad,data:formUnidadMuestreo,status:formUnidadMuestreo.status}"><mat-icon>check</mat-icon></button>
+</mat-dialog-actions>
+
+

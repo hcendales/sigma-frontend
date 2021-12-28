@@ -1,0 +1,61 @@
+<mat-card class="large-card">
+    <mat-card-header class="mat-card-header-umv">
+        <div class="mat-card-header-text">
+            <mat-card-subtitle>
+                <h2>Solicitudes de Ensayo Laboratorio</h2>
+            </mat-card-subtitle>
+        </div>
+    </mat-card-header>
+
+    <mat-card-content>
+        <div *ngIf="loading" class="loading">Loading&#8230;</div>
+        <mat-tab-group dynamicHeight>
+            <mat-tab label="Densidad de Campo" *ngIf="tabServiciosDensidad" >
+                <div class="large-box mat-elevation-z4" style="overflow: auto;">
+                    <app-servicio-densidad (guardar)="handleGuardar($event)" [bloquear]="bloquear" [rowUpdate] = "rowUpdate" ></app-servicio-densidad>
+                </div>
+            </mat-tab>
+            <mat-tab label="Apiques" *ngIf="tabServiciosApique">
+                <div class="large-box mat-elevation-z4" style="overflow: auto;">
+                    <app-servicio-apiques (guardar)="handleGuardar($event)" [bloquear]="bloquear" [rowUpdate] = "rowUpdate"></app-servicio-apiques>
+                </div>
+            </mat-tab>
+            <mat-tab label="Nucleos" *ngIf="tabServiciosNucleo" >
+                <div class="large-box mat-elevation-z4" style="overflow: auto;">
+                    <app-servicio-nucleo (guardar)="handleGuardar($event)" [bloquear]="bloquear" [rowUpdate] = "rowUpdate"></app-servicio-nucleo>
+                </div>
+            </mat-tab>
+            <mat-tab label="Formula de Trabajo" *ngIf="tabServiciosFormula">
+                <div class="large-box mat-elevation-z4" style="overflow: auto;">
+                    <app-servicio-formula (guardar)="handleGuardar($event)" [bloquear]="bloquear" [rowUpdate] = "rowUpdate"></app-servicio-formula>
+                </div>
+            </mat-tab>
+            <mat-tab label="Otros" *ngIf="tabServiciosOtros">
+                <div class="large-box mat-elevation-z4" style="overflow: auto;">
+                    <app-servicio-otros (guardar)="handleGuardar($event)" [bloquear]="bloquear" [rowUpdate] = "rowUpdate"></app-servicio-otros>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </mat-card-content>
+</mat-card>
+
+<br>
+
+<div style="flex: 1; text-align: right; margin-right: 16px;">
+    <mat-action-row>
+        <button type="button" mat-raised-button color="primary" (click)="handleCancelar()">
+            Cerrar
+            <mat-icon>close</mat-icon>
+        </button>
+        &nbsp;
+        <button type="button" mat-raised-button color="primary" color="warn" [disabled]="!eliminar || buttonEliminar" (click)="eliminarSolicitud()">
+            Cancelar
+            <mat-icon>delete</mat-icon>
+        </button>
+        &nbsp;
+        <button type="button" mat-raised-button color="primary" [disabled]="!oKguardar" (click)="guardarSolicitud()">
+            Guardar
+            <mat-icon>save</mat-icon>
+        </button>
+    </mat-action-row>
+</div>

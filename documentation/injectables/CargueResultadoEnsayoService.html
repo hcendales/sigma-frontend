@@ -1,0 +1,2014 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>sigma2-frontend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">sigma2-frontend documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li >CargueResultadoEnsayoService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/core/services/cargue-resultado-ensayo.service.ts</code>
+        </p>
+
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#httpOptions" >httpOptions</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#listas" >listas</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#actualizarInforme" >actualizarInforme</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#actualizarSolicitudEnsayo" >actualizarSolicitudEnsayo</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#bloqueoDocumentoCaliope" >bloqueoDocumentoCaliope</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#buscarEstadoBloqueoDocumentoCaliope" >buscarEstadoBloqueoDocumentoCaliope</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#buscarInforme" >buscarInforme</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#buscarSolcitudesPriorizadas" >buscarSolcitudesPriorizadas</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#buscarVersiones" >buscarVersiones</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#cambiarEstadoSolicitud" >cambiarEstadoSolicitud</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#crearEnsayoApique" >crearEnsayoApique</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#guardarGestion" >guardarGestion</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#guardarInforme" >guardarInforme</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#listarSolicitudesEnsayos" >listarSolicitudesEnsayos</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#notificarInforme" >notificarInforme</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#notificarSolicitud" >notificarSolicitud</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(securityService: <a href="../injectables/SecurityService.html" target="_self">SecurityService</a>, http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, locale: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, solicitudEnsayoLaboratorioService: <a href="../injectables/SolicitudEnsayoLaboratorioService.html" target="_self">SolicitudEnsayoLaboratorioService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/core/services/cargue-resultado-ensayo.service.ts:18</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>securityService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SecurityService.html" target="_self" >SecurityService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>locale</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>solicitudEnsayoLaboratorioService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SolicitudEnsayoLaboratorioService.html" target="_self" >SolicitudEnsayoLaboratorioService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actualizarInforme"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>actualizarInforme</b></span>
+                        <a href="#actualizarInforme"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>actualizarInforme(itm: <a href="../interfaces/informeDetalle.html" target="_self">informeDetalle</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="168"
+                            class="link-to-prism">src/app/core/services/cargue-resultado-ensayo.service.ts:168</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Actualiza la solicitud agregando solo varios campos del ensayo</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>itm</td>
+                                    <td>
+                                                <code><a href="../interfaces/informeDetalle.html" target="_self" >informeDetalle</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actualizarSolicitudEnsayo"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>actualizarSolicitudEnsayo</b></span>
+                        <a href="#actualizarSolicitudEnsayo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>actualizarSolicitudEnsayo(itm: <a href="../interfaces/SolicitudEnsayoLaboratorio.html" target="_self">SolicitudEnsayoLaboratorio</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="77"
+                            class="link-to-prism">src/app/core/services/cargue-resultado-ensayo.service.ts:77</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Actualiza la solicitud de ensayo laboratorio</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>itm</td>
+                                    <td>
+                                                <code><a href="../interfaces/SolicitudEnsayoLaboratorio.html" target="_self" >SolicitudEnsayoLaboratorio</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="bloqueoDocumentoCaliope"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>bloqueoDocumentoCaliope</b></span>
+                        <a href="#bloqueoDocumentoCaliope"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>bloqueoDocumentoCaliope(idDocumento: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, estado: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="223"
+                            class="link-to-prism">src/app/core/services/cargue-resultado-ensayo.service.ts:223</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Actualizar Estado del documento CALIOPE</p>
+<p>ESTADOS DEL DOCUMENTO:</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>idDocumento</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>,</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>estado</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>[Desbloqueo: 1041 =&gt; true, Bloqueado: 1044 =&gt; false | todos los demas]</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>id_documento;</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="buscarEstadoBloqueoDocumentoCaliope"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>buscarEstadoBloqueoDocumentoCaliope</b></span>
+                        <a href="#buscarEstadoBloqueoDocumentoCaliope"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>buscarEstadoBloqueoDocumentoCaliope(idDocumento: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="265"
+                            class="link-to-prism">src/app/core/services/cargue-resultado-ensayo.service.ts:265</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Consulta Estado del documento CALIOPE</p>
+<p>ESTADOS DEL DOCUMENTO:</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>idDocumento</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>boolean true / false;</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="buscarInforme"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>buscarInforme</b></span>
+                        <a href="#buscarInforme"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>buscarInforme(filtro: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="103"
+                            class="link-to-prism">src/app/core/services/cargue-resultado-ensayo.service.ts:103</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Buscar Informes asociados a la solicitud</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>filtro</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="buscarSolcitudesPriorizadas"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>buscarSolcitudesPriorizadas</b></span>
+                        <a href="#buscarSolcitudesPriorizadas"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>buscarSolcitudesPriorizadas(filtro: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/core/services/cargue-resultado-ensayo.service.ts:43</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>filtro</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>&quot;&quot;</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="buscarVersiones"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>buscarVersiones</b></span>
+                        <a href="#buscarVersiones"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>buscarVersiones(codigo_ensayo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/core/services/cargue-resultado-ensayo.service.ts:29</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>obtiene las versiones de ensayos asociadas por el codigo_ensayo</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>codigo_ensayo</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cambiarEstadoSolicitud"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>cambiarEstadoSolicitud</b></span>
+                        <a href="#cambiarEstadoSolicitud"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>cambiarEstadoSolicitud(id_ensayo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, situacion: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="355"
+                            class="link-to-prism">src/app/core/services/cargue-resultado-ensayo.service.ts:355</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Metodo que actualiza el estado de la solicitud</p>
+<ol>
+<li>NUEVO   = (default) Al crear la solicitud</li>
+<li>EDITADA = Al clonar y ser modificada</li>
+<li>GESTION = Registran los resultados (en la gestion)</li>
+<li>NOTIFICADA = Cuando al registrar los resultados quieren notificar alguna observacion (aqui puede regresar a EDITADA)</li>
+<li>FINALIZADO = Finaliza la solicitud no se puede editar</li>
+</ol>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id_ensayo</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>situacion</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="crearEnsayoApique"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>crearEnsayoApique</b></span>
+                        <a href="#crearEnsayoApique"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>crearEnsayoApique(idMantenimientoVial: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, pkIdCalzada: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, numeroApiques: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, prioridad: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="193"
+                            class="link-to-prism">src/app/core/services/cargue-resultado-ensayo.service.ts:193</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>idMantenimientoVial</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>pkIdCalzada</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>numeroApiques</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>prioridad</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="guardarGestion"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>guardarGestion</b></span>
+                        <a href="#guardarGestion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>guardarGestion(itm: <a href="../interfaces/SolicitudEnsayoLaboratorio.html" target="_self">SolicitudEnsayoLaboratorio</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="117"
+                            class="link-to-prism">src/app/core/services/cargue-resultado-ensayo.service.ts:117</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Actualiza la solicitud agregando solo varios campos del ensayo</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>itm</td>
+                                    <td>
+                                                <code><a href="../interfaces/SolicitudEnsayoLaboratorio.html" target="_self" >SolicitudEnsayoLaboratorio</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="guardarInforme"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>guardarInforme</b></span>
+                        <a href="#guardarInforme"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>guardarInforme(itm: <a href="../interfaces/informeDetalle.html" target="_self">informeDetalle</a>, idTipoServicio: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="139"
+                            class="link-to-prism">src/app/core/services/cargue-resultado-ensayo.service.ts:139</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Actualiza la solicitud agregando solo varios campos del ensayo</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>itm</td>
+                                    <td>
+                                                <code><a href="../interfaces/informeDetalle.html" target="_self" >informeDetalle</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>idTipoServicio</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listarSolicitudesEnsayos"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>listarSolicitudesEnsayos</b></span>
+                        <a href="#listarSolicitudesEnsayos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>listarSolicitudesEnsayos(filtro: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/core/services/cargue-resultado-ensayo.service.ts:58</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>filtro</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="notificarInforme"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>notificarInforme</b></span>
+                        <a href="#notificarInforme"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>notificarInforme(id_plantilla: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, id_roles: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, codigoEnsayo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, observacion: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="321"
+                            class="link-to-prism">src/app/core/services/cargue-resultado-ensayo.service.ts:321</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id_plantilla</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>id_roles</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>codigoEnsayo</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>observacion</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="notificarSolicitud"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>notificarSolicitud</b></span>
+                        <a href="#notificarSolicitud"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>notificarSolicitud(id_plantilla: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, id_roles: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, codigoEnsayo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, observacion: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, id_ensayo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="298"
+                            class="link-to-prism">src/app/core/services/cargue-resultado-ensayo.service.ts:298</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Permite enviar una notificacion al usuario por medio del correo,
+el Formulario envia el ID_USUARIO_SOLICITUD toca buscar el correo de ese usuario
+debido al cruce de libreria se crea NUEVAMENTE la funcion de Notificar</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id_plantilla</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>= ( 4 ) Notifica nueva Solicitud / ( 5 ) Notifica la gestion de la solicitud</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>id_roles</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>= ( 11121 ) SIGMA_SOLICITUD_LAB / ( 11122 ) SIGMA_REG_LAB</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>codigoEnsayo</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>= ZZ-9,99-AA-MM-XXX.</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>observacion</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>= Campo Novedades</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>id_ensayo</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="httpOptions"></a>
+                    <span class="name">
+                        <span ><b>httpOptions</b></span>
+                        <a href="#httpOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    headers: new HttpHeaders({ &#x27;Content-Type&#x27;: &#x27;application/json&#x27; }),
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/core/services/cargue-resultado-ensayo.service.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listas"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>listas</b></span>
+                        <a href="#listas"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/core/services/cargue-resultado-ensayo.service.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { formatDate } from &#x27;@angular/common&#x27;;
+import { HttpClient, HttpHeaders } from &#x27;@angular/common/http&#x27;;
+import { Inject, Injectable, LOCALE_ID } from &#x27;@angular/core&#x27;;
+import { Archivo } from &#x27;../models/archivo&#x27;;
+import { informeDetalle, SolicitudEnsayoLaboratorio } from &#x27;../models/solicitud-ensayo-laboratorio&#x27;;
+import { SecurityService } from &#x27;../security/services/security.service&#x27;;
+import { SolicitudEnsayoLaboratorioService } from &#x27;./solicitud-ensayo-laboratorio.service&#x27;;
+import { environment } from &#x27;../../../environments/environment&#x27;;
+
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class CargueResultadoEnsayoService {
+
+  public listas: any &#x3D; {};
+  httpOptions &#x3D; {
+    headers: new HttpHeaders({ &#x27;Content-Type&#x27;: &#x27;application/json&#x27; }),
+  };
+
+  constructor(
+    private securityService: SecurityService,
+    private http: HttpClient,
+    @Inject(LOCALE_ID) private locale: string,
+    private solicitudEnsayoLaboratorioService: SolicitudEnsayoLaboratorioService) { }
+
+    /**
+     * obtiene las versiones de ensayos asociadas por el codigo_ensayo
+     */
+  public buscarVersiones(codigo_ensayo: string) {
+
+    let body: any &#x3D; {};
+    let url &#x3D; &#x27;/SIGMA-backend-desa/api/laboratorio/ensayo/consultarXFiltro&#x27;;
+
+    body &#x3D; {
+      usuario: this.securityService.userSession.login,
+      filtro: &quot;codigo_ensayo &#x3D; &#x27;&quot; + codigo_ensayo + &quot;&#x27;&quot;
+    }
+    const response &#x3D; this.http.post&lt;any&gt;(url, JSON.stringify(body), this.httpOptions).toPromise();
+
+    return response;
+  }
+
+  public buscarSolcitudesPriorizadas(filtro: string &#x3D; &quot;&quot;) {
+
+    let body: any &#x3D; {};
+    let url &#x3D; &#x27;/SIGMA-backend-desa/api/laboratorio/ensayo/consultarOrdenPrioridad&#x27;;
+
+    body &#x3D; {
+      usuario: this.securityService.userSession.login,
+      filtro: filtro
+    }
+    const response &#x3D; this.http.post&lt;any&gt;(url, JSON.stringify(body), this.httpOptions).toPromise();
+
+    return response;
+  }
+
+  /*Lista las solicitudes de ensayos de acuerdo a un filtro*/
+  public listarSolicitudesEnsayos(filtro: string) {
+
+    let body: any &#x3D; {};
+    let url &#x3D; &#x27;/SIGMA-backend-desa/api/laboratorio/ensayo/consultarXFiltro&#x27;;
+
+    body &#x3D; {
+      usuario: this.securityService.userSession.login,
+      filtro: filtro
+    }
+    const response &#x3D; this.http.post&lt;any&gt;(url, JSON.stringify(body), this.httpOptions).toPromise();
+
+    return response;
+  }
+
+  /** Actualiza la solicitud de ensayo laboratorio 
+   * @param idTipoServicio : 53 D.N - 54 A.P - 55 N.U - 56 F.T - 109 OTROS
+   * @param fechaSolicitud : Date.now()
+   * @param idUsuarioSolicitud : Id del usuario login
+   */
+  public async actualizarSolicitudEnsayo(itm: SolicitudEnsayoLaboratorio) {
+                            
+    const url &#x3D; &#x27;/SIGMA-backend-desa/api/laboratorio/ensayo/actualizar&#x27;;
+    const body:any &#x3D;  { 
+              usuario: this.securityService.userSession.login, 
+              ensayo: 
+              {
+                codigoEnsayo                       : itm.codigo_ensayo,
+                fechaProgramada                    : formatDate(itm.fecha_programada, &#x27;yyyy-MM-dd&#x27;, this.locale) + &#x27;T05:00:00.000Z&#x27;,
+                fechaSolicitud                     : formatDate(itm.fecha_solicitud,  &#x27;yyyy-MM-dd&#x27;, this.locale) + &#x27;T05:00:00.000Z&#x27;,
+                fechaToma                          : formatDate(itm.fecha_toma, &#x27;yyyy-MM-dd&#x27;, this.locale) + &#x27;T05:00:00.000Z&#x27;,
+                idDocumento                        : itm.id_documento,
+                idEnsayo                           : itm.id_ensayo,
+                idResponsableToma                  : itm.id_responsable_toma,  
+                idTipoServicio                     : itm.id_tipo_servicio,
+                idUsuarioSolicitud                 : this.securityService.userSession.idUsuario,
+                novedades                          : itm.novedades,
+              }
+            }
+
+    const response: any &#x3D; await this.http.post&lt;any&gt;(url, JSON.stringify(body), this.httpOptions).toPromise();
+  }            
+
+  /***
+   * Buscar Informes asociados a la solicitud 
+   */
+  public async buscarInforme(filtro: string) {
+
+      let body: any &#x3D; {};
+      let url &#x3D; &#x27;/SIGMA-backend-desa/api/laboratorio/ensayo/informe/consultarXFiltro&#x27;;
+      body &#x3D;  { 
+                usuario: this.securityService.userSession.login,
+                filtro
+              }
+      return this.http.post&lt;any&gt;(url, JSON.stringify(body), this.httpOptions).toPromise();
+  }  
+
+  /**
+   * Actualiza la solicitud agregando solo varios campos del ensayo
+   */
+  public async guardarGestion(itm: SolicitudEnsayoLaboratorio) {
+    
+    let body: any &#x3D; {};
+    const url &#x3D; &#x27;/SIGMA-backend-desa/api/laboratorio/ensayo/actualizarCampo&#x27;;
+    body &#x3D;  { usuario: this.securityService.userSession.login, 
+      &quot;nombreCampo&quot;: &quot;fecha_toma;fecha_programada;id_responsable_toma;novedades;situacion;id_usuario_recibe_muestra;id_tipo_observacion&quot;,
+      &quot;valorCampo&quot;: formatDate(itm.fecha_toma, &#x27;dd-MMM-yyyy&#x27;, this.locale) + &quot;;&quot; + 
+                    formatDate(itm.fecha_programada, &#x27;dd-MMM-yyyy&#x27;, this.locale) + &quot;;&quot; + 
+                    itm.id_responsable_toma + &quot;;&quot; + 
+                    itm.novedades + &quot;;GESTION&quot; + &quot;;&quot; + 
+                    itm.id_usuario_recibe_muestra + &quot;;&quot; + 
+                    itm.id_tipo_observacion,
+              ensayo: {
+                          &quot;idEnsayo&quot; : itm.id_ensayo
+                      }
+            }
+    return this.http.post&lt;any&gt;(url, JSON.stringify(body), this.httpOptions).toPromise();
+  }
+
+  /**
+   * Actualiza la solicitud agregando solo varios campos del ensayo
+   */
+  public async guardarInforme(itm: informeDetalle, idTipoServicio: number) {
+
+    let body: any &#x3D; {};
+    const url &#x3D; &#x27;/SIGMA-backend-desa/api/laboratorio/ensayo/informe/insertar&#x27;;
+    //const id_documento : number &#x3D; await this.solicitudEnsayoLaboratorioService.obtenerIdDocumento(17)
+    body &#x3D;  { usuario: this.securityService.userSession.login, 
+              informe:
+              {
+                asunto                              : itm.asunto,
+                fechaRadicado                       : formatDate(itm.fecha_radicado, &#x27;yyyy-MM-dd&#x27;, this.locale) + &#x27;T05:00:00.000Z&#x27;,
+                fechaResultado                      : formatDate(itm.fecha_resultado, &#x27;yyyy-MM-dd&#x27;, this.locale) + &#x27;T05:00:00.000Z&#x27;,
+                //idDocumentoInforme                  : id_documento,
+                idEnsayo                            : itm.id_ensayo,
+                idTipoResultado                     : itm.id_tipo_resultado,
+                idUsuarioLaboratorio                : this.securityService.userSession.idUsuario,
+                numeroRadicado                      : itm.numero_radicado,
+                observaciones                       : itm.observaciones,
+              }
+            }
+
+    if (idTipoServicio &#x3D;&#x3D;&#x3D; 54) body.informe[&#x27;idTipoDocumento&#x27;] &#x3D; 251;
+    return await this.http.post&lt;any&gt;(url, JSON.stringify(body), this.httpOptions).toPromise();
+
+    
+  }  
+    
+  /**
+   * Actualiza la solicitud agregando solo varios campos del ensayo
+   */
+  public async actualizarInforme(itm: informeDetalle) {
+
+    let body: any &#x3D; {};
+    const url &#x3D; &#x27;/SIGMA-backend-desa/api/laboratorio/ensayo/informe/actualizar&#x27;;
+    body &#x3D;  { usuario: this.securityService.userSession.login, 
+              informe:
+              {
+                asunto                              : itm.asunto,
+                fechaRadicado                       : formatDate(itm.fecha_radicado, &#x27;yyyy-MM-dd&#x27;, this.locale) + &#x27;T05:00:00.000Z&#x27;,
+                fechaResultado                      : formatDate(itm.fecha_resultado, &#x27;yyyy-MM-dd&#x27;, this.locale) + &#x27;T05:00:00.000Z&#x27;,
+                //idDocumentoInforme                  : await this.solicitudEnsayoLaboratorioService.obtenerIdDocumento(17),
+                idEnsayo                            : itm.id_ensayo,
+                idEnsayoinforme                     : itm.id_ensayo_informe,
+                idTipoResultado                     : itm.id_tipo_resultado,
+                idUsuarioLaboratorio                : this.securityService.userSession.idUsuario,
+                numeroRadicado                      : itm.numero_radicado,
+                observaciones                       : itm.observaciones,
+              }
+            }
+
+    return this.http.post&lt;any&gt;(url, JSON.stringify(body), this.httpOptions).toPromise();
+  }  
+
+
+
+  public async crearEnsayoApique(idMantenimientoVial:number,pkIdCalzada:number, numeroApiques:number, prioridad:number ){
+    const url &#x3D; &#x27;/SIGMA-backend-desa/api/gestionEnsayo/crearEnsayoApique&#x27;;
+    let body &#x3D; {usuario:this.securityService.userSession.login, 
+                idMantenimientoVial:idMantenimientoVial,
+                pkIdCalzada:pkIdCalzada,
+                apiques:numeroApiques,
+                prioridad:prioridad,
+                direccion: environment.URL_CALIOPE_BACK +&quot;api/correo/enviarNotificacionCorreo&quot;
+   }
+   return this.http.post&lt;any&gt;(url, JSON.stringify(body), this.httpOptions).toPromise();
+  }
+
+  /**
+   * Actualizar Estado del documento CALIOPE
+   * 
+   * ESTADOS DEL DOCUMENTO:
+   * @var 1040 MIGRADO
+   * @var 1041 BORRADOR    (desbloqueo)
+   * @var 1042 REGISTRADO
+   * @var 1043 APROBADO
+   * @var 1044 EN FIRME    (bloqueado)
+   * @var 1045 RECHAZADO
+   * @var 1046 ANULADO
+   * @var 1047 REEMPLAZADO
+   * @var 1048 REVISADO
+   * 
+   * @param idDocumento, 
+   * @param estado [Desbloqueo: 1041 &#x3D;&gt; true, Bloqueado: 1044 &#x3D;&gt; false | todos los demas]
+   * @returns id_documento;
+   */
+  public async bloqueoDocumentoCaliope(idDocumento: number, estado: boolean) {
+    
+    let url &#x3D; &#x27;/SIGMA-backend-desa/api/externo/consume&#x27;;
+    let body &#x3D; {
+                  url: environment.URL_CALIOPE_BACK + &quot;api/documento/insertar&quot;,
+                  usuario: this.securityService.userSession.login,
+                  json: JSON.stringify({ 
+                                        
+                                        usuario: this.securityService.userSession.login, 
+                                        documento : {
+                                                    idDocumento           : idDocumento,
+                                                    registroActivo        : &quot;SI&quot;,
+                                                    idTipoDocumento       : 16,
+                                                    idTipoEstadoDocumento : estado ? 1041 : 1044,
+                                                    fecha                 : Date.now(),
+                                                    }
+                                      }),
+              }
+
+    let response: any &#x3D; await this.http.post&lt;any&gt;(url, body, this.httpOptions).toPromise();
+    let jsonRespuesta &#x3D; JSON.parse(response.respuesta[0].json).respuesta;
+    return jsonRespuesta[0].id_documento;
+  }
+
+
+  /**
+   * Consulta Estado del documento CALIOPE
+   *
+   * ESTADOS DEL DOCUMENTO:
+   * @var 1040 MIGRADO
+   * @var 1041 BORRADOR    (desbloqueo)
+   * @var 1042 REGISTRADO
+   * @var 1043 APROBADO
+   * @var 1044 EN FIRME    (bloqueado)
+   * @var 1045 RECHAZADO
+   * @var 1046 ANULADO
+   * @var 1047 REEMPLAZADO
+   * @var 1048 REVISADO
+   *
+   * @param estado [Desbloqueo: 1041 &#x3D;&gt; true, Bloqueado: 1044 &#x3D;&gt; false | todos los demas]
+   * @returns boolean true / false;
+   */
+  public async buscarEstadoBloqueoDocumentoCaliope(idDocumento: number) {
+    
+    let url &#x3D; &#x27;/SIGMA-backend-desa/api/externo/consume&#x27;;
+    let body &#x3D; {
+                  url: environment.URL_CALIOPE_BACK + &quot;api/documento/consultarXFiltro&quot;,
+                  usuario: this.securityService.userSession.login,
+                  json: JSON.stringify({ 
+                    usuario: this.securityService.userSession.login, 
+                    filtro : &quot; id_documento &#x3D; &quot; + idDocumento 
+                  }),
+              }
+
+    let response: any &#x3D; await this.http.post&lt;any&gt;(url, body, this.httpOptions).toPromise();
+    let jsonRespuesta &#x3D; JSON.parse(response.respuesta[0].json).respuesta;
+
+    return jsonRespuesta[0].id_tipo_estado_documento &#x3D;&#x3D;&#x3D; 1044 ? true : false;
+  }  
+
+
+   /**
+   * Permite enviar una notificacion al usuario por medio del correo,
+   * el Formulario envia el ID_USUARIO_SOLICITUD toca buscar el correo de ese usuario
+   * debido al cruce de libreria se crea NUEVAMENTE la funcion de Notificar
+
+
+   * @param id_plantilla &#x3D; ( 4 ) Notifica nueva Solicitud / ( 5 ) Notifica la gestion de la solicitud
+   * @param id_roles &#x3D; ( 11121 ) SIGMA_SOLICITUD_LAB / ( 11122 ) SIGMA_REG_LAB
+   * @param codigoEnsayo &#x3D; ZZ-9,99-AA-MM-XXX.
+   * @param prioridad &#x3D; 10 - 1 donde 1 es max Prioridad y solo la maneja Apiques ( 10 ) default otros servicios
+   * @param observacion &#x3D; Campo Novedades
+   * @returns 
+   */
+
+  public async notificarSolicitud(id_plantilla: string, id_roles: string, codigoEnsayo: string, observacion: string, id_ensayo: number) {
+    
+    await this.cambiarEstadoSolicitud(id_ensayo, &quot;NOTIFICADA&quot;);
+    
+    const url &#x3D; &#x27;/SIGMA-backend-desa/api/externo/consume&#x27;;
+    let body &#x3D; {
+                  url: environment.URL_CALIOPE_BACK + &quot;api/correo/enviarNotificacionCorreo&quot;,
+                  usuario: this.securityService.userSession.login,
+                  json: JSON.stringify({ 
+                    usuario: this.securityService.userSession.login, 
+                    idPlantilla: id_plantilla,
+                    roles: id_roles,
+                    concopia: this.securityService.userSession.login + &quot;@umv.gov.co&quot;,
+                    destinatario: this.securityService.userSession.login + &quot;@umv.gov.co&quot;,
+                    reemplazarVariables: &quot;@codigoEnsayo; @observacion&quot;,
+                    reemplazarValores: codigoEnsayo + &quot;;&quot; + observacion
+                  }),
+              }
+
+    let response: any &#x3D; await this.http.post&lt;any&gt;(url, body, this.httpOptions).toPromise();
+    return JSON.parse(response.respuesta[0].json).respuesta;
+  }
+
+    public async notificarInforme(id_plantilla: string, id_roles: string, codigoEnsayo: string, observacion: string) {
+    
+    const url &#x3D; &#x27;/SIGMA-backend-desa/api/externo/consume&#x27;;
+    let body &#x3D; {
+                  url: environment.URL_CALIOPE_BACK + &quot;api/correo/enviarNotificacionCorreo&quot;,
+                  usuario: this.securityService.userSession.login,
+                  json: JSON.stringify({ 
+                    usuario: this.securityService.userSession.login, 
+                    idPlantilla: id_plantilla,
+                    roles: id_roles,
+                    concopia: this.securityService.userSession.login + &quot;@umv.gov.co&quot;,
+                    destinatario: this.securityService.userSession.login + &quot;@umv.gov.co&quot;,
+                    reemplazarVariables: &quot;@codigoEnsayo; @observacion&quot;,
+                    reemplazarValores: codigoEnsayo + &quot;;&quot; + observacion
+                  }),
+              }
+
+    let response: any &#x3D; await this.http.post&lt;any&gt;(url, body, this.httpOptions).toPromise();
+    return JSON.parse(response.respuesta[0].json).respuesta;
+  }
+
+  /**
+   * Metodo que actualiza el estado de la solicitud
+   * 
+      1. NUEVO   &#x3D; (default) Al crear la solicitud
+      2. EDITADA &#x3D; Al clonar y ser modificada
+      3. GESTION &#x3D; Registran los resultados (en la gestion)
+      4. NOTIFICADA &#x3D; Cuando al registrar los resultados quieren notificar alguna observacion (aqui puede regresar a EDITADA)
+      5. FINALIZADO &#x3D; Finaliza la solicitud no se puede editar
+
+   * @param id_ensayo 
+   * @param situacion 
+   * @returns 
+   */
+  public async cambiarEstadoSolicitud(id_ensayo: number, situacion: string ) {
+
+    let body: any &#x3D; {};
+    const url &#x3D; &#x27;/SIGMA-backend-desa/api/laboratorio/ensayo/actualizarCampo&#x27;;
+    body &#x3D; {
+      usuario: this.securityService.userSession.login,
+      &quot;nombreCampo&quot;: &quot;situacion&quot;,
+      &quot;valorCampo&quot;: situacion,
+      ensayo: {
+        &quot;idEnsayo&quot;: id_ensayo
+      }
+    }
+    return this.http.post&lt;any&gt;(url, JSON.stringify(body), this.httpOptions).toPromise();
+
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'CargueResultadoEnsayoService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

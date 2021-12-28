@@ -1,0 +1,101 @@
+<mat-card>
+    <mat-card-header class="mat-card-header-umv">
+      <div class="mat-card-header-text">
+        <mat-card-subtitle>
+          <h2>Gestionar vehículos/ingenieros programación visita</h2>
+        </mat-card-subtitle>
+      </div>
+    </mat-card-header>
+
+    <mat-form-field class="example-form-field" appearance="fill">
+      <mat-label>Filtro</mat-label>
+      <input matInput type="text" [(ngModel)]="searchTerm" (keyup)="filterData()">
+      <button *ngIf="searchTerm" matSuffix mat-icon-button aria-label="Clear" (click)="clearFilter()">
+        <mat-icon>Cerrar</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class = "campo">
+      <mat-label>Actividad</mat-label>
+      <mat-select  [(ngModel)]="idActividad" (selectionChange)="filterActividad()" >
+        <mat-option [value]="null"> -- </mat-option>
+        <mat-option *ngFor="let tipo of arrActividades" [value]="tipo.text">{{tipo.text}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+</mat-card>
+
+<div class="content-header">
+
+  <mat-grid-list cols="7">
+    <mat-grid-tile
+    *ngFor="let tile of tiles2"
+    [colspan]="tile.cols"
+    [rowspan]="tile.rows"
+    [style.background]="tile.color">
+  <div *ngIf="!tile.panel" style="text-align:center;">
+    <p>
+    {{tile.text}}</p>
+    <mat-form-field *ngIf="tile.text == 'Profesional'" class="mid-width" appearance="fill">
+      <mat-label>Fecha de la semana</mat-label>
+      <input [(ngModel)]="currentDate"
+             matInput [min]="minDate" [max]="maxDate"
+             [matDatepicker]="picker"
+             (dateChange)="updateDate()"
+             [matDatepickerFilter]="filterSunday"
+             >
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <p style="font-size:16pt;">{{tile.dayLabel}}</p>
+  </div>
+  </mat-grid-tile>
+  </mat-grid-list>
+
+</div>
+
+<div class="conterr">
+
+<mat-grid-list cols="7">
+  <mat-grid-tile
+  *ngFor="let tile of tiles"
+  [colspan]="tile.cols"
+  [rowspan]="tile.rows"
+  [style.background]="tile.color">
+<div *ngIf="!tile.panel" style="text-align:center;">
+  <p>
+  {{tile.text}}</p>
+    <p *ngFor="let item of tile.acts" style="font-size:9px">{{item}}</p>
+  <mat-form-field *ngIf="tile.text == 'Profesional'" class="mid-width" appearance="fill">
+    <mat-label>Fecha de la semana</mat-label>
+    <input [(ngModel)]="currentDate"
+           matInput [min]="minDate" [max]="maxDate"
+           [matDatepicker]="picker"
+           (dateChange)="updateDate()"
+           [matDatepickerFilter]="filterSunday"
+           >
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <p style="font-size:16pt;">{{tile.dayLabel}}</p>
+</div>
+
+  <div *ngIf="tile.panel" style="height:160px;overflow-y:auto;">
+     <mat-selection-list #shoes [multiple]="false">
+       <mat-list-option style="font-size:10px" *ngFor="let item of tile.panel" [value]="item" (click)="paraBorrar(item)">
+         {{item.placa}} - ( {{item.conductor}} ): {{item.hora_inicio_text}} - {{item.hora_fin_text}}
+       </mat-list-option>
+     </mat-selection-list>
+     <button type="button"
+      mat-mini-fab color="primary" (click)="openDialog(tile)" [disabled]="tile.isDisabled">
+      <mat-icon>add</mat-icon></button>
+      <button type="button"
+       mat-mini-fab color="warn" (click)="borrarAsignacion()" [disabled]="tile.isDisabled">
+       <mat-icon>delete</mat-icon></button>
+       <button type="button"
+        mat-mini-fab color="primary" (click)="openGrupo()" [disabled]="toDeleteItem==null">
+        <mat-icon>groups</mat-icon></button>
+  </div>
+</mat-grid-tile>
+</mat-grid-list>
+
+</div>

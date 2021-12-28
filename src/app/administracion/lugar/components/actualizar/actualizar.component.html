@@ -1,0 +1,87 @@
+<mat-card>
+  <mat-card-header class="mat-card-header-umv">
+    <div class="mat-card-header-text">
+      <mat-card-subtitle>
+        <h2>{{titulo}}</h2>
+      </mat-card-subtitle>
+    </div>
+  </mat-card-header>
+  <mat-card-content>
+  <form [formGroup]="formEntity" (ngSubmit)="save($event)" >
+    <p>
+      <mat-form-field appearance="outline" >
+        <mat-label>Tipo Lugar</mat-label>
+        <mat-select formControlName="idTipoLugar" required>
+          <mat-option *ngFor="let tipo of listas[3486]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="tipoLugarField.hasError('required')">Campo requerido</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Tipo Origen</mat-label>
+        <mat-select formControlName="idTipoOrigen" required>
+          <mat-option *ngFor="let tipo of listas[3487]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="tipoOrigenField.hasError('required')">Campo requerido</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombre" autocomplete="off" readonly>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Descripción</mat-label>
+        <input matInput formControlName="descripcion" autocomplete="off">
+        <mat-error *ngIf="descripcionField.hasError('required')">Campo requerido</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre Contacto</mat-label>
+        <input matInput formControlName="contactoNombre" autocomplete="off">
+        <mat-error *ngIf="contactoNombreField.hasError('required')">Campo requerido</mat-error>
+        <mat-error *ngIf="contactoNombreField.hasError('maxlength')">Caracteres máximos 300</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Contacto Correo</mat-label>
+        <input matInput formControlName="contactoCorreoElectronico" placeholder="correo@ejemplo.com" autocomplete="off">
+        <mat-error *ngIf="contactoCorreoField.hasError('required')">Campo requerido</mat-error>
+        <mat-error *ngIf="contactoCorreoField.hasError('email')">Correo invalido</mat-error>
+        <mat-error *ngIf="contactoCorreoField.hasError('maxlength')">Caracteres máximos 100</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Contacto telefono</mat-label>
+        <input matInput formControlName="contactoTelefono" autocomplete="off">
+        <mat-error *ngIf="contactoTelefonoField.hasError('maxlength')">Caracteres máximo 20</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Dirección</mat-label>
+        <input matInput formControlName="direccion" autocomplete="off">
+        <mat-error *ngIf="direccionField.hasError('maxlength')">Caracteres máximos 100</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Estado</mat-label>
+        <mat-select formControlName="idTipoEstadoLugar" required>
+          <mat-option *ngFor="let tipo of listas[3488]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+        </mat-select>
+       <mat-error *ngIf="estadoField.hasError('required')">Campo requerido</mat-error>
+      </mat-form-field>
+    </p>
+  </form>
+</mat-card-content>
+  <mat-card-actions align="start">
+    <div class="button-row">
+      <button mat-flat-button color="primary" (click)="returnlist()">Regresar al listado</button>
+      <button mat-flat-button color="primary" (click)="save($event)">Guardar</button>
+    </div>
+  </mat-card-actions>
+  <mat-card-footer>
+  </mat-card-footer>
+</mat-card>

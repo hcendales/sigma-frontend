@@ -1,0 +1,241 @@
+<mat-card>
+  <mat-card-header class="mat-card-header-umv">
+    <div class="mat-card-header-text">
+      <mat-card-subtitle>
+        <h2>{{titulo}}</h2>
+      </mat-card-subtitle>
+    </div>
+  </mat-card-header>
+  <mat-card-content *ngIf="ready">
+    <form [formGroup]="formEntity" (ngSubmit)="save($event)" >
+      <mat-form-field appearance="outline">
+        <mat-label>Numero Interno</mat-label>
+        <input matInput formControlName="numeroInterno" autocomplete="off" readonly>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Placa Inventario</mat-label>
+        <input matInput formControlName="placaInventario" autocomplete="off" readonly>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Placa</mat-label>
+        <input matInput formControlName="placa" autocomplete="off">
+        <mat-error *ngIf="placaField.hasError('maxlength')">Maximo de caracteres 20</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Movil</mat-label>
+        <input matInput formControlName="movil" autocomplete="off">
+        <mat-error *ngIf="movilField.hasError('maxlength')">Maximo de caracteres 10</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" >
+        <mat-label>Clase Equipo</mat-label>
+        <mat-select formControlName="idTipoClaseEquipo">
+          <mat-option *ngFor="let tipo of listas[3481]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" >
+        <mat-label>Tipo Equipo</mat-label>
+        <mat-select formControlName="idTipoEquipo" required>
+          <mat-option *ngFor="let tipo of listas[3480]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="tipoField.hasError('required')">Campo requerido</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" >
+        <mat-label>Pico y placa</mat-label>
+        <mat-select formControlName="picoYPlaca">
+          <mat-option [value]="'SI'">SI</mat-option>
+          <mat-option [value]="'NO'">No</mat-option>
+        </mat-select>
+        <mat-error *ngIf="picoYPlacaField.hasError('required')">Campo requerido</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" >
+        <mat-label>Origen de Equipo</mat-label>
+        <mat-select formControlName="idTipoOrigenEquipo" required>
+          <mat-option *ngFor="let tipo of listas[3482]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="tipoOrigenField.hasError('required')">Campo requerido</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Plazo días mantenimiento</mat-label>
+        <input matInput formControlName="plazoDiasMantenimiento" autocomplete="off">
+        <mat-error *ngIf="diasMantenimientoField.hasError('required')">Campo requerido</mat-error>
+        <mat-error *ngIf="diasMantenimientoField.hasError('maxlength')">Caracteres máximos 12</mat-error>
+        <mat-error *ngIf="diasMantenimientoField.hasError('pattern')">Solo números</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Horas mantenimiento</mat-label>
+        <input matInput formControlName="horasMantenimiento" autocomplete="off">
+        <mat-error *ngIf="horasMantenimientoField.hasError('required')">Campo requerido</mat-error>
+        <mat-error *ngIf="horasMantenimientoField.hasError('maxlength')">Caracteres máximos 12</mat-error>
+        <mat-error *ngIf="horasMantenimientoField.hasError('pattern')">Solo números</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Km mantenimiento</mat-label>
+        <input matInput formControlName="kilometrosMantenimiento" autocomplete="off">
+        <mat-error *ngIf="KmMantenimientoField.hasError('required')">Campo requerido</mat-error>
+        <mat-error *ngIf="KmMantenimientoField.hasError('maxlength')">Caracteres máximos 12</mat-error>
+        <mat-error *ngIf="KmMantenimientoField.hasError('pattern')">Solo números</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class = "mat-form-field-disabled">
+        <mat-label>Fecha último mantenimiento</mat-label>
+        <input matInput formControlName="fechaUltimoMantenimiento" [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="fechaUltimoMantenimientoField.hasError('required')">Fecha requerida</mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field appearance="outline">
+        <mat-label>Fecha Siguiente mantenimiento</mat-label>
+        <input matInput formControlName="fechaSiguienteMantenimiento" [matDatepicker]="pickersig">
+        <mat-datepicker-toggle matSuffix [for]="pickersig"></mat-datepicker-toggle>
+        <mat-datepicker #pickersig></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Estado</mat-label>
+        <mat-select formControlName="idTipoEstadoEquipo" required>
+          <mat-option *ngFor="let tipo of listas[3483]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="tipoEstadoField.hasError('required')">Campo requerido</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Marca</mat-label>
+        <mat-select formControlName="idTipoMarcaEquipo" required>
+          <mat-option *ngFor="let tipo of listas[3484]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="tipoMarcaField.hasError('required')">Campo requerido</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Linea</mat-label>
+        <input matInput formControlName="linea" autocomplete="off">
+        <mat-error *ngIf="lineaField.hasError('maxlength')">Caracteres máximos 30</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Cilindraje</mat-label>
+        <input matInput formControlName="cilindraje" autocomplete="off">
+        <mat-error *ngIf="cilindrajeField.hasError('maxlength')">Caracteres máximos 30</mat-error>
+        <mat-error *ngIf="cilindrajeField.hasError('pattern')">Solo números</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Número Motor</mat-label>
+        <input matInput formControlName="numeroMotor" autocomplete="off">
+        <mat-error *ngIf="numeroMotorField.hasError('maxlength')">Caracteres máximos 30</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Número chasis</mat-label>
+        <input matInput formControlName="numeroChasis" autocomplete="off">
+        <mat-error *ngIf="numeroChasisField.hasError('maxlength')">Caracteres máximos 30</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Combustible</mat-label>
+        <mat-select formControlName="idTipoCombustible">
+          <mat-option *ngFor="let tipo of listas[3485]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Año Modelo</mat-label>
+        <input matInput formControlName="modelo" autocomplete="off">
+        <mat-error *ngIf="modeloField.hasError('maxlength')">Caracteres máximos 30</mat-error>
+        <mat-error *ngIf="modeloField.hasError('pattern')">Solo números</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Color</mat-label>
+        <input matInput formControlName="color" autocomplete="off">
+        <mat-error *ngIf="colorField.hasError('maxlength')">Caracteres máximos 30</mat-error>
+        <mat-error *ngIf="colorField.hasError('pattern')">Solo números</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Area</mat-label>
+        <mat-select formControlName="idTipoArea">
+          <mat-option *ngFor="let tipo of listas[3]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Fecha inicio</mat-label>
+        <input matInput formControlName="fechaInicio" [matDatepicker]="pickerini">
+        <mat-datepicker-toggle matSuffix [for]="pickerini"></mat-datepicker-toggle>
+        <mat-datepicker #pickerini></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Fecha fin</mat-label>
+        <input matInput formControlName="fechaFin" [matDatepicker]="pickerfin">
+        <mat-datepicker-toggle matSuffix [for]="pickerfin"></mat-datepicker-toggle>
+        <mat-datepicker #pickerfin></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Toneladas</mat-label>
+        <input matInput formControlName="toneladas" autocomplete="off">
+        <mat-error *ngIf="toneladasField.hasError('pattern')">Solo números</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Pasajeros</mat-label>
+        <input matInput formControlName="pasajeros" autocomplete="off">
+        <mat-error *ngIf="pasajerosField.hasError('pattern')">Solo números</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Serial</mat-label>
+        <input matInput formControlName="numeroSerial" autocomplete="off">
+        <mat-error *ngIf="numeroSerialField.hasError('maxlength')">Caracteres máximos 30</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Referencia</mat-label>
+        <input matInput formControlName="referencia" autocomplete="off">
+        <mat-error *ngIf="referenciaField.hasError('maxlength')">Caracteres máximos 30</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Descripcion</mat-label>
+        <input matInput formControlName="descripcion" autocomplete="off">
+        <mat-error *ngIf="descripcionField.hasError('maxlength')">Caracteres máximos 100</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>volumenM3</mat-label>
+        <input matInput formControlName="volumenM3" autocomplete="off">
+        <mat-error *ngIf="volumenM3Field.hasError('maxlength')">Caracteres máximos 30</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" >
+        <mat-label>Tipo Unidad Uso</mat-label>
+        <mat-select formControlName="idTipoUnidadUso" required>
+          <mat-option *ngFor="let tipo of listas[3489]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="tipoUnidadUsoField.hasError('required')">Campo requerido</mat-error>
+      </mat-form-field>
+  </form>
+</mat-card-content>
+  <mat-card-actions align="start">
+    <div class="button-row">
+      <button mat-flat-button color="primary" (click)="returnlist()">Regresar al listado</button>
+      <button mat-flat-button color="primary" (click)="save($event)">Guardar</button>
+    </div>
+  </mat-card-actions>
+  <mat-card-footer>
+  </mat-card-footer>
+</mat-card>

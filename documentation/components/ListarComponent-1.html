@@ -1,0 +1,1447 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>sigma2-frontend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">sigma2-frontend documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  ListarComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/administracion/lugar/components/listar/listar.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-listar</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./listar.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./listar.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#dataSource" >dataSource</a>
+                            </li>
+                            <li>
+                                <a href="#displayedColumns" >displayedColumns</a>
+                            </li>
+                            <li>
+                                <a href="#filterColumns" >filterColumns</a>
+                            </li>
+                            <li>
+                                <a href="#filterValues" >filterValues</a>
+                            </li>
+                            <li>
+                                <a href="#navigationExtras" >navigationExtras</a>
+                            </li>
+                            <li>
+                                <a href="#paginator" >paginator</a>
+                            </li>
+                            <li>
+                                <a href="#search1" >search1</a>
+                            </li>
+                            <li>
+                                <a href="#search2" >search2</a>
+                            </li>
+                            <li>
+                                <a href="#search3" >search3</a>
+                            </li>
+                            <li>
+                                <a href="#search4" >search4</a>
+                            </li>
+                            <li>
+                                <a href="#sort" >sort</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#titulo" >titulo</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#creaFiltro" >creaFiltro</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onActualizar" >onActualizar</a>
+                            </li>
+                            <li>
+                                <a href="#onClearFilters" >onClearFilters</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#onEliminar" >onEliminar</a>
+                            </li>
+                            <li>
+                                <a href="#onInsertar" >onInsertar</a>
+                            </li>
+                            <li>
+                                <a href="#onVer" >onVer</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, activatedroute: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, lugarService: <a href="../injectables/EntityTabLugarService.html" target="_self">EntityTabLugarService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/administracion/lugar/components/listar/listar.component.ts:45</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>activatedroute</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>lugarService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/EntityTabLugarService.html" target="_self" >EntityTabLugarService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="creaFiltro"></a>
+                    <span class="name">
+                        <span ><b>creaFiltro</b></span>
+                        <a href="#creaFiltro"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>creaFiltro()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="96"
+                            class="link-to-prism">src/app/administracion/lugar/components/listar/listar.component.ts:96</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/app/administracion/lugar/components/listar/listar.component.ts:53</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onActualizar"></a>
+                    <span class="name">
+                        <span ><b>onActualizar</b></span>
+                        <a href="#onActualizar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onActualizar(row: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="119"
+                            class="link-to-prism">src/app/administracion/lugar/components/listar/listar.component.ts:119</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>row</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onClearFilters"></a>
+                    <span class="name">
+                        <span ><b>onClearFilters</b></span>
+                        <a href="#onClearFilters"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onClearFilters()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="109"
+                            class="link-to-prism">src/app/administracion/lugar/components/listar/listar.component.ts:109</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onEliminar"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>onEliminar</b></span>
+                        <a href="#onEliminar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onEliminar(idEntity: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="129"
+                            class="link-to-prism">src/app/administracion/lugar/components/listar/listar.component.ts:129</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>idEntity</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onInsertar"></a>
+                    <span class="name">
+                        <span ><b>onInsertar</b></span>
+                        <a href="#onInsertar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onInsertar()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="116"
+                            class="link-to-prism">src/app/administracion/lugar/components/listar/listar.component.ts:116</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onVer"></a>
+                    <span class="name">
+                        <span ><b>onVer</b></span>
+                        <a href="#onVer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onVer(row: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="124"
+                            class="link-to-prism">src/app/administracion/lugar/components/listar/listar.component.ts:124</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>row</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dataSource"></a>
+                    <span class="name">
+                        <span ><b>dataSource</b></span>
+                        <a href="#dataSource"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatTableDataSource&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/administracion/lugar/components/listar/listar.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="displayedColumns"></a>
+                    <span class="name">
+                        <span ><b>displayedColumns</b></span>
+                        <a href="#displayedColumns"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    &#x27;id_lugar&#x27;, &#x27;descripcion_tipo_lugar&#x27;, &#x27;descripcion_tipo_origen&#x27;, &#x27;nombre&#x27;, &#x27;TRABAJAR&#x27;]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/administracion/lugar/components/listar/listar.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterColumns"></a>
+                    <span class="name">
+                        <span ><b>filterColumns</b></span>
+                        <a href="#filterColumns"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[&#x27;search1&#x27;, &#x27;search2&#x27;, &#x27;search3&#x27;, &#x27;search4&#x27;, &#x27;search5&#x27;]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/administracion/lugar/components/listar/listar.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterValues"></a>
+                    <span class="name">
+                        <span ><b>filterValues</b></span>
+                        <a href="#filterValues"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    id_lugar: &#x27;&#x27;,
+    descripcion_tipo_lugar: &#x27;&#x27;,
+    descripcion_tipo_origen: &#x27;&#x27;,
+    nombre: &#x27;&#x27;,
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/administracion/lugar/components/listar/listar.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="navigationExtras"></a>
+                    <span class="name">
+                        <span ><b>navigationExtras</b></span>
+                        <a href="#navigationExtras"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/router/NavigationExtras" target="_blank" >NavigationExtras</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    state: {
+      value: null
+    }
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/administracion/lugar/components/listar/listar.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="paginator"></a>
+                    <span class="name">
+                        <span ><b>paginator</b></span>
+                        <a href="#paginator"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(MatPaginator)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/administracion/lugar/components/listar/listar.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="search1"></a>
+                    <span class="name">
+                        <span ><b>search1</b></span>
+                        <a href="#search1"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormControl(&#x27;&#x27;)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/administracion/lugar/components/listar/listar.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="search2"></a>
+                    <span class="name">
+                        <span ><b>search2</b></span>
+                        <a href="#search2"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormControl(&#x27;&#x27;)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/administracion/lugar/components/listar/listar.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="search3"></a>
+                    <span class="name">
+                        <span ><b>search3</b></span>
+                        <a href="#search3"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormControl(&#x27;&#x27;)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/administracion/lugar/components/listar/listar.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="search4"></a>
+                    <span class="name">
+                        <span ><b>search4</b></span>
+                        <a href="#search4"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormControl(&#x27;&#x27;)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/administracion/lugar/components/listar/listar.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sort"></a>
+                    <span class="name">
+                        <span ><b>sort</b></span>
+                        <a href="#sort"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(MatSort)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/administracion/lugar/components/listar/listar.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="titulo"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>titulo</b></span>
+                        <a href="#titulo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;LISTADO LUGARES&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/administracion/lugar/components/listar/listar.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { EntityTabLugarService } from &#x27;./../../../../core/services/entity-tab-lugar.service&#x27;;
+import { AfterViewInit, Component, ViewChild, OnInit } from &#x27;@angular/core&#x27;;
+import { MatPaginator } from &#x27;@angular/material/paginator&#x27;;
+import { MatSort } from &#x27;@angular/material/sort&#x27;;
+import {Sort} from &#x27;@angular/material/sort&#x27;;
+import { MatTableDataSource } from &#x27;@angular/material/table&#x27;;
+import { FormControl } from &#x27;@angular/forms&#x27;;
+import { Routes, Router, ActivatedRoute, Params, NavigationExtras } from &#x27;@angular/router&#x27;;
+
+
+@Component({
+  selector: &#x27;app-listar&#x27;,
+  templateUrl: &#x27;./listar.component.html&#x27;,
+  styleUrls: [&#x27;./listar.component.scss&#x27;]
+})
+export class ListarComponent implements OnInit {
+  navigationExtras: NavigationExtras &#x3D; {
+    state: {
+      value: null
+    }
+  };
+
+  // Titulo
+  public titulo &#x3D; &#x27;LISTADO LUGARES&#x27;;
+  // Propiedades
+  displayedColumns: string[] &#x3D; [
+    &#x27;id_lugar&#x27;, &#x27;descripcion_tipo_lugar&#x27;, &#x27;descripcion_tipo_origen&#x27;, &#x27;nombre&#x27;, &#x27;TRABAJAR&#x27;];
+  // Datos para la lista
+  dataSource!: MatTableDataSource&lt;any&gt;;
+  filterColumns: string[] &#x3D; [&#x27;search1&#x27;, &#x27;search2&#x27;, &#x27;search3&#x27;, &#x27;search4&#x27;, &#x27;search5&#x27;];
+  // Campos de filtro en el formulario
+  search1 &#x3D; new FormControl(&#x27;&#x27;);
+  search2 &#x3D; new FormControl(&#x27;&#x27;);
+  search3 &#x3D; new FormControl(&#x27;&#x27;);
+  search4 &#x3D; new FormControl(&#x27;&#x27;);
+
+  filterValues &#x3D; {
+    id_lugar: &#x27;&#x27;,
+    descripcion_tipo_lugar: &#x27;&#x27;,
+    descripcion_tipo_origen: &#x27;&#x27;,
+    nombre: &#x27;&#x27;,
+  };
+
+  @ViewChild(MatSort) sort: any;
+  @ViewChild(MatPaginator) paginator: any;
+
+  constructor(
+    private router: Router,
+    private activatedroute: ActivatedRoute,
+    private lugarService: EntityTabLugarService
+  ) { }
+
+  ngOnInit(): void {
+    this.activatedroute.paramMap.subscribe(params &#x3D;&gt; {
+      const idActividad &#x3D;  Number(params.get(&#x27;idActividad&#x27;));
+      this.lugarService.list(&#x27;&#x27;).then((resp: any) &#x3D;&gt; {
+        this.dataSource &#x3D; new MatTableDataSource(resp.respuesta);
+        console.log(&#x27;Datasource &#x27;, this.dataSource);
+        this.dataSource.sort &#x3D; this.sort;
+        this.dataSource.paginator &#x3D; this.paginator;
+        this.creaFiltro();
+        this.onClearFilters();
+      });
+    });
+    this.search1.valueChanges
+      .subscribe(
+        valor1 &#x3D;&gt; {
+          this.filterValues.id_lugar &#x3D; valor1.toLowerCase();
+          // console.log(&#x27;FilterValues: &#x27;, JSON.stringify(this.filterValues));
+          this.dataSource.filter &#x3D; JSON.stringify(this.filterValues);
+        }
+      );
+    this.search2.valueChanges
+      .subscribe(
+        valor2 &#x3D;&gt; {
+          this.filterValues.descripcion_tipo_lugar &#x3D; valor2.toLowerCase();
+          this.dataSource.filter &#x3D; JSON.stringify(this.filterValues);
+        }
+      );
+    this.search3.valueChanges
+      .subscribe(
+        valor3 &#x3D;&gt; {
+          this.filterValues.descripcion_tipo_origen &#x3D; valor3.toLowerCase();
+          this.dataSource.filter &#x3D; JSON.stringify(this.filterValues);
+        }
+      );
+    this.search4.valueChanges
+      .subscribe(
+        valor4 &#x3D;&gt; {
+          this.filterValues.nombre &#x3D; valor4.toLowerCase();
+          this.dataSource.filter &#x3D; JSON.stringify(this.filterValues);
+        }
+      );
+  }
+
+  creaFiltro(){
+    this.dataSource.filterPredicate &#x3D; ((data, filter) &#x3D;&gt;{
+      const searchTerms &#x3D; JSON.parse(filter);
+      return (data.id_lugar || &#x27;&#x27;).toString().toLowerCase().indexOf(searchTerms.id_lugar) !&#x3D;&#x3D; -1
+      &amp;&amp; (data.descripcion_tipo_lugar || &#x27;&#x27;).toString().toLowerCase().indexOf(searchTerms.descripcion_tipo_lugar) !&#x3D;&#x3D; -1
+      &amp;&amp; (data.descripcion_tipo_origen || &#x27;&#x27;).toString().toLowerCase().indexOf(searchTerms.descripcion_tipo_origen) !&#x3D;&#x3D; -1
+      &amp;&amp; (data.nombre || &#x27;&#x27;).toString().toLowerCase().indexOf(searchTerms.nombre) !&#x3D;&#x3D; -1;
+    });
+    setTimeout( () &#x3D;&gt; {
+      this.dataSource.paginator &#x3D; this.paginator;
+      this.dataSource.sort      &#x3D; this.sort;
+    });
+  }
+  onClearFilters(){
+    this.search1.setValue(&#x27;&#x27;);
+    this.search2.setValue(&#x27;&#x27;);
+    this.search3.setValue(&#x27;&#x27;);
+    this.search4.setValue(&#x27;&#x27;);
+  }
+
+  onInsertar(): void{
+    this.router.navigate([&#x27;dashboard/administracion-lugares/insertar&#x27;]);
+  }
+  onActualizar(row: any): void{
+    // console.log(&#x27;Row &#x27;, row);
+    this.navigationExtras.state &#x3D; row;
+    this.router.navigate([&#x27;dashboard/administracion-lugares/actualizar&#x27;], this.navigationExtras);
+  }
+  onVer(row: any): void{
+    // console.log(&#x27;Row &#x27;, row);
+    this.navigationExtras.state &#x3D; row;
+    this.router.navigate([&#x27;dashboard/administracion-lugares/ver&#x27;], this.navigationExtras);
+  }
+  async onEliminar(idEntity: number): Promise&lt;void&gt;{
+    try{
+      if(confirm(&#x27;Esta seguro de borrar?&#x27;)){
+        await this.lugarService.eliminar(idEntity);
+        alert(&#x27;Registro Borrado.&#x27;);
+        this.router.navigateByUrl(&#x27;/DummyComponent&#x27;, {skipLocationChange: true}).then(()&#x3D;&gt;
+        this.router.navigate([&quot;dashboard/administracion-lugares/listar&quot;]));
+      }
+    }catch (err){
+      console.log(err);
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;mat-card-header class&#x3D;&quot;mat-card-header-umv&quot;&gt;
+  &lt;div class&#x3D;&quot;mat-card-header-text&quot;&gt;
+    &lt;mat-card-subtitle&gt;
+      &lt;h2&gt;{{titulo}}&lt;/h2&gt;
+    &lt;/mat-card-subtitle&gt;
+  &lt;/div&gt;
+&lt;/mat-card-header&gt;
+&lt;div class&#x3D;&quot;boton-nuevo&quot;&gt;
+  &lt;button mat-flat-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;onInsertar()&quot;&gt;&lt;mat-icon&gt;note_add&lt;/mat-icon&gt;Nuevo&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;mat-elevation-z8&quot;&gt;
+  &lt;table mat-table [dataSource]&#x3D;&quot;dataSource&quot; matSort&gt;
+    &lt;!-- ID Column --&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;id_lugar&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef  mat-sort-header&gt;ID&lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let row&quot;&gt;{{row.id_lugar}}&lt;/td&gt;
+    &lt;/ng-container&gt;
+    &lt;!-- id tipo lugar Column --&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;descripcion_tipo_lugar&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt;TIPO LUGAR &lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let row&quot;&gt; {{row.descripcion_tipo_lugar}}&lt;/td&gt;
+    &lt;/ng-container&gt;
+    &lt;!-- Id tipo origen Column --&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;descripcion_tipo_origen&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt;TIPO ORIGEN &lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let row&quot;&gt; {{row.descripcion_tipo_origen}}&lt;/td&gt;
+    &lt;/ng-container&gt;
+    &lt;!-- Nombre Column --&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;nombre&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt;NOMBRE &lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let row&quot;&gt; {{row.nombre}}&lt;/td&gt;
+    &lt;/ng-container&gt;
+     &lt;!-- TRABAJAR Column --&gt;
+     &lt;ng-container matColumnDef&#x3D;&quot;TRABAJAR&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt;ACCIONES&lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let row&quot;&gt;
+        &lt;div class&#x3D;&quot;button-row&quot;&gt;
+          &lt;button mat-flat-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;onActualizar(row)&quot;&gt;&lt;mat-icon&gt;description&lt;/mat-icon&gt;&lt;/button&gt;
+          &lt;button mat-flat-button color&#x3D;&quot;accent&quot; (click)&#x3D;&quot;onVer(row)&quot;&gt;&lt;mat-icon&gt;find_in_page&lt;/mat-icon&gt;&lt;/button&gt;
+          &lt;button mat-flat-button color&#x3D;&quot;warn&quot; (click)&#x3D;&quot;onEliminar(row.id_lugar)&quot;&gt;&lt;mat-icon&gt;delete&lt;/mat-icon&gt;&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/ng-container&gt;
+
+    &lt;!--Campos de busqueda--&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;search1&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef&gt;
+        &lt;mat-form-field class&#x3D;&quot;filter&quot; floatLabel&#x3D;&quot;never&quot;&gt;
+          &lt;mat-label&gt;Buscar&lt;/mat-label&gt;
+          &lt;input matInput autocomplete&#x3D;&quot;off&quot; [formControl]&#x3D;&quot;search1&quot;&gt;
+        &lt;/mat-form-field&gt;
+    &lt;/ng-container&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;search2&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef&gt;
+        &lt;mat-form-field class&#x3D;&quot;filter&quot; floatLabel&#x3D;&quot;never&quot;&gt;
+          &lt;mat-label&gt;Buscar&lt;/mat-label&gt;
+          &lt;input matInput autocomplete&#x3D;&quot;off&quot; [formControl]&#x3D;&quot;search2&quot;&gt;
+        &lt;/mat-form-field&gt;
+    &lt;/ng-container&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;search3&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef&gt;
+        &lt;mat-form-field class&#x3D;&quot;filter&quot; floatLabel&#x3D;&quot;never&quot;&gt;
+          &lt;mat-label&gt;Buscar&lt;/mat-label&gt;
+          &lt;input matInput autocomplete&#x3D;&quot;off&quot; [formControl]&#x3D;&quot;search3&quot;&gt;
+        &lt;/mat-form-field&gt;
+    &lt;/ng-container&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;search4&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef&gt;
+        &lt;mat-form-field class&#x3D;&quot;filter&quot; floatLabel&#x3D;&quot;never&quot;&gt;
+          &lt;mat-label&gt;Buscar&lt;/mat-label&gt;
+          &lt;input matInput autocomplete&#x3D;&quot;off&quot; [formControl]&#x3D;&quot;search4&quot;&gt;
+        &lt;/mat-form-field&gt;
+    &lt;/ng-container&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;search5&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef&gt;
+          &lt;button mat-flat-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;onClearFilters()&quot;&gt;LIMPIAR&lt;/button&gt;
+    &lt;/ng-container&gt;
+    &lt;!-- No hay datos Column --&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;noData&quot;&gt;
+      &lt;mat-footer-cell *matFooterCellDef colspan&#x3D;&quot;6&quot;&gt;
+        No hay datos
+      &lt;/mat-footer-cell&gt;
+    &lt;/ng-container&gt;
+    &lt;!-- Cargando datos Column --&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;Cargando&quot;&gt;
+      &lt;mat-footer-cell *matFooterCellDef colspan&#x3D;&quot;6&quot;&gt;
+        Cargando datos...
+      &lt;/mat-footer-cell&gt;
+    &lt;/ng-container&gt;
+
+    &lt;tr mat-header-row *matHeaderRowDef&#x3D; &quot;displayedColumns&quot;&gt;&lt;/tr&gt;
+    &lt;tr mat-header-row *matHeaderRowDef&#x3D; &quot;filterColumns&quot;&gt;&lt;/tr&gt;
+
+    &lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: displayedColumns;&quot;
+      &gt;&lt;/tr&gt;
+    &lt;tr mat-footer-row *matFooterRowDef&#x3D; &quot;[&#x27;Cargando&#x27;]&quot; [ngClass]&#x3D;&quot;{&#x27;hide&#x27;:dataSource!&#x3D;null}&quot;&gt;&lt;/tr&gt;
+    &lt;tr mat-footer-row *matFooterRowDef&#x3D; &quot;[&#x27;noData&#x27;]&quot; [ngClass]&#x3D;&quot;{&#x27;hide&#x27;:!(dataSource&#x3D;&#x3D;null)}&quot;&gt;&lt;/tr&gt;
+
+    &lt;!-- Row shown when there is no matching data. --&gt;
+    &lt;tr class&#x3D;&quot;mat-row&quot; *matNoDataRow&gt;
+      &lt;td class&#x3D;&quot;mat-cell&quot; colspan&#x3D;&quot;4&quot;&gt;No hay datos para filtro&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;mat-paginator [pageSizeOptions]&#x3D;&quot;[5, 10, 20, 100]&quot; [pageSize]&#x3D;&quot;5&quot; showFirstLastButtons&gt;&lt;/mat-paginator&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./listar.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 12px;
+  width: 100%;
+}
+
+td, th {
+  width: 20%;
+}
+
+.hide {
+  display: none;
+}
+
+/* mat-table */
+mat-footer-row mat-footer-cell{
+  justify-content: center;
+  font-style: italic;
+}
+/* Clear input */
+.search-form-field {
+  width: 200px;
+}
+
+.filter {
+  display: block;
+  width: 40px;
+}
+
+.retraso {
+  color: brown;
+}
+
+.undia {
+  color: orange;
+}
+.normal {
+  color: black;
+}
+
+.boton-nuevo{
+  padding: 10px 10px;
+  text-align: right;
+}
+
+.button-row{
+  padding: 5px 5px;
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mat-card-header class="mat-card-header-umv">  <div class="mat-card-header-text">    <mat-card-subtitle>      <h2>{{titulo}}</h2>    </mat-card-subtitle>  </div></mat-card-header><div class="boton-nuevo">  <button mat-flat-button color="primary" (click)="onInsertar()"><mat-icon>note_add</mat-icon>Nuevo</button></div><div class="mat-elevation-z8">  <table mat-table [dataSource]="dataSource" matSort>    <!-- ID Column -->    <ng-container matColumnDef="id_lugar">      <th mat-header-cell *matHeaderCellDef  mat-sort-header>ID</th>      <td mat-cell *matCellDef="let row">{{row.id_lugar}}</td>    </ng-container>    <!-- id tipo lugar Column -->    <ng-container matColumnDef="descripcion_tipo_lugar">      <th mat-header-cell *matHeaderCellDef mat-sort-header>TIPO LUGAR </th>      <td mat-cell *matCellDef="let row"> {{row.descripcion_tipo_lugar}}</td>    </ng-container>    <!-- Id tipo origen Column -->    <ng-container matColumnDef="descripcion_tipo_origen">      <th mat-header-cell *matHeaderCellDef mat-sort-header>TIPO ORIGEN </th>      <td mat-cell *matCellDef="let row"> {{row.descripcion_tipo_origen}}</td>    </ng-container>    <!-- Nombre Column -->    <ng-container matColumnDef="nombre">      <th mat-header-cell *matHeaderCellDef mat-sort-header>NOMBRE </th>      <td mat-cell *matCellDef="let row"> {{row.nombre}}</td>    </ng-container>     <!-- TRABAJAR Column -->     <ng-container matColumnDef="TRABAJAR">      <th mat-header-cell *matHeaderCellDef mat-sort-header>ACCIONES</th>      <td mat-cell *matCellDef="let row">        <div class="button-row">          <button mat-flat-button color="primary" (click)="onActualizar(row)"><mat-icon>description</mat-icon></button>          <button mat-flat-button color="accent" (click)="onVer(row)"><mat-icon>find_in_page</mat-icon></button>          <button mat-flat-button color="warn" (click)="onEliminar(row.id_lugar)"><mat-icon>delete</mat-icon></button>        </div>    </ng-container>    <!--Campos de busqueda-->    <ng-container matColumnDef="search1">      <th mat-header-cell *matHeaderCellDef>        <mat-form-field class="filter" floatLabel="never">          <mat-label>Buscar</mat-label>          <input matInput autocomplete="off" [formControl]="search1">        </mat-form-field>    </ng-container>    <ng-container matColumnDef="search2">      <th mat-header-cell *matHeaderCellDef>        <mat-form-field class="filter" floatLabel="never">          <mat-label>Buscar</mat-label>          <input matInput autocomplete="off" [formControl]="search2">        </mat-form-field>    </ng-container>    <ng-container matColumnDef="search3">      <th mat-header-cell *matHeaderCellDef>        <mat-form-field class="filter" floatLabel="never">          <mat-label>Buscar</mat-label>          <input matInput autocomplete="off" [formControl]="search3">        </mat-form-field>    </ng-container>    <ng-container matColumnDef="search4">      <th mat-header-cell *matHeaderCellDef>        <mat-form-field class="filter" floatLabel="never">          <mat-label>Buscar</mat-label>          <input matInput autocomplete="off" [formControl]="search4">        </mat-form-field>    </ng-container>    <ng-container matColumnDef="search5">      <th mat-header-cell *matHeaderCellDef>          <button mat-flat-button color="primary" (click)="onClearFilters()">LIMPIAR</button>    </ng-container>    <!-- No hay datos Column -->    <ng-container matColumnDef="noData">      <mat-footer-cell *matFooterCellDef colspan="6">        No hay datos      </mat-footer-cell>    </ng-container>    <!-- Cargando datos Column -->    <ng-container matColumnDef="Cargando">      <mat-footer-cell *matFooterCellDef colspan="6">        Cargando datos...      </mat-footer-cell>    </ng-container>    <tr mat-header-row *matHeaderRowDef= "displayedColumns"></tr>    <tr mat-header-row *matHeaderRowDef= "filterColumns"></tr>    <tr mat-row *matRowDef="let row; columns: displayedColumns;"      ></tr>    <tr mat-footer-row *matFooterRowDef= "[\'Cargando\']" [ngClass]="{\'hide\':dataSource!=null}"></tr>    <tr mat-footer-row *matFooterRowDef= "[\'noData\']" [ngClass]="{\'hide\':!(dataSource==null)}"></tr>    <!-- Row shown when there is no matching data. -->    <tr class="mat-row" *matNoDataRow>      <td class="mat-cell" colspan="4">No hay datos para filtro</td>    </tr>  </table>  <mat-paginator [pageSizeOptions]="[5, 10, 20, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator></div></div>'
+    var COMPONENTS = [{'name': 'ActualizarAlternativaComponent', 'selector': 'app-actualizar-alternativa'},{'name': 'ActualizarApiquesComponent', 'selector': 'app-actualizar-apiques'},{'name': 'ActualizarComponent', 'selector': 'app-actualizar'},{'name': 'ActualizarComponent', 'selector': 'app-actualizar'},{'name': 'ActualizarComponent', 'selector': 'app-actualizar'},{'name': 'ActualizarComponent', 'selector': 'app-actualizar'},{'name': 'ActualizarComponent', 'selector': 'app-actualizar'},{'name': 'ActualizarNovedadComponent', 'selector': 'app-actualizar-novedad'},{'name': 'AforosComponent', 'selector': 'app-aforos'},{'name': 'AgendaVisitasComponent', 'selector': 'app-agenda-visitas'},{'name': 'AlcaldiasComponent', 'selector': 'app-alcaldias'},{'name': 'AnalisisTransitoComponent', 'selector': 'app-analisis-transito'},{'name': 'ApiquesAforosComponent', 'selector': 'app-apiques-aforos'},{'name': 'ApiquesAledaniosComponent', 'selector': 'app-apiques-aledanios'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AreaIntervencionComponent', 'selector': 'app-area-intervencion'},{'name': 'AsignarConductorOperarioComponent', 'selector': 'app-asignar-conductor-operario'},{'name': 'AsignarMisionalidadComponent', 'selector': 'app-asignar-misionalidad'},{'name': 'AsignarRecursoComponent', 'selector': 'app-asignar-recurso'},{'name': 'AsignarSeguimientoComponent', 'selector': 'app-asignar-seguimiento'},{'name': 'AsignarVisitasComponent', 'selector': 'app-asignar-visitas'},{'name': 'AsociarAforosComponent', 'selector': 'app-asociar-aforos'},{'name': 'AutoprogramarVisitaComponent', 'selector': 'app-autoprogramar-visita'},{'name': 'AvanceMantenimientoComponent', 'selector': 'app-avance-mantenimiento'},{'name': 'AvanceMasivoMantenimientoComponent', 'selector': 'app-avance-masivo-mantenimiento'},{'name': 'BuscarRadicadoComponent', 'selector': 'app-buscar-radicado'},{'name': 'BusquedaMantenimientosComponent', 'selector': 'app-busqueda-mantenimientos'},{'name': 'CalendarioAsignacionCoComponent', 'selector': 'app-calendario-asignacion-co'},{'name': 'CambioContraseniaComponent', 'selector': 'app-cambio-contrasenia'},{'name': 'CargueArchivoComponent', 'selector': 'app-cargue-archivo'},{'name': 'CargueDocumentosComponent', 'selector': 'app-cargue-documentos'},{'name': 'CarguesMejoramientoComponent', 'selector': 'app-cargues-mejoramiento'},{'name': 'ConsultaAlternativaComponent', 'selector': 'app-consulta-alternativa'},{'name': 'ConsultaApiquesComponent', 'selector': 'app-consulta-apiques'},{'name': 'ConsultaDisenioComponent', 'selector': 'app-consulta-disenio'},{'name': 'ConsultaGeneralGestionComponent', 'selector': 'app-consulta-general-gestion'},{'name': 'ConsultaHistorialComponent', 'selector': 'app-consulta-historial'},{'name': 'ConsultarApiquesComponent', 'selector': 'app-consultar-apiques'},{'name': 'ConsultasMejoramientoComponent', 'selector': 'app-consultas-mejoramiento'},{'name': 'ConsultaVisitaDiagnosticoComponent', 'selector': 'app-consulta-visita-diagnostico'},{'name': 'ConsultaVisitaEncabezadoComponent', 'selector': 'app-consulta-visita-encabezado'},{'name': 'ControlSolicitudesPmtComponent', 'selector': 'app-control-solicitudes-pmt'},{'name': 'CreateLugarComponent', 'selector': 'app-create-lugar'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DetalleDocumentosComponent', 'selector': 'app-detalle-documentos'},{'name': 'DialogConfirmComponent', 'selector': 'app-dialog-confirm'},{'name': 'DialogConfirmComponent', 'selector': 'app-dialog-confirm'},{'name': 'DialogConfirmComponent', 'selector': 'app-dialog-confirm'},{'name': 'DialogoMotivoCancelacionComponent', 'selector': 'app-dialogo-motivo-cancelacion'},{'name': 'DialogVerVisitaDiagnostico', 'selector': 'dialog-ver-visita-diagnostico'},{'name': 'DialogVerVisitaDisenioComponent', 'selector': 'app-dialog-ver-visita-disenio'},{'name': 'DialogVerVisitaDiseno', 'selector': 'dialog-ver-visita-diseno'},{'name': 'DropZoneDocumentosComponent', 'selector': 'app-drop-zone-documentos'},{'name': 'EditarAsignacionComponent', 'selector': 'app-editar-asignacion'},{'name': 'EditarAsociarCoiComponent', 'selector': 'app-editar-asociar-coi'},{'name': 'EditarAsociarSolicitudComponent', 'selector': 'app-editar-asociar-solicitud'},{'name': 'EditarProgramacionComponent', 'selector': 'app-editar-programacion'},{'name': 'EditarProgramacionPeriodicaComponent', 'selector': 'app-editar-programacion-periodica'},{'name': 'EditarReporteFalloComponent', 'selector': 'app-editar-reporte-fallo'},{'name': 'EliminarComponent', 'selector': 'app-eliminar'},{'name': 'EliminarComponent', 'selector': 'app-eliminar'},{'name': 'EliminarComponent', 'selector': 'app-eliminar'},{'name': 'EliminarComponent', 'selector': 'app-eliminar'},{'name': 'EnEsperaComponent', 'selector': 'app-en-espera'},{'name': 'GestionarMisionalidadComponent', 'selector': 'app-gestionar-misionalidad'},{'name': 'GestionarPeticionarioComponent', 'selector': 'app-gestionar-peticionario'},{'name': 'GestionarReservaComponent', 'selector': 'app-gestionar-reserva'},{'name': 'GestionarSeguimientoComponent', 'selector': 'app-gestionar-seguimiento'},{'name': 'GestionMasivaComponent', 'selector': 'app-gestion-masiva'},{'name': 'GestionMisionalidadComponent', 'selector': 'app-gestion-misionalidad'},{'name': 'GestionSolicitudComponent', 'selector': 'app-gestion-solicitud'},{'name': 'HistorialMantenimientoComponent', 'selector': 'app-historial-mantenimiento'},{'name': 'InformeDetalleComponent', 'selector': 'app-informe-detalle'},{'name': 'InformeSolicitudComponent', 'selector': 'app-informe-solicitud'},{'name': 'InsertarComponent', 'selector': 'app-insertar'},{'name': 'InsertarComponent', 'selector': 'app-insertar'},{'name': 'InsertarComponent', 'selector': 'app-insertar'},{'name': 'InsertarComponent', 'selector': 'app-insertar'},{'name': 'InsertarComponent', 'selector': 'app-insertar'},{'name': 'InsertarFranjaComponent', 'selector': 'app-insertar-franja'},{'name': 'InsertarNovedadComponent', 'selector': 'app-insertar-novedad'},{'name': 'ListaAforosComponent', 'selector': 'app-lista-aforos'},{'name': 'ListaAlternativaComponent', 'selector': 'app-lista-alternativa'},{'name': 'ListaContratosMqeqComponent', 'selector': 'app-lista-contratos-mqeq'},{'name': 'ListaFallosComponent', 'selector': 'app-lista-fallos'},{'name': 'ListaFranjasComponent', 'selector': 'app-lista-franjas'},{'name': 'ListaLugarComponent', 'selector': 'app-lista-lugar'},{'name': 'ListaMaqEquDisponiblesComponent', 'selector': 'app-lista-maq-equ-disponibles'},{'name': 'ListaMaqEquVigentesComponent', 'selector': 'app-lista-maq-equ-vigentes'},{'name': 'ListaMaquinariaEquiposComponent', 'selector': 'app-lista-maquinaria-equipos'},{'name': 'ListaPendientesComponent', 'selector': 'app-lista-pendientes'},{'name': 'ListaPksActaComponent', 'selector': 'app-lista-pks-acta'},{'name': 'ListaPksAsociarComponent', 'selector': 'app-lista-pks-asociar'},{'name': 'ListaProgramacionPeriocidadComponent', 'selector': 'app-lista-programacion-periocidad'},{'name': 'ListaProgramacionSinpmtComponent', 'selector': 'app-lista-programacion-sinpmt'},{'name': 'ListaRadicadosComponent', 'selector': 'app-lista-radicados'},{'name': 'ListarAlternativasComponent', 'selector': 'app-listar-alternativas'},{'name': 'ListarApiquesComponent', 'selector': 'app-listar-apiques'},{'name': 'ListarComponent', 'selector': 'app-listar'},{'name': 'ListarComponent', 'selector': 'app-listar'},{'name': 'ListarComponent', 'selector': 'app-listar'},{'name': 'ListarComponent', 'selector': 'app-listar'},{'name': 'ListarComponent', 'selector': 'app-listar'},{'name': 'ListarFranjaComponent', 'selector': 'app-listar-franja'},{'name': 'ListarNovedadComponent', 'selector': 'app-listar-novedad'},{'name': 'ListaSeguimientoComponent', 'selector': 'app-lista-seguimiento'},{'name': 'ListaTransicionComponent', 'selector': 'app-lista-transicion'},{'name': 'ListaVerificacionComponent', 'selector': 'app-lista-verificacion'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapaSeleccionComponent', 'selector': 'app-mapa-seleccion'},{'name': 'MapaUmvComponent', 'selector': 'app-mapa-umv'},{'name': 'MapComponent', 'selector': 'app-map'},{'name': 'MenuItemComponent', 'selector': 'app-menu-item'},{'name': 'ModalAutoprogramarComponent', 'selector': 'app-modal-autoprogramar'},{'name': 'ModalCargueArchivoComponent', 'selector': 'app-modal-cargue-archivo'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'ModalConfirmarComponent', 'selector': 'app-modal-confirmar'},{'name': 'ModalConfirmarComponent', 'selector': 'app-modal-confirmar'},{'name': 'ModalConfirmarComponent', 'selector': 'app-modal-confirmar'},{'name': 'ModalDescargaArchivoComponent', 'selector': 'app-modal-descarga-archivo'},{'name': 'ModalListaEnsayosComponent', 'selector': 'app-modal-lista-ensayos'},{'name': 'ModalListaMaterialesComponent', 'selector': 'app-modal-lista-materiales'},{'name': 'ModalTableAsociarComponent', 'selector': 'app-modal-table-asociar'},{'name': 'ModalVersionComponent', 'selector': 'app-modal-version'},{'name': 'NotAuthorizedComponent', 'selector': 'app-not-authorized'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NovedadadesIntervencionComponent', 'selector': 'app-novedadades-intervencion'},{'name': 'ProgramacionPeriodicaIntervencionComponent', 'selector': 'app-programacion-periodica-intervencion'},{'name': 'ProgramacionVisitaTecnicaComponent', 'selector': 'app-programacion-visita-tecnica'},{'name': 'ProgramarComponent', 'selector': 'app-programar'},{'name': 'ProgressComponent', 'selector': 'app-progress'},{'name': 'RealizarSolicitudesComponent', 'selector': 'app-realizar-solicitudes'},{'name': 'RegistrarInsumosComponent', 'selector': 'app-registrar-insumos'},{'name': 'RegistrarPriorizacionComponent', 'selector': 'app-registrar-priorizacion'},{'name': 'RegistrarServicioComponent', 'selector': 'app-registrar-servicio'},{'name': 'RegistroAforosComponent', 'selector': 'app-registro-aforos'},{'name': 'RegistroAlternativaComponent', 'selector': 'app-registro-alternativa'},{'name': 'RegistroApiqueComponent', 'selector': 'app-registro-apique'},{'name': 'RegistroCapaComponent', 'selector': 'app-registro-capa'},{'name': 'RegistroDatosAforoComponent', 'selector': 'app-registro-datos-aforo'},{'name': 'RegistroDiarioComponent', 'selector': 'app-registro-diario'},{'name': 'RegistroDiarioComponent', 'selector': 'app-registro-diario'},{'name': 'RegistroDisenoComponent', 'selector': 'app-registro-diseno'},{'name': 'RegistroFallasComponent', 'selector': 'app-registro-fallas'},{'name': 'RegistroFotoComponent', 'selector': 'app-registro-foto'},{'name': 'RegistroInsumosComponent', 'selector': 'app-registro-insumos'},{'name': 'RegistroOtrosFactoresComponent', 'selector': 'app-registro-otros-factores'},{'name': 'RegistroUnidadMuestreoComponent', 'selector': 'app-registro-unidad-muestreo'},{'name': 'RegistroVisitaComponent', 'selector': 'app-registro-visita'},{'name': 'RegistroVisitaDiagnosticoComponent', 'selector': 'app-registro-visita-diagnostico'},{'name': 'RegistroVisitaVerificacionComponent', 'selector': 'app-registro-visita-verificacion'},{'name': 'ReportarFalloComponent', 'selector': 'app-reportar-fallo'},{'name': 'ResultadoEnsayoComponent', 'selector': 'app-resultado-ensayo'},{'name': 'RevisarDisenoComponent', 'selector': 'app-revisar-diseno'},{'name': 'RevisarVisitaDiagnosticoComponent', 'selector': 'app-revisar-visita-diagnostico'},{'name': 'RevisionVisitaDiagnosticoComponent', 'selector': 'app-revision-visita-diagnostico'},{'name': 'SeccionCantidadesDeObraComponent', 'selector': 'app-seccion-cantidades-de-obra'},{'name': 'SeccionControlDeCalidadComponent', 'selector': 'app-seccion-control-de-calidad'},{'name': 'SeccionEquipoPortatilComponent', 'selector': 'app-seccion-equipo-portatil'},{'name': 'SeccionInformacionDelPersonalComponent', 'selector': 'app-seccion-informacion-del-personal'},{'name': 'SeccionInformacionGeneralComponent', 'selector': 'app-seccion-informacion-general'},{'name': 'SeccionInspeccionYOficialCuadrillaComponent', 'selector': 'app-seccion-inspeccion-y-oficial-cuadrilla'},{'name': 'SeccionMaquinariaComponent', 'selector': 'app-seccion-maquinaria'},{'name': 'SeccionMaquinariaComponent', 'selector': 'app-seccion-maquinaria'},{'name': 'SeccionMaterialComponent', 'selector': 'app-seccion-material'},{'name': 'SeccionMaterialesComponent', 'selector': 'app-seccion-materiales'},{'name': 'SeccionMezclaAsfalticasConcretosComponent', 'selector': 'app-seccion-mezcla-asfalticas-concretos'},{'name': 'SeccionObservacionesGeneralesComponent', 'selector': 'app-seccion-observaciones-generales'},{'name': 'SeccionPersonalComponent', 'selector': 'app-seccion-personal'},{'name': 'SeccionProgramacionDiariaComponent', 'selector': 'app-seccion-programacion-diaria'},{'name': 'SeccionRetiroMaterialesEscombrosComponent', 'selector': 'app-seccion-retiro-materiales-escombros'},{'name': 'SegMapaUmvComponent', 'selector': 'app-seg-mapa-umv'},{'name': 'ServicioApiquesComponent', 'selector': 'app-servicio-apiques'},{'name': 'ServicioDensidadComponent', 'selector': 'app-servicio-densidad'},{'name': 'ServicioFormulaComponent', 'selector': 'app-servicio-formula'},{'name': 'ServicioNucleoComponent', 'selector': 'app-servicio-nucleo'},{'name': 'ServicioOtrosComponent', 'selector': 'app-servicio-otros'},{'name': 'SimpleDialogComponent', 'selector': 'app-simple-dialog'},{'name': 'SincroniacionSPIComponent', 'selector': 'app-sincroniacion-spi'},{'name': 'SolicitudDialogComponent', 'selector': 'app-solicitud-dialog'},{'name': 'SolicitudEnsayoLaboratorioComponent', 'selector': 'app-solicitud-ensayo-laboratorio'},{'name': 'SolicitudesApiquesAforosComponent', 'selector': 'app-solicitudes-apiques-aforos'},{'name': 'TablaFiltrosComponent', 'selector': 'app-tabla-filtros'},{'name': 'TablaGestionPendienteComponent', 'selector': 'app-tabla-gestion-pendiente'},{'name': 'TablaPendientesApiquesComponent', 'selector': 'app-tabla-pendientes-apiques'},{'name': 'TablaRadicadoVinculadoComponent', 'selector': 'app-tabla-radicado-vinculado'},{'name': 'TablaSeguimientosComponent', 'selector': 'app-tabla-seguimientos'},{'name': 'TablaVincularComponent', 'selector': 'app-tabla-vincular'},{'name': 'TableDocumentosComponent', 'selector': 'app-table-documentos'},{'name': 'TableEnsayoComponent', 'selector': 'app-table-ensayo'},{'name': 'TableInformeComponent', 'selector': 'app-table-informe'},{'name': 'TableMantenimientosActivosComponent', 'selector': 'app-table-mantenimientos-activos'},{'name': 'TableNomenclaturaApiqueComponent', 'selector': 'app-table-nomenclatura-apique'},{'name': 'TableVersionSolicitudComponent', 'selector': 'app-table-version-solicitud'},{'name': 'TabsDistribuidorComponent', 'selector': 'app-tabs-distribuidor'},{'name': 'TabSeccionesComponent', 'selector': 'app-tab-secciones'},{'name': 'TabSeccionesComponent', 'selector': 'app-tab-secciones'},{'name': 'UbicarApiqueComponent', 'selector': 'app-ubicar-apique'},{'name': 'ValidacionVisitaDiagnosticoComponent', 'selector': 'app-validacion-visita-diagnostico'},{'name': 'ValidarDisenoComponent', 'selector': 'app-validar-diseno'},{'name': 'ValidarVisitaDiagnosticoComponent', 'selector': 'app-validar-visita-diagnostico'},{'name': 'VerAlternativaComponent', 'selector': 'app-ver-alternativa'},{'name': 'VerComponent', 'selector': 'app-ver'},{'name': 'VerComponent', 'selector': 'app-ver'},{'name': 'VerComponent', 'selector': 'app-ver'},{'name': 'VerComponent', 'selector': 'app-ver'},{'name': 'VerComponent', 'selector': 'app-ver'},{'name': 'VerDetalleMantenimientoComponent', 'selector': 'app-ver-detalle-mantenimiento'},{'name': 'VerEquipoComponent', 'selector': 'app-ver-equipo'},{'name': 'VerFallasComponent', 'selector': 'app-ver-fallas'},{'name': 'VerFotosComponent', 'selector': 'app-ver-fotos'},{'name': 'VerGrupoComponent', 'selector': 'app-ver-grupo'},{'name': 'VerLugarComponent', 'selector': 'app-ver-lugar'},{'name': 'VerOtroFactorComponent', 'selector': 'app-ver-otro-factor'},{'name': 'VerParametrosDisenioComponent', 'selector': 'app-ver-parametros-disenio'},{'name': 'VerPersonaComponent', 'selector': 'app-ver-persona'},{'name': 'VincularPeticionarioComponent', 'selector': 'app-vincular-peticionario'},{'name': 'VisorFotosComponent', 'selector': 'app-visor-fotos'},{'name': 'WebMapaUmvComponent', 'selector': 'app-web-mapa-umv'},{'name': 'WelcomeComponent', 'selector': 'app-welcome'}];
+    var DIRECTIVES = [{'name': 'DndDirective', 'selector': '[appDnd]'},{'name': 'MsgErrorDirective', 'selector': '[msg-error]'},{'name': 'MsgErrorDirective', 'selector': '[msg-error]'}];
+    var ACTUAL_COMPONENT = {'name': 'ListarComponent-1'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ListarComponent-1.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

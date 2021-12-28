@@ -1,0 +1,116 @@
+<div class="contenido-seccion" *ngIf="mantenimientoVialEvento" >
+  <div class="campo">
+      <div class="nombre"><strong>Localidad</strong></div>
+      <div class="valor">{{mantenimientoVialEvento.valor_localidad +' - '+ mantenimientoVialEvento.descripcion_localidad}}</div>
+  </div>
+
+  <div class="campo">
+      <div class="nombre"><strong>UPZ</strong></div>
+      <div class="valor">{{mantenimientoVialEvento.valor_upz +' - '+ mantenimientoVialEvento.descripcion_upz}}</div>
+  </div>
+
+  <div class="campo">
+      <div class="nombre"><strong>Barrio</strong></div>
+      <div class="valor">{{mantenimientoVialEvento.descripcion_barrio}}</div>
+  </div>
+
+  <div class="campo">
+      <div class="nombre"><strong>CIV</strong></div>
+      <div class="valor">{{mantenimientoVialEvento.civ}}</div>
+  </div>
+
+  <div class="campo">
+      <div class="nombre"><strong>PK ID Calzada</strong></div>
+      <div class="valor">{{mantenimientoVialEvento.pk_id_calzada}}</div>
+  </div>
+
+  <div class="campo">
+      <div class="nombre"><strong>Eje Vial</strong></div>
+      <div class="valor">{{mantenimientoVialEvento.eje_vial}}</div>
+  </div>
+
+  <div class="campo">
+      <div class="nombre"><strong>Desde</strong></div>
+      <div class="valor">{{mantenimientoVialEvento.desde}}</div>
+  </div>
+
+  <div class="campo">
+      <div class="nombre"><strong>Hasta</strong></div>
+      <div class="valor">{{mantenimientoVialEvento.hasta}}</div>
+  </div>
+
+  <div class="campo">
+      <div class="nombre"><strong>Zona</strong></div>
+      <div class="valor">{{mantenimientoVialEvento.descripcion_zona}}</div>
+  </div>
+
+  <div class="campo">
+      <div class="nombre"><strong>Fecha visita</strong></div>
+      <div class="valor">{{mantenimientoVialEvento.fecha_visita | date: 'dd/MM/yyyy' }}</div>
+  </div>
+
+  <div class="campo">
+      <div class="nombre"><strong>Sección vial</strong></div>
+      <div class="valor">{{mantenimientoVialEvento.descripcion_seccion_vial }}</div>
+  </div>
+
+  <div class="campo">
+      <div class="nombre"><strong>Fecha solicitud</strong></div>
+      <div class="valor">{{mantenimientoVialEvento.solicitud_fecha | date: 'dd/MM/yyyy' }}</div>
+  </div>
+
+  <div class="campo">
+    <div class="nombre"><strong>Origen</strong></div>
+    <div class="valor">{{mantenimientoVialEvento.descripcion_origen}}</div>
+    </div>
+
+  <div class="campo">
+      <div class="nombre"><strong>Uso vía</strong></div>
+      <div class="valor">{{mantenimientoVialEvento.descripcion_uso_via}}</div>
+  </div>
+
+  <div class="campo">
+      <div class="nombre"><strong>Tipo malla</strong></div>
+      <div class="valor">{{mantenimientoVialEvento.descripcion_malla}}</div>
+  </div>
+
+  <div class="campo">
+      <div class="nombre"><strong>Rutas transporte</strong></div>
+      <div class="valor">{{mantenimientoVialEvento.rutas_transporte}}</div>
+  </div>
+
+  <div class="campo">
+      <div class="nombre"><strong>Transitabilidad</strong></div>
+      <div class="valor">{{mantenimientoVialEvento.descripcion_transitabilidad}}</div>
+  </div>
+
+  <div class="campo">
+      <div class="nombre"><strong>Area PK</strong></div>
+      <div class="valor">{{mantenimientoVialEvento.area_pk}}m2</div>
+  </div>
+
+  <div class="campo">
+      <div class="nombre"><strong>Ancho PK</strong></div>
+      <div class="valor">{{mantenimientoVialEvento.ancho_pk}}m</div>
+  </div>
+
+  <div class="campo">
+      <div class="nombre"><strong>Programa</strong></div>
+      <div class="valor">{{mantenimientoVialEvento.descripcion_programa?mantenimientoVialEvento.descripcion_programa:'ninguno'}}</div>
+  </div>
+
+  <div class="campo">
+      <div class="nombre"><strong>Superficie</strong></div>
+      <div class="valor">{{mantenimientoVialEvento.descripcion_superficie}}</div>
+  </div>
+
+  <div class="campo">
+      <div class="nombre"><strong>Interveción Total</strong></div>
+      <div class="valor">{{mantenimientoVialEvento.descripcion_intervencion_total?mantenimientoVialEvento.descripcion_intervencion_total:'ninguna'}}</div>
+  </div>
+
+  <div class="campo">
+      <div class="nombre"><strong>PCI</strong></div>
+      <div class="valor">{{mantenimientoVialEvento.pci!=null?mantenimientoVialEvento.pci:'ninguno'}}</div>
+  </div>
+</div>

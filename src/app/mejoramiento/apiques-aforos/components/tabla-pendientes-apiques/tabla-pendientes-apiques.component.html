@@ -1,0 +1,170 @@
+<div class="mat-elevation-z8">
+    <div style="overflow-x: scroll;">
+    <table mat-table [dataSource]="dataSource" matSort #tableSort="matSort" *ngIf = "ready" >
+        <!--columnas de datos-->
+        <ng-container *ngFor="let col of configColumnas" [matColumnDef]="col.attr">
+            <th mat-header-cell *matHeaderCellDef [ngStyle]="{'min-width':col.ancho?col.ancho:'None','max-width':col.ancho?col.ancho:'None'}">{{col.label}}</th>
+            <ng-container *ngIf=" !esColumnaPredefinida(col.attr)">
+                <td (click)="irAPk(row.pk_id_calzada)" mat-cell *matCellDef="let row" [ngStyle]="{'min-width':col.ancho?col.ancho:'None','max-width':col.ancho?col.ancho:'None'}" >
+                    {{col.tipo == 'Fecha' ? (row[col.attr] | date :'dd/MM/YYYY'):row[col.attr]}}
+                    
+                </td>
+            </ng-container>
+            <ng-container *ngIf="esColumnaPredefinida(col.attr)">
+                <ng-container [ngSwitch]="col.attr">
+                    <ng-container *ngSwitchCase="'requiere_apiques'">
+                        <td mat-cell *matCellDef="let row" [ngStyle]="{'min-width':col.ancho?col.ancho:'None','max-width':col.ancho?col.ancho:'None'}" >
+                            {{row[col.attr]}}
+                        </td>
+                    </ng-container>
+                    <ng-container *ngSwitchCase="'requiere_aforo'">
+                        <td mat-cell *matCellDef="let row" [ngStyle]="{'min-width':col.ancho?col.ancho:'None','max-width':col.ancho?col.ancho:'None'}" >
+                            {{row[col.attr]}}
+                        </td>
+                    </ng-container>
+                    <ng-container *ngSwitchCase="'check'">
+                        <td mat-cell *matCellDef="let row">
+                            <mat-checkbox [(ngModel)]="row.checked"
+                            (change)=checkPK($event,row)
+                            >
+                            </mat-checkbox>  
+                        </td>
+                    </ng-container>
+
+                    <ng-container *ngSwitchCase="'respuesta_apiques'">
+                        <td mat-cell *matCellDef="let row">
+                            <mat-icon *ngIf="row.respuesta_apiques == 'PENDIENTE'" matTooltip="Pendiente" aria-hidden="false" aria-label="Example home icon">pending_actions</mat-icon>
+                            <span *ngIf="row.respuesta_apiques != 'SI' && row.respuesta_apiques != 'PENDIENTE'">N/A</span>
+                            <button [disabled] = "enEspera" class="btnOpciones color-primary-100" *ngIf="row.respuesta_apiques == 'SI'" mat-raised-button (click)="verDocumento(row)"> 
+                                <mat-icon matTooltip="Ver" aria-hidden="false" aria-label="Example home icon">description</mat-icon>
+                            </button>
+                            
+                        </td>
+                    </ng-container>
+
+                    <ng-container *ngSwitchCase="'respuesta_aforo'">
+                        <td mat-cell *matCellDef="let row">
+                            <mat-icon *ngIf="row.respuesta_aforo != 'SI' && row.requiere_aforo == 'SI'" matTooltip="Pendiente" aria-hidden="false" aria-label="Example home icon">pending_actions</mat-icon>
+                            <span *ngIf="row.requiere_aforo != 'SI'">N/A</span>
+                            <button [disabled] = "enEspera" class="btnOpciones color-primary-100" *ngIf="row.respuesta_aforo == 'SI'" mat-raised-button (click)="verResAforo(row)"> 
+                                <mat-icon matTooltip="Ver" aria-hidden="false" aria-label="Example home icon">description</mat-icon>
+                            </button>
+                        </td>
+                    </ng-container>
+
+                    <ng-container *ngSwitchDefault>
+                        <td mat-cell *matCellDef="let row"  [ngStyle]="{'min-width':col.ancho?col.ancho:'None','max-width':col.ancho?col.ancho:'None'}" >
+                            
+                        </td>
+                    </ng-container>
+                </ng-container>
+            </ng-container>
+        </ng-container>
+
+         <!--columnas de filtros-->
+         <ng-container *ngFor="let col of configColumnas;let i = index" [matColumnDef]="col.attr+'_'">
+            <th mat-header-cell *matHeaderCellDef [ngStyle]="{'min-width':col.ancho?col.ancho:'None','max-width':col.ancho?col.ancho:'None'}">
+              <mat-form-field *ngIf = "!esColumnaPredefinida(col.attr)" class="filter" floatLabel="always"  >
+                <mat-label>Buscar</mat-label>
+                <input *ngIf = "col.tipo != 'Fecha'" matInput autocomplete="off" [formControl]="formControlsFiltro[i]">
+                <ng-container *ngIf = "col.tipo == 'Fecha'">
+                    <span style="display: inline-flex;">
+                    <mat-date-range-input  
+                        [formGroup]="formControlsFiltro[i]"
+                        [rangePicker]="picker">
+                        <input matStartDate formControlName="start">
+                        <input matEndDate formControlName="end">
+                    </mat-date-range-input>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-date-range-picker #picker></mat-date-range-picker>
+                    </span>
+                </ng-container>
+              </mat-form-field>
+              <ng-container *ngIf = "esColumnaPredefinida(col.attr)">
+                  <ng-container [ngSwitch]="col.attr">
+                    <ng-container *ngSwitchCase="'check'" >
+                        <mat-checkbox 
+                            (change)=masterCheck($event)
+                            [indeterminate]="isIndeterminate()"
+                            [checked]="allSelected">
+                        </mat-checkbox>  
+                    </ng-container>
+
+                    <ng-container *ngSwitchCase="'trabajar'" >
+                        <button  mat-raised-button class="color-warn-800" class="btnOpciones color-warn-800" (click)="onClearFilters()" matTooltip = "Limpiar filtros"><mat-icon>backspace</mat-icon></button>
+                    </ng-container>
+
+                    <ng-container *ngSwitchCase="'requiere_apiques'" >
+                        <mat-form-field  class="filter" floatLabel="always">
+                            <mat-label>Buscar</mat-label>
+                            <mat-select [formControl]="formControlsFiltro[i]">
+                                <mat-option> - </mat-option>
+                                <mat-option value="SI">SI</mat-option>
+                                <mat-option value="NO">NO</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </ng-container>
+
+                    <ng-container *ngSwitchCase="'requiere_aforo'" >
+                        <mat-form-field  class="filter" floatLabel="always">
+                            <mat-label>Buscar</mat-label>
+                            <mat-select [formControl]="formControlsFiltro[i]">
+                                <mat-option> - </mat-option>
+                                <mat-option value="SI">SI</mat-option>
+                                <mat-option value="NO">NO</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </ng-container>
+
+                    <ng-container *ngSwitchCase="'respuesta_apiques'" >
+                        <mat-form-field  class="filter" floatLabel="always">
+                            <mat-label>Buscar</mat-label>
+                            <mat-select [formControl]="formControlsFiltro[i]">
+                                <mat-option> - </mat-option>
+                                <mat-option value="SI">SI</mat-option>
+                                <mat-option value="NO">NO</mat-option>
+                               
+                            </mat-select>
+                        </mat-form-field>
+                    </ng-container>
+
+                    <ng-container *ngSwitchCase="'respuesta_aforo'" >
+                        <mat-form-field  class="filter" floatLabel="always">
+                            <mat-label>Buscar</mat-label>
+                            <mat-select [formControl]="formControlsFiltro[i]">
+                                <mat-option> - </mat-option>
+                                <mat-option value="SI">SI</mat-option>
+                                <mat-option value="NO">NO</mat-option>
+                                
+                            </mat-select>
+                        </mat-form-field>
+                    </ng-container>
+
+                    
+                    <ng-container *ngSwitchDefault >
+                        
+                    </ng-container>
+                  </ng-container>
+                
+              </ng-container>
+              
+          </ng-container>
+
+         
+
+          <!-- No hay datos Column -->
+          <ng-container matColumnDef="noData">
+            <mat-footer-cell *matFooterCellDef colspan="6">
+             No hay datos
+            </mat-footer-cell>
+          </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef= "displayedColumns"></tr>
+        <tr mat-header-row *matHeaderRowDef= "filterColumns"></tr>
+        
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        <tr mat-footer-row *matFooterRowDef= "['noData']" [ngClass]="{'hide':!(dataSource != null && dataSource['data']['length'] < 1)}"></tr>
+    </table>
+    </div>
+</div>       

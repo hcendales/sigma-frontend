@@ -1,0 +1,131 @@
+<mat-card>
+    <mat-card-header class="mat-card-header-umv">
+      <div class="mat-card-header-text">
+        <mat-card-subtitle>
+          <h2 *ngIf = "!edit_flag">Asociar COI</h2>
+          <h2 *ngIf = "edit_flag">Editar COI</h2>
+        </mat-card-subtitle>
+      </div>
+    </mat-card-header>
+
+    <form [formGroup]="formEditar"  class="editar-frm">
+
+        <mat-form-field appearance="outline" class = "campo">
+            <mat-label>COI *</mat-label>
+            <input matInput formControlName="coi" autocomplete="off">
+            <button *ngIf="buscandoCOI" matSuffix mat-icon-button>
+                <mat-icon><mat-spinner diameter="20"></mat-spinner></mat-icon>
+            </button>
+            <mat-error *ngIf="formEditar.get('coi')!.hasError('required')">
+                (!) Campo requerido
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class = "campo">
+            <mat-label>Radicado SDM *</mat-label>
+            <input matInput formControlName="radicado_sdm" autocomplete="off">
+            <button *ngIf="buscandoCOI" matSuffix mat-icon-button>
+                <mat-icon><mat-spinner diameter="20"></mat-spinner></mat-icon>
+            </button>
+            <mat-error *ngIf="formEditar.get('radicado_sdm')!.hasError('required')">
+                (!) Campo requerido
+            </mat-error>
+        </mat-form-field>
+
+        <button type="button" mat-icon-button color="primary" matTooltip="Buscar COI | Radicado SDM" (click)="buscarCOI()">
+            <mat-icon>search</mat-icon>
+        </button>
+        <br>
+        <mat-form-field appearance="outline" class = "campo">
+            <mat-label>Tipo Respuesta *</mat-label>
+            <mat-select formControlName="tipo_respuesta">
+                <mat-option [value]="null"> -- </mat-option>
+                <mat-option value="aprobado">Aprobado</mat-option>
+                <mat-option value="negado">Negado</mat-option>
+            </mat-select>
+            <mat-error *ngIf="formEditar.get('tipo_respuesta')!.hasError('required')">
+                (!) Campo requerido
+            </mat-error>
+        </mat-form-field>
+
+        <div class="file-box">
+            <div>
+                <mat-label>Reporte COI * </mat-label>
+            </div>
+            <button type="button" mat-raised-button color="primary" [disabled]="onDescargar" onclick="document.getElementById('uploadfile').click()">
+                <mat-icon>upload</mat-icon>
+                Agregar Archivo
+            </button>
+            <ng-container *ngIf="file">
+                <label class="label-box" *ngIf="!onDescargar">{{ fileName.value }}</label>
+                <label class="label-box" *ngIf="onDescargar">{{ nombreArchivo }}</label>
+                
+                <button type="button" mat-icon-button color="primary" *ngIf="onDescargar" (click)="descargar()">
+                    <mat-icon>file_download</mat-icon>
+                </button>
+
+            </ng-container>
+            <ng-container *ngIf="extencion">
+              <p style="color:red;">Archivo debe estar en formato PDF</p>
+            </ng-container>
+            <ng-container *ngIf="size">
+              <p style="color:red;">Archivo pesa más de 10 megas</p>
+            </ng-container>
+            <input type="file" id="uploadfile" accept=".pdf" style="display:none" formControlName="archivo" (change)="capturarFile($event)" >
+        </div>
+
+        <mat-form-field appearance="outline" class = "campo campo-are">
+            <mat-label>Observaciones*</mat-label>
+            <textarea matInput type="text" formControlName="observaciones" autocomplete="off" rows="10" cols="50"></textarea>
+            <mat-error *ngIf="formEditar.get('observaciones')!.hasError('maxlength')">
+                (!) Campo supera la cantidad límite de carácteres de 250
+            </mat-error>
+        </mat-form-field>
+
+        <!-- <ng-container >
+            <div [formGroup]="formEnviar">
+                <mat-form-field appearance="outline" class = "campo">
+                    <mat-label>Actividad Destino *</mat-label>
+                    <mat-select [disabled]="!buttonRegistrar" formControlName="actividad_destino">
+                        <mat-option [value]="null"> -- </mat-option>
+                        <mat-option *ngFor="let opcion of listas" [value]="opcion.id_actividad">{{ opcion.nombre }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </ng-container> -->
+
+        <app-avance-masivo-mantenimiento *ngIf="buttonRegistrar"  [idsProcesoGestion]="idsProcesoGestion" [actividadDestino]="actividadDestino" ></app-avance-masivo-mantenimiento>
+        <div>
+            <button mat-raised-button class="color-primary-100 act-btn" (click)="onSubmit()" [disabled]="formEditar.invalid || salvarCOI || buttonRegistrar" >
+                <mat-icon>save</mat-icon>
+                <mat-icon *ngIf="salvarCOI">
+                    <mat-spinner diameter="20"></mat-spinner>
+                </mat-icon>
+                Registrar
+            </button>
+            <!-- <button mat-raised-button class="color-primary-100 act-btn-2" type="button" (click)="enviar()" [disabled]="formEnviar.invalid || enviarCOI" >
+                <mat-icon>send</mat-icon>
+                <mat-icon *ngIf="enviarCOI">
+                    <mat-spinner diameter="20"></mat-spinner>
+                </mat-icon>
+                Enviar
+            </button> -->
+                <button type="button" mat-raised-button class="act-btn-2 color-warn-800" (click)="regresarEvent.emit()">
+                <mat-icon>cancel</mat-icon>
+                Cerrar
+            </button>
+            <mat-error *ngIf="formEditar.invalid">
+                (!) Los campos con * son obligatorios.
+            </mat-error>
+        </div>
+
+        
+
+    </form>
+</mat-card>
+
+
+<!-- <pre>formEditar: {{ formEditar.value | json }}</pre>
+<pre>fileName: {{ fileName.value | json }}</pre>
+<pre>formEnviar: {{ formEnviar.value | json }}</pre> -->
+

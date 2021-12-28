@@ -1,0 +1,100 @@
+<div class="example-container mat-elevation-z8">
+  <div class="mat-elevation-z8">
+      <input matInput [(ngModel)]="filter" (keyup)="applyFilter($event)" placeholder="Filtro" autocomplete="off">
+    <button type="button" mat-icon-button color="primary" matTooltip="Exportar tabla a CSV" (click)="generarExportLista()">
+      <mat-icon aria-label="Export archivo CSV">get_app</mat-icon>
+    </button>
+  </div>
+    <!--mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator-->
+    <mat-table [dataSource]="dataSourceSolicitudes" class="mat-elevation-z8" matSort>
+        <!-- SELECCION -->
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>
+            <mat-checkbox (change)="alternarSeleccion()"
+              [checked]="isAllSelected()"
+              [indeterminate]="selection.hasValue() && !isAllSelected()"
+              [disabled]="disabledChecks">
+            </mat-checkbox>
+          </mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation()"
+               (change)="$event ? selection.toggle(row.id_mantenimiento_vial) : null; $event ? clickSelectedMantenimiento(row): null"
+               [checked]="selection.isSelected(row.id_mantenimiento_vial)"
+               [disabled]="rowDisabled(row) || disabledChecks"></mat-checkbox>
+          </mat-cell>
+        </ng-container>
+
+        <!-- idMant -->
+        <ng-container matColumnDef="idMant">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> idMantenimiento </mat-header-cell>
+          <mat-cell *matCellDef="let row"  > {{row.id_mantenimiento_vial}} </mat-cell>
+        </ng-container>
+        <!-- idMantEvent -->
+        <ng-container matColumnDef="idMantEvent">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> idMantEvent </mat-header-cell>
+          <mat-cell *matCellDef="let row"  > {{row.id_mantenimiento_vial_evento}} </mat-cell>
+        </ng-container>
+
+        <!-- idProcesoGestion -->
+        <ng-container matColumnDef="idProcesoGestion">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> idProcesoGestion </mat-header-cell>
+          <mat-cell *matCellDef="let row"  > {{row.id_proceso_gestion}} </mat-cell>
+        </ng-container>
+
+        <!-- CIV -->
+        <ng-container matColumnDef="civ">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> CIV </mat-header-cell>
+          <mat-cell *matCellDef="let row"  > {{row.civ}} </mat-cell>
+        </ng-container>
+
+        <!-- PK ID -->
+        <ng-container matColumnDef="pkId">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> PK ID </mat-header-cell>
+          <mat-cell *matCellDef="let row" > {{row.pk_id_calzada}} </mat-cell>
+        </ng-container>
+
+        <!-- Radicado Entrada -->
+        <ng-container matColumnDef="radEntrada">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Radicado Entrada </mat-header-cell>
+          <mat-cell *matCellDef="let row" > {{row.numero_radicado_intervencion}} </mat-cell>
+        </ng-container>
+
+        <!-- Radicado Salida -->
+        <ng-container matColumnDef="radSalida">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Radicado Salida </mat-header-cell>
+          <mat-cell *matCellDef="let row" > {{row.numero_radicado_sol_reserva}} </mat-cell>
+        </ng-container>
+
+        <!-- Actividad Agrupada -->
+        <ng-container matColumnDef="actividadAgrupada">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Act. Agrupada </mat-header-cell>
+          <mat-cell *matCellDef="let row" >{{row.codigo_actividad_agrupada}}</mat-cell>
+        </ng-container>
+
+        <!-- Km carril impacto -->
+        <ng-container matColumnDef="kmCarril">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> KmCarril </mat-header-cell>
+          <mat-cell *matCellDef="let row" >{{row.km_carril_impacto}}</mat-cell>
+        </ng-container>
+
+        <!-- No hay datos Column -->
+        <ng-container matColumnDef="noData">
+          <mat-footer-cell *matFooterCellDef colspan="6">
+            No hay datos
+          </mat-footer-cell>
+        </ng-container>
+        <!-- Cargando datos Column -->
+        <ng-container matColumnDef="Cargando">
+          <mat-footer-cell *matFooterCellDef colspan="6">
+            Cargando datos...
+          </mat-footer-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;" [class.hidden] ="rowDisabled(row)">
+        </mat-row>
+
+        <!--tr mat-footer-row *matFooterRowDef= "['Cargando']" [ngClass]="{'hide':numEnabled>0}"></tr>
+        <tr mat-footer-row *matFooterRowDef= "['noData']" [ngClass]="{'hide':numEnabled!=0}"></tr-->
+      </mat-table>
+</div>

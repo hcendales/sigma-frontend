@@ -1,0 +1,25 @@
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { InsertarComponent } from './components/insertar/insertar.component';
+import { ActualizarComponent } from './components/actualizar/actualizar.component';
+import { ListarComponent } from './components/listar/listar.component';
+import { VerComponent } from './components/ver/ver.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    children: [
+      { path: 'actualizar', component: ActualizarComponent},
+      { path: 'insertar', component: InsertarComponent},
+      { path: 'listar', component: ListarComponent},
+      { path: 'ver', component: VerComponent},
+      { path: '**', redirectTo: 'listar'},
+    ]
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class RecursoSemanaRoutingModule { }

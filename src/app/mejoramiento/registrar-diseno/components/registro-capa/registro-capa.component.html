@@ -1,0 +1,36 @@
+<mat-card>
+  <mat-card-header class="mat-card-header-umv">
+    <div class="mat-card-header-text">
+      <mat-card-subtitle>
+        <h2>CAPAS</h2>
+      </mat-card-subtitle>
+    </div>
+  </mat-card-header>
+  <mat-card-content *ngIf="ready">
+    <div [formGroup]="form">
+      <ng-container formArrayName="capas">
+        <ng-container *ngFor="let capaForm of capas.controls; let i = index">
+          <div >
+            <mat-form-field appearance="outline">
+              <mat-label>Tipo </mat-label>
+              <mat-select formControlName="idTipoCapa">
+                <mat-option *ngFor="let tipo of listas[89]"[value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Espesor(m)</mat-label>
+              <input matInput formControlName="espesor" autocomplete="off">
+            </mat-form-field>
+              <button type="button" mat-mini-fab color="primary" (click)="deleteCapa(i)"><mat-icon class="mat-18">delete</mat-icon></button>
+          </div>
+        </ng-container>
+      </ng-container>
+
+      <button type="button" mat-mini-fab (click)="addCapa()">
+        <mat-icon class="mat-18">add</mat-icon>
+      </button>
+    </div>
+    </mat-card-content>
+  </mat-card>
+

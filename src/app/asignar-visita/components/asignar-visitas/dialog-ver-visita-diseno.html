@@ -1,0 +1,10 @@
+<div style="width:100%; height: 100%; position: relative;">
+    <div style="width:100%; height: 10%;">
+        <h2 mat-dialog-title>{{data.titulo}}</h2>
+        <button mat-dialog-close mat-mini-fab style="position: absolute; right: 0; top: 0;z-index: 100; width:1.5rem; height: 1.5rem;"><mat-icon style="font-size: 1rem;margin-top: -0.6rem;">close</mat-icon></button>
+    </div>    
+    <div style="overflow-y: scroll; width:100%; height: 90%; ">
+
+        <app-consulta-visita-diagnostico  [idMantenimientoVial]="data.dataMantenimiento.id_mantenimiento_vial" [idMantenimientoEvento]="data.dataMantenimiento.id_mantenimiento_vial_evento" [idDocumento]="data.dataMantenimiento.id_documento" [idActividad]="data.dataMantenimiento.id_actividad"></app-consulta-visita-diagnostico>
+    </div>
+</div>

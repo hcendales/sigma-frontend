@@ -1,0 +1,69 @@
+table {
+  width: 100%;
+}
+
+.mat-column-id_tipo_servicio_ensayo, .mat-cell-id_tipo_servicio_ensayo {
+    min-width: 20px;
+}
+
+.mat-column-codigo_tipo_ensayo, .mat-cell-codigo_tipo_ensayo {
+    min-width: 40px;
+}
+
+.mat-column-descripcion_tipo_ensayo, .mat-cell-descripcion_tipo_ensayo {
+    min-width: 50px;
+}
+
+.mat-column-programado, .mat-cell-programado {
+    min-width: 20%;
+    padding-right: 0px;
+  .mat-form-field {
+    text-align: center;
+    font-size: 9px;
+    width: 60%;
+  }    
+}
+
+.hide {
+  display: none;
+}
+
+// .mat-form-field {
+//   font-size: 9px;
+//   width: 30%;
+// }
+
+// td, th {
+//   width: 5%;
+// }
+// /* mat-table */
+// mat-footer-row mat-footer-cell{
+//   justify-content: center;
+//   font-style: italic;
+// }
+// /* Clear input */
+// .search-form-field {
+//   width: 200px;
+// }
+
+// .filter {
+//   display: block;
+//   width: 40px;
+// }
+
+// .retraso {
+//   color: brown;
+// }
+
+// .undia {
+//   color: orange;
+// }
+// .normal {
+//   color: black;
+// }
+// #bookmark {
+//      position: absolute;
+//      top: 80px;
+//      right: 20px;
+//      z-level: 1000;
+// }

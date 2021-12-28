@@ -1,0 +1,35 @@
+<h2 mat-dialog-title>Cargar un archivo al Radicado <strong>{{numeroRadicado}}</strong> </h2>
+<div mat-dialog-content>
+  <!-- Importar archivo... -->
+  <div *ngIf="loadExport" class="loading">Loading&#8230;</div>
+  <div 
+    ngfDrop multiple="1" selectable="1" class="well my-drop-zone"
+    [fileDropDisabled]="fileDropDisabled"
+    (filesChange)="lastFileAt = getDate()" 
+    [(validDrag)]="validComboDrag"
+    [(files)]="files"
+    [(lastInvalids)]="lastInvalids"
+    [(dragFiles)]="dragFiles"
+    [maxSize]="maxSize"
+    [fileDropDisabled]="fileDropDisabled"    
+    [class.invalid-drag]="validComboDrag === false" 
+    [class.valid-drag]="validComboDrag"
+    [accept]="accept"
+    >
+    <br />
+    {{files.length ? files[0].name: 'Arrastre o de click para cargar el archivo.'}}
+  </div>
+
+  <button mat-raised-button color="primary" style="width: 100%" (click)="subirArchivo()"
+    [disabled]="files.length==0">
+    <mat-icon>file_upload</mat-icon>
+    Cargar archivo
+  </button>
+</div>
+
+<mat-dialog-actions align="end" class="mt-5">
+  <button mat-raised-button color="primary" (click)="handleOk()" cdkFocusInitial>
+    <mat-icon>close</mat-icon>
+    Cerrar
+  </button>
+</mat-dialog-actions>

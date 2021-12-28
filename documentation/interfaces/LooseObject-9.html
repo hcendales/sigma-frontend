@@ -1,0 +1,456 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>sigma2-frontend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">sigma2-frontend documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Interfaces</li>
+  <li
+  >
+  LooseObject</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/mejoramiento/vincular-pks/components/tabla-vincular/tabla-vincular.component.ts</code>
+        </p>
+
+
+
+
+
+
+            <section>
+    <h3 id="inputs">Indexable</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <code>[key: string]:        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="288" class="link-to-prism">src/app/mejoramiento/vincular-pks/components/tabla-vincular/tabla-vincular.component.ts:288</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { SelectionModel } from &#x27;@angular/cdk/collections&#x27;;
+import { Component, EventEmitter, OnInit, Input, Output, ViewChild } from &#x27;@angular/core&#x27;;
+import { FormControl } from &#x27;@angular/forms&#x27;;
+import { MatDialog } from &#x27;@angular/material/dialog&#x27;;
+import { MatPaginator } from &#x27;@angular/material/paginator&#x27;;
+import { MatSort } from &#x27;@angular/material/sort&#x27;;
+import { MatTableDataSource } from &#x27;@angular/material/table&#x27;;
+import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
+import { GestionService } from &#x27;src/app/core/services/gestion.service&#x27;;
+import { SimpleDialogComponent } from &#x27;src/app/core/simple-dialog/simple-dialog.component&#x27;;
+import * as XLSX from &#x27;xlsx&#x27;;
+
+@Component({
+  selector: &#x27;app-tabla-vincular&#x27;,
+  templateUrl: &#x27;./tabla-vincular.component.html&#x27;,
+  styleUrls: [&#x27;./tabla-vincular.component.scss&#x27;]
+})
+export class TablaVincularComponent implements OnInit {
+
+  displayedColumns: any[];
+  dataSourceSolicitudes: MatTableDataSource&lt;any&gt;;
+  filterStr!: string;
+  selection &#x3D; new SelectionModel&lt;number&gt;(true, []);
+  filter!: string;
+  textoTablaGenerado!: string;
+
+  @ViewChild(MatPaginator)
+  paginator!: any;
+  @ViewChild(MatSort)
+  sort!: any;
+  file: any;
+  @ViewChild(&#x27;inputXls&#x27;) inputXls: any;
+  @Input() dataSource:any;
+  @Output() regLoaded &#x3D; new EventEmitter();
+  @Output() solicitudGestionSeleccionada &#x3D; new EventEmitter();
+  @Output() desSeleccionSolicitud &#x3D; new EventEmitter();
+  @Output() irAPkEmiter &#x3D; new EventEmitter();
+  @Output() filterPKs &#x3D; new EventEmitter();
+  filterColumns: any[] &#x3D; [];
+  public formControls:FormControl[] &#x3D; [];
+  searchkey!: string;
+  filterValues &#x3D; {
+    civ: &#x27;&#x27;,
+    pkId: &#x27;&#x27;,
+    tipoElemento: &#x27;&#x27;,
+    tipoMalla: &#x27;&#x27;,
+    tipoSuperficie: &#x27;&#x27;,
+    ejeVial: &#x27;&#x27;,
+    desde: &#x27;&#x27;,
+    hasta: &#x27;&#x27;,
+    tipOrigen: &#x27;&#x27;,
+    localidad: &#x27;&#x27;,
+    sector: &#x27;&#x27;,
+    upl: &#x27;&#x27;,
+    zona: &#x27;&#x27;
+  };
+  constructor(private gestionService: GestionService, private route: ActivatedRoute,
+    private router: Router, public dialog: MatDialog) {
+      this.displayedColumns &#x3D; [&#x27;civ&#x27;, &#x27;pkId&#x27;, &#x27;tipoElemento&#x27;, &#x27;tipoMalla&#x27;, &#x27;tipoSuperficie&#x27;,
+       &#x27;ejeVial&#x27;, &#x27;desde&#x27;, &#x27;hasta&#x27;, &#x27;localidad&#x27;, &#x27;sector&#x27;, &#x27;upl&#x27;, &#x27;zona&#x27;, &#x27;_CTRL_ACCION_borrar&#x27;];
+      this.dataSourceSolicitudes &#x3D;  new MatTableDataSource();
+  }
+  ngOnChanges(e:any){
+      console.log(&#x27;taa: &#x27;, e);
+      if(!e){return;}
+      let dataS &#x3D; e.dataSource ? e.dataSource.currentValue : null;
+      if(dataS &amp;&amp; this.dataSource &amp;&amp; this.dataSource.filteredData){
+        console.log(&#x27;tabla: &#x27;, e.dataSource);
+      }
+  }
+  ngOnInit() {
+    this.creaFiltro();
+  }
+
+  cargarListaSolicitudesPorActividad () {
+    const inArr: Array&lt;any&gt; &#x3D; [];
+    this.textoTablaGenerado &#x3D; &#x27;ID MANT;PK ID;CIV;RAD SALIDA;RAD ENTRADA;ACT AGRUPADA \n&#x27;;
+    let id, pkId, civ,sal,ent,act: string;
+
+  }
+
+  creaFiltro(){
+    this.dataSourceSolicitudes.filterPredicate &#x3D; ((data, filter) &#x3D;&gt; {
+      // console.log(&#x27;FiltroVinc: &#x27;, filter);
+      const searchTerms &#x3D; JSON.parse(filter);
+      // console.log(&#x27;searchTerms: &#x27;, searchTerms);
+      return (data.PK_ID || &#x27;&#x27;).toString().toLowerCase().indexOf(searchTerms.pkId) !&#x3D;&#x3D; -1
+      &amp;&amp; (data.DESCRIPCION_ELEMENTO || &#x27;&#x27;).toString().toLowerCase().indexOf(searchTerms.tipoElemento) !&#x3D;&#x3D; -1
+      &amp;&amp; (data.TIPOMALLA || &#x27;&#x27;).toString().toLowerCase().indexOf(searchTerms.tipoMalla) !&#x3D;&#x3D; -1
+      &amp;&amp; (data.TIPOSUPERFICIE || &#x27;&#x27;).toString().toLowerCase().indexOf(searchTerms.tipoSuperficie) !&#x3D;&#x3D; -1
+      &amp;&amp; (data.EJE_VIAL || &#x27;&#x27;).toString().toLowerCase().indexOf(searchTerms.ejeVial) !&#x3D;&#x3D; -1
+      &amp;&amp; (data.DESDE || &#x27;&#x27;).toString().toLowerCase().indexOf(searchTerms.desde) !&#x3D;&#x3D; -1
+      &amp;&amp; (data.HASTA || &#x27;&#x27;).toString().toLowerCase().indexOf(searchTerms.hasta) !&#x3D;&#x3D; -1
+      &amp;&amp; (data.TIPOORIGEN || &#x27;&#x27;).toString().toLowerCase().indexOf(searchTerms.tipOrigen) !&#x3D;&#x3D; -1
+      &amp;&amp; (data.NOM_LOCALIDAD || &#x27;&#x27;).toString().toLowerCase().indexOf(searchTerms.localidad) !&#x3D;&#x3D; -1
+      &amp;&amp; (data.NOM_SECTOR || &#x27;&#x27;).toString().toLowerCase().indexOf(searchTerms.sector) !&#x3D;&#x3D; -1
+      &amp;&amp; (data.NOM_UPL || &#x27;&#x27;).toString().toLowerCase().indexOf(searchTerms.upl) !&#x3D;&#x3D; -1
+      &amp;&amp; (data.NOM_ZONA || &#x27;&#x27;).toString().toLowerCase().indexOf(searchTerms.zona) !&#x3D;&#x3D; -1
+    });
+    setTimeout(() &#x3D;&gt; {
+      this.dataSourceSolicitudes.paginator &#x3D; this.paginator;
+      this.dataSourceSolicitudes.sort      &#x3D; this.sort;
+      this.cargarColumnas();
+    });
+  }
+  irAPk (pk: number) {
+    let w &#x3D; &quot;PK_ID_ELEMENTO &#x3D; &quot; + pk.toString();
+    console.log(w);
+    this.irAPkEmiter.emit(w);
+  }
+  applyFilter(valor: string): void {
+    this.dataSourceSolicitudes.filter &#x3D; valor.trim().toLowerCase();
+    if (this.dataSourceSolicitudes.paginator) {
+      this.dataSourceSolicitudes.paginator.firstPage();
+    }
+  }
+  // tslint:disable-next-line: typedef
+  onSearchClear(){
+    this.searchkey &#x3D; &#x27;&#x27;;
+    this.applyFilter(&#x27;&#x27;);
+  }
+  // tslint:disable-next-line: typedef
+  onClearFilters(){
+    for (let c of this.formControls){
+      c.setValue(&#x27;&#x27;);
+    }
+  }
+  cargarColumnas(){
+    this.filterColumns &#x3D; [];
+    this.formControls &#x3D; [];
+
+    for(let a of this.displayedColumns){
+      this.filterColumns.push(a+&#x27;_&#x27;);
+      if(!a.startsWith(&#x27;_CTRL_ACCION_&#x27;)){
+        let formControl &#x3D; new FormControl(&#x27;&#x27;);
+        formControl.valueChanges
+          .subscribe(
+            valor &#x3D;&gt; {
+              const attr:string &#x3D; a as string;
+              (this.filterValues as LooseObject)[attr] &#x3D; valor;
+              this.dataSourceSolicitudes.filter &#x3D; JSON.stringify(this.filterValues);
+              //this.inArr &#x3D; [];
+              console.log(this.dataSourceSolicitudes.filteredData);
+              this.filterPKs.emit(this.dataSourceSolicitudes.filteredData);//.forEach((value: { pk_id_calzada: any; }) &#x3D;&gt; {
+                //this.inArr.push(value.pk_id_calzada);
+              //});
+              //this.cargaMapa(true);
+            }
+          );
+        this.formControls.push(formControl);
+      }
+    }
+
+  }
+
+  eliminarPk(pk:any) {
+    const index &#x3D; this.dataSourceSolicitudes.data.indexOf(pk);
+    this.dataSourceSolicitudes.data.splice(index, 1);
+    //this.dataSourceSolicitudes &#x3D; this.dataSourceSolicitudes.filter((item, index) &#x3D;&gt; index !&#x3D;&#x3D; pk);
+    this.dataSourceSolicitudes._updateChangeSubscription();
+  }
+
+  agregarPk(pk:any,origen:string) {
+    let scope &#x3D; this;
+    console.log(&#x27;pk&#x27;,pk);
+    let pkFilter &#x3D; this.dataSourceSolicitudes.data.filter((data)&#x3D;&gt;{
+      //console.log(&#x27;agPk&#x27;,data);
+      return data.PK_ID &#x3D;&#x3D; pk.PK_ID;
+    });
+    if(pkFilter.length&#x3D;&#x3D;0)
+      this.dataSourceSolicitudes.data.push(pk);
+  /*  else {
+      const dialogRef &#x3D; this.dialog.open(SimpleDialogComponent,{
+        data: {
+          titulo: origen,
+          contenido: &#x27;Este PK ya fué vinculado.&#x27;,
+          aceptar: false,
+          cancelar: false,
+          cerrar: true
+        }
+      });
+      dialogRef.afterClosed().subscribe(result &#x3D;&gt; {
+        return;
+      });
+    }*/
+    this.dataSourceSolicitudes._updateChangeSubscription();
+  }
+
+  /*applyFilter(event: KeyboardEvent) {
+    const target &#x3D; event.target as HTMLInputElement;
+    if (target) {
+      let filterValue:string &#x3D; target.value;
+      filterValue &#x3D; filterValue.trim(); // Remove whitespace
+      filterValue &#x3D; filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
+      this.dataSourceSolicitudes.filter &#x3D; filterValue;
+      this.selection.clear();
+    }
+  }*/
+
+  clickSelectedMantenimiento (solicitudGestionPendienteSeleccionada:any) {
+    solicitudGestionPendienteSeleccionada.seleccionado &#x3D; this.selection.isSelected(solicitudGestionPendienteSeleccionada.id_mantenimiento_vial);//solicitudGestionPendienteSeleccionada.seleccionado;
+    //console.log(solicitudGestionPendienteSeleccionada.seleccionado);
+    if( solicitudGestionPendienteSeleccionada.seleccionado ) {
+      //console.log(&#x27;selecciona&#x27;);
+      this.solicitudGestionSeleccionada.emit(solicitudGestionPendienteSeleccionada);
+    }else{
+      //console.log(&#x27;DESselecciona&#x27;);
+      this.desSeleccionSolicitud.emit(solicitudGestionPendienteSeleccionada);
+    }
+  }
+  exportexcel() {
+    if (this.dataSourceSolicitudes.data.length &gt; 0) {
+      let headers &#x3D; {header:[
+        &#x27;CIV&#x27;,
+        &#x27;PK_ID&#x27;,
+        &#x27;DESCRIPCION_ELEMENTO&#x27;,
+        &#x27;TIPOMALLA&#x27;,
+        &#x27;TIPOSUPERFICIE&#x27;,
+        &#x27;EJE_VIAL&#x27;,
+        &#x27;DESDE&#x27;,
+        &#x27;HASTA&#x27;,
+        &#x27;NOM_LOCALIDAD&#x27;,
+        &#x27;NOM_SECTOR&#x27;,
+        &#x27;NOM_UPL&#x27;,
+        &#x27;NOM_ZONA&#x27;
+      ]};
+      this.displayedColumns &#x3D; [&#x27;civ&#x27;, &#x27;pkId&#x27;, &#x27;tipoElemento&#x27;, &#x27;tipoMalla&#x27;, &#x27;tipoSuperficie&#x27;,
+       &#x27;ejeVial&#x27;, &#x27;desde&#x27;, &#x27;hasta&#x27;, &#x27;localidad&#x27;, &#x27;sector&#x27;, &#x27;upl&#x27;, &#x27;zona&#x27;];
+      let datos &#x3D; [];
+      for (let registro of this.dataSourceSolicitudes.data) {
+        datos.push({
+          &#x27;CIV&#x27;: registro.CIV,
+          &#x27;PK_ID&#x27;: registro.PK_ID,
+          &#x27;DESCRIPCION_ELEMENTO&#x27;: registro.DESCRIPCION_ELEMENTO,
+          &#x27;TIPOMALLA&#x27;: registro.TIPOMALLA,
+          &#x27;TIPOSUPERFICIE&#x27;: registro.TIPOSUPERFICIE,
+          &#x27;EJE_VIAL&#x27;: registro.EJE_VIAL,
+          &#x27;DESDE&#x27;: registro.DESDE,
+          &#x27;HASTA&#x27;: registro.HASTA,
+          &#x27;NOM_LOCALIDAD&#x27;: registro.NOM_LOCALIDAD,
+          &#x27;NOM_SECTOR&#x27;: registro.NOM_SECTOR,
+          &#x27;NOM_UPL&#x27;: registro.NOM_UPL,
+          &#x27;NOM_ZONA&#x27;: registro.NOM_ZONA,
+        });
+      }
+      const ws: XLSX.WorkSheet &#x3D;XLSX.utils.json_to_sheet(datos, headers);
+      const wb: XLSX.WorkBook &#x3D; XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, ws, &#x27;Reporte&#x27;);
+      let today &#x3D; new Date();
+      let dd &#x3D; String(today.getDate()).padStart(2, &#x27;0&#x27;);
+      let mm &#x3D; String(today.getMonth() + 1).padStart(2, &#x27;0&#x27;); //January is 0!
+      let yyyy &#x3D; today.getFullYear();
+      XLSX.writeFile(wb, &#x60;Lista_PKs_Misionalidad_${dd}${mm}${yyyy}.xlsx&#x60;);
+    }
+  }
+  changeExcel(){
+      this.inputXls.nativeElement.click()
+  }
+  uploadExcel(event: any) {
+    this.file &#x3D; event.target.files[0];
+    let fileReader &#x3D; new FileReader();
+    let arrBuffer:any&#x3D;null;
+    let fileList:any[];
+    fileReader.readAsArrayBuffer(this.file);
+    fileReader.onload &#x3D; (e) &#x3D;&gt; {
+        arrBuffer &#x3D; fileReader.result;
+        var data &#x3D; new Uint8Array(arrBuffer);
+        var arr &#x3D; new Array();
+        for(var i &#x3D; 0; i !&#x3D; data.length; ++i) arr[i] &#x3D; String.fromCharCode(data[i]);
+        var bstr &#x3D; arr.join(&quot;&quot;);
+        var workbook &#x3D; XLSX.read(bstr, {type:&quot;binary&quot;});
+        var first_sheet_name &#x3D; workbook.SheetNames[0];
+        var worksheet &#x3D; workbook.Sheets[first_sheet_name];
+        //console.log(XLSX.utils.sheet_to_json(worksheet,{raw:true}));
+        var arraylist &#x3D; XLSX.utils.sheet_to_json(worksheet,{raw:true});
+        arraylist.forEach((item:any)&#x3D;&gt;{
+          //console.log(&quot;fromXls: &quot;, item);
+          this.agregarPk(item,&#x27;&#x27;);
+          /*let pkFilter &#x3D; this.dataSourceSolicitudes.data.filter((data)&#x3D;&gt;{
+            return data.pkId &#x3D;&#x3D; item[&quot;PK ID&quot;];
+          });
+          if(pkFilter.length&gt;0)*/
+        });
+        this.regLoaded.emit(this.dataSourceSolicitudes.data);
+    }
+  }
+}
+interface LooseObject {
+  [key: string]: any
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'LooseObject-9.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

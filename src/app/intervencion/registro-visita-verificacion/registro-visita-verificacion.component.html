@@ -1,0 +1,262 @@
+<mat-card>
+  <mat-card-header class="mat-card-header-umv">
+    <div class="mat-card-header-text">
+      <mat-card-subtitle>
+        <h2>{{titulo}}</h2>
+      </mat-card-subtitle>
+    </div>
+  </mat-card-header>
+  <form [formGroup]="formVerificacion" (ngSubmit)="onSubmit()" *ngIf="ready">
+
+      <mat-accordion multi class="headers-align">
+          <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Encabezado
+              </mat-panel-title>
+              <mat-panel-description>
+                  <span>{{encabezadoForm.status == 'INVALID' && encabezadoForm.touched?'Campos sin diligenciar':''}}</span>
+                  <mat-icon [color]="encabezadoForm.status == 'INVALID' && encabezadoForm.touched?'warn':'primary'" *ngIf = "encabezadoForm.touched">{{encabezadoForm.status == 'INVALID' && encabezadoForm.touched?'cancel':'check_circle'}}</mat-icon>
+                  <mat-panel-description>
+                  <button *ngIf="!generandoFicha" mat-icon-button color="primary" class="ver-pdf" aria-label="Example icon button with a home icon" (click) ="generarDocumentoActa($event)">
+                      <mat-icon>picture_as_pdf</mat-icon>
+                  </button>
+                  <span *ngIf="generandoFicha">
+                      Generando ficha ...
+                  </span>
+                  </mat-panel-description>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <div formGroupName="encabezado" class="contenedorFormGroup" id="seccionEncabezado">
+              <mat-form-field appearance="outline">
+                  <mat-label>Localidad</mat-label>
+                  <mat-select formControlName="id_localidad" [disabled]="true">
+                    <mat-option [value]="mantenimientoVialEvento.id_localidad">{{mantenimientoVialEvento.valor_localidad +' - '+ mantenimientoVialEvento.descripcion_localidad}}</mat-option>
+                  </mat-select>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                  <mat-label>UPZ</mat-label>
+                  <mat-select formControlName="id_upz" [disabled]="true">
+                    <mat-option [value]="mantenimientoVialEvento.id_upz">{{mantenimientoVialEvento.valor_upz +' - '+ mantenimientoVialEvento.descripcion_upz}}</mat-option>
+                  </mat-select>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                  <mat-label>Barrio</mat-label>
+                  <mat-select formControlName="id_barrio" [disabled]="true">
+                    <mat-option [value]="mantenimientoVialEvento.id_barrio">{{mantenimientoVialEvento.descripcion_barrio}}</mat-option>
+                  </mat-select>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class = "mat-form-field-disabled">
+                  <mat-label>CIV</mat-label>
+                  <input matInput formControlName="civ" readonly >
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class = "mat-form-field-disabled">
+                  <mat-label>PK ID Calzada</mat-label>
+                  <input matInput formControlName="pk_id_calzada" readonly >
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                  <mat-label>Eje Vial</mat-label>
+                  <input matInput formControlName="eje_vial" autocomplete="off">
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                  <mat-label>desde</mat-label>
+                  <input matInput formControlName="desde" autocomplete="off">
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                  <mat-label>hasta</mat-label>
+                  <input matInput formControlName="hasta" autocomplete="off">
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                  <mat-label>Zona</mat-label>
+                  <mat-select formControlName="id_zona" [disabled]="true">
+                    <mat-option [value]="mantenimientoVialEvento.id_zona">{{mantenimientoVialEvento.descripcion_zona}}</mat-option>
+                  </mat-select>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class = "mat-form-field-disabled">
+                  <mat-label>Fecha visita</mat-label>
+                  <input matInput formControlName="fecha_visita_tecnica" readonly >
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                  <mat-label>Sección vial</mat-label>
+                  <mat-select formControlName="id_tipo_seccion_vial" [disabled]="true">
+                    <mat-option [value]="mantenimientoVialEvento.id_tipo_seccion_vial">{{mantenimientoVialEvento.descripcion_seccion_vial}}</mat-option>
+                  </mat-select>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class = "mat-form-field-disabled">
+                  <mat-label>Fecha solicitud</mat-label>
+                  <input matInput formControlName="solicitud_fecha" readonly >
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                  <mat-label>Tipo via</mat-label>
+                  <mat-select formControlName="id_tipo_seccion_vial" required>
+                    <mat-option *ngFor="let tipo of listas[44]" [value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+                  </mat-select>
+              </mat-form-field>
+
+              <!--mat-form-field appearance="outline">
+                  <mat-label>Tipo malla vial</mat-label>
+                  <mat-select formControlName="id_tipo_malla" [disabled]="true">
+                    <mat-option [value]="mantenimientoVialEvento.id_tipo_malla">{{mantenimientoVialEvento.descripcion_tipo_malla}}</mat-option>
+                  </mat-select>
+              </mat-form-field-->
+
+              <mat-form-field appearance="outline">
+                  <mat-label>Rutas de transporte</mat-label>
+                  <mat-select formControlName="id_tipo_transitabilidad" required>
+                    <mat-option *ngFor="let tipo of listas[43]" [value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+                  </mat-select>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class = "mat-form-field-disabled">
+                  <mat-label>Actividad agrupada</mat-label>
+                  <input matInput formControlName="codigo_actividad_agrupada" readonly>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                  <mat-label>PMT</mat-label>
+                  <mat-select formControlName="id_tipo_pmt" required>
+                    <mat-option *ngFor="let tipo of listas[93]" [value]="tipo.id_tipo">{{tipo.descripcion}}</mat-option>
+                  </mat-select>
+              </mat-form-field>
+          </div>
+          <mat-action-row>
+              <button type="button" mat-raised-button (click) = "guardarEncabezado()" color="primary" [disabled]="encabezadoForm.status == 'INVALID'">Guardar <mat-icon>save</mat-icon></button>
+          </mat-action-row>
+          </mat-expansion-panel>
+          <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Áreas de intervención
+                </mat-panel-title>
+                <mat-panel-description>
+                  {{areaIntervencionForm.errors?.required && (areaIntervencionForm.touched)?'Mínimo un área de intervención':''}}
+                  {{!areaIntervencionForm.errors && (areaIntervencionForm.status == 'INVALID')?'Corregir datos del área de intervención':''}}
+                  <mat-panel-description>
+                      <span>{{''}}</span>
+                  <mat-icon [color]="areaIntervencionForm.status == 'INVALID' && areaIntervencionForm.touched?'warn':'primary'" *ngIf = "areaIntervencionForm.touched">{{areaIntervencionForm.status == 'INVALID' && areaIntervencionForm.touched?'cancel':'check_circle'}}</mat-icon>
+                  </mat-panel-description>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+
+              <div formGroupName="areaIntervencion" class="contenedorFormGroup seccionMultiple" id="seccionUnidadesMuestreo">
+                <div class="itemForm" [class.invalidItem]="areaIntervencion.status == 'INVALID'"
+                    *ngFor="let areaIntervencion of areaIntervencionForm.controls; let i=index"
+                    [formGroupName]="i"
+                    (click) = "openDialogAreaIntervecion(i,areaIntervencion.value)">
+                  <div class="header"><strong>Área {{i+1}}</strong></div>
+                  <div class="item"><strong>Elemento:</strong> {{areaIntervencion.get('elemento')?.value}}</div>
+                  <div class="item">{{findTipo(42,areaIntervencion.get('tipoSuperficie')?.value)?.descripcion}}</div>
+                  <div class="item"><strong>Longitud:</strong> {{areaIntervencion.get('longitud')?.value}}</div>
+                  <div class="item"><strong>Ancho:</strong> {{areaIntervencion.get('ancho')?.value}}</div>
+                  <div class="item"><strong>Área:</strong> {{areaIntervencion.get('area')?.value}}</div>
+                  <div class="item">{{findTipo(25,areaIntervencion.get('tipoAreaIntervencion')?.value)?.descripcion}}</div>
+                </div>
+                <div class="itemForm new-item" (click) = "addAreaIntervecion()">
+                  <img src="assets/img/app/add_circle_outline-24px.svg">
+                  <span><strong>Agregar</strong></span>
+                </div>
+              </div>
+              <mat-action-row>
+                <button type="button" mat-raised-button color="primary" (click)="saveCambiosAreasIntervencion()" [disabled]="areaIntervencionForm.status == 'INVALID' || areaIntervencionForm.status == 'INVALID'">Guardar áreas de intervención<mat-icon>save</mat-icon></button>
+                <button type="button" mat-button color="primary" (click)="prevStep()"><mat-icon>keyboard_arrow_up</mat-icon></button>
+            </mat-action-row>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Fotos ({{fotosForm.controls.length}})
+                </mat-panel-title>
+                <mat-panel-description>
+                  {{fotosForm.errors?.MinLengthArray && (fotosForm.touched)?'Mínimo 2 fotos':''}}
+                  {{fotosForm.errors?.MaxLengthArray && (fotosForm.touched)?'Maximo 6 fotos':''}}
+                  {{!fotosForm.errors && (fotosForm.status == 'INVALID')?'Fotos vacias':''}}
+                  <mat-panel-description>
+                      <span>{{''}}</span>
+                      <mat-icon [color]="fotosForm.status == 'INVALID' && fotosForm.touched?'warn':'primary'" *ngIf = "fotosForm.touched">{{fotosForm.status == 'INVALID' && fotosForm.touched?'cancel':'check_circle'}}</mat-icon>
+                  </mat-panel-description>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+                <div formGroupName="fotos" class="contenedorFormGroup seccionMultiple" id="seccionFotos">
+                  <div class="itemForm" [class.invalidItem]="foto.status == 'INVALID'"
+                      *ngFor="let foto of fotosForm.controls; let i=index"
+                      [formGroupName]="i"
+                      (click) = "openDialogFoto(i,foto.value)">
+                      <input #inputFoto style="display: none;" hidden="true" type="file" accept="image/*" (change)="onFotoChanged($event,i)" (click)="stopPropagation($event)">
+                      <img mat-card-image src="{{(foto.get('url')?.value.startsWith('data:')?'':URL_FOTOS)+foto.get('url')?.value}}" *ngIf="foto.get('url')?.value.length > 0">
+                      <div class="header" *ngIf="foto.status == 'INVALID'"><strong>Sin foto</strong></div>
+                  </div>
+                  <div class="itemForm new-item" (click) = "addFoto()" *ngIf='fotosForm.controls.length < 6'>
+                    <img src="assets/img/app/add_circle_outline-24px.svg">
+                    <span><strong>Agregar</strong></span>
+                  </div>
+                </div>
+              <mat-action-row>
+                <button type="button" mat-raised-button color="primary" (click)="guardarFotos()" [disabled]="fotosForm.status == 'INVALID'" >Guardar <mat-icon>save</mat-icon></button>
+                <button type="button" mat-button color="primary" (click)="prevStep()"><mat-icon>keyboard_arrow_up</mat-icon></button>
+            </mat-action-row>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel [expanded]="step === 4" (opened)="setStep(4)" hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Lista de chequeo
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <!--app-novedadades-intervencion></app-novedadades-intervencion-->
+              <mat-card *ngIf="ready">
+                <div formGroupName="novedades">
+                  <mat-card-title>Novedades de Intervención</mat-card-title>
+                  <mat-card-content>
+                  <mat-selection-list #shoes formControlName="activity">
+                      <mat-list-option *ngFor="let shoe of listas[116]" [value]="shoe">
+                          {{shoe.descripcion}}
+                      </mat-list-option>
+
+                  </mat-selection-list>
+                  </mat-card-content>
+                  </div>
+              </mat-card>
+              <mat-action-row>
+                <button type="button" mat-raised-button color="primary" (click)="saveNovedades()" [disabled]="novedadesForm.status == 'INVALID'" >Guardar <mat-icon>save</mat-icon></button>
+                <button type="button" mat-button color="primary" (click)="prevStep()"><mat-icon>keyboard_arrow_up</mat-icon></button>
+              </mat-action-row>
+            </mat-expansion-panel>
+          </mat-accordion>
+
+          <mat-card>
+            Observaciones
+            <mat-form-field appearance="fill" style="width:100%">
+              <mat-label>Observaciones</mat-label>
+              <textarea matInput formControlName="observaciones" #inputObservaciones maxlength="600" cdkTextareaAutosize cdkAutosizeMinRows="2" autocomplete="off"></textarea>
+              <mat-hint align="end">Máximo 600 caracteres: {{inputObservaciones.value?.length || 0}}/600</mat-hint>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary">Guardar todo <mat-icon>save</mat-icon></button>
+          </mat-card>
+    </form>
+    <input #inputFotoTemp style="display: none;" hidden="true" type="file" accept="image/*" (change)="onFotoChanged($event,fotosForm.length)" (click)="stopPropagation($event)">
+</mat-card>
+<mat-card *ngIf="guardadoTodo">
+  <mat-card-header class="mat-card-header-umv">
+    <div class="mat-card-header-text">
+      <mat-card-subtitle>
+        <h2>Gestión mantenimiento</h2>
+      </mat-card-subtitle>
+    </div>
+  </mat-card-header>
+  <!--app-avance-mantenimiento [idProcesoGestion]="idGestion" (gestionRealizada)="gestionRealizada()" (opcionSeleccionada)="accionGestion($event)" [acciones]="[{text:'cancelar',action:'cancel'}]"></app-avance-mantenimiento-->
+</mat-card>

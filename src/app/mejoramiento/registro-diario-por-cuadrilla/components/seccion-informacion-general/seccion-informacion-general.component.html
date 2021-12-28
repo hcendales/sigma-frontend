@@ -1,0 +1,207 @@
+<div *ngIf="loading" class="loading">Loading&#8230;</div>
+<form autocomplete="off" [formGroup]="formInformaGeneral" *ngIf="!loading">
+    <div class="form-control" id="formInformaGeneral" >
+
+        <mat-form-field appearance="outline" class = "campo" >
+            <mat-label>Fecha*</mat-label>
+            <input matInput formControlName="fecha" [ngClass]="{'is-invalid': isInvalid('fecha')}" [matDatepicker]="picker0" placeholder="DD/MM/YYYY" >
+            <mat-datepicker-toggle matSuffix [for]="picker0" ></mat-datepicker-toggle>
+            <mat-datepicker #picker0></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="campo">
+            <mat-label>Hora Inicio Actividades*</mat-label>
+            <input matInput formControlName="hora_inicio_actividades" [ngClass]="{'is-invalid': isInvalid('hora_inicio_actividades')}" type="time" min="01:00" max="24:00" >
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="campo">
+            <mat-label>Hora Fin Actividades*</mat-label>
+            <input matInput formControlName="horario_fin_actividades" [ngClass]="{'is-invalid': isInvalid('horario_fin_actividades')}" type="time" min="01:00" max="24:00">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="campo">
+            <mat-label>Tipo Clima Mañana* </mat-label>
+            <mat-select placeholder="Tipo Clima Mañana" formControlName="id_tipo_clima_manana" >
+                <mat-option>--</mat-option>
+                <mat-option *ngFor="let tipo of listas[126]" [value]="tipo.id_tipo">
+                    {{tipo.descripcion | titlecase}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="campo">
+            <mat-label>Tipo Clima Noche*</mat-label>
+            <mat-select placeholder="Tipo Clima Noche" formControlName="id_tipo_clima_noche">
+                <mat-option>--</mat-option>
+                <mat-option *ngFor="let tipo of listas[126]" [value]="tipo.id_tipo">
+                    {{tipo.descripcion | titlecase}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="campo">
+            <mat-label>Tipo Clima Tarde*</mat-label>
+            <mat-select placeholder="Tipo Clima Tarde" formControlName="id_tipo_clima_tarde">
+                <mat-option>--</mat-option>
+                <mat-option *ngFor="let tipo of listas[126]" [value]="tipo.id_tipo">
+                    {{tipo.descripcion | titlecase}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="campo">
+            <mat-label>Tipo Estado Informe*</mat-label>
+            <mat-select placeholder="Tipo Estado Informe" formControlName="id_tipo_estado_informe">
+                <mat-option>--</mat-option>
+                <mat-option *ngFor="let tipo of listas[125]" [value]="tipo.id_tipo">
+                    {{tipo.descripcion | titlecase}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="campo">
+            <mat-label>Tipo Estado Obra*</mat-label>
+            <mat-select placeholder="Tipo Estado Obra" formControlName="id_tipo_estado_obra">
+                <mat-option>--</mat-option>
+                <mat-option *ngFor="let tipo of listas[119]" [value]="tipo.id_tipo">
+                    {{tipo.descripcion | titlecase}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="campo">
+            <mat-label>Tipo Jornada*</mat-label>
+            <mat-select placeholder="Tipo Jornada" formControlName="id_tipo_jornada">
+                <mat-option>--</mat-option>
+                <mat-option *ngFor="let tipo of listas[120]" [value]="tipo.id_tipo">
+                    {{tipo.descripcion | titlecase}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="width:30%" class="campo">
+            <mat-label>Actividad Dia Siguiente*</mat-label>
+            <textarea matInput formControlName="actividad_dia_siguiente" [ngClass]="{'is-invalid': isInvalid('actividad_dia_siguiente')}" #inputActividadDiaSiguiente cdkTextareaAutosize cdkAutosizeMinRows="1"
+                maxlength="30" ></textarea>
+            <mat-hint align="end">Máximo 50 caracteres</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="campo" style="width: 10%;">
+            <mat-label>Area Total Intervenida*</mat-label>
+            <input matInput type="number" [ngClass]="{'is-invalid': isInvalid('area_total_intervenida')}" formControlName="area_total_intervenida" min="1" max="99" >
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="campo" style="width: 10%;">
+            <mat-label>Cantidad Delineadores*</mat-label>
+            <input matInput type="number" formControlName="cantidad_delineadores" [ngClass]="{'is-invalid': isInvalid('cantidad_delineadores')}" min="1" max="99" >
+        </mat-form-field>
+            
+        <mat-form-field appearance="outline" class="campo" style="width: 40%;">
+            <mat-label>Persona Aprueba</mat-label>
+            <input type="text" placeholder="Persona Aprueba" matInput formControlName="id_persona_aprueba"
+                [matAutocomplete]="auto0" >
+            <mat-autocomplete #auto0="matAutocomplete" [displayWith]="displayPersonaAprueba">
+                <mat-option *ngFor="let pAprueba of personasAprueban | async" [value]="pAprueba">
+                    {{pAprueba.nombre | titlecase}} 
+                </mat-option>
+            </mat-autocomplete>
+            <mat-error *ngIf="formInformaGeneral.get('id_persona_aprueba')!.hasError('invalidAutocompleteObject')">
+                Elija un elemento de la lista.
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="campo" style="width: 40%;">
+            <mat-label>Persona Elabora*</mat-label>
+            <input type="text" placeholder="Persona Elabora" matInput formControlName="id_persona_elabora"
+                [matAutocomplete]="auto1">
+            <mat-autocomplete #auto1="matAutocomplete" [displayWith]="displayPersonaElabora">
+                <mat-option *ngFor="let pElabora of personasElabora | async" [value]="pElabora">
+                    {{pElabora.nombre | titlecase}} 
+                </mat-option>
+            </mat-autocomplete>
+            <mat-error *ngIf="formInformaGeneral.get('id_persona_elabora')!.hasError('invalidAutocompleteObject')">
+                Elija un elemento de la lista.
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="campo" style="width: 40%;">
+            <mat-label>Persona Revisa*</mat-label>
+            <input type="text" placeholder="Persona Revisa" matInput formControlName="id_persona_revisa"
+                [matAutocomplete]="auto2">
+            <mat-autocomplete #auto2="matAutocomplete" [displayWith]="displayPersonaRevisa">
+                <mat-option *ngFor="let pRevisa of personasRevisores | async" [value]="pRevisa">
+                    {{pRevisa.nombre | titlecase}} 
+                </mat-option>
+            </mat-autocomplete>
+            <mat-error *ngIf="formInformaGeneral.get('id_persona_revisa')!.hasError('invalidAutocompleteObject')">
+                Elija un elemento de la lista.
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="campo" style="width: 10%;">
+            <mat-label>Cantidad Señales*</mat-label>
+            <input matInput type="number" [ngClass]="{'is-invalid': isInvalid('cantidad_seniales')}" formControlName="cantidad_seniales" min="1" max="99">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="campo" style="width: 10%;">
+            <mat-label>Longitud Total Intervenida*</mat-label>
+            <input matInput type="number" formControlName="longitud_total_intervenida" [ngClass]="{'is-invalid': isInvalid('longitud_total_intervenida')}" min="1" max="99">
+        </mat-form-field>      
+
+        <mat-form-field appearance="outline" class="campo" style="width: 10%;">
+            <mat-label>Porcentaje Avance (Acumulado)*</mat-label>
+            <input matInput type="number" formControlName="porcentaje_avance_acum_obra" [ngClass]="{'is-invalid': isInvalid('porcentaje_avance_acum_obra')}" min="1" max="99">
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline" class="campo" style="width: 10%;">
+            <mat-label>Porcentaje Avance (Diario)*</mat-label>
+            <input matInput type="number" formControlName="porcentaje_avance_diario_obra" [ngClass]="{'is-invalid': isInvalid('porcentaje_avance_diario_obra')}" min="1" max="99">
+        </mat-form-field>        
+
+        <mat-form-field appearance="outline" class="campo">
+            <mat-label>Servicio Baño</mat-label>
+            <mat-select placeholder="Tipo Jornada" formControlName="id_tipo_jornada">
+                <mat-option value="SI">SI</mat-option>
+                <mat-option value="NO">NO</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="campo" style="width: 10%;">
+            <mat-label>Servicio Baño (Horas)*</mat-label>
+            <input matInput type="number" [ngClass]="{'is-invalid': isInvalid('servicio_banio_horas')}" formControlName="servicio_banio_horas" min="1" max="99">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="campo">
+            <mat-label>Servicio Vigilancia</mat-label>
+            <mat-select placeholder="Tipo Jornada" formControlName="id_tipo_jornada">
+                <mat-option value="SI">SI</mat-option>
+                <mat-option value="NO">NO</mat-option>
+            </mat-select>
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline" class="campo" style="width: 10%;">
+            <mat-label>Servicio vigilancia(Horas)*</mat-label>
+            <input matInput type="number" [ngClass]="{'is-invalid': isInvalid('servicio_vigilancia_horas')}" formControlName="servicio_vigilancia_horas" min="1" max="99" >
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" style="width:100%" class="campo">
+            <mat-label>Observaciones*</mat-label>
+            <textarea matInput formControlName="observaciones" #inputObservaciones cdkTextareaAutosize cdkAutosizeMinRows="2"
+                maxlength="30"></textarea>
+            <mat-hint align="end">Máximo 50 caracteres</mat-hint>
+        </mat-form-field>
+
+    </div>
+
+    <div style="flex: 1; text-align: right; margin-right: 16px;">
+        <mat-action-row>
+            <button type="button" mat-raised-button color="primary" 
+                (click)="guardaSolicitud()">
+                Guardar
+                <mat-icon>save</mat-icon>
+            </button>
+        </mat-action-row>
+    </div>
+    <!-- <pre>{{ formInformaGeneral.valid }}</pre>
+    <pre>{{ formInformaGeneral.value | json }}</pre> -->
+</form>

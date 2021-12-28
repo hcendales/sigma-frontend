@@ -1,0 +1,1524 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>sigma2-frontend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">sigma2-frontend documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  InsertarFranjaComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/administracion/recurso/components/insertar-franja/insertar-franja.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                                <code><a href="../miscellaneous/variables.html#MY_DATE_FORMATS" target="_self" >{ provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS }</a></code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-insertar-franja</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./insertar-franja.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./insertar-franja.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#data" >data</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dialog" >dialog</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#formEntity" >formEntity</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#HORAMIN_PATTERN" >HORAMIN_PATTERN</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#idRecursoNovedad" >idRecursoNovedad</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#listas" >listas</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#NUMBERS_PATTERN" >NUMBERS_PATTERN</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#ready" >ready</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#titulo" >titulo</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#cancel" >cancel</a>
+                            </li>
+                            <li>
+                                <a href="#handleError" >handleError</a>
+                            </li>
+                            <li>
+                                <a href="#mostrarVentanaEnEspera" >mostrarVentanaEnEspera</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#onSubmit" >onSubmit</a>
+                            </li>
+                            <li>
+                                <a href="#operationSuccess" >operationSuccess</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#saveFranja" >saveFranja</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#fechaDesdeField" >fechaDesdeField</a>
+                                </li>
+                                <li>
+                                    <a href="#fechaHastaField" >fechaHastaField</a>
+                                </li>
+                                <li>
+                                    <a href="#horaInicioField" >horaInicioField</a>
+                                </li>
+                                <li>
+                                    <a href="#horaFinField" >horaFinField</a>
+                                </li>
+                                <li>
+                                    <a href="#intervaloField" >intervaloField</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(data: literal type, activatedroute: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, formBuilder: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, dialog: MatDialog, snackBar: MatSnackBar, entityTabFranjaService: <a href="../injectables/EntityTabFranjaService.html" target="_self">EntityTabFranjaService</a>, listasService: <a href="../injectables/ConsultaListasService.html" target="_self">ConsultaListasService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/administracion/recurso/components/insertar-franja/insertar-franja.component.ts:44</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>data</td>
+                                                  
+                                                        <td>
+                                                                    <code>literal type</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>activatedroute</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>formBuilder</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>snackBar</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatSnackBar</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>entityTabFranjaService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/EntityTabFranjaService.html" target="_self" >EntityTabFranjaService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>listasService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ConsultaListasService.html" target="_self" >ConsultaListasService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cancel"></a>
+                    <span class="name">
+                        <span ><b>cancel</b></span>
+                        <a href="#cancel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cancel(event: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="127"
+                            class="link-to-prism">src/app/administracion/recurso/components/insertar-franja/insertar-franja.component.ts:127</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/router/Event" target="_blank" >Event</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleError"></a>
+                    <span class="name">
+                        <span ><b>handleError</b></span>
+                        <a href="#handleError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>handleError(error?: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="141"
+                            class="link-to-prism">src/app/administracion/recurso/components/insertar-franja/insertar-franja.component.ts:141</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>error</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mostrarVentanaEnEspera"></a>
+                    <span class="name">
+                        <span ><b>mostrarVentanaEnEspera</b></span>
+                        <a href="#mostrarVentanaEnEspera"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>mostrarVentanaEnEspera(titulo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, footer?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="158"
+                            class="link-to-prism">src/app/administracion/recurso/components/insertar-franja/insertar-franja.component.ts:158</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>titulo</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>footer</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/app/administracion/recurso/components/insertar-franja/insertar-franja.component.ts:72</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmit"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>onSubmit</b></span>
+                        <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onSubmit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="95"
+                            class="link-to-prism">src/app/administracion/recurso/components/insertar-franja/insertar-franja.component.ts:95</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="operationSuccess"></a>
+                    <span class="name">
+                        <span ><b>operationSuccess</b></span>
+                        <a href="#operationSuccess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>operationSuccess()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="133"
+                            class="link-to-prism">src/app/administracion/recurso/components/insertar-franja/insertar-franja.component.ts:133</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveFranja"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>saveFranja</b></span>
+                        <a href="#saveFranja"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>saveFranja()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="106"
+                            class="link-to-prism">src/app/administracion/recurso/components/insertar-franja/insertar-franja.component.ts:106</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="data"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>data</b></span>
+                        <a href="#data"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @Inject(MAT_DIALOG_DATA)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/administracion/recurso/components/insertar-franja/insertar-franja.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dialog"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>dialog</b></span>
+                        <a href="#dialog"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatDialog</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/administracion/recurso/components/insertar-franja/insertar-franja.component.ts:57</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formEntity"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>formEntity</b></span>
+                        <a href="#formEntity"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/administracion/recurso/components/insertar-franja/insertar-franja.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="HORAMIN_PATTERN"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>HORAMIN_PATTERN</b></span>
+                        <a href="#HORAMIN_PATTERN"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/administracion/recurso/components/insertar-franja/insertar-franja.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="idRecursoNovedad"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>idRecursoNovedad</b></span>
+                        <a href="#idRecursoNovedad"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/administracion/recurso/components/insertar-franja/insertar-franja.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listas"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>listas</b></span>
+                        <a href="#listas"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/administracion/recurso/components/insertar-franja/insertar-franja.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="NUMBERS_PATTERN"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>NUMBERS_PATTERN</b></span>
+                        <a href="#NUMBERS_PATTERN"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>/^[0-9]+(.[0-9]{0,2})*$/</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/administracion/recurso/components/insertar-franja/insertar-franja.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ready"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>ready</b></span>
+                        <a href="#ready"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/administracion/recurso/components/insertar-franja/insertar-franja.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="titulo"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>titulo</b></span>
+                        <a href="#titulo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;FRANJA DE DISPONIBILIDAD&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/administracion/recurso/components/insertar-franja/insertar-franja.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="fechaDesdeField"></a>
+                        <span class="name"><b>fechaDesdeField</b><a href="#fechaDesdeField"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>fechaDesdeField()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="169" class="link-to-prism">src/app/administracion/recurso/components/insertar-franja/insertar-franja.component.ts:169</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="fechaHastaField"></a>
+                        <span class="name"><b>fechaHastaField</b><a href="#fechaHastaField"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>fechaHastaField()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="173" class="link-to-prism">src/app/administracion/recurso/components/insertar-franja/insertar-franja.component.ts:173</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="horaInicioField"></a>
+                        <span class="name"><b>horaInicioField</b><a href="#horaInicioField"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>horaInicioField()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="178" class="link-to-prism">src/app/administracion/recurso/components/insertar-franja/insertar-franja.component.ts:178</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="horaFinField"></a>
+                        <span class="name"><b>horaFinField</b><a href="#horaFinField"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>horaFinField()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="182" class="link-to-prism">src/app/administracion/recurso/components/insertar-franja/insertar-franja.component.ts:182</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="intervaloField"></a>
+                        <span class="name"><b>intervaloField</b><a href="#intervaloField"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>intervaloField()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="186" class="link-to-prism">src/app/administracion/recurso/components/insertar-franja/insertar-franja.component.ts:186</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Inject } from &#x27;@angular/core&#x27;;
+import { Router, ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { AbstractControlOptions, FormBuilder, FormControl, FormArray } from &#x27;@angular/forms&#x27;;
+import { FormGroup, Validators, AbstractControl } from &#x27;@angular/forms&#x27;;
+import {MAT_DIALOG_DATA} from &#x27;@angular/material/dialog&#x27;;
+import { MatDialog } from &#x27;@angular/material/dialog&#x27;;
+import { MatSnackBar } from &#x27;@angular/material/snack-bar&#x27;;
+import { SimpleDialogComponent } from &#x27;../../../../core/simple-dialog/simple-dialog.component&#x27;;
+import { EnEsperaComponent } from &#x27;../../../../core/en-espera/en-espera.component&#x27;;
+import { ConsultaListasService } from &#x27;../../../../core/services/consulta-listas.service&#x27;;
+import { MAT_DATE_FORMATS } from &#x27;@angular/material/core&#x27;;
+import { MAT_DATE_LOCALE } from &#x27;@angular/material/core&#x27;;
+
+import { EntityTabFranjaService } from &#x27;../../../../core/services/entity-tab-franja.service&#x27;;
+import { Franja } from  &#x27;../../../../core/models/franjas&#x27;;
+
+export const MY_DATE_FORMATS &#x3D; {
+  parse: {
+    dateInput: &#x27;DD/MM/YYYY&#x27;,
+  },
+  display: {
+    dateInput: &#x27;DD/MM/YYYY&#x27;,
+    monthYearLabel: &#x27;MMMM YYYY&#x27;,
+    dateA11yLabel: &#x27;LL&#x27;,
+    monthYearA11yLabel: &#x27;MMMM YYYY&#x27;
+  },
+};
+
+@Component({
+  selector: &#x27;app-insertar-franja&#x27;,
+  templateUrl: &#x27;./insertar-franja.component.html&#x27;,
+  styleUrls: [&#x27;./insertar-franja.component.scss&#x27;],
+  providers: [
+    { provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS },
+  ]
+})
+export class InsertarFranjaComponent implements OnInit {
+  public formEntity: FormGroup;
+  public listas: any;
+  public ready:boolean &#x3D; false;
+  public idRecursoNovedad: number &#x3D; 0;
+  public NUMBERS_PATTERN &#x3D; /^[0-9]+(.[0-9]{0,2})*$/;
+  public HORAMIN_PATTERN &#x3D; /^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/;
+  public titulo &#x3D; &quot;FRANJA DE DISPONIBILIDAD&quot;;
+
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: {idRecurso: number,
+      fechaDesde: number,
+      fechaHasta: number,
+      horaInicio: string,
+      horaFin: string,
+      intervalo: number,
+    },
+      private activatedroute: ActivatedRoute,
+      private router: Router,
+      private formBuilder: FormBuilder,
+      public dialog: MatDialog,
+      private snackBar: MatSnackBar,
+      private entityTabFranjaService: EntityTabFranjaService,
+      private listasService: ConsultaListasService,
+  ) {
+    this.formEntity &#x3D; this.formBuilder.group({
+      idRecurso: [&#x27;&#x27;],
+      fechaDesde: [&#x27;&#x27;],
+      fechaHasta: [&#x27;&#x27;],
+      horaInicio: [&#x27;&#x27;, [Validators.required]],
+      horaFin: [&#x27;&#x27;],
+      intervalo: [&#x27;&#x27;]
+    })
+   }
+
+  ngOnInit(): void {
+    if(!this.data.idRecurso){
+      // Nuevo registro
+      console.log(&#x27;id&#x27;, this.data.idRecurso);
+      this.formEntity.controls[&#x27;idRecurso&#x27;].setValue(this.data.idRecurso);
+    }
+    else{
+      this.formEntity.controls.idRecurso.setValue(this.data.idRecurso);
+      if(this.data.fechaDesde !&#x3D;&#x3D; null) {
+        let fechaini &#x3D; new Date(this.data.fechaDesde).toISOString().slice(0, 10);
+        this.formEntity.controls.fechaDesde.setValue(fechaini.toString());
+      }
+      if(this.data.fechaHasta !&#x3D;&#x3D; null) {
+        let fechahasta &#x3D; new Date(this.data.fechaHasta).toISOString().slice(0, 10);
+        this.formEntity.controls.fechaHasta.setValue(fechahasta.toString());
+      }
+      this.formEntity.controls.horaInicio.setValue(this.data.horaInicio);
+      this.formEntity.controls.horaFin.setValue(this.data.horaFin);
+      this.formEntity.controls.intervalo.setValue(this.data.intervalo);
+      this.ready&#x3D;true;
+    }
+  }
+
+  async onSubmit(){
+    try{
+      await this.saveFranja();
+      this.operationSuccess();
+      this.dialog.closeAll();
+    }catch(e){
+      console.log(&#x27;El error&#x27;, e);
+      console.error(&#x27;ERROR al guardar todo&#x27;);
+    }
+  }
+
+  async  saveFranja(){
+
+    let fecInicio &#x3D; new Date(this.formEntity.controls.fechaDesde?.value);
+    let fecFin &#x3D; new Date(this.formEntity.controls.fechaHasta?.value);
+    let objFranja: Franja &#x3D; {
+      idRecurso: this.formEntity.get(&#x27;idRecurso&#x27;)?.value,
+      fechaDesde: fecInicio.getTime(),
+      fechaHasta: fecFin.getTime(),
+      horaInicio: this.formEntity.get(&#x27;horaInicio&#x27;)?.value,
+      horaFin: this.formEntity.get(&#x27;horaFin&#x27;)?.value,
+      intervalo: this.formEntity.get(&#x27;intervalo&#x27;)?.value,
+    }
+    console.log(&#x27;Crear ObjFranja:&#x27;, objFranja);
+    let result &#x3D; await this.entityTabFranjaService.insertar(objFranja);
+    if(result.codError&#x3D;&#x3D;&#x3D;null || result.codError&#x3D;&#x3D;&#x3D;0){
+     alert(&#x27;Verificar. &#x27; + result.msgError);
+     // this.mostrarVentanaEnEspera(&#x27;ALERTA&#x27;, result.msgError);
+    }
+    console.log(&#x27;Respuesta al salvar:&#x27;, result);
+  }
+
+  cancel(event: Event) {
+    event.preventDefault();
+    console.log(&#x27;click&#x27;);
+    this.dialog.closeAll();
+  }
+
+  operationSuccess(){
+
+    this.snackBar.open(&#x27;Cambios realizados&#x27;, &#x27;X&#x27;, {
+      duration: 5000,
+      panelClass: [&#x27;success-snackbar&#x27;]
+    });
+  }
+
+  handleError(error?:any){
+    let txtError &#x3D; &#x27;&#x27;
+    if(error.msjError){
+      txtError &#x3D; error.msjError;
+    }else if (error.error){
+      txtError &#x3D; error.error.msjError;
+    }else{
+      txtError &#x3D; error.status;
+    }
+    const dialogRef &#x3D; this.dialog.open(SimpleDialogComponent,{
+      data:{
+        contenido: &#x27;Hubo un error en la operación: &#x27; + txtError,
+        aceptar: true
+      }
+    });
+  }
+
+  mostrarVentanaEnEspera(titulo: string, footer?: string){
+    const data:any &#x3D; {
+      titulo: titulo,
+      footer: footer
+    }
+    const dialogRef &#x3D; this.dialog.open(EnEsperaComponent,{
+      data: data
+    });
+    return dialogRef;
+  }
+
+  get fechaDesdeField(): any{
+    return this.formEntity.get(&#x27;fechaDesde&#x27;);
+  }
+
+  get fechaHastaField(): any{
+    return this.formEntity.get(&#x27;fechaHasta&#x27;);
+  }
+
+
+  get horaInicioField(): any{
+    return this.formEntity.get(&#x27;horaInicio&#x27;);
+  }
+
+  get horaFinField(): any{
+    return this.formEntity.get(&#x27;horaFin&#x27;);
+  }
+
+   get intervaloField(): any{
+     return this.formEntity.get(&#x27;intervalo&#x27;);
+   }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div mat-dialog-content&gt;
+&lt;mat-card&gt;
+  &lt;mat-card-header class&#x3D;&quot;mat-card-header-umv&quot;&gt;
+    &lt;div class&#x3D;&quot;mat-card-header-text&quot;&gt;
+      &lt;mat-card-subtitle&gt;
+        &lt;h2&gt;{{titulo}}&lt;/h2&gt;
+      &lt;/mat-card-subtitle&gt;
+    &lt;/div&gt;
+  &lt;/mat-card-header&gt;
+  &lt;mat-card-content *ngIf&#x3D;&quot;ready&quot;&gt;
+      &lt;form [formGroup]&#x3D;&quot;formEntity&quot; (ngSubmit)&#x3D;&quot;onSubmit()&quot;&gt;
+          &lt;p&gt;
+            &lt;mat-form-field appearance&#x3D;&quot;outline&quot; &gt;
+              &lt;mat-label&gt;Intervalo programación&lt;/mat-label&gt;
+              &lt;mat-select formControlName&#x3D;&quot;intervalo&quot;&gt;
+                &lt;mat-option [value]&#x3D;&quot;60&quot;&gt;1 Hora&lt;/mat-option&gt;
+                &lt;mat-option [value]&#x3D;&quot;120&quot;&gt;2 Horas&lt;/mat-option&gt;
+                &lt;mat-option [value]&#x3D;&quot;180&quot;&gt;3 Horas&lt;/mat-option&gt;
+                &lt;mat-option [value]&#x3D;&quot;240&quot;&gt;4 Horas&lt;/mat-option&gt;
+              &lt;/mat-select&gt;
+              &lt;mat-error *ngIf&#x3D;&quot;intervaloField.hasError(&#x27;required&#x27;)&quot;&gt;Campo requerido&lt;/mat-error&gt;
+            &lt;/mat-form-field&gt;
+
+            &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+              &lt;mat-label&gt;Rango de fechas&lt;/mat-label&gt;
+              &lt;mat-date-range-input [rangePicker]&#x3D;&quot;picker&quot;&gt;
+                &lt;input matStartDate formControlName&#x3D;&quot;fechaDesde&quot; placeholder&#x3D;&quot;Fecha desde&quot;&gt;
+                &lt;input matEndDate  formControlName&#x3D;&quot;fechaHasta&quot; placeholder&#x3D;&quot;Fecha hasta&quot;&gt;
+              &lt;/mat-date-range-input&gt;
+              &lt;mat-datepicker-toggle matSuffix [for]&#x3D;&quot;picker&quot;&gt;&lt;/mat-datepicker-toggle&gt;
+              &lt;mat-date-range-picker #picker&gt;&lt;/mat-date-range-picker&gt;
+            &lt;/mat-form-field&gt;
+
+            &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+              &lt;mat-label&gt;Hora inicio programación (HH:MM)&lt;/mat-label&gt;
+              &lt;input matInput type&#x3D;&quot;time&quot; formControlName&#x3D;&quot;horaInicio&quot; autocomplete&#x3D;&quot;off&quot;&gt;
+              &lt;mat-error *ngIf&#x3D;&quot;horaInicioField.hasError(&#x27;required&#x27;)&quot;&gt;Campo requerido&lt;/mat-error&gt;
+              &lt;mat-error *ngIf&#x3D;&quot;horaInicioField.hasError(&#x27;maxlength&#x27;)&quot;&gt;Caracteres máximos 5&lt;/mat-error&gt;
+              &lt;mat-error *ngIf&#x3D;&quot;horaInicioField.hasError(&#x27;pattern&#x27;)&quot;&gt;Valor HH:MM incorrecto&lt;/mat-error&gt;
+            &lt;/mat-form-field&gt;
+
+            &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+              &lt;mat-label&gt;Hora fin programación&lt;/mat-label&gt;
+              &lt;input matInput type&#x3D;&quot;time&quot; formControlName&#x3D;&quot;horaFin&quot; autocomplete&#x3D;&quot;off&quot;&gt;
+              &lt;mat-error *ngIf&#x3D;&quot;horaFinField.hasError(&#x27;required&#x27;)&quot;&gt;Campo requerido&lt;/mat-error&gt;
+              &lt;mat-error *ngIf&#x3D;&quot;horaFinField.hasError(&#x27;maxlength&#x27;)&quot;&gt;Caracteres máximos 5&lt;/mat-error&gt;
+              &lt;mat-error *ngIf&#x3D;&quot;horaFinField.hasError(&#x27;pattern&#x27;)&quot;&gt;Valor HH:MM incorrecto&lt;/mat-error&gt;
+            &lt;/mat-form-field&gt;
+          &lt;/p&gt;
+      &lt;/form&gt;
+    &lt;/mat-card-content&gt;
+    &lt;mat-card-actions align&#x3D;&quot;start&quot;&gt;
+      &lt;div class&#x3D;&quot;example-button-row&quot;&gt;
+        &lt;button mat-button mat-dialog-close (click)&#x3D;&quot;cancel($event)&quot;&gt;Cancel&lt;/button&gt;
+        &lt;button mat-flat-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;onSubmit()&quot;&gt;Guardar&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/mat-card-actions&gt;
+  &lt;/mat-card&gt;
+&lt;/div&gt;
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./insertar-franja.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div mat-dialog-content><mat-card>  <mat-card-header class="mat-card-header-umv">    <div class="mat-card-header-text">      <mat-card-subtitle>        <h2>{{titulo}}</h2>      </mat-card-subtitle>    </div>  </mat-card-header>  <mat-card-content *ngIf="ready">      <form [formGroup]="formEntity" (ngSubmit)="onSubmit()">          <p>            <mat-form-field appearance="outline" >              <mat-label>Intervalo programación</mat-label>              <mat-select formControlName="intervalo">                <mat-option [value]="60">1 Hora</mat-option>                <mat-option [value]="120">2 Horas</mat-option>                <mat-option [value]="180">3 Horas</mat-option>                <mat-option [value]="240">4 Horas</mat-option>              </mat-select>              <mat-error *ngIf="intervaloField.hasError(\'required\')">Campo requerido</mat-error>            </mat-form-field>            <mat-form-field appearance="outline">              <mat-label>Rango de fechas</mat-label>              <mat-date-range-input [rangePicker]="picker">                <input matStartDate formControlName="fechaDesde" placeholder="Fecha desde">                <input matEndDate  formControlName="fechaHasta" placeholder="Fecha hasta">              </mat-date-range-input>              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>              <mat-date-range-picker #picker></mat-date-range-picker>            </mat-form-field>            <mat-form-field appearance="outline">              <mat-label>Hora inicio programación (HH:MM)</mat-label>              <input matInput type="time" formControlName="horaInicio" autocomplete="off">              <mat-error *ngIf="horaInicioField.hasError(\'required\')">Campo requerido</mat-error>              <mat-error *ngIf="horaInicioField.hasError(\'maxlength\')">Caracteres máximos 5</mat-error>              <mat-error *ngIf="horaInicioField.hasError(\'pattern\')">Valor HH:MM incorrecto</mat-error>            </mat-form-field>            <mat-form-field appearance="outline">              <mat-label>Hora fin programación</mat-label>              <input matInput type="time" formControlName="horaFin" autocomplete="off">              <mat-error *ngIf="horaFinField.hasError(\'required\')">Campo requerido</mat-error>              <mat-error *ngIf="horaFinField.hasError(\'maxlength\')">Caracteres máximos 5</mat-error>              <mat-error *ngIf="horaFinField.hasError(\'pattern\')">Valor HH:MM incorrecto</mat-error>            </mat-form-field>          </p>      </form>    </mat-card-content>    <mat-card-actions align="start">      <div class="example-button-row">        <button mat-button mat-dialog-close (click)="cancel($event)">Cancel</button>        <button mat-flat-button color="primary" (click)="onSubmit()">Guardar</button>      </div>    </mat-card-actions>  </mat-card></div></div>'
+    var COMPONENTS = [{'name': 'ActualizarAlternativaComponent', 'selector': 'app-actualizar-alternativa'},{'name': 'ActualizarApiquesComponent', 'selector': 'app-actualizar-apiques'},{'name': 'ActualizarComponent', 'selector': 'app-actualizar'},{'name': 'ActualizarComponent', 'selector': 'app-actualizar'},{'name': 'ActualizarComponent', 'selector': 'app-actualizar'},{'name': 'ActualizarComponent', 'selector': 'app-actualizar'},{'name': 'ActualizarComponent', 'selector': 'app-actualizar'},{'name': 'ActualizarNovedadComponent', 'selector': 'app-actualizar-novedad'},{'name': 'AforosComponent', 'selector': 'app-aforos'},{'name': 'AgendaVisitasComponent', 'selector': 'app-agenda-visitas'},{'name': 'AlcaldiasComponent', 'selector': 'app-alcaldias'},{'name': 'AnalisisTransitoComponent', 'selector': 'app-analisis-transito'},{'name': 'ApiquesAforosComponent', 'selector': 'app-apiques-aforos'},{'name': 'ApiquesAledaniosComponent', 'selector': 'app-apiques-aledanios'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AreaIntervencionComponent', 'selector': 'app-area-intervencion'},{'name': 'AsignarConductorOperarioComponent', 'selector': 'app-asignar-conductor-operario'},{'name': 'AsignarMisionalidadComponent', 'selector': 'app-asignar-misionalidad'},{'name': 'AsignarRecursoComponent', 'selector': 'app-asignar-recurso'},{'name': 'AsignarSeguimientoComponent', 'selector': 'app-asignar-seguimiento'},{'name': 'AsignarVisitasComponent', 'selector': 'app-asignar-visitas'},{'name': 'AsociarAforosComponent', 'selector': 'app-asociar-aforos'},{'name': 'AutoprogramarVisitaComponent', 'selector': 'app-autoprogramar-visita'},{'name': 'AvanceMantenimientoComponent', 'selector': 'app-avance-mantenimiento'},{'name': 'AvanceMasivoMantenimientoComponent', 'selector': 'app-avance-masivo-mantenimiento'},{'name': 'BuscarRadicadoComponent', 'selector': 'app-buscar-radicado'},{'name': 'BusquedaMantenimientosComponent', 'selector': 'app-busqueda-mantenimientos'},{'name': 'CalendarioAsignacionCoComponent', 'selector': 'app-calendario-asignacion-co'},{'name': 'CambioContraseniaComponent', 'selector': 'app-cambio-contrasenia'},{'name': 'CargueArchivoComponent', 'selector': 'app-cargue-archivo'},{'name': 'CargueDocumentosComponent', 'selector': 'app-cargue-documentos'},{'name': 'CarguesMejoramientoComponent', 'selector': 'app-cargues-mejoramiento'},{'name': 'ConsultaAlternativaComponent', 'selector': 'app-consulta-alternativa'},{'name': 'ConsultaApiquesComponent', 'selector': 'app-consulta-apiques'},{'name': 'ConsultaDisenioComponent', 'selector': 'app-consulta-disenio'},{'name': 'ConsultaGeneralGestionComponent', 'selector': 'app-consulta-general-gestion'},{'name': 'ConsultaHistorialComponent', 'selector': 'app-consulta-historial'},{'name': 'ConsultarApiquesComponent', 'selector': 'app-consultar-apiques'},{'name': 'ConsultasMejoramientoComponent', 'selector': 'app-consultas-mejoramiento'},{'name': 'ConsultaVisitaDiagnosticoComponent', 'selector': 'app-consulta-visita-diagnostico'},{'name': 'ConsultaVisitaEncabezadoComponent', 'selector': 'app-consulta-visita-encabezado'},{'name': 'ControlSolicitudesPmtComponent', 'selector': 'app-control-solicitudes-pmt'},{'name': 'CreateLugarComponent', 'selector': 'app-create-lugar'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DetalleDocumentosComponent', 'selector': 'app-detalle-documentos'},{'name': 'DialogConfirmComponent', 'selector': 'app-dialog-confirm'},{'name': 'DialogConfirmComponent', 'selector': 'app-dialog-confirm'},{'name': 'DialogConfirmComponent', 'selector': 'app-dialog-confirm'},{'name': 'DialogoMotivoCancelacionComponent', 'selector': 'app-dialogo-motivo-cancelacion'},{'name': 'DialogVerVisitaDiagnostico', 'selector': 'dialog-ver-visita-diagnostico'},{'name': 'DialogVerVisitaDisenioComponent', 'selector': 'app-dialog-ver-visita-disenio'},{'name': 'DialogVerVisitaDiseno', 'selector': 'dialog-ver-visita-diseno'},{'name': 'DropZoneDocumentosComponent', 'selector': 'app-drop-zone-documentos'},{'name': 'EditarAsignacionComponent', 'selector': 'app-editar-asignacion'},{'name': 'EditarAsociarCoiComponent', 'selector': 'app-editar-asociar-coi'},{'name': 'EditarAsociarSolicitudComponent', 'selector': 'app-editar-asociar-solicitud'},{'name': 'EditarProgramacionComponent', 'selector': 'app-editar-programacion'},{'name': 'EditarProgramacionPeriodicaComponent', 'selector': 'app-editar-programacion-periodica'},{'name': 'EditarReporteFalloComponent', 'selector': 'app-editar-reporte-fallo'},{'name': 'EliminarComponent', 'selector': 'app-eliminar'},{'name': 'EliminarComponent', 'selector': 'app-eliminar'},{'name': 'EliminarComponent', 'selector': 'app-eliminar'},{'name': 'EliminarComponent', 'selector': 'app-eliminar'},{'name': 'EnEsperaComponent', 'selector': 'app-en-espera'},{'name': 'GestionarMisionalidadComponent', 'selector': 'app-gestionar-misionalidad'},{'name': 'GestionarPeticionarioComponent', 'selector': 'app-gestionar-peticionario'},{'name': 'GestionarReservaComponent', 'selector': 'app-gestionar-reserva'},{'name': 'GestionarSeguimientoComponent', 'selector': 'app-gestionar-seguimiento'},{'name': 'GestionMasivaComponent', 'selector': 'app-gestion-masiva'},{'name': 'GestionMisionalidadComponent', 'selector': 'app-gestion-misionalidad'},{'name': 'GestionSolicitudComponent', 'selector': 'app-gestion-solicitud'},{'name': 'HistorialMantenimientoComponent', 'selector': 'app-historial-mantenimiento'},{'name': 'InformeDetalleComponent', 'selector': 'app-informe-detalle'},{'name': 'InformeSolicitudComponent', 'selector': 'app-informe-solicitud'},{'name': 'InsertarComponent', 'selector': 'app-insertar'},{'name': 'InsertarComponent', 'selector': 'app-insertar'},{'name': 'InsertarComponent', 'selector': 'app-insertar'},{'name': 'InsertarComponent', 'selector': 'app-insertar'},{'name': 'InsertarComponent', 'selector': 'app-insertar'},{'name': 'InsertarFranjaComponent', 'selector': 'app-insertar-franja'},{'name': 'InsertarNovedadComponent', 'selector': 'app-insertar-novedad'},{'name': 'ListaAforosComponent', 'selector': 'app-lista-aforos'},{'name': 'ListaAlternativaComponent', 'selector': 'app-lista-alternativa'},{'name': 'ListaContratosMqeqComponent', 'selector': 'app-lista-contratos-mqeq'},{'name': 'ListaFallosComponent', 'selector': 'app-lista-fallos'},{'name': 'ListaFranjasComponent', 'selector': 'app-lista-franjas'},{'name': 'ListaLugarComponent', 'selector': 'app-lista-lugar'},{'name': 'ListaMaqEquDisponiblesComponent', 'selector': 'app-lista-maq-equ-disponibles'},{'name': 'ListaMaqEquVigentesComponent', 'selector': 'app-lista-maq-equ-vigentes'},{'name': 'ListaMaquinariaEquiposComponent', 'selector': 'app-lista-maquinaria-equipos'},{'name': 'ListaPendientesComponent', 'selector': 'app-lista-pendientes'},{'name': 'ListaPksActaComponent', 'selector': 'app-lista-pks-acta'},{'name': 'ListaPksAsociarComponent', 'selector': 'app-lista-pks-asociar'},{'name': 'ListaProgramacionPeriocidadComponent', 'selector': 'app-lista-programacion-periocidad'},{'name': 'ListaProgramacionSinpmtComponent', 'selector': 'app-lista-programacion-sinpmt'},{'name': 'ListaRadicadosComponent', 'selector': 'app-lista-radicados'},{'name': 'ListarAlternativasComponent', 'selector': 'app-listar-alternativas'},{'name': 'ListarApiquesComponent', 'selector': 'app-listar-apiques'},{'name': 'ListarComponent', 'selector': 'app-listar'},{'name': 'ListarComponent', 'selector': 'app-listar'},{'name': 'ListarComponent', 'selector': 'app-listar'},{'name': 'ListarComponent', 'selector': 'app-listar'},{'name': 'ListarComponent', 'selector': 'app-listar'},{'name': 'ListarFranjaComponent', 'selector': 'app-listar-franja'},{'name': 'ListarNovedadComponent', 'selector': 'app-listar-novedad'},{'name': 'ListaSeguimientoComponent', 'selector': 'app-lista-seguimiento'},{'name': 'ListaTransicionComponent', 'selector': 'app-lista-transicion'},{'name': 'ListaVerificacionComponent', 'selector': 'app-lista-verificacion'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapaSeleccionComponent', 'selector': 'app-mapa-seleccion'},{'name': 'MapaUmvComponent', 'selector': 'app-mapa-umv'},{'name': 'MapComponent', 'selector': 'app-map'},{'name': 'MenuItemComponent', 'selector': 'app-menu-item'},{'name': 'ModalAutoprogramarComponent', 'selector': 'app-modal-autoprogramar'},{'name': 'ModalCargueArchivoComponent', 'selector': 'app-modal-cargue-archivo'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'ModalConfirmarComponent', 'selector': 'app-modal-confirmar'},{'name': 'ModalConfirmarComponent', 'selector': 'app-modal-confirmar'},{'name': 'ModalConfirmarComponent', 'selector': 'app-modal-confirmar'},{'name': 'ModalDescargaArchivoComponent', 'selector': 'app-modal-descarga-archivo'},{'name': 'ModalListaEnsayosComponent', 'selector': 'app-modal-lista-ensayos'},{'name': 'ModalListaMaterialesComponent', 'selector': 'app-modal-lista-materiales'},{'name': 'ModalTableAsociarComponent', 'selector': 'app-modal-table-asociar'},{'name': 'ModalVersionComponent', 'selector': 'app-modal-version'},{'name': 'NotAuthorizedComponent', 'selector': 'app-not-authorized'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NovedadadesIntervencionComponent', 'selector': 'app-novedadades-intervencion'},{'name': 'ProgramacionPeriodicaIntervencionComponent', 'selector': 'app-programacion-periodica-intervencion'},{'name': 'ProgramacionVisitaTecnicaComponent', 'selector': 'app-programacion-visita-tecnica'},{'name': 'ProgramarComponent', 'selector': 'app-programar'},{'name': 'ProgressComponent', 'selector': 'app-progress'},{'name': 'RealizarSolicitudesComponent', 'selector': 'app-realizar-solicitudes'},{'name': 'RegistrarInsumosComponent', 'selector': 'app-registrar-insumos'},{'name': 'RegistrarPriorizacionComponent', 'selector': 'app-registrar-priorizacion'},{'name': 'RegistrarServicioComponent', 'selector': 'app-registrar-servicio'},{'name': 'RegistroAforosComponent', 'selector': 'app-registro-aforos'},{'name': 'RegistroAlternativaComponent', 'selector': 'app-registro-alternativa'},{'name': 'RegistroApiqueComponent', 'selector': 'app-registro-apique'},{'name': 'RegistroCapaComponent', 'selector': 'app-registro-capa'},{'name': 'RegistroDatosAforoComponent', 'selector': 'app-registro-datos-aforo'},{'name': 'RegistroDiarioComponent', 'selector': 'app-registro-diario'},{'name': 'RegistroDiarioComponent', 'selector': 'app-registro-diario'},{'name': 'RegistroDisenoComponent', 'selector': 'app-registro-diseno'},{'name': 'RegistroFallasComponent', 'selector': 'app-registro-fallas'},{'name': 'RegistroFotoComponent', 'selector': 'app-registro-foto'},{'name': 'RegistroInsumosComponent', 'selector': 'app-registro-insumos'},{'name': 'RegistroOtrosFactoresComponent', 'selector': 'app-registro-otros-factores'},{'name': 'RegistroUnidadMuestreoComponent', 'selector': 'app-registro-unidad-muestreo'},{'name': 'RegistroVisitaComponent', 'selector': 'app-registro-visita'},{'name': 'RegistroVisitaDiagnosticoComponent', 'selector': 'app-registro-visita-diagnostico'},{'name': 'RegistroVisitaVerificacionComponent', 'selector': 'app-registro-visita-verificacion'},{'name': 'ReportarFalloComponent', 'selector': 'app-reportar-fallo'},{'name': 'ResultadoEnsayoComponent', 'selector': 'app-resultado-ensayo'},{'name': 'RevisarDisenoComponent', 'selector': 'app-revisar-diseno'},{'name': 'RevisarVisitaDiagnosticoComponent', 'selector': 'app-revisar-visita-diagnostico'},{'name': 'RevisionVisitaDiagnosticoComponent', 'selector': 'app-revision-visita-diagnostico'},{'name': 'SeccionCantidadesDeObraComponent', 'selector': 'app-seccion-cantidades-de-obra'},{'name': 'SeccionControlDeCalidadComponent', 'selector': 'app-seccion-control-de-calidad'},{'name': 'SeccionEquipoPortatilComponent', 'selector': 'app-seccion-equipo-portatil'},{'name': 'SeccionInformacionDelPersonalComponent', 'selector': 'app-seccion-informacion-del-personal'},{'name': 'SeccionInformacionGeneralComponent', 'selector': 'app-seccion-informacion-general'},{'name': 'SeccionInspeccionYOficialCuadrillaComponent', 'selector': 'app-seccion-inspeccion-y-oficial-cuadrilla'},{'name': 'SeccionMaquinariaComponent', 'selector': 'app-seccion-maquinaria'},{'name': 'SeccionMaquinariaComponent', 'selector': 'app-seccion-maquinaria'},{'name': 'SeccionMaterialComponent', 'selector': 'app-seccion-material'},{'name': 'SeccionMaterialesComponent', 'selector': 'app-seccion-materiales'},{'name': 'SeccionMezclaAsfalticasConcretosComponent', 'selector': 'app-seccion-mezcla-asfalticas-concretos'},{'name': 'SeccionObservacionesGeneralesComponent', 'selector': 'app-seccion-observaciones-generales'},{'name': 'SeccionPersonalComponent', 'selector': 'app-seccion-personal'},{'name': 'SeccionProgramacionDiariaComponent', 'selector': 'app-seccion-programacion-diaria'},{'name': 'SeccionRetiroMaterialesEscombrosComponent', 'selector': 'app-seccion-retiro-materiales-escombros'},{'name': 'SegMapaUmvComponent', 'selector': 'app-seg-mapa-umv'},{'name': 'ServicioApiquesComponent', 'selector': 'app-servicio-apiques'},{'name': 'ServicioDensidadComponent', 'selector': 'app-servicio-densidad'},{'name': 'ServicioFormulaComponent', 'selector': 'app-servicio-formula'},{'name': 'ServicioNucleoComponent', 'selector': 'app-servicio-nucleo'},{'name': 'ServicioOtrosComponent', 'selector': 'app-servicio-otros'},{'name': 'SimpleDialogComponent', 'selector': 'app-simple-dialog'},{'name': 'SincroniacionSPIComponent', 'selector': 'app-sincroniacion-spi'},{'name': 'SolicitudDialogComponent', 'selector': 'app-solicitud-dialog'},{'name': 'SolicitudEnsayoLaboratorioComponent', 'selector': 'app-solicitud-ensayo-laboratorio'},{'name': 'SolicitudesApiquesAforosComponent', 'selector': 'app-solicitudes-apiques-aforos'},{'name': 'TablaFiltrosComponent', 'selector': 'app-tabla-filtros'},{'name': 'TablaGestionPendienteComponent', 'selector': 'app-tabla-gestion-pendiente'},{'name': 'TablaPendientesApiquesComponent', 'selector': 'app-tabla-pendientes-apiques'},{'name': 'TablaRadicadoVinculadoComponent', 'selector': 'app-tabla-radicado-vinculado'},{'name': 'TablaSeguimientosComponent', 'selector': 'app-tabla-seguimientos'},{'name': 'TablaVincularComponent', 'selector': 'app-tabla-vincular'},{'name': 'TableDocumentosComponent', 'selector': 'app-table-documentos'},{'name': 'TableEnsayoComponent', 'selector': 'app-table-ensayo'},{'name': 'TableInformeComponent', 'selector': 'app-table-informe'},{'name': 'TableMantenimientosActivosComponent', 'selector': 'app-table-mantenimientos-activos'},{'name': 'TableNomenclaturaApiqueComponent', 'selector': 'app-table-nomenclatura-apique'},{'name': 'TableVersionSolicitudComponent', 'selector': 'app-table-version-solicitud'},{'name': 'TabsDistribuidorComponent', 'selector': 'app-tabs-distribuidor'},{'name': 'TabSeccionesComponent', 'selector': 'app-tab-secciones'},{'name': 'TabSeccionesComponent', 'selector': 'app-tab-secciones'},{'name': 'UbicarApiqueComponent', 'selector': 'app-ubicar-apique'},{'name': 'ValidacionVisitaDiagnosticoComponent', 'selector': 'app-validacion-visita-diagnostico'},{'name': 'ValidarDisenoComponent', 'selector': 'app-validar-diseno'},{'name': 'ValidarVisitaDiagnosticoComponent', 'selector': 'app-validar-visita-diagnostico'},{'name': 'VerAlternativaComponent', 'selector': 'app-ver-alternativa'},{'name': 'VerComponent', 'selector': 'app-ver'},{'name': 'VerComponent', 'selector': 'app-ver'},{'name': 'VerComponent', 'selector': 'app-ver'},{'name': 'VerComponent', 'selector': 'app-ver'},{'name': 'VerComponent', 'selector': 'app-ver'},{'name': 'VerDetalleMantenimientoComponent', 'selector': 'app-ver-detalle-mantenimiento'},{'name': 'VerEquipoComponent', 'selector': 'app-ver-equipo'},{'name': 'VerFallasComponent', 'selector': 'app-ver-fallas'},{'name': 'VerFotosComponent', 'selector': 'app-ver-fotos'},{'name': 'VerGrupoComponent', 'selector': 'app-ver-grupo'},{'name': 'VerLugarComponent', 'selector': 'app-ver-lugar'},{'name': 'VerOtroFactorComponent', 'selector': 'app-ver-otro-factor'},{'name': 'VerParametrosDisenioComponent', 'selector': 'app-ver-parametros-disenio'},{'name': 'VerPersonaComponent', 'selector': 'app-ver-persona'},{'name': 'VincularPeticionarioComponent', 'selector': 'app-vincular-peticionario'},{'name': 'VisorFotosComponent', 'selector': 'app-visor-fotos'},{'name': 'WebMapaUmvComponent', 'selector': 'app-web-mapa-umv'},{'name': 'WelcomeComponent', 'selector': 'app-welcome'}];
+    var DIRECTIVES = [{'name': 'DndDirective', 'selector': '[appDnd]'},{'name': 'MsgErrorDirective', 'selector': '[msg-error]'},{'name': 'MsgErrorDirective', 'selector': '[msg-error]'}];
+    var ACTUAL_COMPONENT = {'name': 'InsertarFranjaComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'InsertarFranjaComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

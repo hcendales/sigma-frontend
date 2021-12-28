@@ -1,0 +1,2208 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>sigma2-frontend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">sigma2-frontend documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li >ProcesoIntervencionService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/core/services/proceso-intervencion.service.ts</code>
+        </p>
+
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#httpOptions" >httpOptions</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#actualizarCOI" >actualizarCOI</a>
+                            </li>
+                            <li>
+                                <a href="#actualizarProgramacionPeriodica" >actualizarProgramacionPeriodica</a>
+                            </li>
+                            <li>
+                                <a href="#actualizarSolicitud" >actualizarSolicitud</a>
+                            </li>
+                            <li>
+                                <a href="#adicionarPKGrupo" >adicionarPKGrupo</a>
+                            </li>
+                            <li>
+                                <a href="#consultaArchivoCOI" >consultaArchivoCOI</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#consultarArchivoCal" >consultarArchivoCal</a>
+                            </li>
+                            <li>
+                                <a href="#consultarPeriodos" >consultarPeriodos</a>
+                            </li>
+                            <li>
+                                <a href="#consultarRadicados" >consultarRadicados</a>
+                            </li>
+                            <li>
+                                <a href="#desasociarRadicado" >desasociarRadicado</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#insertarArcivoCaliope" >insertarArcivoCaliope</a>
+                            </li>
+                            <li>
+                                <a href="#insertarCOI" >insertarCOI</a>
+                            </li>
+                            <li>
+                                <a href="#insertarProgramacionPeriodica" >insertarProgramacionPeriodica</a>
+                            </li>
+                            <li>
+                                <a href="#insertarSolicitud" >insertarSolicitud</a>
+                            </li>
+                            <li>
+                                <a href="#listarPKsAsociar" >listarPKsAsociar</a>
+                            </li>
+                            <li>
+                                <a href="#listarProgramacionPeriocidad" >listarProgramacionPeriocidad</a>
+                            </li>
+                            <li>
+                                <a href="#listaRProgramacionSinPMT" >listaRProgramacionSinPMT</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#obtenerIdDocumento" >obtenerIdDocumento</a>
+                            </li>
+                            <li>
+                                <a href="#obtenerVigencias" >obtenerVigencias</a>
+                            </li>
+                            <li>
+                                <a href="#remuevePKGrupo" >remuevePKGrupo</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(securityService: <a href="../injectables/SecurityService.html" target="_self">SecurityService</a>, http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/core/services/proceso-intervencion.service.ts:17</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Constructor del objeto.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>securityService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SecurityService.html" target="_self" >SecurityService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Referencia al servicio de seguridad.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Referencia al cliente HTTP.</p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actualizarCOI"></a>
+                    <span class="name">
+                        <span ><b>actualizarCOI</b></span>
+                        <a href="#actualizarCOI"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>actualizarCOI(solicitud: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="361"
+                            class="link-to-prism">src/app/core/services/proceso-intervencion.service.ts:361</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Permite actualizar un registro de asociacion.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>solicitud</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Respuesta de backend a la peticion.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actualizarProgramacionPeriodica"></a>
+                    <span class="name">
+                        <span ><b>actualizarProgramacionPeriodica</b></span>
+                        <a href="#actualizarProgramacionPeriodica"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>actualizarProgramacionPeriodica(programacion_periodica: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/app/core/services/proceso-intervencion.service.ts:70</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Permite actualizar un registro de programacion periodica.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>programacion_periodica</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Respuesta de backend a la peticion.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actualizarSolicitud"></a>
+                    <span class="name">
+                        <span ><b>actualizarSolicitud</b></span>
+                        <a href="#actualizarSolicitud"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>actualizarSolicitud(solicitud: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="254"
+                            class="link-to-prism">src/app/core/services/proceso-intervencion.service.ts:254</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Permite actualizar un registro de asociacion.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>solicitud</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Respuesta de backend a la peticion.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="adicionarPKGrupo"></a>
+                    <span class="name">
+                        <span ><b>adicionarPKGrupo</b></span>
+                        <a href="#adicionarPKGrupo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>adicionarPKGrupo(idProgramacionPeriodica: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, idMantenimientoVial: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="145"
+                            class="link-to-prism">src/app/core/services/proceso-intervencion.service.ts:145</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Adiciona un PK a un grupo de periodo.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>idProgramacionPeriodica</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>ID del grupo.</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>idMantenimientoVial</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>ID del PK.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Resultado de la operacion.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="consultaArchivoCOI"></a>
+                    <span class="name">
+                        <span ><b>consultaArchivoCOI</b></span>
+                        <a href="#consultaArchivoCOI"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>consultaArchivoCOI(coi?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, numeroRadicadoRta?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="345"
+                            class="link-to-prism">src/app/core/services/proceso-intervencion.service.ts:345</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Permite consultar un registro de asociacion.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>coi</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>opcional dato del campo COI en el formulario</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>numeroRadicadoRta</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>opcional dato del campo numeroRadicadoRta en el formulario</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Respuesta de backend a la peticion.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="consultarArchivoCal"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>consultarArchivoCal</b></span>
+                        <a href="#consultarArchivoCal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>consultarArchivoCal(idArchivo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="130"
+                            class="link-to-prism">src/app/core/services/proceso-intervencion.service.ts:130</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>idArchivo</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="consultarPeriodos"></a>
+                    <span class="name">
+                        <span ><b>consultarPeriodos</b></span>
+                        <a href="#consultarPeriodos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>consultarPeriodos(vigencia: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, idPeriodicidad: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="103"
+                            class="link-to-prism">src/app/core/services/proceso-intervencion.service.ts:103</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Consultar los periodos.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>vigencia</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Vigencia del periodo.</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>idPeriodicidad</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>ID de la periocidad.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Lista de periodos</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="consultarRadicados"></a>
+                    <span class="name">
+                        <span ><b>consultarRadicados</b></span>
+                        <a href="#consultarRadicados"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>consultarRadicados(filtro: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="377"
+                            class="link-to-prism">src/app/core/services/proceso-intervencion.service.ts:377</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>filtro</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="desasociarRadicado"></a>
+                    <span class="name">
+                        <span ><b>desasociarRadicado</b></span>
+                        <a href="#desasociarRadicado"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>desasociarRadicado(solicitud: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="277"
+                            class="link-to-prism">src/app/core/services/proceso-intervencion.service.ts:277</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Permite desAsociar un registro de asociacion.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>solicitud</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Respuesta de backend a la peticion.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="insertarArcivoCaliope"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>insertarArcivoCaliope</b></span>
+                        <a href="#insertarArcivoCaliope"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>insertarArcivoCaliope(file: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, idTiposArchivos: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="120"
+                            class="link-to-prism">src/app/core/services/proceso-intervencion.service.ts:120</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Inserta un arcivo en caliope.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>file</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Contenido del archivo.</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>idTiposArchivos</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Tipo de achivo.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>ID del archivo</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="insertarCOI"></a>
+                    <span class="name">
+                        <span ><b>insertarCOI</b></span>
+                        <a href="#insertarCOI"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>insertarCOI(solicitud: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="322"
+                            class="link-to-prism">src/app/core/services/proceso-intervencion.service.ts:322</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Permite insertar un registro de asiciacion.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>solicitud</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Respuesta de backend a la peticion.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="insertarProgramacionPeriodica"></a>
+                    <span class="name">
+                        <span ><b>insertarProgramacionPeriodica</b></span>
+                        <a href="#insertarProgramacionPeriodica"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>insertarProgramacionPeriodica(programacion_periodica: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/core/services/proceso-intervencion.service.ts:49</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Permite insertar un registro de programacion periodica.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>programacion_periodica</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Respuesta de backend a la peticion.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="insertarSolicitud"></a>
+                    <span class="name">
+                        <span ><b>insertarSolicitud</b></span>
+                        <a href="#insertarSolicitud"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>insertarSolicitud(solicitud: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="234"
+                            class="link-to-prism">src/app/core/services/proceso-intervencion.service.ts:234</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Permite insertar un registro de asiciacion.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>solicitud</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Respuesta de backend a la peticion.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listarPKsAsociar"></a>
+                    <span class="name">
+                        <span ><b>listarPKsAsociar</b></span>
+                        <a href="#listarPKsAsociar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>listarPKsAsociar(filtro?: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="182"
+                            class="link-to-prism">src/app/core/services/proceso-intervencion.service.ts:182</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Permite obtener la lista PKs para asociar a un grupo
+de programacion periodica.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>filtro</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>Filtro de la consulta</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Lista de PKs.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listarProgramacionPeriocidad"></a>
+                    <span class="name">
+                        <span ><b>listarProgramacionPeriocidad</b></span>
+                        <a href="#listarProgramacionPeriocidad"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>listarProgramacionPeriocidad(filtro?: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app/core/services/proceso-intervencion.service.ts:34</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Permite obtener la lista de maquinaria y
+equipos para el registro de mantenimiento.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>filtro</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>Filtro de la consulta</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Lista de maquinaria y equipos.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listaRProgramacionSinPMT"></a>
+                    <span class="name">
+                        <span ><b>listaRProgramacionSinPMT</b></span>
+                        <a href="#listaRProgramacionSinPMT"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>listaRProgramacionSinPMT(filtro?: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="203"
+                            class="link-to-prism">src/app/core/services/proceso-intervencion.service.ts:203</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Permite obtener la lista de maquinaria y
+equipos para el registro de mantenimiento.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>filtro</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>Filtro de la consulta</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Lista de maquinaria y equipos.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="obtenerIdDocumento"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>obtenerIdDocumento</b></span>
+                        <a href="#obtenerIdDocumento"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>obtenerIdDocumento(idTipoDocumento: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="295"
+                            class="link-to-prism">src/app/core/services/proceso-intervencion.service.ts:295</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Permite obtener el ID del nuevo documento.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>idTipoDocumento</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>ID del nuevo documento.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="obtenerVigencias"></a>
+                    <span class="name">
+                        <span ><b>obtenerVigencias</b></span>
+                        <a href="#obtenerVigencias"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>obtenerVigencias()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="89"
+                            class="link-to-prism">src/app/core/services/proceso-intervencion.service.ts:89</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Optiene la lista de vigencias.</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Lista de vigencias.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="remuevePKGrupo"></a>
+                    <span class="name">
+                        <span ><b>remuevePKGrupo</b></span>
+                        <a href="#remuevePKGrupo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>remuevePKGrupo(idProgramacionPeriodicaMV: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="163"
+                            class="link-to-prism">src/app/core/services/proceso-intervencion.service.ts:163</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Remueve un PK a un grupo de periodo.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>idProgramacionPeriodicaMV</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>ID de la asignacion.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Resultado de la operacion.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="httpOptions"></a>
+                    <span class="name">
+                        <span ><b>httpOptions</b></span>
+                        <a href="#httpOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    headers: new HttpHeaders({ &#x27;Content-Type&#x27;: &#x27;application/json&#x27; }),
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/core/services/proceso-intervencion.service.ts:15</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Adicion el encabezado de tipo de contenido
+a las peticiones.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { SecurityService } from &#x27;../security/services/security.service&#x27;;
+import { HttpClient, HttpHeaders } from &#x27;@angular/common/http&#x27;;
+import { environment } from &#x27;../../../environments/environment&#x27;;
+
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class ProcesoIntervencionService {
+
+  /**
+   * Adicion el encabezado de tipo de contenido 
+   * a las peticiones.
+   */
+  httpOptions &#x3D; {
+    headers: new HttpHeaders({ &#x27;Content-Type&#x27;: &#x27;application/json&#x27; }),
+  };
+
+  /**
+   * Constructor del objeto.
+   * 
+   * @param securityService Referencia al servicio de seguridad. 
+   * @param http Referencia al cliente HTTP.
+   */
+  constructor(private securityService: SecurityService, private http: HttpClient) { }
+
+  /**
+   * Permite obtener la lista de maquinaria y 
+   * equipos para el registro de mantenimiento.
+   * 
+   * @param filtro Filtro de la consulta 
+   * @returns Lista de maquinaria y equipos.
+   */
+  listarProgramacionPeriocidad(filtro?:any){
+    const url &#x3D; &#x27;/SIGMA-backend-desa/api/intervencion/programacionPeriodica/consultarActivas&#x27;;
+    let body &#x3D; {
+      usuario: this.securityService.userSession.login,
+      idUsuario: this.securityService.userSession.idUsuario,
+    }
+    return this.http.post&lt;any&gt;(url, body , this.httpOptions).toPromise();
+  }
+  
+  /**
+   * Permite insertar un registro de programacion periodica.
+   * 
+   * @param programacion-periodica Modelo del compoenente. 
+   * @returns Respuesta de backend a la peticion.
+   */
+  insertarProgramacionPeriodica(programacion_periodica:any){
+    const url &#x3D; &#x27;/SIGMA-backend-desa/api/intervencion/programacionPeriodica/insertar&#x27;;
+    let body &#x3D; {
+      usuario: this.securityService.userSession.login,
+      idUsuario: this.securityService.userSession.idUsuario,
+      progPeriodica: {
+        idTipoPeriodoProgramacion: programacion_periodica.idTipoPeriodoProgramacion,
+        idArchivo: programacion_periodica.idArchivo,
+        observaciones: programacion_periodica.observaciones,
+        totalNumeroCuadrillas: programacion_periodica.totalNumeroCuadrillas
+      }
+    }
+    return this.http.post&lt;any&gt;(url, body , this.httpOptions).toPromise();
+  }
+
+  /**
+   * Permite actualizar un registro de programacion periodica.
+   * 
+   * @param programacion-periodica Modelo del compoenente. 
+   * @returns Respuesta de backend a la peticion.
+   */
+  actualizarProgramacionPeriodica(programacion_periodica:any){
+    const url &#x3D; &#x27;/SIGMA-backend-desa/api/intervencion/programacionPeriodica/actualizar&#x27;;
+    let body &#x3D; {
+      usuario: this.securityService.userSession.login,
+      idUsuario: this.securityService.userSession.idUsuario,
+      progPeriodica: {
+        idTipoPeriodoProgramacion: programacion_periodica.idTipoPeriodoProgramacion,
+        idArchivo: programacion_periodica.idArchivo,
+        observaciones: programacion_periodica.observaciones,
+        totalNumeroCuadrillas: programacion_periodica.totalNumeroCuadrillas
+      }
+    }
+    return this.http.post&lt;any&gt;(url, body , this.httpOptions).toPromise();
+  }
+
+  /**
+   * Optiene la lista de vigencias.
+   * @returns Lista de vigencias.
+   */
+  obtenerVigencias(): any {
+    const url &#x3D; &#x27;/SIGMA-backend-desa/api/intervencion/periodoProgramacion/filtrarVigencias&#x27;;
+    let body &#x3D; {
+      usuario: this.securityService.userSession.login,
+      idUsuario: this.securityService.userSession.idUsuario    }
+    return this.http.post&lt;any&gt;(url, body , this.httpOptions).toPromise();
+  }
+
+  /**
+   * Consultar los periodos.
+   * @param vigencia Vigencia del periodo.
+   * @param idPeriodicidad ID de la periocidad.
+   * @returns Lista de periodos
+   */
+  consultarPeriodos(vigencia: number, idPeriodicidad: number): any {
+    const url &#x3D; &#x27;/SIGMA-backend-desa/api/intervencion/periodoProgramacion/consultar&#x27;;
+    let body &#x3D; {
+      usuario: this.securityService.userSession.login,
+      idUsuario: this.securityService.userSession.idUsuario,
+      vigencia: vigencia,
+      idPeriodicidad: idPeriodicidad
+    }
+    return this.http.post&lt;any&gt;(url, body , this.httpOptions).toPromise();
+  }
+
+  /**
+   * Inserta un arcivo en caliope.
+   * @param file Contenido del archivo.
+   * @param idTiposArchivos Tipo de achivo.
+   * @returns ID del archivo
+   */
+   async insertarArcivoCaliope(file:any, idTiposArchivos:string) {
+    const url &#x3D; &#x27;/SIGMA-backend-desa/api/archivo/insertarArchivoCal&#x27;;
+    const formData: FormData &#x3D; new FormData();
+    formData.append(&#x27;idTiposArchivos&#x27;, idTiposArchivos);
+    formData.append(&#x27;Usuario&#x27;, this.securityService.userSession.login);
+    formData.append(&#x27;file&#x27;, file, file.name);
+    const response : any &#x3D; await this.http.post(url, formData ).toPromise();
+    return response.respuesta[0].idArchivo
+  }
+
+  async consultarArchivoCal(idArchivo:number) {
+    const url &#x3D; &#x27;/SIGMA-backend-desa/api/archivo/consultarArchivoCal&#x27;;
+    let body &#x3D; {
+      usuario: this.securityService.userSession.login,
+      idArchivo,
+    }
+    return this.http.post(url, body, { observe: &#x27;response&#x27;, responseType: &#x27;blob&#x27; }).toPromise();
+  }
+
+  /**
+   * Adiciona un PK a un grupo de periodo.
+   * @param idProgramacionPeriodica ID del grupo.
+   * @param idMantenimientoVial ID del PK.
+   * @returns Resultado de la operacion.
+   */
+  adicionarPKGrupo(idProgramacionPeriodica: number, idMantenimientoVial: number){    
+    const url &#x3D; &#x27;/SIGMA-backend-desa/api/intervencion/programacionPeriodica/adicionarPK&#x27;;
+    let body &#x3D; {
+      usuario: this.securityService.userSession.login,
+      idUsuario: this.securityService.userSession.idUsuario,
+      detalle: {
+        idProgramacionPeriodica: idProgramacionPeriodica,
+        idMantenimientoVial: idMantenimientoVial
+      }
+    }
+    return this.http.post&lt;any&gt;(url, body , this.httpOptions).toPromise();
+  }
+
+  /**
+   * Remueve un PK a un grupo de periodo.
+   * @param idProgramacionPeriodicaMV ID de la asignacion.
+   * @returns Resultado de la operacion.
+   */
+   remuevePKGrupo(idProgramacionPeriodicaMV: number){    
+    const url &#x3D; &#x27;/SIGMA-backend-desa/api/intervencion/programacionPeriodica/removerPK&#x27;;
+    let body &#x3D; {
+      usuario: this.securityService.userSession.login,
+      idUsuario: this.securityService.userSession.idUsuario,
+      detalle: {
+        idProgramacionPeriodicaMV: idProgramacionPeriodicaMV
+      }
+    }
+    return this.http.post&lt;any&gt;(url, body , this.httpOptions).toPromise();
+  }
+
+  /**
+   * Permite obtener la lista PKs para asociar a un grupo 
+   * de programacion periodica.
+   * 
+   * @param filtro Filtro de la consulta 
+   * @returns Lista de PKs.
+   */
+   listarPKsAsociar(filtro?:any){
+    let url &#x3D; &#x27;/SIGMA-backend-desa/api/intervencion/programacionPeriodica/listarPkAsociar&#x27;;
+    let body &#x3D; {
+      usuario: this.securityService.userSession.login,
+      idUsuario: this.securityService.userSession.idUsuario,
+      idActividad: filtro.idActividad, 
+      progPeriodica:
+      {
+        idProgramacionPeriodica: filtro.idProgramacionPeriodica
+      }
+    }
+    return this.http.post&lt;any&gt;(url, body , this.httpOptions).toPromise();
+  }
+
+  /**
+   * Permite obtener la lista de maquinaria y 
+   * equipos para el registro de mantenimiento.
+   * 
+   * @param filtro Filtro de la consulta 
+   * @returns Lista de maquinaria y equipos.
+   */
+  listaRProgramacionSinPMT(filtro?:any){
+    let url &#x3D; &#x27;/SIGMA-backend-desa/api/produccion/listarFallos&#x27;;
+    let body &#x3D; {
+      usuario: this.securityService.userSession.login,
+      idUsuario: this.securityService.userSession.idUsuario,
+      pk_id_calzada: filtro.pk_id_calzada,
+      civ: filtro.civ,
+      descripcion_localidad: filtro.descripcion_localidad,
+      descripcion_upz: filtro.descripcion_upz,
+      tipo_intervencion: filtro.tipo_intervencion,
+      descripcion_tipo_estrategia: filtro.descripcion_tipo_estrategia,
+      director: filtro.director,
+      km_carril_impacto: filtro.km_carril_impacto,
+      km_carril_lineal: filtro.km_carril_lineal,
+      km_carril_obra: filtro.km_carril_obra,
+      vigencia_programacion_periodica: filtro.vigencia_programacion_periodica,
+      descripcion_periodicidad: filtro.descripcion_periodicidad,
+      periodo: filtro.periodo,
+      duracion: filtro.duracion,
+      nombre_responsable_visita: filtro.nombre_responsable_visi
+    }
+    return this.http.post&lt;any&gt;(url, body , this.httpOptions).toPromise();
+  }
+
+
+  /**
+   * Permite insertar un registro de asiciacion.
+   * 
+   * @param solicitud-pmt Modelo del compoenente. 
+   * @returns Respuesta de backend a la peticion.
+   */
+  insertarSolicitud(solicitud:any){
+    let url &#x3D; &#x27;/SIGMA-backend-desa/api/PMT/asociarSolicitud&#x27;;
+    let body &#x3D; {
+      usuario: this.securityService.userSession.login,
+      idUsuario: this.securityService.userSession.idUsuario,
+      idMantenimientoVial: solicitud.idMantenimientoVial,
+      idTipoPMT: 911,
+      numeroRadicadoUMV: solicitud.radicado,
+      fechaRadicadoUMV: solicitud.fechaRadicadoUMV,
+      idDocumento: solicitud.idDocumento
+    }
+    return this.http.post&lt;any&gt;(url, body , this.httpOptions).toPromise();
+  }
+
+  /**
+    * Permite actualizar un registro de asociacion.
+    * 
+    * @param solicitud-pmt Modelo del compoenente. 
+    * @returns Respuesta de backend a la peticion.
+    */
+  actualizarSolicitud(solicitud: any) {
+    let url &#x3D; &#x27;/SIGMA-backend-desa/api/PMT/asociarSolicitud&#x27;;
+    let body &#x3D; {
+      usuario: this.securityService.userSession.login,
+      idUsuario: this.securityService.userSession.idUsuario,
+      radicado: solicitud.radicado,
+      coi: solicitud.coi,
+      radicado_sdm: solicitud.radicado_sdm,
+      tipo_respuesta: solicitud.tipo_respuesta,
+      observaciones: solicitud.observaciones,
+      reporte_coi_ver: solicitud.reporte_coi_ver,
+      actividad_destino: solicitud.actividad_destino,
+
+    }
+    return this.http.post&lt;any&gt;(url, body, this.httpOptions).toPromise();
+  }
+
+  /**
+    * Permite desAsociar un registro de asociacion.
+    * 
+    * @param solicitud-pmt Modelo del compoenente. 
+    * @returns Respuesta de backend a la peticion.
+    */
+  desasociarRadicado(solicitud: any) {
+    let url &#x3D; &#x27;/SIGMA-backend-desa/api/PMT/desasociarRadicado&#x27;;
+    let body &#x3D; {
+      usuario: this.securityService.userSession.login,
+      idUsuario: this.securityService.userSession.idUsuario,
+      idMantenimientoVial: solicitud.id_mantenimiento_vial,
+      idRadicado: solicitud.id_radicado,
+      tipoRadicado: solicitud.tipo,
+      radicado: solicitud.id_radicado
+    }
+    return this.http.post&lt;any&gt;(url, body, this.httpOptions).toPromise();
+  }
+
+  /**
+   * Permite obtener el ID del nuevo documento.
+   * @param idTipoDocumento ID del nuevo documento.
+   * @returns 
+   */
+  async obtenerIdDocumento(idTipoDocumento: number) {  
+    let url &#x3D; &#x27;/SIGMA-backend-desa/api/externo/consume&#x27;;
+    let body &#x3D; {
+      url: environment.URL_CALIOPE_BACK + &quot;api/documento/insertar&quot;,
+      usuario: this.securityService.userSession.login,
+      json: JSON.stringify({
+        usuario: this.securityService.userSession.login,
+        documento: {
+          registroActivo: &quot;SI&quot;,
+          idTipoDocumento: idTipoDocumento,
+          idTipoEstadoDocumento: 1041,
+          fecha: Date.now(),
+        }
+      }),
+    }
+    const response: any &#x3D; await this.http.post&lt;any&gt;(url, body, this.httpOptions).toPromise();
+    const result &#x3D; JSON.parse(response.respuesta[0].json);
+    const _val &#x3D; result.codError !&#x3D;&#x3D; 0 ? result.msgError : result.respuesta[0].id_documento;
+    return _val;
+  }
+
+  /**
+   * Permite insertar un registro de asiciacion.
+   * 
+   * @param solicitud-pmt Modelo del compoenente. 
+   * @returns Respuesta de backend a la peticion.
+   */
+  insertarCOI(solicitud:any){
+    let url &#x3D; &#x27;/SIGMA-backend-desa/api/PMT/registrarRespuesta&#x27;;
+    let body &#x3D; {
+      usuario: this.securityService.userSession.login,
+      idUsuario: this.securityService.userSession.idUsuario,
+      idMantenimientoVial: solicitud.idMantenimientoVial,
+      coi: solicitud.coi,
+      idTipoEstadoPMT: solicitud.idTipoEstadoPMT,
+      numeroRadicadoRta: solicitud.radicado_sdm,
+      fechaRadicadoRta: solicitud.fechaRadicadoRta,
+      idArchivoCoi: solicitud.idArchivoCoi,
+      observaciones: solicitud.observaciones,
+    }
+    return this.http.post&lt;any&gt;(url, body , this.httpOptions).toPromise();
+  }
+
+  /**
+ * Permite consultar un registro de asociacion.
+ * 
+ * @param coi opcional dato del campo COI en el formulario
+ * @param numeroRadicadoRta opcional dato del campo numeroRadicadoRta en el formulario
+ * @returns Respuesta de backend a la peticion.
+ */
+  consultaArchivoCOI(coi?: string, numeroRadicadoRta?: number) {
+    let url &#x3D; &#x27;/SIGMA-backend-desa/api/PMT/consultaArchivoCOI&#x27;;
+    let body &#x3D; {
+      usuario: this.securityService.userSession.login,
+      coi,
+      numeroRadicadoRta,
+    }
+    return this.http.post&lt;any&gt;(url, body, this.httpOptions).toPromise();
+  }
+
+  /**
+   * Permite actualizar un registro de asociacion.
+   * 
+   * @param solicitud-pmt Modelo del compoenente. 
+   * @returns Respuesta de backend a la peticion.
+   */
+  actualizarCOI(solicitud:any){
+    let url &#x3D; &#x27;/SIGMA-backend-desa/api/produccion/fallo/actualizar&#x27;;
+    let body &#x3D; {
+      usuario: this.securityService.userSession.login,
+      idUsuario: this.securityService.userSession.idUsuario,
+      coi: solicitud.coi,
+      radicado_sdm: solicitud.radicado_sdm,
+      tipo_respuesta: solicitud.tipo_respuesta,
+      observaciones: solicitud.observaciones,
+      reporte_coi_ver: solicitud.reporte_coi_ver,
+      actividad_destino: solicitud.actividad_destino,
+
+    }
+    return this.http.post&lt;any&gt;(url, body , this.httpOptions).toPromise();
+  }
+
+  consultarRadicados(filtro: any): any {
+    let url &#x3D; &#x27;/SIGMA-backend-desa/api/PMT/consultarRadicados&#x27;;
+    let body &#x3D; {
+      usuario: this.securityService.userSession.login,
+      idUsuario: this.securityService.userSession.idUsuario,
+      idMantenimientoVial: filtro,
+    }
+    return this.http.post&lt;any&gt;(url, body , this.httpOptions).toPromise();
+  }
+
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'ProcesoIntervencionService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,133 @@
+<mat-card>
+    <div style="overflow-x: scroll">
+        <div style="min-width: 800px;">
+            <mat-table [dataSource]="dataSourceRegistroAforos" matSort>
+            
+              <!-- FECHA HORA -->
+              <ng-container matColumnDef="hora">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Hora </mat-header-cell>
+                <mat-cell *matCellDef="let row" > 
+                      <span *ngIf="!ModoEdicion">{{row.fechaHora}}</span>
+                      <mat-form-field *ngIf="ModoEdicion" class="field-min-width" floatLabel="always" class="inputTabla">
+                              <input matInput type="time" required [(ngModel)]="row.fechaHora">
+                      </mat-form-field>
+                </mat-cell>
+              </ng-container>
+
+              <!-- AUTOMOVILES -->
+
+              <ng-container matColumnDef="automoviles">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Automóviles </mat-header-cell>
+                <mat-cell *matCellDef="let row" > 
+    
+                    <span *ngIf="!ModoEdicion">{{row.automoviles}}</span>
+                    
+                    <mat-form-field *ngIf="ModoEdicion" class="field-min-width" floatLabel="always" class="inputTabla">
+                      <input matInput type="number" required [(ngModel)]="row.automoviles" min="0">
+                    </mat-form-field>
+    
+                </mat-cell>
+              </ng-container>
+    
+              <!-- BUSES - BUSETA -->
+              <ng-container matColumnDef="busesBuseta">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Buses - Buseta </mat-header-cell>
+                <mat-cell *matCellDef="let row" > 
+                      <span *ngIf="!ModoEdicion">{{row.busesBuseta}}</span>
+    
+                      <mat-form-field *ngIf="ModoEdicion" class="field-min-width" floatLabel="always" class="inputTabla">
+                              <input matInput type="number" required [(ngModel)]="row.busesBuseta" min="0">
+                      </mat-form-field>
+    
+                </mat-cell>
+              </ng-container>
+
+              <!-- BUSES - SITP ALIMENTADORES -->
+              <ng-container matColumnDef="busesSitpAlimentadores">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Buses - SITP </mat-header-cell>
+                <mat-cell *matCellDef="let row"> 
+                      <span *ngIf="!ModoEdicion">{{row.busesSitpAlimentadores}} </span>
+                      <mat-form-field *ngIf="ModoEdicion" class="field-min-width" floatLabel="always" class="inputTabla">
+                              <input matInput type="number" required [(ngModel)]="row.busesSitpAlimentadores" min="0">
+                      </mat-form-field>
+                </mat-cell>
+              </ng-container>
+
+              <!-- BUSES - VAN -->
+
+              <ng-container matColumnDef="busesVan">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Buses - Van </mat-header-cell>
+                <mat-cell *matCellDef="let row" > 
+    
+                    <span *ngIf="!ModoEdicion">{{row.busesVan}}</span>
+                    
+                    <mat-form-field *ngIf="ModoEdicion" class="field-min-width" floatLabel="always" class="inputTabla">
+                      <input matInput type="number" required [(ngModel)]="row.busesVan " min="0">
+                    </mat-form-field>
+    
+                </mat-cell>
+              </ng-container>
+ 
+               <!-- CAMIONES C2P -->
+              <ng-container matColumnDef="camionesC2p">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Camiones - C2P </mat-header-cell>
+                  <mat-cell *matCellDef="let row"> 
+                        <span *ngIf="!ModoEdicion">{{row.camionesC2p}}</span>
+                        <mat-form-field *ngIf="ModoEdicion" class="field-min-width" floatLabel="always" class="inputTabla">
+                                <input matInput type="number" required [(ngModel)]="row.camionesC2p" min="0">
+                        </mat-form-field>
+                  </mat-cell>
+                </ng-container>  
+  
+              <!-- CAMIONES C2G -->
+              <ng-container matColumnDef="camionesC2g">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Camiones - C2G </mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                    <span *ngIf="!ModoEdicion">{{row.camionesC2g}}</span>
+                    <mat-form-field *ngIf="ModoEdicion" class="field-min-width" floatLabel="always" class="inputTabla">
+                          <input matInput type="number" required [(ngModel)]="row.camionesC2g" min="0">
+                    </mat-form-field>
+                </mat-cell>
+              </ng-container>    
+              <!-- CAMIONES C3 - C4 -->
+              <ng-container matColumnDef="camionesC3C4">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Camiones - C3,C4 </mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                    <span *ngIf="!ModoEdicion">{{row.camionesC3C4}}</span>
+                    <mat-form-field *ngIf="ModoEdicion" class="field-min-width" floatLabel="always" class="inputTabla">
+                          <input matInput type="number" required [(ngModel)]="row.camionesC3C4" min="0">
+                    </mat-form-field>
+                </mat-cell>
+              </ng-container> 
+
+              <!-- CAMIONES C5 - >C5 -->
+              <ng-container matColumnDef="camionesC5C5">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Camiones - C5,>C5 </mat-header-cell>
+                <mat-cell *matCellDef="let row"> 
+                    <span *ngIf="!ModoEdicion">{{row.camionesC5C5}}</span>
+                    <mat-form-field *ngIf="ModoEdicion" class="field-min-width" floatLabel="always" class="inputTabla">
+                          <input matInput type="number" required [(ngModel)]="row.camionesC5C5" min="0">
+                    </mat-form-field>
+                </mat-cell>
+              </ng-container>
+
+                <!-- CONTROLES AFORO MANUAL -->
+                <ng-container matColumnDef="controles_aforo_manual">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Acciones </mat-header-cell>
+                    <mat-cell *matCellDef="let row ; let i = index"  > 
+                            <button mat-icon-button color="primary" (click)="agregarRegistro(i)" [disabled]="row.fechaHora == null"> <mat-icon>add_circle</mat-icon> </button>
+                            <a *ngIf="i != 0"mat-icon-button color="secondary" (click)="quitarRegistro(i)" > <mat-icon>cancel</mat-icon> </a>
+                    </mat-cell>
+                </ng-container>
+        
+                <mat-header-row *matHeaderRowDef="displayedColumnsRegistroAforos"></mat-header-row>
+                <mat-row [@rowsAnimation]="" *matRowDef="let row; columns: displayedColumnsRegistroAforos;" >
+                </mat-row>
+              </mat-table>
+              <div *ngIf="dataSourceRegistroAforos && dataSourceRegistroAforos.data.length == 0">
+                <span style="text-align:center">No hay registros </span>
+              </div>
+              <mat-paginator #paginatorRegistros [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+        </div>
+    </div>
+</mat-card>

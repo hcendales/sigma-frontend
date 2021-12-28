@@ -1,0 +1,38 @@
+<mat-card style="min-width: 500px;" layout=”row”>
+  <mat-card-content *ngIf="ready">
+    <div [formGroup]="form">
+      <ng-container formArrayName="fotos">
+        <ng-container *ngFor="let foto of fotosForm.controls; let i = index">
+          <mat-card>
+            <mat-card-content *ngIf="ready">
+              <div [formGroupName]="i" style="display: flex;" >
+                <div *ngIf="foto.get('idArchivo')?.value != 0" style="width: 20%;">
+                  <a href="{{(foto.get('url')?.value.startsWith('data:')?'':URL_FOTOS)+foto.get('url')?.value}}" target="_blank">Ver</a>
+                </div>
+                <div style="width: 70%;">
+                  <input #inputFoto  *ngIf="foto.get('idArchivo')?.value == 0" type="file" accept=".xlsx, .xls, .doc, .docx, .pdf"  name="file" (change)="onFotoChanged($event, i)" >
+                  <input matInput formControlName="url" *ngIf="foto.get('url')?.value.startsWith('data:')?false:true" readonly >
+                </div>
+                <div *ngIf="adicionaDocumento">
+                  <button type="button" mat-mini-fab color="warn" (click)="deleteFoto(i)"><mat-icon class="mat-18">delete</mat-icon></button>
+                </div>
+              </div>
+          </mat-card-content>
+        </mat-card>
+        </ng-container>
+      </ng-container>
+      <div *ngIf="adicionaDocumento">
+        <button type="button" mat-mini-fab color="primary" (click)="addFoto()">
+        <mat-icon class="mat-18">add</mat-icon>
+      </button>
+    </div>
+    </div>
+    </mat-card-content>
+    <mat-card-actions align="start">
+      <div class="example-button-row" *ngIf="adicionaDocumento">
+        <button mat-flat-button color="primary" (click)="onSubmit()">Guardar</button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+
+

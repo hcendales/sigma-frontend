@@ -1,0 +1,118 @@
+    <mat-card class="large-card"  style="height: 500px; overflow-y: auto; " >
+    <form autocomplete="off" [formGroup]="formInforme">
+        <div class="form-control" id="seccionInforme">
+            <div *ngIf="loading" class="loading">Loading&#8230;</div>
+            <!-- <mat-form-field appearance="outline" class="campo">
+                <mat-label>Numero Radicado</mat-label>
+                <input matInput formControlName="numero_radicado" placeholder="99999999999999" type="number" maxlength="14">
+                <mat-error *ngIf="!validNumeroRadicado">solo debe contener numero</mat-error>
+                <button *ngIf="radicado" matSuffix mat-icon-button aria-label="Clear" (click)="LimpiarNumeroRadicado()">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="campo" style="width: 40%;" >
+                <mat-label>Asunto</mat-label>
+                <input matInput formControlName="asunto" maxlength="100" readonly>
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline" class="campo">
+                <mat-label>Fecha de Radicado</mat-label>
+                <input matInput formControlName="fecha_radicado" [matDatepicker]="picker0" placeholder="DD/MM/YYYY" readonly>
+                <mat-datepicker-toggle matSuffix [for]="picker0" disabled></mat-datepicker-toggle>
+                <mat-datepicker #picker0></mat-datepicker>
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline" class="campo">
+                <mat-label>Fecha Resultado * </mat-label>
+                <input matInput formControlName="fecha_resultado" [matDatepicker]="picker1" placeholder="DD/MM/YYYY">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline" class="campo" *ngIf="okListaDocumento">
+                <mat-label>Tipo Informe *</mat-label>
+                <mat-select placeholder="Tipo Informe" formControlName="id_tipo_resultado">
+                    <mat-option>--</mat-option>
+                    <mat-option *ngFor="let tipo of listaDocumento[69]" [value]="tipo.id_tipo">
+                        {{tipo.descripcion | titlecase}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field> -->
+
+            <!-- <mat-form-field appearance="fill" style="width:100%" class="campo">
+                <mat-label>Observaciones</mat-label>
+                <textarea matInput formControlName="observaciones" #inputObservaciones cdkTextareaAutosize cdkAutosizeMinRows="2"
+                    maxlength="250"></textarea>
+                <mat-hint align="end">Máximo 250 caracteres</mat-hint>
+            </mat-form-field>
+             -->
+            <mat-action-row>
+                <!-- <button type="button" mat-raised-button color="primary" (click)="buscarRadicadoOrfeo()" [disabled]="!validNumeroRadicado || bloquear">
+                    Buscar Radicado
+                    <mat-icon>search</mat-icon>
+                </button>
+            
+                <button type="button" mat-raised-button color="primary" [disabled]="!formInforme.valid || actualizar" matTooltip="Guardar" 
+                    (click)="guardarInforme()">
+                    <mat-icon>add</mat-icon>
+                </button>
+
+                <button type="button" mat-raised-button color="primary" *ngIf="actualizar" [disabled]="!formInforme.valid" matTooltip="Actualizar"
+                    (click)="actualizarInforme()">
+                    <mat-icon>update</mat-icon>
+                </button> -->
+
+                <button type="button" mat-raised-button color="primary" matTooltip="Cargar Archivo" (click)="cargarArchivo()"> 
+                     Cargar <mat-icon>file_upload </mat-icon>
+                </button>
+
+                <button type="button" mat-raised-button color="primary" matTooltip="ver Archivo"
+                    (click)="verArchivo()"> 
+                    Ver <mat-icon>pageview</mat-icon>
+                </button>
+
+            </mat-action-row>
+        </div>
+
+                    <app-table-ensayo [idEnsayo]="idEnsayo" [bloquear]="bloquear"></app-table-ensayo>
+
+        <!-- <mat-accordion>
+            <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <mat-icon>summarize</mat-icon>
+                        &nbsp;Ensayos a realizar
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-card>
+                    <app-table-ensayo
+                    [idEnsayo]="idEnsayo"
+                    [bloquear]="bloquear"
+                    >
+                    </app-table-ensayo>
+                </mat-card>
+            </mat-expansion-panel> 
+            <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <mat-icon>summarize</mat-icon>
+                        &nbsp;Informes
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-card>
+                    <app-table-informe
+                    [listaInformes]="listaInformes"
+                    (rowInforme)="cargarInforme($event)"
+                    (rowTotal)="eliminarInforme($event)"
+                    [borrarInforme]="borrarInforme"
+                    [bloquear]="bloquear"
+                    >
+                    </app-table-informe>
+                </mat-card>
+            </mat-expansion-panel>            
+        </mat-accordion> -->
+        <br>
+        <!-- <pre>{{ formInforme.value | json }}</pre> -->
+    </form>
+</mat-card>

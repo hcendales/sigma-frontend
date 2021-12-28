@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>Foto {{data.indexFoto + 1}}</h2>
+<div style="position: relative; margin: 0; padding: 0;">
+<img mat-card-image src="{{urlFoto}}" *ngIf="urlFoto" width="100%" style="max-height: 70vh;">
+<input #inputFoto style="display: none;" hidden="true" type="file" accept="image/*" (change)="onFotoChanged($event)">
+<button type="button" mat-mini-fab color="primary" (click)="clickCambioFoto()" style="position: absolute; bottom: 5px; right: 0;"><mat-icon>image_search</mat-icon></button>
+<div *ngIf="!urlFoto" style="width:200px; height:200px; background-color:lightgray" >
+    <img src="assets/img/app/image_not_supported-24px.svg" style="width: 100%; height: 50%; margin-top:25%;filter: invert(98%) sepia(34%) saturate(0%) hue-rotate(200deg) brightness(108%) contrast(100%);">
+</div>
+</div>
+
+<mat-dialog-actions align="end">
+    <button *ngIf = "!data.nuevo" type="button" mat-mini-fab color="warn" [mat-dialog-close]="{action:'delete',index:data.indexFoto}" > <mat-icon>delete</mat-icon></button>
+    <button type="button" mat-mini-fab color="primary" [mat-dialog-close]="{action:'cancel',index:data.indexFoto,data:anteriorValor}"><mat-icon>undo</mat-icon></button>
+    <button type="button" mat-mini-fab color="primary" [mat-dialog-close]="{action:'update',index:data.indexFoto,data:urlFoto}"><mat-icon>check</mat-icon></button>
+</mat-dialog-actions> 

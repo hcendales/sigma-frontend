@@ -1,0 +1,19 @@
+.toolbar-spacer {
+    flex: 1 1 auto;
+}
+mat-toolbar{
+  height: 6vh;
+}
+.mat-drawer-container{
+    height: 94vh;
+}
+.logo-header{
+  height: 80%;
+  width: auto;
+}
+@media screen and (max-width: 300px) {
+  #logo-umv-header{
+      visibility: hidden;
+      width: 0;
+  }
+}

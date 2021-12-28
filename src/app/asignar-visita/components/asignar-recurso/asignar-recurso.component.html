@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>Asignar vehículo a {{data.responsableName}}</h1>
+<div mat-dialog-content>
+<mat-form-field appearance="fill">
+  <mat-label>Vehículo</mat-label>
+  <mat-select [(ngModel)]="selectedRecurso" (selectionChange)="updateRecursosDisponibles()">
+    <mat-option *ngFor="let r of recursosUnicosLista" [value]="r.id_recurso">
+      {{r.placa_equipo}} - ( {{r.conductor}} )
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Franja</mat-label>
+  <mat-select [(ngModel)]="selectedRecursoDisponible">
+    <mat-option *ngFor="let r of recursosDisponibilidadLista" [value]="r.id">
+      {{r.label}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<button type="button"
+ mat-mini-fab color="primary" (click)="openGrupo()" [disabled]="selectedRecursoDisponible==null">
+ <mat-icon>groups</mat-icon></button>
+</div>
+<mat-dialog-actions align="end">
+    <span style="flex: 1 1 auto"></span>
+    <button type="button" mat-flat-button color="primary" [disabled]="selectedRecursoDisponible==null" [mat-dialog-close]="{value:selectedRecursoDisponible,action:'save'}"><mat-icon>save</mat-icon>Guardar</button>
+    <!--button type="button" [disabled]="modalAsignar.status == 'INVALID'" mat-flat-button color="primary" [mat-dialog-close]="{action:'delete',value:selectedRecursoDisponible}"><mat-icon>undo</mat-icon>Borrar</button-->
+</mat-dialog-actions>

@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Grupo de {{placa}}</h1>
+<div mat-dialog-content>
+  <h3>Franja {{label}}</h3>
+  <h4>Lista de Ingenieros</h4>
+  <mat-selection-list #shoes [multiple]="false">
+    <mat-list-option style="font-size:10px" *ngFor="let item of recursosLista" [value]="item" (click)="paraBorrar(item)">
+      {{item.nombre_responsable_visita}} - ( {{item.nombre_actividad}} )
+    </mat-list-option>
+  </mat-selection-list>
+</div>
+<mat-dialog-actions align="end">
+    <span style="flex: 1 1 auto"></span>
+    <button type="button"
+     mat-mini-fab color="primary" (click)="borrarAsignacion()" [disabled]="toDeleteItem==null">
+     <mat-icon>person_remove</mat-icon></button>
+    <button type="button" mat-flat-button color="primary" [mat-dialog-close]="{action:'close'}"><mat-icon>undo</mat-icon>Volver</button>
+</mat-dialog-actions>

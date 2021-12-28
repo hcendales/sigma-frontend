@@ -1,0 +1,59 @@
+<mat-card>
+    <mat-card-header class="mat-card-header-umv">
+      <div class="mat-card-header-text">
+        <mat-card-subtitle>
+          <h2 *ngIf = "!edit_flag">Asociar Solicitud</h2>
+          <h2 *ngIf = "edit_flag">Editar Solicitud</h2>
+        </mat-card-subtitle>
+      </div>
+    </mat-card-header>
+    <form [formGroup]="formEditar" (ngSubmit)="onSubmit()" class="form-box">
+      <mat-form-field appearance="outline" class = "campo">
+        <mat-label>Radicado *</mat-label>
+        <input matInput formControlName="radicado" type="number" autocomplete="off">
+        <mat-error *ngIf="!validNumeroRadicado">
+            (!) Campo requerido
+        </mat-error>
+        <button *ngIf="radicado" matSuffix mat-icon-button aria-label="Clear" (click)="LimpiarNumeroRadicado()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="campo" style="width: 40%;">
+        <mat-label>Asunto</mat-label>
+        <input matInput formControlName="asunto" maxlength="100" readonly>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="campo">
+        <mat-label>Fecha de Radicado</mat-label>
+        <input matInput formControlName="fechaRadicado" [matDatepicker]="picker0" placeholder="DD/MM/YYYY" readonly>
+        <mat-datepicker-toggle matSuffix [for]="picker0" disabled></mat-datepicker-toggle>
+        <mat-datepicker #picker0></mat-datepicker>
+      </mat-form-field>
+      <button 
+        mat-raised-button 
+        class="color-primary-100 act-btn-2"
+         [disabled]="!validNumeroRadicado"
+        (click)="buscarRadicadoOrfeo()"
+        >
+        <mat-icon>search</mat-icon>
+        Buscar
+      </button>
+    </form>
+    <app-lista-radicados *ngIf="false"
+        (opcionSeleccionada)="opcionSeleccionadaEvt($event)"
+        (registroSeleccionado)="registroSeleccionadoEvt($event)"
+        [actualizador]="updateSubject.asObservable()">
+    </app-lista-radicados>
+    <div class="btn-box">
+      <button type="button" mat-raised-button class="color-primary-100 act-btn" [disabled]="formEditar.invalid || realizandoCounsulta" (click)="enviar()">
+        <mat-icon>check</mat-icon>
+        <mat-icon *ngIf="realizandoCounsulta">
+            <mat-spinner diameter="20"></mat-spinner>
+        </mat-icon>
+        Asociar
+      </button>
+      <button type="button" mat-raised-button class="color-primary-100 act-btn-2" (click)="regresarEvent.emit()">
+        <mat-icon>cancel</mat-icon>
+        Cerrar
+      </button>
+    </div>
+</mat-card>

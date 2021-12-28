@@ -1,0 +1,55 @@
+<mat-card-header class="mat-card-header-umv">
+  <div class="mat-card-header-text">
+    <mat-card-subtitle>
+      <h2>{{titulo}}</h2>
+    </mat-card-subtitle>
+  </div>
+</mat-card-header>
+<mat-card-content>
+  <div class="contenido-seccion">
+    <div class="campo">
+      <div class="nombre"><strong>Tipo Recurso</strong></div>
+      <div class="valor">{{entity.descripcion_tipo_recurso}}</div>
+    </div>
+    <div class="campo" *ngif="entity.id_tipo_recurso===4721">
+      <div class="nombre"><strong>Nombre persona</strong></div>
+      <div class="valor">{{entity.nombre_persona}}</div>
+    </div>
+    <div class="campo" *ngif="entity.id_tipo_recurso===4722">
+      <div class="nombre"><strong>Placa equipo</strong></div>
+      <div class="valor">{{entity.placa_equipo}}</div>
+    </div>
+    <div class="campo" *ngif="entity.id_tipo_recurso===4723">
+      <div class="nombre"><strong>Lugar</strong></div>
+      <div class="valor">{{entity.nombre_lugar}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Fecha Inicio</strong></div>
+      <div class="valor">{{entity.fecha_inicio | date: "DD/MM/YYYY"}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Fecha Fin</strong></div>
+      <div class="valor">{{entity.fecha_fin | date: "DD/MM/YYYY"}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Hora Inicio</strong></div>
+      <div class="valor">{{entity.hora_inicio_programacion}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Fecha Inicio</strong></div>
+      <div class="valor">{{entity.hora_fin_programacion}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Descripción</strong></div>
+      <div class="valor">{{entity.descripcion }}</div>
+    </div>
+  </div>
+</mat-card-content>
+<mat-card-actions>
+<div>
+  <button mat-flat-button color="primary" (click)="returnlist()">Regresar al listado</button>
+  <button mat-flat-button color="primary" (click)="onEdit()">Editar</button>
+</div>
+</mat-card-actions>
+
+

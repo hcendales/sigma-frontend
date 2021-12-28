@@ -1,0 +1,57 @@
+<mat-card-header class="mat-card-header-umv">
+  <div class="mat-card-header-text">
+    <mat-card-subtitle>
+      <h2>{{titulo}}</h2>
+    </mat-card-subtitle>
+  </div>
+</mat-card-header>
+<mat-card-content>
+  <div class="contenido-seccion">
+    <div class="campo">
+        <div class="nombre"><strong>Identificación</strong></div>
+        <div class="valor">{{entity.identificacion}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Nombre</strong></div>
+      <div class="valor">{{entity.nombre}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Teléfono</strong></div>
+      <div class="valor">{{entity.telefono}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Correo Electronico</strong></div>
+      <div class="valor">{{entity.email}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Tipo Regimen</strong></div>
+      <div class="valor">{{entity.descripcion_tipo_regimen}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Tipo Categoría</strong></div>
+      <div class="valor">{{entity.descripcion_categoria_persona}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Tipo Área</strong></div>
+      <div class="valor">{{entity.descripcion_area}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Tipo Cargo</strong></div>
+      <div class="valor">{{entity.descripcion_cargo}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Tipo Estado</strong></div>
+      <div class="valor">{{entity.descripcion_estado_persona}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Tipo Rol</strong></div>
+      <div class="valor">{{entity.descripcion_rol}}</div>
+    </div>
+  </div>
+</mat-card-content>
+<mat-card-actions>
+<div>
+  <button mat-flat-button color="primary" (click)="returnlist()">Regresar al listado</button>
+  <button mat-flat-button color="primary" (click)="onEdit()">Editar</button>
+</div>
+</mat-card-actions>

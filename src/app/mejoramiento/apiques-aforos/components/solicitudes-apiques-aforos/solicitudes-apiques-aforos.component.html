@@ -1,0 +1,68 @@
+<mat-card>
+<mat-card-header class="mat-card-header-umv">
+    <div class="mat-card-header-text" style="width:100%">
+      <mat-card-subtitle>
+        <h2>Solicitudes de apiques y aforos</h2>
+      </mat-card-subtitle>
+    </div>
+</mat-card-header>
+
+
+
+<br>
+<button 
+    mat-raised-button 
+    class="color-primary-100"
+    (click)="recargarDatos()"
+    [disabled]="!ready"
+    style="margin-right: 0.5rem;"
+    ><mat-icon>refresh</mat-icon> Actualizar
+</button>
+
+<mat-tab-group>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            Solicitudes por realizar
+        </ng-template>
+        <app-mapa-umv #mapa
+            [basemap]="'gray'"
+            [center]="[-74.113, 4.667]"
+            [zoom]="12"
+            (mapLoaded)="cargaMapa($event)"
+            (pkSelected)="pkSelectedEvt('porRealizar',$event)"
+            (pkClicked)="pkClickedEvt('porRealizar',$event)"
+            style="width: 100%;height: 500px; display:block; margin-bottom: -250px;">
+        </app-mapa-umv>
+        
+        <button 
+            mat-raised-button 
+            class="color-primary-100"
+            (click)="realizarSolicitudes()"
+            [disabled]="!ready"
+            ><mat-icon>science</mat-icon> Realizar solicitudes 
+        </button>
+
+        <app-tabla-pendientes-apiques #tablaPendeintes *ngIf="mostrarTabla" (rowClicked)="irAPK($event)" [configColumnas]="configColumnasSolicitudes" [datos]="solicitudesPorRealizar">
+
+        </app-tabla-pendientes-apiques>
+        
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            En proceso
+        </ng-template>
+        <app-tabla-pendientes-apiques #tablaEnProceso [enEspera]="consultandoArchivo" (verApiques)="verEstudio($event)" (verAforo)="verEstudio($event)" *ngIf="mostrarTabla" [configColumnas]="configColumnasEnEspera" [datos]="solicitudesEnEspera">
+
+        </app-tabla-pendientes-apiques>
+    </mat-tab>  
+    <mat-tab>
+        <ng-template mat-tab-label>
+            Resultados
+        </ng-template>
+        <app-tabla-pendientes-apiques #tablaResultados [enEspera]="consultandoArchivo" (checkPk)="pkChecked($event)" (Allchecked)="allpkChecked($event)" (verApiques)="verEstudio($event)" (verAforo)="verAforo($event)" *ngIf="mostrarTabla" [configColumnas]="configColumnasResultados" [datos]="solicitudesRealizadas">
+
+        </app-tabla-pendientes-apiques>
+        <app-avance-masivo-mantenimiento *ngIf="transicion != null"  (gestionRealizada)="gestionRealizadaEvt()" [actividadDestino] = "transicion" [idsProcesoGestion] = "arraySelected"></app-avance-masivo-mantenimiento>
+    </mat-tab>  
+</mat-tab-group>
+</mat-card>

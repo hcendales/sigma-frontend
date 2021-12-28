@@ -1,0 +1,151 @@
+<ng-container *ngIf="modo == 'salida'">
+  <app-mapa-umv #mapa
+    [parent]="this"
+    [center]="mapCenter"
+    [basemap]="basemapType"
+    [zoom]="mapZoomLevel"
+    (pkSelected)="pkSelectedEvt($event)"
+    (filterPK)="filterDataPK($event)"
+    (mapLoaded)="cargaMapa($event)">
+  </app-mapa-umv>
+</ng-container>
+<ng-container *ngIf="modo == 'salida'">
+  <mat-card>
+      <mat-card-header class="mat-card-header-umv">
+        <div class="mat-card-header-text">
+          <mat-card-subtitle>
+            <h2>Registro de Programación Periódica de Intervención</h2>
+          </mat-card-subtitle>
+        </div>
+      </mat-card-header>
+      <app-lista-pks-acta
+        (dataSourceEmiter)="getDataSource($event)"
+        (filterPKs)="filtrarMapa($event)"
+        [selectedFeatures]="selectedFeatures"
+        [selectedFeatures]="selectedFeatures" #listaTransicion
+        (opcionSeleccionada)="opcionSeleccionadaEvt($event)"
+        (registroSeleccionado)="registroSeleccionadoEvt($event)"
+        (selecteDataSourceEmiter)="getSelecteDataSource($event)">
+      </app-lista-pks-acta>
+      <div *ngIf="cargandoComponente" class="nota-cargando">
+        <h2 >Cargando</h2> <mat-spinner diameter="20"></mat-spinner>
+      </div>
+      <div>
+        <button 
+          type="button" 
+          mat-raised-button 
+          class="act-btn-2 color-primary-100"
+          [disabled]="!selectedRowFlag" 
+          (click)="enviar()">
+          <mat-icon>check</mat-icon>
+          Enviar
+        </button> &nbsp;
+        <button 
+          type="button" 
+          mat-raised-button 
+          class="act-btn color-primary-100"
+          (click)="modo = 'seleccion'; periodos_selected = false;">
+          <mat-icon>search</mat-icon>
+          Gestionar Programación Periodica
+        </button> 
+      </div>
+  </mat-card>
+</ng-container>
+<ng-container *ngIf="modo == 'seleccion'">
+    <mat-card>
+        <mat-card-header class="mat-card-header-umv">
+          <div class="mat-card-header-text">
+            <mat-card-subtitle>
+              <h2>Registro de Programación Periódica de Intervención</h2>
+            </mat-card-subtitle>
+          </div>
+        </mat-card-header>
+        <h3>Grupos de Tipos de Periocidad</h3>
+        <app-lista-programacion-periocidad
+          (opcionSeleccionada)="opcionSeleccionadaEvt($event)"
+          (registroSeleccionado)="regSelecPeriodosEvts($event)"
+          [actualizador]="perUpdateSubject.asObservable()">
+        </app-lista-programacion-periocidad>
+        <ng-container *ngIf="mostrar_lista_asociar">
+          <h3>Lista de PKs para Asignación</h3>
+          <app-lista-pks-asociar
+            [reg]="row"
+            (opcionSeleccionada)="opcionSeleccionadaEvt($event)"
+            (registroSeleccionado)="regSelecPksEvts($event)"
+            [actualizador]="asoUpdateSubject.asObservable()">
+          </app-lista-pks-asociar>
+        </ng-container>
+        <div *ngIf="cargandoComponente" class="nota-cargando">
+          <h2 >Cargando</h2> <mat-spinner diameter="20"></mat-spinner>
+        </div>
+        <div>
+          <div class="campos-salida">
+            <h2>Totales</h2>
+            <div class="campos">
+              <div class="campo">
+                <div class="titulo">
+                  <strong>TOTAL KM CARRIL IMPACTO</strong>
+                </div> 
+                <div class="valor">{{formTotales.get('impacto')?.value}}</div>
+              </div>
+              <div class="campo">
+                <div class="titulo">
+                  <strong>TOTAL KM CARRIL lINEAL</strong>
+                </div> 
+                <div class="valor">{{formTotales.get('lineal')?.value}}</div>
+              </div>
+              <div class="campo">
+                <div class="titulo">
+                  <strong>TOTAL KM CARRIL OBRA</strong>
+                </div> 
+                <div class="valor">{{formTotales.get('obra')?.value}}</div>
+              </div>
+              <div class="campo">
+                <div class="titulo">
+                  <strong>No DE DIAS LABORALES</strong>
+                </div> 
+                <div class="valor">{{formTotales.get('duracion')?.value}}</div>
+              </div>
+              <div class="campo">
+                <div class="titulo">
+                  <strong>No DE CUADRILLAS</strong>
+                </div> 
+                <div class="valor">{{formTotales.get('cuadras')?.value}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button 
+            type="button" 
+            mat-raised-button 
+            class="act-btn color-primary-100"
+            [disabled]="!pks_selected || !periodos_selected" 
+            (click)="asignar()">
+            <mat-icon>check</mat-icon>
+            Asignar
+          </button>
+          <button 
+            type="button" 
+            mat-raised-button 
+            class="act-btn-2" 
+            (click)="desasignar()"
+            [disabled]="!pks_selected || !periodos_selected">
+            <mat-icon>reply</mat-icon>
+            Desasignar
+          </button>
+          <button type="button" mat-raised-button class="act-btn-2 color-warn-800" (click)="cancelarAsig()">
+            <mat-icon>cancel</mat-icon>
+            Cancelar
+          </button>
+        </div>
+    </mat-card>
+</ng-container>
+<ng-container *ngIf="modo == 'editar'">
+  <app-editar-programacion-periodica 
+    [edit_flag]="edit_flag"
+    [reg]="row"
+    (almacenadoEvent)="almacenado($event)"
+    (regresarEvent)="regresarEvt()"
+  ></app-editar-programacion-periodica>
+</ng-container>

@@ -1,0 +1,45 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="toggleSidenav()">
+      <mat-icon>{{sidenav.opened?'menu_open':'menu'}}</mat-icon>
+    </button>
+    
+    <span class="toolbar-spacer"></span>
+    <img src="assets/img/app/logo_umv_header.png" class="logo-header" id="logo-umv-header">
+    <img src="assets/img/app/logo_sigma_header.png" class="logo-header">
+    <span class="toolbar-spacer"></span>
+    <button mat-icon-button [matMenuTriggerFor]="menuUser">
+        <mat-icon>account_circle</mat-icon>
+    </button>
+</mat-toolbar>
+
+<mat-menu #menuUser="matMenu">
+    <span mat-menu-item class="menu-item-toolbar">{{securityService.userSession?.nombre}}</span>
+    <button mat-menu-item class="menu-item-toolbar" (click)="logOut()">
+      <mat-icon>power_settings_new</mat-icon>
+      <span>Cerrar sesión</span>
+    </button>
+</mat-menu>
+
+<mat-sidenav-container [hasBackdrop]="setBackdrop">
+    <mat-sidenav mode="over" opened class="sidenav mat-elevation-z6" #sidenav >
+        <span *ngFor="let item of appMenu" >
+            <span *ngIf="item.tabMenuList.length > 0">
+                <button mat-menu-item class="mat-menu-item-submenu-trigger" [matMenuTriggerFor]="menu.childMenu">
+                    <mat-icon>trending_up</mat-icon>
+                    <span>{{item.nombre}}</span>
+                </button>
+                <app-menu-item #menu [items]="item.tabMenuList" (clickMenu)="toggleSidenav()" ></app-menu-item>
+            </span>
+            <span *ngIf="item.tabMenuList.length === 0">
+                <button mat-menu-item [routerLink]="item.url" (click)="clickMenu();toggleSidenav()" >
+                    <mat-icon>trending_up</mat-icon>
+                    <span>{{item.nombre}} </span>
+                </button>
+            </span>
+        </span>
+       
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

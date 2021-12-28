@@ -1,0 +1,51 @@
+<!--app-modal [titulo]="" (cerrar)="vincularRadicado()" (cancel)="cancelarVincular()" *ngIf="detalleRadicado" [btnOk]="radicado" [btnCancel]="true">
+
+</app-modal-->
+<mat-expansion-panel #panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title class="field-min-width">
+            Vincular Radicado
+        </mat-panel-title>
+        <mat-panel-description>
+            {{tipoRad}} de reserva
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+      <input matInput placeholder="Número de radicado" name="radicado" [(ngModel)]="radicadoStr" type="number" (keyup)="checkRadicado($event)">
+      <!--mat-error *ngIf="!radRegex.match(radicado)">Ingrese un número de radicado válido </mat-error-->
+    <button type="button" mat-raised-button color="primary" (click)="buscarRadicadoOrfeo()" [disabled]="buscarRadicado">Buscar radicado</button>
+    <!--mat-radio-group placeholder="Seleccione respuesta de reserva" *ngIf="tipoRad == 'Entrada' && tipoDestino" [(ngModel)]="respuestaSeleccionada" (change)="selTipoResp()" required>
+      <mat-radio-button value=1>
+        Reservado
+      </mat-radio-button>
+      <mat-radio-button value=0>
+        Reserva Rechazada
+      </mat-radio-button>
+    </mat-radio-group-->
+    <mat-divider></mat-divider>
+    <div *ngIf="radicado">
+      <b>Detalle del radicado: {{radicado.radi_nume_radi}}</b>
+      <ul>
+          <li >
+              <span>Asunto:</span> {{radicado.ra_asun}}
+          </li>
+          <li>
+              <span>Fecha radicado:</span> {{radicado.radi_fech_radi | date: 'dd/MM/yyyy'}}
+          </li>
+          <li>
+              <span>Fecha vencimiento:</span> {{radicado.fech_vcmto | date: 'dd/MM/yyyy'}}
+          </li>
+      </ul>
+    </div>
+    <mat-divider></mat-divider>
+    <div *ngIf="tipoRad == 'Entrada' && tipoDestino">
+      <b>Actividad Destino:</b>
+      <ul>
+          <li *ngIf="respuestaSeleccionada==1">
+              <span>Priorizar intervenciones(Reservado)</span>
+          </li>
+          <li *ngIf="respuestaSeleccionada==0">
+              <span>FIN(Terminado (Reserva rechazada))</span>
+          </li>
+      </ul>
+    </div>
+</mat-expansion-panel>

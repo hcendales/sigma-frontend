@@ -1,0 +1,232 @@
+<h2>Cálculo de análisis de tránsito</h2>
+<div class="wrapper-campo">
+    
+    <span class="campo">
+            <span><b>Tasa crecimiento localidad (r):</b> {{aforo.tasa_crecimiento_r}}</span>
+    </span>
+    
+    <span class="campo">
+            <span><b>Número de ejes equivalentes a 8,2 ton acumulados:</b></span>
+            <mat-form-field  class="field-min-width" floatLabel="always" >
+                    <input matInput type="number" min="0" max ="20" required [(ngModel)]="aforo.anios_8_2">
+            </mat-form-field>
+            <mat-error *ngIf="aforo.anios_8_2>20">Valor máximo debe ser 20</mat-error>
+    </span>
+
+    <br>
+
+    <span class="campo">
+        <span><b>Factor direccional (Fd):</b></span>
+        <mat-form-field  class="field-min-width" floatLabel="always" >            
+            <input matInput type="number" min="0" required [(ngModel)]="aforo.factor_direccional_fd">
+        </mat-form-field>
+    </span>
+
+    <span class="campo">
+            <span><b>Número de ejes equivalentes a 8,2 ton acumulados:</b></span>
+            <mat-form-field  class="field-min-width" floatLabel="always" >
+                    <input matInput type="number" min="0" max ="20" required [(ngModel)]="aforo.anios2_8_2">
+            </mat-form-field>
+            <mat-error *ngIf="aforo.anios2_8_2>20">Valor máximo debe ser 20</mat-error>
+    </span>
+
+    <br>
+
+    <span class="campo">
+        <span><b>Factor distribución de carril (Fdc):</b></span>
+        <mat-form-field  class="field-min-width" floatLabel="always" >
+                <input matInput type="number" min="0" required [(ngModel)]="aforo.factor_distribucion_carril_fdc">
+        </mat-form-field>
+    </span>
+
+    <span class="campo">
+            <span><b>TPD > 3.5 toneladas en periodo de diseño:</b></span>
+            <mat-form-field  class="field-min-width" floatLabel="always" >
+                    <input matInput type="number" min="0" required [(ngModel)]="aforo.anios_3_5">
+            </mat-form-field>
+            <mat-error *ngIf="aforo.anios_3_5>20">Valor máximo debe ser 20</mat-error>
+        </span>
+    
+        <br>
+        <button mat-raised-button color="primary" (click)="realizarAnalisis()" [disabled]="enEspera">Ejecutar análisis</button>
+        <span *ngIf="enEspera" class ="avisoCargando" style="margin-left: 10px;">
+                <img src="assets/Loading_icon.gif" width="25" height="25">		
+                Realizando analisis...
+        </span>
+        
+</div>
+
+<mat-table [dataSource]="dataSourceAnalisis" matSort>
+
+    <!-- Periodo diseño -->
+
+    <ng-container matColumnDef="periodo_disenio">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Periodo diseño </mat-header-cell>
+            <mat-cell *matCellDef="let row; let i = index" [ngStyle]="{'background-color': aforo.anios_8_2 == i + (paginatorAnalisis.pageIndex * paginatorAnalisis.pageSize) ||  aforo.anios2_8_2 == i + (paginatorAnalisis.pageIndex * paginatorAnalisis.pageSize) || aforo.anios_3_5 == i + (paginatorAnalisis.pageIndex * paginatorAnalisis.pageSize)? '#ffff00' : '#ffffff'}"> 
+                <span  >{{row.periodo_disenio}}</span>
+            </mat-cell>
+    </ng-container>
+
+    <!-- Año -->
+
+    <ng-container matColumnDef="anio">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Año </mat-header-cell>
+            <mat-cell *matCellDef="let row; let i = index" > 
+                <span>{{row.anio}}</span>
+            </mat-cell>
+    </ng-container>
+
+    <!-- TPD -->
+
+    <ng-container matColumnDef="tpd">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> TPD </mat-header-cell>
+            <mat-cell *matCellDef="let row; let i = index" > 
+                <span>{{row.tpd | number:'1.0-0'}}</span>
+               
+            </mat-cell>
+    </ng-container>
+
+    <!-- Buses - Van -->
+
+    <ng-container matColumnDef="buses_van">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Buses - Van </mat-header-cell>
+            <mat-cell *matCellDef="let row; let i = index" > 
+                <span *ngIf="i + (paginatorAnalisis.pageIndex * paginatorAnalisis.pageSize)>0">{{row.buses_van | number:'1.0-0'}}</span>
+                <mat-form-field *ngIf="i + (paginatorAnalisis.pageIndex * paginatorAnalisis.pageSize)==0" class="field-min-width" floatLabel="always" class="inputTabla">
+                    <input matInput type="number" min="0" required [(ngModel)]="aforo.t_buses_van">
+                  </mat-form-field>
+            </mat-cell>
+    </ng-container>
+
+    <!-- Buses - Buseta -->
+    <ng-container matColumnDef="buses_buseta">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Buses - Buseta </mat-header-cell>
+            <mat-cell *matCellDef="let row; let i = index" > 
+                <span *ngIf="i + (paginatorAnalisis.pageIndex * paginatorAnalisis.pageSize)>0">{{row.buses_buseta | number:'1.0-0'}}</span>
+                <mat-form-field *ngIf="i + (paginatorAnalisis.pageIndex * paginatorAnalisis.pageSize)==0" class="field-min-width" floatLabel="always" class="inputTabla">
+                    <input matInput type="number" min="0" required [(ngModel)]="aforo.t_buses_buseta">
+                  </mat-form-field>
+            </mat-cell>
+    </ng-container>
+
+    <!-- Buses - SITP Alimentadores -->
+    <ng-container matColumnDef="buses_sitp_alimentadores">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Buses - SITP alimentadores </mat-header-cell>
+            <mat-cell *matCellDef="let row; let i = index" > 
+                <span *ngIf="i + (paginatorAnalisis.pageIndex * paginatorAnalisis.pageSize)>0">{{row.buses_sitp_alimentadores | number:'1.0-0'}}</span>
+                <mat-form-field *ngIf="i + (paginatorAnalisis.pageIndex * paginatorAnalisis.pageSize)==0" class="field-min-width" floatLabel="always" class="inputTabla">
+                    <input matInput type="number" min="0" required [(ngModel)]="aforo.t_buses_sitp_alimentadores">
+                </mat-form-field>
+                
+            </mat-cell>
+    </ng-container>
+
+    <!-- Camiones - C2p -->
+    <ng-container matColumnDef="camiones_c2p">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Camiones - C2P </mat-header-cell>
+            <mat-cell *matCellDef="let row; let i = index" > 
+                <span *ngIf="i + (paginatorAnalisis.pageIndex * paginatorAnalisis.pageSize)>0">{{row.camiones_c2p | number:'1.0-0'}}</span>
+                <mat-form-field *ngIf="i + (paginatorAnalisis.pageIndex * paginatorAnalisis.pageSize)==0" class="field-min-width" floatLabel="always" class="inputTabla">
+                    <input matInput type="number" min="0" required [(ngModel)]="aforo.t_camiones_c2p">
+                </mat-form-field>
+            </mat-cell>
+    </ng-container>
+
+    <!-- Camiones - C2g -->
+    <ng-container matColumnDef="camiones_c2g">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Camiones - C2G </mat-header-cell>
+            <mat-cell *matCellDef="let row; let i = index" > 
+                <span *ngIf="i + (paginatorAnalisis.pageIndex * paginatorAnalisis.pageSize)>0">{{row.camiones_c2g | number:'1.0-0'}}</span>
+                <mat-form-field *ngIf="i + (paginatorAnalisis.pageIndex * paginatorAnalisis.pageSize)==0" class="field-min-width" floatLabel="always" class="inputTabla">
+                    <input matInput type="number" min="0" required [(ngModel)]="aforo.t_camiones_c2g">
+                </mat-form-field>
+            </mat-cell>
+    </ng-container>
+
+    <!-- Camiones - C3 C4 -->
+    <ng-container matColumnDef="camiones_c3_c4">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Camiones - C3 C4 </mat-header-cell>
+            <mat-cell *matCellDef="let row; let i = index" > 
+                <span *ngIf="i + (paginatorAnalisis.pageIndex * paginatorAnalisis.pageSize)>0">{{row.camiones_c3_c4 | number:'1.0-0'}}</span>
+                <mat-form-field *ngIf="i + (paginatorAnalisis.pageIndex * paginatorAnalisis.pageSize)==0" class="field-min-width" floatLabel="always" class="inputTabla">
+                    <input matInput type="number" min="0" required [(ngModel)]="aforo.t_camiones_c3_c4">
+                </mat-form-field>
+            </mat-cell>
+    </ng-container>
+
+    <!-- Camiones - C5 >C5 -->
+    <ng-container matColumnDef="camiones_c5_c5">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Camiones - C5 >C5 </mat-header-cell>
+            <mat-cell *matCellDef="let row; let i = index" > 
+                <span *ngIf="i + (paginatorAnalisis.pageIndex * paginatorAnalisis.pageSize)>0">{{row.camiones_c5_c5 | number:'1.0-0'}}</span>
+                <mat-form-field *ngIf="i + (paginatorAnalisis.pageIndex * paginatorAnalisis.pageSize)==0" class="field-min-width" floatLabel="always" class="inputTabla">
+                    <input matInput type="number" min="0" required [(ngModel)]="aforo.t_camiones_c5_c5">
+                </mat-form-field>
+            </mat-cell>
+    </ng-container>
+
+    <!-- vcAcumulados -->
+    <ng-container matColumnDef="vc_acumulados">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> VC Acumulados </mat-header-cell>
+            <mat-cell *matCellDef="let row; let i = index" [ngStyle]="{'background-color': aforo.anios_3_5 == i + (paginatorAnalisis.pageIndex * paginatorAnalisis.pageSize)? '#ffff00' : '#ffffff'}" > 
+                <span >{{row.vc_acumulados | number:'1.0-0'}}</span>
+               
+            </mat-cell>
+    </ng-container>
+
+    <!-- NEE AÑO -->
+    <ng-container matColumnDef="nee_anios">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> NEE Año </mat-header-cell>
+            <mat-cell *matCellDef="let row; let i = index" > 
+                <span >{{row.nee_anios | number: '2.'}}</span>
+               
+            </mat-cell>
+    </ng-container>
+
+    <!-- NEE ACUMULADOS -->
+    <ng-container matColumnDef="nee_acumulados">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> NEE Acumulados </mat-header-cell>
+            <mat-cell *matCellDef="let row; let i = index" [ngStyle]="{'background-color': aforo.anios_8_2 == i + (paginatorAnalisis.pageIndex * paginatorAnalisis.pageSize) ||  aforo.anios2_8_2 == i + (paginatorAnalisis.pageIndex * paginatorAnalisis.pageSize)? '#ffff00' : '#ffffff'}" > 
+                <span >{{row.nee_acumulados | number: '2.'}}</span>
+               
+            </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumnsRegistroAforos"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumnsRegistroAforos;" >
+    </mat-row>
+</mat-table>
+
+<div *ngIf="dataSourceAnalisis && dataSourceAnalisis.data.length == 0">
+    <span style="text-align:center">No hay registros </span>
+</div>
+
+<mat-paginator #paginatorAnalisis [pageSize]="5" [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
+
+<div class="wrapper-campo">
+    <span class="campo">
+            <span><b>Número de ejes equivalentes a 8,2 ton acumulados ({{aforo?.anios_8_2}} Años): </b> {{aforo?.anios_8_2 >=0 && dataSourceAnalisis && dataSourceAnalisis.data[aforo.anios_8_2]?dataSourceAnalisis.data[aforo.anios_8_2].nee_acumulados:''| number: '2.'}}</span>
+    </span>
+    <br>
+    <span class="campo">
+            <span><b>Número de ejes equivalentes a 8,2 ton acumulados ({{aforo?.anios2_8_2}} Años): </b> {{aforo?.anios2_8_2 >=0 && dataSourceAnalisis && dataSourceAnalisis.data[aforo.anios2_8_2]?dataSourceAnalisis.data[aforo.anios2_8_2].nee_acumulados:''| number: '2.'}}</span>
+    </span>
+    <br>
+    <span class="campo">
+            <span><b>TPD > 3.5 toneladas en periodo de diseño ({{aforo?.anios_3_5}} Años): </b> {{aforo?.anios_3_5 >=0 && dataSourceAnalisis && dataSourceAnalisis.data[aforo.anios_3_5]?dataSourceAnalisis.data[aforo.anios_3_5].vc_acumulados:''| number: '2.'}}</span>
+    </span>
+</div>
+
+<mat-form-field class="field-full-width" style="width:100%">
+    <textarea matInput placeholder="Observaciones" rows="5" name="observacionAforo" [(ngModel)]="analisisObservaciones"
+        maxlength="600"></textarea>
+  
+</mat-form-field>
+
+<mat-form-field class="field-full-width" style="width:100%">
+    <textarea matInput placeholder="Referencias" rows="7" name="referencisAnalisis" [(ngModel)]="analisisReferencias"
+        maxlength="800"></textarea>
+
+</mat-form-field>
+
+<button mat-raised-button class="color-primary-100" style="margin-right: 0.5rem;" (click)="generarEstudio()" [disabled] = "!(dataSourceAnalisis && dataSourceAnalisis.data && dataSourceAnalisis.data.length > 0) || generandoEstudios" > <mat-icon>description</mat-icon> {{generandoEstudios?'generando Estudios...':'Generar documentos'}} </button>

@@ -1,0 +1,13 @@
+
+<h1 mat-dialog-title></h1>
+<div mat-dialog-content style="text-align: center; overflow: hidden">
+        <p *ngIf="data.action==='I'">Confirme que desea subir el Archivo?</p>
+</div>
+<div mat-dialog-actions style="flex: 1 1 auto; justify-content: center">
+    <button type="button" class="color-primary-100" mat-raised-button mat-dialog-close>Cancelar<mat-icon>clear</mat-icon></button>&nbsp;
+    <button type="button"  mat-raised-button cdkFocusInitial [ngClass]="{'color-warn-800':data.action==='I'}"[mat-dialog-close]="true">
+        Aceptar
+        <mat-icon *ngIf="data.action==='I'">save</mat-icon>
+    </button>
+</div>
+

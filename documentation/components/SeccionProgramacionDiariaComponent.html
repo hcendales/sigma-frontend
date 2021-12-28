@@ -1,0 +1,2478 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>sigma2-frontend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">sigma2-frontend documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  SeccionProgramacionDiariaComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                                <code><a href="https://angular.io/api/common/DatePipe" target="_blank" >DatePipe</a></code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-seccion-programacion-diaria</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./seccion-programacion-diaria.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./seccion-programacion-diaria.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#checkList" >checkList</a>
+                            </li>
+                            <li>
+                                <a href="#dataSchema" >dataSchema</a>
+                            </li>
+                            <li>
+                                <a href="#dataSource" >dataSource</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dialog" >dialog</a>
+                            </li>
+                            <li>
+                                <a href="#displayedColumns" >displayedColumns</a>
+                            </li>
+                            <li>
+                                <a href="#errorRN" >errorRN</a>
+                            </li>
+                            <li>
+                                <a href="#hideErrorRN" >hideErrorRN</a>
+                            </li>
+                            <li>
+                                <a href="#idMantenimientoVial" >idMantenimientoVial</a>
+                            </li>
+                            <li>
+                                <a href="#listaEstadoProgramacion" >listaEstadoProgramacion</a>
+                            </li>
+                            <li>
+                                <a href="#minDate" >minDate</a>
+                            </li>
+                            <li>
+                                <a href="#pageSize" >pageSize</a>
+                            </li>
+                            <li>
+                                <a href="#paginator" >paginator</a>
+                            </li>
+                            <li>
+                                <a href="#sort" >sort</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addRow" >addRow</a>
+                            </li>
+                            <li>
+                                <a href="#asociarForm" >asociarForm</a>
+                            </li>
+                            <li>
+                                <a href="#editRow" >editRow</a>
+                            </li>
+                            <li>
+                                <a href="#esFilaValida" >esFilaValida</a>
+                            </li>
+                            <li>
+                                <a href="#esJornadaValida" >esJornadaValida</a>
+                            </li>
+                            <li>
+                                <a href="#estProgramacionRN" >estProgramacionRN</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#registrar" >registrar</a>
+                            </li>
+                            <li>
+                                <a href="#regresar" >regresar</a>
+                            </li>
+                            <li>
+                                <a href="#removeRow" >removeRow</a>
+                            </li>
+                            <li>
+                                <a href="#removeSelectedRows" >removeSelectedRows</a>
+                            </li>
+                            <li>
+                                <a href="#searchDataTable" >searchDataTable</a>
+                            </li>
+                            <li>
+                                <a href="#toSeconds" >toSeconds</a>
+                            </li>
+                            <li>
+                                <a href="#validRol" >validRol</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#listas" >listas</a>
+                            </li>
+                            <li>
+                                <a href="#persona" >persona</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#viewForm" >viewForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(activatedRoute: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, datePipe: <a href="https://angular.io/api/common/DatePipe" target="_blank">DatePipe</a>, progDiariaService: <a href="../injectables/RegistroProgramacionDiariaService.html" target="_self">RegistroProgramacionDiariaService</a>, dialog: MatDialog, snackBar: MatSnackBar, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:40</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>activatedRoute</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>datePipe</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/DatePipe" target="_blank" >DatePipe</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>progDiariaService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/RegistroProgramacionDiariaService.html" target="_self" >RegistroProgramacionDiariaService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>snackBar</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatSnackBar</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="listas"></a>
+                        <b>listas</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:33</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="persona"></a>
+                        <b>persona</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:34</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="viewForm"></a>
+                        <b>viewForm</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:35</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addRow"></a>
+                    <span class="name">
+                        <span ><b>addRow</b></span>
+                        <a href="#addRow"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addRow()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="82"
+                            class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:82</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Nueva Fila Obtiene los campos por defectos</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="asociarForm"></a>
+                    <span class="name">
+                        <span ><b>asociarForm</b></span>
+                        <a href="#asociarForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>asociarForm(element: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="326"
+                            class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:326</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>element</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editRow"></a>
+                    <span class="name">
+                        <span ><b>editRow</b></span>
+                        <a href="#editRow"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>editRow(row: <a href="../interfaces/progDiariaCrud.html" target="_self">progDiariaCrud</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="175"
+                            class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:175</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Edicion de la fila seleccionada</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>row</td>
+                                    <td>
+                                                <code><a href="../interfaces/progDiariaCrud.html" target="_self" >progDiariaCrud</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="esFilaValida"></a>
+                    <span class="name">
+                        <span ><b>esFilaValida</b></span>
+                        <a href="#esFilaValida"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>esFilaValida(row: <a href="../interfaces/progDiariaCrud.html" target="_self">progDiariaCrud</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="116"
+                            class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:116</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Validaciones generales de reglas de negocio</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>row</td>
+                                    <td>
+                                                <code><a href="../interfaces/progDiariaCrud.html" target="_self" >progDiariaCrud</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>progDiariaCrud</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="esJornadaValida"></a>
+                    <span class="name">
+                        <span ><b>esJornadaValida</b></span>
+                        <a href="#esJornadaValida"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>esJornadaValida(fecha: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, jornada: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, desde: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, hasta: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="135"
+                            class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:135</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>contiene 2 Validaciones
+1ra si el rango de tiempo es correcto</p>
+<p>2da si esta dentro de la jornada valida</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>fecha</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>jornada</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>0</code>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>desde</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>hasta</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>001</p>
+<p>2da si esta dentro de la jornada valida</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="estProgramacionRN"></a>
+                    <span class="name">
+                        <span ><b>estProgramacionRN</b></span>
+                        <a href="#estProgramacionRN"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>estProgramacionRN(e: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="107"
+                            class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:107</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>estProgramacionRN Regala de negocio
+listaEstadoProgramacion: Si crear registro la lista solo debe tener estado Borrador</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>e</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:51</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registrar"></a>
+                    <span class="name">
+                        <span ><b>registrar</b></span>
+                        <a href="#registrar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>registrar()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="332"
+                            class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:332</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="regresar"></a>
+                    <span class="name">
+                        <span ><b>regresar</b></span>
+                        <a href="#regresar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>regresar()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:60</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeRow"></a>
+                    <span class="name">
+                        <span ><b>removeRow</b></span>
+                        <a href="#removeRow"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeRow(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="263"
+                            class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:263</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Elimina una fila</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeSelectedRows"></a>
+                    <span class="name">
+                        <span ><b>removeSelectedRows</b></span>
+                        <a href="#removeSelectedRows"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeSelectedRows()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="293"
+                            class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:293</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Elimina varias filas seleccionadas</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchDataTable"></a>
+                    <span class="name">
+                        <span ><b>searchDataTable</b></span>
+                        <a href="#searchDataTable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>searchDataTable(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:65</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Busca los registros existentes asociados al id mantenimiento</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>this.idMantenimientoVial</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toSeconds"></a>
+                    <span class="name">
+                        <span ><b>toSeconds</b></span>
+                        <a href="#toSeconds"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toSeconds(time: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="168"
+                            class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:168</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>convierte a segundos</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>time</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validRol"></a>
+                    <span class="name">
+                        <span ><b>validRol</b></span>
+                        <a href="#validRol"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>validRol(element: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="120"
+                            class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:120</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>element</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkList"></a>
+                    <span class="name">
+                        <span ><b>checkList</b></span>
+                        <a href="#checkList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dataSchema"></a>
+                    <span class="name">
+                        <span ><b>dataSchema</b></span>
+                        <a href="#dataSchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>progDiariaCrudSchema</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dataSource"></a>
+                    <span class="name">
+                        <span ><b>dataSource</b></span>
+                        <a href="#dataSource"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new MatTableDataSource&lt;progDiariaCrud&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dialog"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>dialog</b></span>
+                        <a href="#dialog"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatDialog</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="displayedColumns"></a>
+                    <span class="name">
+                        <span ><b>displayedColumns</b></span>
+                        <a href="#displayedColumns"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>Object.keys(progDiariaCrudSchema)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="errorRN"></a>
+                    <span class="name">
+                        <span ><b>errorRN</b></span>
+                        <a href="#errorRN"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Error de tiempo y jornada Para usar la directiva</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hideErrorRN"></a>
+                    <span class="name">
+                        <span ><b>hideErrorRN</b></span>
+                        <a href="#hideErrorRN"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="idMantenimientoVial"></a>
+                    <span class="name">
+                        <span ><b>idMantenimientoVial</b></span>
+                        <a href="#idMantenimientoVial"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listaEstadoProgramacion"></a>
+                    <span class="name">
+                        <span ><b>listaEstadoProgramacion</b></span>
+                        <a href="#listaEstadoProgramacion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="minDate"></a>
+                    <span class="name">
+                        <span ><b>minDate</b></span>
+                        <a href="#minDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Date(Date.now())</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pageSize"></a>
+                    <span class="name">
+                        <span ><b>pageSize</b></span>
+                        <a href="#pageSize"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>20</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="paginator"></a>
+                    <span class="name">
+                        <span ><b>paginator</b></span>
+                        <a href="#paginator"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(MatPaginator)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sort"></a>
+                    <span class="name">
+                        <span ><b>sort</b></span>
+                        <a href="#sort"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(MatSort)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/mejoramiento/registro-programacion-diaria/components/seccion-programacion-diaria/seccion-programacion-diaria.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { DatePipe } from &#x27;@angular/common&#x27;;
+import { Component, EventEmitter, Input, OnInit, Output, QueryList, ViewChild } from &#x27;@angular/core&#x27;;
+import { FormBuilder } from &#x27;@angular/forms&#x27;;
+import { MatDialog } from &#x27;@angular/material/dialog&#x27;;
+import { MatPaginator } from &#x27;@angular/material/paginator&#x27;;
+import { MatSnackBar } from &#x27;@angular/material/snack-bar&#x27;;
+import { MatSort } from &#x27;@angular/material/sort&#x27;;
+import { MatTableDataSource } from &#x27;@angular/material/table&#x27;;
+import { ActivatedRoute, Params, Router } from &#x27;@angular/router&#x27;;
+import { progDiariaCrud, progDiariaCrudSchema } from &#x27;src/app/core/models/registro-programacion-diaria&#x27;;
+import { RegistroProgramacionDiariaService } from &#x27;src/app/core/services/registro-programacion-diaria.service&#x27;;
+import { DialogConfirmComponent } from &#x27;../dialog-confirm/dialog-confirm.component&#x27;;
+
+@Component({
+  selector: &#x27;app-seccion-programacion-diaria&#x27;,
+  templateUrl: &#x27;./seccion-programacion-diaria.component.html&#x27;,
+  styleUrls: [&#x27;./seccion-programacion-diaria.component.scss&#x27;],
+  providers: [DatePipe]
+})
+export class SeccionProgramacionDiariaComponent implements OnInit {
+
+  dataSchema: any &#x3D; progDiariaCrudSchema;
+  dataSource &#x3D; new MatTableDataSource&lt;progDiariaCrud&gt;();
+  displayedColumns: string[] &#x3D; Object.keys(progDiariaCrudSchema);
+  idMantenimientoVial : number &#x3D; 0;
+  pageSize &#x3D; 20;
+  checkList : any;
+
+  /**Error de tiempo y jornada Para usar la directiva  */
+  errorRN : string &#x3D; &#x27;&#x27; ; 
+  hideErrorRN : boolean &#x3D; false;
+
+  @Input() listas: any;
+  @Input() persona: any
+  @Output() viewForm &#x3D; new EventEmitter();
+  @ViewChild(MatPaginator) paginator: any;
+  @ViewChild(MatSort) sort: any;
+
+  minDate &#x3D; new Date(Date.now());
+  listaEstadoProgramacion : any[] &#x3D; [];
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private datePipe: DatePipe,
+    private progDiariaService: RegistroProgramacionDiariaService,
+    public dialog: MatDialog,
+    private snackBar: MatSnackBar,
+    private router: Router,
+  ) { }
+
+  async ngOnInit() {
+
+    /**Id de la URL */
+    this.activatedRoute.params.subscribe((params: Params) &#x3D;&gt; { this.idMantenimientoVial &#x3D; +params[&#x27;id&#x27;]; });
+    this.searchDataTable(this.idMantenimientoVial);
+
+    //console.log(&quot;~~~&gt;&quot;,this.persona)
+    //console.log(&quot;~~~&gt;&quot;,this.persona)
+  }
+  regresar() {
+    this.router.navigate([&#x27;dashboard/mejoramiento-registro-programacion-diaria/1775&#x27;]);
+  }
+
+  /**Busca los registros existentes asociados al id mantenimiento */
+  searchDataTable(id: number &#x3D; this.idMantenimientoVial) {
+    this.progDiariaService.getProgDiaria(&quot;id_mantenimiento_vial &#x3D; &quot; + id).subscribe((res: any) &#x3D;&gt; {
+
+      res.respuesta.sort((a: any, b: any) &#x3D;&gt; (a.id_programacion_diaria &lt; b.id_programacion_diaria) ? 1 : ((b.id_programacion_diaria &lt; a.id_programacion_diaria) ? -1 : 0));
+      res.respuesta &#x3D; res.respuesta.map((dato: any) &#x3D;&gt; {
+        dato.fecha &#x3D; dato.fecha ? this.datePipe.transform(dato.fecha, &#x27;yyyy-MM-dd&#x27;) : dato
+        //dato.fecha &#x3D; dato.fecha ? this.datePipe.transform(dato.fecha, &#x27;dd-MM-yyyy&#x27;) : dato
+        return dato;
+      });
+
+      this.dataSource.data &#x3D; res.respuesta;
+      this.dataSource.sort &#x3D; this.sort;
+      this.dataSource.paginator &#x3D; this.paginator;
+    })
+  }
+
+  /**Nueva Fila Obtiene los campos por defectos */
+  addRow() {
+    const newRow: progDiariaCrud &#x3D; {
+      observaciones: &quot;&quot;,
+      isSelected: false,
+      isEdit: true,
+      id_tipo_jornada: 0,
+      id_tipo_estado_programacion: 0,
+      id_programacion_diaria: 0,
+      id_mantenimiento_vial: this.idMantenimientoVial,
+      hora_trabajo_hasta: &quot;&quot;,
+      hora_trabajo_desde: &quot;&quot;,
+      fecha: 0,
+      descripcion_jornada: &#x27;&#x27;,
+      descripcion_estado_programacion: &#x27;&#x27;,
+      viewElement: true,
+      id_persona_elabora: this.persona.id_persona
+    }
+    this.estProgramacionRN(true);
+    this.dataSource.data &#x3D; [newRow, ...this.dataSource.data];
+  }
+
+  /**
+   * estProgramacionRN Regala de negocio
+   * listaEstadoProgramacion: Si crear registro la lista solo debe tener estado Borrador
+   */
+  estProgramacionRN(e : boolean){
+    if (e) this.listaEstadoProgramacion &#x3D; this.listas[124].filter((e: any) &#x3D;&gt; e.id_tipo &#x3D;&#x3D;&#x3D; 1336)
+    else this.listaEstadoProgramacion &#x3D; this.listas[124];
+  }
+
+  /**
+   * Validaciones generales de reglas de negocio
+   * @param row progDiariaCrud
+   */
+  esFilaValida(row: progDiariaCrud){
+    return this.esJornadaValida(row.fecha, row.id_tipo_jornada, row.hora_trabajo_desde, row.hora_trabajo_hasta)
+  }
+
+  validRol(element:any){
+    console.log(element, this.persona); element.isEdit &#x3D; !element.isEdit;
+    //if (element.id_persona_elabora &#x3D;&#x3D;&#x3D; this.persona.id_persona)element.isEdit &#x3D; !element.isEdit;
+    //else this.snackBar.open(&quot;Solo puede editar la misma persona que creo el archivo&quot;, &#x27;X&#x27;, { duration: 5000, panelClass: [&#x27;error-snackbar&#x27;] });
+  }
+
+  /**contiene 2 Validaciones
+   * 1ra si el rango de tiempo es correcto 
+   * @return 001
+   * 
+   * 2da si esta dentro de la jornada valida
+   * @return 002
+   * 
+   * @return 999 Todo OK
+   */
+  esJornadaValida(fecha : number, jornada : number &#x3D; 0, desde : any, hasta : any){
+    let isValid : string &#x3D; &#x27;999&#x27;;
+
+    
+    const event &#x3D; new Date(fecha);
+    const valJornada: any &#x3D; [
+      { jornada: 1331, ini: &#x27;5:00&#x27;, fin: &#x27;18:00&#x27;}, ///Diurna
+      { jornada: 1332, ini: &#x27;18:00&#x27;, fin: &#x27;5:00&#x27;}  ///Nocturna
+    ];
+    const rnJornada &#x3D; valJornada.find((e: any) &#x3D;&gt; e.jornada &#x3D;&#x3D;&#x3D; jornada)
+
+    const pini &#x3D; this.toSeconds(rnJornada.ini);
+    const pfin &#x3D; this.toSeconds(rnJornada.fin);
+    const mdesde &#x3D; this.toSeconds(desde);
+    const mhasta &#x3D; this.toSeconds(hasta);
+    
+    if (jornada &#x3D;&#x3D;&#x3D; 1331 &amp;&amp; mdesde &lt; pini)             isValid &#x3D; &#x27;001&#x27;
+    else if (jornada &#x3D;&#x3D;&#x3D; 1331 &amp;&amp; (mdesde &gt; mhasta))    isValid &#x3D; &#x27;002&#x27;
+    else if (jornada &#x3D;&#x3D;&#x3D; 1331 &amp;&amp; (mhasta &gt; pfin))      isValid &#x3D; &#x27;003&#x27;
+    else if (jornada &#x3D;&#x3D;&#x3D; 1331 &amp;&amp; (mdesde &gt; mhasta))    isValid &#x3D; &#x27;004&#x27;
+    else if (jornada &#x3D;&#x3D;&#x3D; 1332 &amp;&amp; (mdesde &gt; mhasta))    isValid &#x3D; &#x27;005&#x27;
+    else if (jornada &#x3D;&#x3D;&#x3D; 1332 &amp;&amp; mhasta &lt; 43200 &amp;&amp; (mdesde &gt; pini))      isValid &#x3D; &#x27;006&#x27;
+    else if (jornada &#x3D;&#x3D;&#x3D; 1332 &amp;&amp; mhasta &lt; 43200 &amp;&amp; (mhasta &lt; pfin))      isValid &#x3D; &#x27;007&#x27;
+
+
+    //console.log(isValid, mdesde, pini, mhasta, pfin)
+
+
+
+    return isValid
+  }
+
+  /**convierte a segundos */
+  toSeconds(time : any ){
+    let hrs: number &#x3D; time.split(&#x27;:&#x27;)[0];
+    let min: number &#x3D; time.split(&#x27;:&#x27;)[1];
+    return hrs * 3600 + min * 60;
+  }
+
+  /**Edicion de la fila seleccionada */
+  editRow(row: progDiariaCrud) {
+   
+    this.hideErrorRN &#x3D; true
+    const esFilaValida &#x3D; this.esFilaValida(row);
+
+    if (esFilaValida !&#x3D;&#x3D; &#x27;999&#x27;){
+      let msgError : string &#x3D; &quot;&quot;
+      switch (esFilaValida) {
+        case &#x27;001&#x27;: 
+          msgError &#x3D; &quot;Error, Rango de tiempo es incorrecto&quot;;
+          break;
+        case &#x27;002&#x27;:
+          msgError &#x3D; &quot;Error, Rango de tiempo es incorrecto&quot;;
+          break;
+        case &#x27;003&#x27;:
+          msgError &#x3D; &quot;Error, Seleccion de Jornada es incorrecta con la Hora desde y Hora hasta&quot;;
+          break;
+        default:
+          msgError &#x3D; &quot;Error no esperado, valide los parametros ingresados e intente nuevamente&quot;;
+          break;
+      }
+      this.errorRN &#x3D; esFilaValida + &quot;|&quot; + msgError;
+      this.snackBar.open( msgError , &#x27;X&#x27;, { duration: 5000, panelClass: [&#x27;error-snackbar&#x27;] });
+      return 
+    }
+
+
+
+    if (row.id_programacion_diaria &#x3D;&#x3D;&#x3D; 0) {
+
+      const dialogRef &#x3D; this.dialog.open(DialogConfirmComponent, {
+        data: {
+          accion: &quot;G&quot;,
+          mensaje: &quot;Confirmar que desea Guardar la fila seleccionadas&quot;
+        }
+      });
+      dialogRef.afterClosed().subscribe(confirm &#x3D;&gt; {
+        if (confirm) {
+          try {
+            this.progDiariaService.copyProgDiaria(row).subscribe((res: any) &#x3D;&gt; {
+              if (res.codError &#x3D;&#x3D;&#x3D; 0) {
+                //this.progDiariaService.copyProgDiaria(row).subscribe((e:any) &#x3D;&gt; {
+                  this.searchDataTable(this.idMantenimientoVial);
+                  this.checkList &#x3D; false;
+                  this.snackBar.open(&#x27;Información de sección Actualizada&#x27;, &#x27;X&#x27;, { duration: 5000, panelClass: [&#x27;success-snackbar&#x27;] });
+                //});
+              } else {
+                this.snackBar.open(&quot;Error, no se logro complear la accion solicitada: &quot; + res.msgError, &#x27;X&#x27;, { duration: 5000, panelClass: [&#x27;error-snackbar&#x27;] });
+              }
+            });
+          } catch (error) {
+            this.snackBar.open(&quot;Error, no se logro complear la accion solicitada: &quot; + error, &#x27;X&#x27;, { duration: 5000, panelClass: [&#x27;error-snackbar&#x27;] });
+          }
+        }
+      });
+
+    } else {
+
+      const dialogRef &#x3D; this.dialog.open(DialogConfirmComponent, {
+        data: {
+          accion: &quot;A&quot;,
+          mensaje: &quot;Confirmar que desea Actualizar la fila seleccionadas&quot;
+        }
+      });
+      dialogRef.afterClosed().subscribe(confirm &#x3D;&gt; {
+        if (confirm) {
+          try {
+            this.progDiariaService.updateProgDiaria(row).subscribe((res: any) &#x3D;&gt; {
+              row.id_persona_elabora &#x3D; this.persona.id_tipo_rol;
+              if (res.codError &#x3D;&#x3D;&#x3D; 0) {
+                this.viewForm.emit(0);
+                this.checkList &#x3D; false;
+                this.searchDataTable(this.idMantenimientoVial);
+                this.snackBar.open(&#x27;Información de sección Actualizada&#x27;, &#x27;X&#x27;, { duration: 5000, panelClass: [&#x27;success-snackbar&#x27;] });
+              } else {
+                this.snackBar.open(&quot;Error, no se logro complear la accion solicitada: &quot; + res.msgError, &#x27;X&#x27;, { duration: 5000, panelClass: [&#x27;error-snackbar&#x27;] });
+              }
+            });
+          } catch (error) {
+            this.snackBar.open(&quot;Error, no se logro complear la accion solicitada: &quot; + error, &#x27;X&#x27;, { duration: 5000, panelClass: [&#x27;error-snackbar&#x27;] });
+          }
+        }
+      });
+
+    }
+  }
+
+  /**Elimina una fila */
+  removeRow(id: number) {
+    const progDiaria : any &#x3D; {}
+    const dialogRef &#x3D; this.dialog.open(DialogConfirmComponent, {
+      data: {
+        accion: &quot;E&quot;,
+        mensaje: &quot;Confirmar que desea Eliminar la fila seleccionadas&quot;
+      }
+    });
+    dialogRef.afterClosed().subscribe(confirm &#x3D;&gt; {
+      if (confirm) {
+        try {
+          this.progDiariaService.deleteRow(id).subscribe((r: any) &#x3D;&gt; {
+            if (r.codError &#x3D;&#x3D;&#x3D; 0) {
+              progDiaria.id_programacion_diaria &#x3D; 0;
+              this.viewForm.emit(progDiaria);
+              this.checkList &#x3D; false;
+              this.dataSource.data &#x3D; this.dataSource.data.filter((u: progDiariaCrud) &#x3D;&gt; u.id_programacion_diaria !&#x3D;&#x3D; id);
+              this.snackBar.open(&#x27;Información de sección Actualizada&#x27;, &#x27;X&#x27;, { duration: 5000, panelClass: [&#x27;success-snackbar&#x27;] });
+            } else {
+              this.snackBar.open(&quot;Error, no se logro complear la accion solicitada: &quot; + r.msgError, &#x27;X&#x27;, { duration: 5000, panelClass: [&#x27;error-snackbar&#x27;] });
+            }
+          })
+        } catch (error) {
+          this.snackBar.open(&quot;Error, no se logro complear la accion solicitada: &quot; + error, &#x27;X&#x27;, { duration: 5000, panelClass: [&#x27;error-snackbar&#x27;] });
+        } 
+      }
+    });
+  }
+
+  /**Elimina varias filas seleccionadas */
+  removeSelectedRows() {
+    const progDiaria : any &#x3D; this.dataSource.data.filter((u: progDiariaCrud) &#x3D;&gt; u.isSelected);
+
+    if(progDiaria.length &#x3D;&#x3D;&#x3D; 0){
+      this.snackBar.open(&quot;Error, por favor seleccione registros en la grilla de datos &quot;, &#x27;X&#x27;, { duration: 5000, panelClass: [&#x27;error-snackbar&#x27;] });
+      return
+    }
+    const dialogRef &#x3D; this.dialog.open(DialogConfirmComponent,{
+      data: {
+        accion: &quot;E&quot;,
+        mensaje: &quot;Confirmar que desea Eliminar las filas seleccionadas&quot;
+      }
+    });
+    dialogRef.afterClosed().subscribe(confirm &#x3D;&gt; {
+      if (confirm) {
+        try {
+          this.progDiariaService.deleteRows(progDiaria).subscribe((r: any) &#x3D;&gt; {
+            this.dataSource.data &#x3D; this.dataSource.data.filter((u: progDiariaCrud) &#x3D;&gt; !u.isSelected);
+            this.snackBar.open(&#x27;Información de sección Actualizada&#x27;, &#x27;X&#x27;, { duration: 5000, panelClass: [&#x27;success-snackbar&#x27;] });
+          });
+          setTimeout(() &#x3D;&gt; {
+            progDiaria.id_programacion_diaria &#x3D; 0;
+            this.viewForm.emit(progDiaria);
+            this.checkList &#x3D; false;
+          }, 1000);
+        } catch (error) {
+          this.snackBar.open(&quot;Error, no se logro complear la accion solicitada: &quot; + error, &#x27;X&#x27;, { duration: 5000, panelClass: [&#x27;error-snackbar&#x27;] });
+        }
+      }
+    });
+  }
+
+
+  asociarForm(element: any){
+    this.viewForm.emit(element);
+
+    if (element.id_tipo_estado_programacion &#x3D;&#x3D;&#x3D; 1336) this.checkList &#x3D; element;
+  }
+
+  registrar(){
+    this.checkList[&#x27;id_tipo_estado_programacion&#x27;] &#x3D; 1337;
+    this.editRow(this.checkList);
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;article&gt;
+    &lt;article class&#x3D;&quot;table-header&quot; style&#x3D;&quot;flex: 1; text-align: right; margin-right: 16px;&quot;&gt;
+        &lt;!-- &lt;button mat-raised-button class&#x3D;&quot;color-primary-100&quot; (click)&#x3D;&quot;removeSelectedRows()&quot;&gt;
+            ELIMINAR
+            &lt;mat-icon&gt;delete&lt;/mat-icon&gt;
+        &lt;/button&gt; &amp;nbsp; --&gt;
+        &lt;button mat-raised-button class&#x3D;&quot;color-primary-100&quot; (click)&#x3D;&quot;regresar()&quot;&gt;
+            VOLVER
+            &lt;mat-icon&gt;keyboard_return&lt;/mat-icon&gt;
+        &lt;/button&gt;
+        &amp;nbsp;
+        &lt;button mat-raised-button class&#x3D;&quot;color-primary-100&quot; [disabled]&#x3D;&quot;!checkList&quot; (click)&#x3D;&quot;registrar()&quot;&gt;
+            REGISTRAR
+            &lt;mat-icon&gt;how_to_reg&lt;/mat-icon&gt;
+        &lt;/button&gt;
+        &amp;nbsp;
+        &lt;button mat-raised-button class&#x3D;&quot;color-primary-100&quot; (click)&#x3D;&quot;addRow()&quot;&gt;
+            NUEVO
+            &lt;mat-icon&gt;add&lt;/mat-icon&gt;
+        &lt;/button&gt;
+    &lt;/article&gt;&lt;br&gt;
+    &lt;div class&#x3D;&quot;mat-elevation-z8&quot;&gt;
+        &lt;div style&#x3D;&quot;overflow-x: scroll;&quot;&gt;
+            &lt;table mat-table [dataSource]&#x3D;&quot;dataSource&quot; matSort&gt;
+                &lt;ng-container [matColumnDef]&#x3D;&quot;col&quot; *ngFor&#x3D;&quot;let col of displayedColumns&quot;&gt;
+                    &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt;
+                        &lt;span *ngIf&#x3D;&quot;col !&#x3D;&#x3D; &#x27;isEdit&#x27; &amp;&amp; col !&#x3D;&#x3D; &#x27;isSelected&#x27;&quot;&gt; 
+                            &lt;span *ngIf&#x3D;&quot;col &#x3D;&#x3D;&#x3D; &#x27;viewElement&#x27;&quot;&gt;VER&lt;/span&gt;
+                            &lt;span *ngIf&#x3D;&quot;col &#x3D;&#x3D;&#x3D; &#x27;fecha&#x27;&quot;&gt;FECHA PROGRAMACION DIARIA*&lt;/span&gt;
+                            &lt;span *ngIf&#x3D;&quot;col &#x3D;&#x3D;&#x3D; &#x27;id_tipo_jornada&#x27;&quot;&gt;JORNADA*&lt;/span&gt;
+                            &lt;span *ngIf&#x3D;&quot;col &#x3D;&#x3D;&#x3D; &#x27;id_tipo_estado_programacion&#x27;&quot;&gt;ESTADO PROGRAMACION*&lt;/span&gt;
+                            &lt;span *ngIf&#x3D;&quot;col &#x3D;&#x3D;&#x3D; &#x27;hora_trabajo_desde&#x27;&quot;&gt;HORA TRABAJO (DESDE)*&lt;/span&gt;
+                            &lt;span *ngIf&#x3D;&quot;col &#x3D;&#x3D;&#x3D; &#x27;hora_trabajo_hasta&#x27;&quot;&gt;HORA TRABAJO (HASTA)*&lt;/span&gt;
+                            &lt;span *ngIf&#x3D;&quot;col &#x3D;&#x3D;&#x3D; &#x27;observaciones&#x27;&quot;&gt;OBSERVACIONES&lt;/span&gt;
+                        &lt;/span&gt;
+                    &lt;/th&gt;
+                    &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;
+
+                        &lt;!-- ****************VISTA POR DEFECTO DE LA TABLA*********** --&gt;
+                        &lt;div [ngSwitch]&#x3D;&quot;dataSchema[col]&quot; *ngIf&#x3D;&quot;!element.isEdit&quot;&gt;
+
+                            &lt;!-- Fecha --&gt;
+                            &lt;div *ngSwitchCase&#x3D;&quot;&#x27;fecha&#x27;&quot;&gt;
+                                {{element.fecha | date: &quot;dd-MM-yyyy&quot;}}
+                            &lt;/div&gt;
+
+                            &lt;!-- Jornada --&gt;
+                            &lt;div *ngSwitchCase&#x3D;&quot;&#x27;listaJornada&#x27;&quot;&gt;
+                                {{element.descripcion_jornada}}
+                            &lt;/div&gt;
+
+                            &lt;!-- Estado Programacion --&gt;
+                            &lt;div *ngSwitchCase&#x3D;&quot;&#x27;listaEstadoProgramacion&#x27;&quot;&gt;
+                                {{element.descripcion_estado_programacion}}
+                            &lt;/div&gt;
+
+                            &lt;div *ngSwitchCase&#x3D;&quot;&#x27;observaciones&#x27;&quot;&gt;
+                                &lt;div *ngIf&#x3D;&quot;element.observaciones&quot;&gt;
+                                {{element.observaciones | slice:0:40 }}
+                                &lt;button mat-button matSuffix mat-icon-button aria-label&#x3D;&quot;Clear&quot; 
+                                [matTooltip]&#x3D;&quot;element.observaciones&quot;
+                                *ngIf&#x3D;&quot;element.observaciones.length &gt; 40&quot;
+                                &gt;
+                                    &lt;mat-icon&gt;...&lt;/mat-icon&gt;
+                                &lt;/button&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+                            &lt;!-- label por defecto --&gt;
+                            &lt;span *ngSwitchDefault&gt; 
+                                {{element[col]}} 
+                            &lt;/span&gt;
+
+                            &lt;!-- checkbox para seleccionar y eliminar en grupos --&gt;
+                            &lt;ng-container *ngSwitchCase&#x3D;&quot;&#x27;isSelected&#x27;&quot;&gt;
+                                &lt;mat-checkbox (change)&#x3D;&quot;element.isSelected &#x3D; $event.checked&quot;&gt;&lt;/mat-checkbox&gt;
+                            &lt;/ng-container&gt;
+                            
+                            &lt;!-- radio button para seleccionar la programacion a trabajar --&gt;
+                            &lt;ng-container *ngSwitchCase&#x3D;&quot;&#x27;isViewElement&#x27;&quot;&gt;
+                                &lt;mat-radio-button name&#x3D;&quot;view&quot; class&#x3D;&quot;radio-button&quot; (click)&#x3D;&quot;asociarForm(element)&quot;  &gt;&lt;/mat-radio-button&gt;
+                            &lt;/ng-container&gt;
+
+                            &lt;!-- botoneria --&gt;
+                            &lt;div *ngSwitchCase&#x3D;&quot;&#x27;isEdit&#x27;&quot;&gt;
+                                &lt;button mat-icon-button (click)&#x3D;&quot;removeRow(element.id_programacion_diaria)&quot;&gt;
+                                    &lt;mat-icon&gt;delete&lt;/mat-icon&gt;
+                                &lt;/button&gt;
+                                &lt;button mat-icon-button (click)&#x3D;&quot;validRol(element); estProgramacionRN(false);&quot;&gt;
+                                    &lt;mat-icon&gt;edit&lt;/mat-icon&gt;
+                                &lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;!-- *************VISTA AL AGREGAR o EDITAR*****************  --&gt;
+                        &lt;div [ngSwitch]&#x3D;&quot;dataSchema[col]&quot; *ngIf&#x3D;&quot;element.isEdit&quot; &gt;
+                           
+                            
+                            &lt;!-- fecha --&gt; 
+                            &lt;ng-container *ngSwitchCase&#x3D;&quot;&#x27;fecha&#x27;&quot;&gt;
+                                &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+                                    &lt;input matInput placeholder&#x3D;&quot;DD/MM/YYYY&quot; [matDatepicker]&#x3D;&quot;picker&quot; [min]&#x3D;&quot;minDate&quot; [(ngModel)]&#x3D;&quot;element[col]&quot;&gt;
+                                    &lt;mat-datepicker-toggle matSuffix [for]&#x3D;&quot;picker&quot;&gt;&lt;/mat-datepicker-toggle&gt;
+                                    &lt;mat-datepicker #picker&gt;&lt;/mat-datepicker&gt;
+                                &lt;/mat-form-field&gt;&lt;br&gt;
+                                &lt;span msg-error [valido]&#x3D;&quot;element[col]&quot; style&#x3D;&quot;font-size: 8px;&quot; &gt;&lt;/span&gt;
+                            &lt;/ng-container&gt;
+
+                            &lt;!-- Tipo Jornada --&gt;
+                            &lt;ng-container *ngSwitchCase&#x3D;&quot;&#x27;listaJornada&#x27;&quot;&gt;
+                                &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+                                    &lt;mat-select [(ngModel)]&#x3D;&quot;element[col]&quot; &gt;
+                                        &lt;mat-option&gt;--&lt;/mat-option&gt;
+                                        &lt;mat-option *ngFor&#x3D;&quot;let tipo of listas[120]&quot; style&#x3D;&quot;font-size: 18;&quot; [value]&#x3D;&quot;tipo.id_tipo&quot;&gt;
+                                            {{tipo.descripcion | titlecase}}
+                                        &lt;/mat-option&gt;
+                                    &lt;/mat-select&gt;
+                                &lt;/mat-form-field&gt;&lt;br&gt;
+                                &lt;span msg-error [valido]&#x3D;&quot;element[col]&quot; style&#x3D;&quot;font-size: 8px;&quot;&gt;&lt;/span&gt;
+                            &lt;/ng-container&gt;
+
+                            &lt;!-- Estado de Programacion --&gt;
+                            &lt;ng-container *ngSwitchCase&#x3D;&quot;&#x27;listaEstadoProgramacion&#x27;&quot;&gt;
+                            &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+                                &lt;mat-select [(ngModel)]&#x3D;&quot;element[col]&quot;&gt;
+                                    &lt;mat-option&gt;--&lt;/mat-option&gt;
+                                    &lt;mat-option *ngFor&#x3D;&quot;let tipo of listaEstadoProgramacion&quot; [value]&#x3D;&quot;tipo.id_tipo&quot;&gt;
+                                        {{tipo.descripcion | titlecase}}
+                                    &lt;/mat-option&gt;
+                                &lt;/mat-select&gt;
+                                &lt;/mat-form-field&gt;&lt;br&gt;
+                                &lt;span msg-error [valido]&#x3D;&quot;element[col]&quot; style&#x3D;&quot;font-size: 8px;&quot;&gt;&lt;/span&gt;
+                            &lt;/ng-container&gt;
+                           
+                            &lt;!-- Hora desde --&gt;
+                            &lt;ng-container *ngSwitchCase&#x3D;&quot;&#x27;horaDesde&#x27;&quot;&gt;
+                                &lt;mat-form-field appearance&#x3D;&quot;fill&quot; &gt;
+                                    &lt;input matInput [(ngModel)]&#x3D;&quot;element[col]&quot; type&#x3D;&quot;time&quot; min&#x3D;&quot;01:00&quot; max&#x3D;&quot;24:00&quot;  &gt;
+                                &lt;/mat-form-field&gt;&lt;br&gt;
+                                &lt;span msg-error [valido]&#x3D;&quot;element[col]&quot; style&#x3D;&quot;font-size: 8px;&quot;&gt;&lt;/span&gt;
+                            &lt;/ng-container&gt;
+
+                            &lt;!-- Hora hasta --&gt;
+                            &lt;ng-container *ngSwitchCase&#x3D;&quot;&#x27;horaHasta&#x27;&quot;&gt;
+                                &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+                                &lt;input matInput [(ngModel)]&#x3D;&quot;element[col]&quot; type&#x3D;&quot;time&quot; min&#x3D;&quot;01:00&quot; max&#x3D;&quot;24:00&quot; &gt;
+                                &lt;/mat-form-field&gt;&lt;br&gt;
+                                &lt;span msg-error [valido]&#x3D;&quot;element[col]&quot; style&#x3D;&quot;font-size: 8px;&quot;&gt;&lt;/span&gt;
+                                &lt;!-- &lt;span msg-error [valido]&#x3D;&quot;element[col]&quot; [errorRN]&#x3D;&quot;&#x27;horaHasta|&#x27;+errorRN&quot; style&#x3D;&quot;font-size: 8px;&quot;&gt;&lt;/span&gt; --&gt;
+                            &lt;/ng-container&gt;
+
+                            &lt;!-- observaciones --&gt;
+                            &lt;mat-form-field *ngSwitchCase&#x3D;&quot;&#x27;observaciones&#x27;&quot; appearance&#x3D;&quot;fill&quot; &gt;
+                                &lt;textarea matInput [(ngModel)]&#x3D;&quot;element[col]&quot; cdkTextareaAutosize cdkAutosizeMinRows&#x3D;&quot;2&quot;
+                                    maxlength&#x3D;&quot;600&quot; &gt;&lt;/textarea&gt;
+                                &lt;mat-hint align&#x3D;&quot;end&quot;&gt;Máximo 600 caracteres&lt;/mat-hint&gt;
+                            &lt;/mat-form-field&gt;
+
+                            &lt;!-- Campos por defectos --&gt;
+                            &lt;mat-form-field *ngSwitchDefault&gt;
+                                &lt;mat-label&gt;{{col}}&lt;/mat-label&gt;
+                                &lt;input style&#x3D;&quot;font-size: 15px;&quot; autocomplete&#x3D;&quot;off&quot; [type]&#x3D;&quot;dataSchema[col]&quot; matInput
+                                    [(ngModel)]&#x3D;&quot;element[col]&quot;&gt;
+                            &lt;/mat-form-field&gt;
+
+                            &lt;!-- Campos no editables --&gt;
+                            &lt;div *ngSwitchCase&#x3D;&quot;&#x27;isSelected&#x27;&quot;&gt;&lt;/div&gt;
+                            &lt;div *ngSwitchCase&#x3D;&quot;&#x27;isViewElement&#x27;&quot;&gt;&lt;/div&gt;
+
+                            &lt;!-- botoneria --&gt;
+                            &lt;div class&#x3D;&quot;btn-edit&quot; *ngSwitchCase&#x3D;&quot;&#x27;isEdit&#x27;&quot;&gt;
+                                &lt;button mat-button (click)&#x3D;&quot;editRow(element)&quot;&gt;
+                                    &lt;mat-icon&gt;save&lt;/mat-icon&gt;
+                                &lt;/button&gt;
+                                &lt;button mat-button (click)&#x3D;&quot;searchDataTable()&quot;&gt;
+                                    &lt;mat-icon&gt;cancel&lt;/mat-icon&gt;
+                                &lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/td&gt;
+                &lt;/ng-container&gt;
+                &lt;tr mat-header-row *matHeaderRowDef&#x3D;&quot;displayedColumns&quot;&gt;&lt;/tr&gt;
+                &lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: displayedColumns;&quot;&gt;&lt;/tr&gt;
+            &lt;/table&gt;
+        &lt;/div&gt;
+        &lt;mat-paginator [pageSizeOptions]&#x3D;&quot;[5, 10, 20, 100]&quot; [pageSize]&#x3D;&quot;pageSize&quot; showFirstLastButtons&gt;&lt;/mat-paginator&gt;
+    &lt;/div&gt;
+&lt;/article&gt;
+
+&lt;!-- &lt;pre&gt;{{ dataSource.data | json }}&lt;/pre&gt; --&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./seccion-programacion-diaria.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">table {
+  min-width: 100rem;
+}
+
+.mat-cell{
+  border-right: 1px solid lightgray;
+  border-collapse: collapse;
+  min-width: 2rem;
+  min-height: auto;
+}
+
+.mat-header-cell{
+  min-width: 1rem;
+  padding: 5px 1px;
+  text-align: center;
+}
+
+.mat-form-field {
+  font-size: 12px;
+  width: 90%;
+  margin-bottom: -20px;
+}
+
+.mat-column-observaciones{
+  width: 17%;
+  min-width: 12rem;
+  font-size: 12px; 
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+/* mat-table */
+mat-footer-row mat-footer-cell{
+  justify-content: center;
+  font-style: italic;
+}
+/* Clear input */
+.search-form-field {
+  width: 200px;
+}
+
+.filter {
+  display: block;
+  width: 40px;
+}
+
+.retraso {
+  color: brown;
+}
+
+.undia {
+  color: orange;
+}
+.normal {
+  color: black;
+}
+#bookmark {
+     position: absolute;
+     top: 80px;
+     right: 20px;
+     z-level: 1000;
+}
+
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+    text-align: center;
+}
+
+.radio-button {
+  margin: 5px;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><article>    <article class="table-header" style="flex: 1; text-align: right; margin-right: 16px;">        <!-- <button mat-raised-button class="color-primary-100" (click)="removeSelectedRows()">            ELIMINAR            <mat-icon>delete</mat-icon>        </button> &nbsp; -->        <button mat-raised-button class="color-primary-100" (click)="regresar()">            VOLVER            <mat-icon>keyboard_return</mat-icon>        </button>        &nbsp;        <button mat-raised-button class="color-primary-100" [disabled]="!checkList" (click)="registrar()">            REGISTRAR            <mat-icon>how_to_reg</mat-icon>        </button>        &nbsp;        <button mat-raised-button class="color-primary-100" (click)="addRow()">            NUEVO            <mat-icon>add</mat-icon>        </button>    </article><br>    <div class="mat-elevation-z8">        <div style="overflow-x: scroll;">            <table mat-table [dataSource]="dataSource" matSort>                <ng-container [matColumnDef]="col" *ngFor="let col of displayedColumns">                    <th mat-header-cell *matHeaderCellDef mat-sort-header>                        <span *ngIf="col !== \'isEdit\' && col !== \'isSelected\'">                             <span *ngIf="col === \'viewElement\'">VER</span>                            <span *ngIf="col === \'fecha\'">FECHA PROGRAMACION DIARIA*</span>                            <span *ngIf="col === \'id_tipo_jornada\'">JORNADA*</span>                            <span *ngIf="col === \'id_tipo_estado_programacion\'">ESTADO PROGRAMACION*</span>                            <span *ngIf="col === \'hora_trabajo_desde\'">HORA TRABAJO (DESDE)*</span>                            <span *ngIf="col === \'hora_trabajo_hasta\'">HORA TRABAJO (HASTA)*</span>                            <span *ngIf="col === \'observaciones\'">OBSERVACIONES</span>                        </span>                    </th>                    <td mat-cell *matCellDef="let element">                        <!-- ****************VISTA POR DEFECTO DE LA TABLA*********** -->                        <div [ngSwitch]="dataSchema[col]" *ngIf="!element.isEdit">                            <!-- Fecha -->                            <div *ngSwitchCase="\'fecha\'">                                {{element.fecha | date: "dd-MM-yyyy"}}                            </div>                            <!-- Jornada -->                            <div *ngSwitchCase="\'listaJornada\'">                                {{element.descripcion_jornada}}                            </div>                            <!-- Estado Programacion -->                            <div *ngSwitchCase="\'listaEstadoProgramacion\'">                                {{element.descripcion_estado_programacion}}                            </div>                            <div *ngSwitchCase="\'observaciones\'">                                <div *ngIf="element.observaciones">                                {{element.observaciones | slice:0:40 }}                                <button mat-button matSuffix mat-icon-button aria-label="Clear"                                 [matTooltip]="element.observaciones"                                *ngIf="element.observaciones.length > 40"                                >                                    <mat-icon>...</mat-icon>                                </button>                                </div>                            </div>                            <!-- label por defecto -->                            <span *ngSwitchDefault>                                 {{element[col]}}                             </span>                            <!-- checkbox para seleccionar y eliminar en grupos -->                            <ng-container *ngSwitchCase="\'isSelected\'">                                <mat-checkbox (change)="element.isSelected = $event.checked"></mat-checkbox>                            </ng-container>                                                        <!-- radio button para seleccionar la programacion a trabajar -->                            <ng-container *ngSwitchCase="\'isViewElement\'">                                <mat-radio-button name="view" class="radio-button" (click)="asociarForm(element)"  ></mat-radio-button>                            </ng-container>                            <!-- botoneria -->                            <div *ngSwitchCase="\'isEdit\'">                                <button mat-icon-button (click)="removeRow(element.id_programacion_diaria)">                                    <mat-icon>delete</mat-icon>                                </button>                                <button mat-icon-button (click)="validRol(element); estProgramacionRN(false);">                                    <mat-icon>edit</mat-icon>                                </button>                            </div>                        </div>                        <!-- *************VISTA AL AGREGAR o EDITAR*****************  -->                        <div [ngSwitch]="dataSchema[col]" *ngIf="element.isEdit" >                                                                                   <!-- fecha -->                             <ng-container *ngSwitchCase="\'fecha\'">                                <mat-form-field appearance="fill">                                    <input matInput placeholder="DD/MM/YYYY" [matDatepicker]="picker" [min]="minDate" [(ngModel)]="element[col]">                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>                                    <mat-datepicker #picker></mat-datepicker>                                </mat-form-field><br>                                <span msg-error [valido]="element[col]" style="font-size: 8px;" ></span>                            </ng-container>                            <!-- Tipo Jornada -->                            <ng-container *ngSwitchCase="\'listaJornada\'">                                <mat-form-field appearance="fill">                                    <mat-select [(ngModel)]="element[col]" >                                        <mat-option>--</mat-option>                                        <mat-option *ngFor="let tipo of listas[120]" style="font-size: 18;" [value]="tipo.id_tipo">                                            {{tipo.descripcion | titlecase}}                                        </mat-option>                                    </mat-select>                                </mat-form-field><br>                                <span msg-error [valido]="element[col]" style="font-size: 8px;"></span>                            </ng-container>                            <!-- Estado de Programacion -->                            <ng-container *ngSwitchCase="\'listaEstadoProgramacion\'">                            <mat-form-field appearance="fill">                                <mat-select [(ngModel)]="element[col]">                                    <mat-option>--</mat-option>                                    <mat-option *ngFor="let tipo of listaEstadoProgramacion" [value]="tipo.id_tipo">                                        {{tipo.descripcion | titlecase}}                                    </mat-option>                                </mat-select>                                </mat-form-field><br>                                <span msg-error [valido]="element[col]" style="font-size: 8px;"></span>                            </ng-container>                                                       <!-- Hora desde -->                            <ng-container *ngSwitchCase="\'horaDesde\'">                                <mat-form-field appearance="fill" >                                    <input matInput [(ngModel)]="element[col]" type="time" min="01:00" max="24:00"  >                                </mat-form-field><br>                                <span msg-error [valido]="element[col]" style="font-size: 8px;"></span>                            </ng-container>                            <!-- Hora hasta -->                            <ng-container *ngSwitchCase="\'horaHasta\'">                                <mat-form-field appearance="fill">                                <input matInput [(ngModel)]="element[col]" type="time" min="01:00" max="24:00" >                                </mat-form-field><br>                                <span msg-error [valido]="element[col]" style="font-size: 8px;"></span>                                <!-- <span msg-error [valido]="element[col]" [errorRN]="\'horaHasta|\'+errorRN" style="font-size: 8px;"></span> -->                            </ng-container>                            <!-- observaciones -->                            <mat-form-field *ngSwitchCase="\'observaciones\'" appearance="fill" >                                <textarea matInput [(ngModel)]="element[col]" cdkTextareaAutosize cdkAutosizeMinRows="2"                                    maxlength="600" ></textarea>                                <mat-hint align="end">Máximo 600 caracteres</mat-hint>                            </mat-form-field>                            <!-- Campos por defectos -->                            <mat-form-field *ngSwitchDefault>                                <mat-label>{{col}}</mat-label>                                <input style="font-size: 15px;" autocomplete="off" [type]="dataSchema[col]" matInput                                    [(ngModel)]="element[col]">                            </mat-form-field>                            <!-- Campos no editables -->                            <div *ngSwitchCase="\'isSelected\'"></div>                            <div *ngSwitchCase="\'isViewElement\'"></div>                            <!-- botoneria -->                            <div class="btn-edit" *ngSwitchCase="\'isEdit\'">                                <button mat-button (click)="editRow(element)">                                    <mat-icon>save</mat-icon>                                </button>                                <button mat-button (click)="searchDataTable()">                                    <mat-icon>cancel</mat-icon>                                </button>                            </div>                        </div>                    </td>                </ng-container>                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>            </table>        </div>        <mat-paginator [pageSizeOptions]="[5, 10, 20, 100]" [pageSize]="pageSize" showFirstLastButtons></mat-paginator>    </div></article><!-- <pre>{{ dataSource.data | json }}</pre> --></div>'
+    var COMPONENTS = [{'name': 'ActualizarAlternativaComponent', 'selector': 'app-actualizar-alternativa'},{'name': 'ActualizarApiquesComponent', 'selector': 'app-actualizar-apiques'},{'name': 'ActualizarComponent', 'selector': 'app-actualizar'},{'name': 'ActualizarComponent', 'selector': 'app-actualizar'},{'name': 'ActualizarComponent', 'selector': 'app-actualizar'},{'name': 'ActualizarComponent', 'selector': 'app-actualizar'},{'name': 'ActualizarComponent', 'selector': 'app-actualizar'},{'name': 'ActualizarNovedadComponent', 'selector': 'app-actualizar-novedad'},{'name': 'AforosComponent', 'selector': 'app-aforos'},{'name': 'AgendaVisitasComponent', 'selector': 'app-agenda-visitas'},{'name': 'AlcaldiasComponent', 'selector': 'app-alcaldias'},{'name': 'AnalisisTransitoComponent', 'selector': 'app-analisis-transito'},{'name': 'ApiquesAforosComponent', 'selector': 'app-apiques-aforos'},{'name': 'ApiquesAledaniosComponent', 'selector': 'app-apiques-aledanios'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AreaIntervencionComponent', 'selector': 'app-area-intervencion'},{'name': 'AsignarConductorOperarioComponent', 'selector': 'app-asignar-conductor-operario'},{'name': 'AsignarMisionalidadComponent', 'selector': 'app-asignar-misionalidad'},{'name': 'AsignarRecursoComponent', 'selector': 'app-asignar-recurso'},{'name': 'AsignarSeguimientoComponent', 'selector': 'app-asignar-seguimiento'},{'name': 'AsignarVisitasComponent', 'selector': 'app-asignar-visitas'},{'name': 'AsociarAforosComponent', 'selector': 'app-asociar-aforos'},{'name': 'AutoprogramarVisitaComponent', 'selector': 'app-autoprogramar-visita'},{'name': 'AvanceMantenimientoComponent', 'selector': 'app-avance-mantenimiento'},{'name': 'AvanceMasivoMantenimientoComponent', 'selector': 'app-avance-masivo-mantenimiento'},{'name': 'BuscarRadicadoComponent', 'selector': 'app-buscar-radicado'},{'name': 'BusquedaMantenimientosComponent', 'selector': 'app-busqueda-mantenimientos'},{'name': 'CalendarioAsignacionCoComponent', 'selector': 'app-calendario-asignacion-co'},{'name': 'CambioContraseniaComponent', 'selector': 'app-cambio-contrasenia'},{'name': 'CargueArchivoComponent', 'selector': 'app-cargue-archivo'},{'name': 'CargueDocumentosComponent', 'selector': 'app-cargue-documentos'},{'name': 'CarguesMejoramientoComponent', 'selector': 'app-cargues-mejoramiento'},{'name': 'ConsultaAlternativaComponent', 'selector': 'app-consulta-alternativa'},{'name': 'ConsultaApiquesComponent', 'selector': 'app-consulta-apiques'},{'name': 'ConsultaDisenioComponent', 'selector': 'app-consulta-disenio'},{'name': 'ConsultaGeneralGestionComponent', 'selector': 'app-consulta-general-gestion'},{'name': 'ConsultaHistorialComponent', 'selector': 'app-consulta-historial'},{'name': 'ConsultarApiquesComponent', 'selector': 'app-consultar-apiques'},{'name': 'ConsultasMejoramientoComponent', 'selector': 'app-consultas-mejoramiento'},{'name': 'ConsultaVisitaDiagnosticoComponent', 'selector': 'app-consulta-visita-diagnostico'},{'name': 'ConsultaVisitaEncabezadoComponent', 'selector': 'app-consulta-visita-encabezado'},{'name': 'ControlSolicitudesPmtComponent', 'selector': 'app-control-solicitudes-pmt'},{'name': 'CreateLugarComponent', 'selector': 'app-create-lugar'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DetalleDocumentosComponent', 'selector': 'app-detalle-documentos'},{'name': 'DialogConfirmComponent', 'selector': 'app-dialog-confirm'},{'name': 'DialogConfirmComponent', 'selector': 'app-dialog-confirm'},{'name': 'DialogConfirmComponent', 'selector': 'app-dialog-confirm'},{'name': 'DialogoMotivoCancelacionComponent', 'selector': 'app-dialogo-motivo-cancelacion'},{'name': 'DialogVerVisitaDiagnostico', 'selector': 'dialog-ver-visita-diagnostico'},{'name': 'DialogVerVisitaDisenioComponent', 'selector': 'app-dialog-ver-visita-disenio'},{'name': 'DialogVerVisitaDiseno', 'selector': 'dialog-ver-visita-diseno'},{'name': 'DropZoneDocumentosComponent', 'selector': 'app-drop-zone-documentos'},{'name': 'EditarAsignacionComponent', 'selector': 'app-editar-asignacion'},{'name': 'EditarAsociarCoiComponent', 'selector': 'app-editar-asociar-coi'},{'name': 'EditarAsociarSolicitudComponent', 'selector': 'app-editar-asociar-solicitud'},{'name': 'EditarProgramacionComponent', 'selector': 'app-editar-programacion'},{'name': 'EditarProgramacionPeriodicaComponent', 'selector': 'app-editar-programacion-periodica'},{'name': 'EditarReporteFalloComponent', 'selector': 'app-editar-reporte-fallo'},{'name': 'EliminarComponent', 'selector': 'app-eliminar'},{'name': 'EliminarComponent', 'selector': 'app-eliminar'},{'name': 'EliminarComponent', 'selector': 'app-eliminar'},{'name': 'EliminarComponent', 'selector': 'app-eliminar'},{'name': 'EnEsperaComponent', 'selector': 'app-en-espera'},{'name': 'GestionarMisionalidadComponent', 'selector': 'app-gestionar-misionalidad'},{'name': 'GestionarPeticionarioComponent', 'selector': 'app-gestionar-peticionario'},{'name': 'GestionarReservaComponent', 'selector': 'app-gestionar-reserva'},{'name': 'GestionarSeguimientoComponent', 'selector': 'app-gestionar-seguimiento'},{'name': 'GestionMasivaComponent', 'selector': 'app-gestion-masiva'},{'name': 'GestionMisionalidadComponent', 'selector': 'app-gestion-misionalidad'},{'name': 'GestionSolicitudComponent', 'selector': 'app-gestion-solicitud'},{'name': 'HistorialMantenimientoComponent', 'selector': 'app-historial-mantenimiento'},{'name': 'InformeDetalleComponent', 'selector': 'app-informe-detalle'},{'name': 'InformeSolicitudComponent', 'selector': 'app-informe-solicitud'},{'name': 'InsertarComponent', 'selector': 'app-insertar'},{'name': 'InsertarComponent', 'selector': 'app-insertar'},{'name': 'InsertarComponent', 'selector': 'app-insertar'},{'name': 'InsertarComponent', 'selector': 'app-insertar'},{'name': 'InsertarComponent', 'selector': 'app-insertar'},{'name': 'InsertarFranjaComponent', 'selector': 'app-insertar-franja'},{'name': 'InsertarNovedadComponent', 'selector': 'app-insertar-novedad'},{'name': 'ListaAforosComponent', 'selector': 'app-lista-aforos'},{'name': 'ListaAlternativaComponent', 'selector': 'app-lista-alternativa'},{'name': 'ListaContratosMqeqComponent', 'selector': 'app-lista-contratos-mqeq'},{'name': 'ListaFallosComponent', 'selector': 'app-lista-fallos'},{'name': 'ListaFranjasComponent', 'selector': 'app-lista-franjas'},{'name': 'ListaLugarComponent', 'selector': 'app-lista-lugar'},{'name': 'ListaMaqEquDisponiblesComponent', 'selector': 'app-lista-maq-equ-disponibles'},{'name': 'ListaMaqEquVigentesComponent', 'selector': 'app-lista-maq-equ-vigentes'},{'name': 'ListaMaquinariaEquiposComponent', 'selector': 'app-lista-maquinaria-equipos'},{'name': 'ListaPendientesComponent', 'selector': 'app-lista-pendientes'},{'name': 'ListaPksActaComponent', 'selector': 'app-lista-pks-acta'},{'name': 'ListaPksAsociarComponent', 'selector': 'app-lista-pks-asociar'},{'name': 'ListaProgramacionPeriocidadComponent', 'selector': 'app-lista-programacion-periocidad'},{'name': 'ListaProgramacionSinpmtComponent', 'selector': 'app-lista-programacion-sinpmt'},{'name': 'ListaRadicadosComponent', 'selector': 'app-lista-radicados'},{'name': 'ListarAlternativasComponent', 'selector': 'app-listar-alternativas'},{'name': 'ListarApiquesComponent', 'selector': 'app-listar-apiques'},{'name': 'ListarComponent', 'selector': 'app-listar'},{'name': 'ListarComponent', 'selector': 'app-listar'},{'name': 'ListarComponent', 'selector': 'app-listar'},{'name': 'ListarComponent', 'selector': 'app-listar'},{'name': 'ListarComponent', 'selector': 'app-listar'},{'name': 'ListarFranjaComponent', 'selector': 'app-listar-franja'},{'name': 'ListarNovedadComponent', 'selector': 'app-listar-novedad'},{'name': 'ListaSeguimientoComponent', 'selector': 'app-lista-seguimiento'},{'name': 'ListaTransicionComponent', 'selector': 'app-lista-transicion'},{'name': 'ListaVerificacionComponent', 'selector': 'app-lista-verificacion'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapaSeleccionComponent', 'selector': 'app-mapa-seleccion'},{'name': 'MapaUmvComponent', 'selector': 'app-mapa-umv'},{'name': 'MapComponent', 'selector': 'app-map'},{'name': 'MenuItemComponent', 'selector': 'app-menu-item'},{'name': 'ModalAutoprogramarComponent', 'selector': 'app-modal-autoprogramar'},{'name': 'ModalCargueArchivoComponent', 'selector': 'app-modal-cargue-archivo'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'ModalConfirmarComponent', 'selector': 'app-modal-confirmar'},{'name': 'ModalConfirmarComponent', 'selector': 'app-modal-confirmar'},{'name': 'ModalConfirmarComponent', 'selector': 'app-modal-confirmar'},{'name': 'ModalDescargaArchivoComponent', 'selector': 'app-modal-descarga-archivo'},{'name': 'ModalListaEnsayosComponent', 'selector': 'app-modal-lista-ensayos'},{'name': 'ModalListaMaterialesComponent', 'selector': 'app-modal-lista-materiales'},{'name': 'ModalTableAsociarComponent', 'selector': 'app-modal-table-asociar'},{'name': 'ModalVersionComponent', 'selector': 'app-modal-version'},{'name': 'NotAuthorizedComponent', 'selector': 'app-not-authorized'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NovedadadesIntervencionComponent', 'selector': 'app-novedadades-intervencion'},{'name': 'ProgramacionPeriodicaIntervencionComponent', 'selector': 'app-programacion-periodica-intervencion'},{'name': 'ProgramacionVisitaTecnicaComponent', 'selector': 'app-programacion-visita-tecnica'},{'name': 'ProgramarComponent', 'selector': 'app-programar'},{'name': 'ProgressComponent', 'selector': 'app-progress'},{'name': 'RealizarSolicitudesComponent', 'selector': 'app-realizar-solicitudes'},{'name': 'RegistrarInsumosComponent', 'selector': 'app-registrar-insumos'},{'name': 'RegistrarPriorizacionComponent', 'selector': 'app-registrar-priorizacion'},{'name': 'RegistrarServicioComponent', 'selector': 'app-registrar-servicio'},{'name': 'RegistroAforosComponent', 'selector': 'app-registro-aforos'},{'name': 'RegistroAlternativaComponent', 'selector': 'app-registro-alternativa'},{'name': 'RegistroApiqueComponent', 'selector': 'app-registro-apique'},{'name': 'RegistroCapaComponent', 'selector': 'app-registro-capa'},{'name': 'RegistroDatosAforoComponent', 'selector': 'app-registro-datos-aforo'},{'name': 'RegistroDiarioComponent', 'selector': 'app-registro-diario'},{'name': 'RegistroDiarioComponent', 'selector': 'app-registro-diario'},{'name': 'RegistroDisenoComponent', 'selector': 'app-registro-diseno'},{'name': 'RegistroFallasComponent', 'selector': 'app-registro-fallas'},{'name': 'RegistroFotoComponent', 'selector': 'app-registro-foto'},{'name': 'RegistroInsumosComponent', 'selector': 'app-registro-insumos'},{'name': 'RegistroOtrosFactoresComponent', 'selector': 'app-registro-otros-factores'},{'name': 'RegistroUnidadMuestreoComponent', 'selector': 'app-registro-unidad-muestreo'},{'name': 'RegistroVisitaComponent', 'selector': 'app-registro-visita'},{'name': 'RegistroVisitaDiagnosticoComponent', 'selector': 'app-registro-visita-diagnostico'},{'name': 'RegistroVisitaVerificacionComponent', 'selector': 'app-registro-visita-verificacion'},{'name': 'ReportarFalloComponent', 'selector': 'app-reportar-fallo'},{'name': 'ResultadoEnsayoComponent', 'selector': 'app-resultado-ensayo'},{'name': 'RevisarDisenoComponent', 'selector': 'app-revisar-diseno'},{'name': 'RevisarVisitaDiagnosticoComponent', 'selector': 'app-revisar-visita-diagnostico'},{'name': 'RevisionVisitaDiagnosticoComponent', 'selector': 'app-revision-visita-diagnostico'},{'name': 'SeccionCantidadesDeObraComponent', 'selector': 'app-seccion-cantidades-de-obra'},{'name': 'SeccionControlDeCalidadComponent', 'selector': 'app-seccion-control-de-calidad'},{'name': 'SeccionEquipoPortatilComponent', 'selector': 'app-seccion-equipo-portatil'},{'name': 'SeccionInformacionDelPersonalComponent', 'selector': 'app-seccion-informacion-del-personal'},{'name': 'SeccionInformacionGeneralComponent', 'selector': 'app-seccion-informacion-general'},{'name': 'SeccionInspeccionYOficialCuadrillaComponent', 'selector': 'app-seccion-inspeccion-y-oficial-cuadrilla'},{'name': 'SeccionMaquinariaComponent', 'selector': 'app-seccion-maquinaria'},{'name': 'SeccionMaquinariaComponent', 'selector': 'app-seccion-maquinaria'},{'name': 'SeccionMaterialComponent', 'selector': 'app-seccion-material'},{'name': 'SeccionMaterialesComponent', 'selector': 'app-seccion-materiales'},{'name': 'SeccionMezclaAsfalticasConcretosComponent', 'selector': 'app-seccion-mezcla-asfalticas-concretos'},{'name': 'SeccionObservacionesGeneralesComponent', 'selector': 'app-seccion-observaciones-generales'},{'name': 'SeccionPersonalComponent', 'selector': 'app-seccion-personal'},{'name': 'SeccionProgramacionDiariaComponent', 'selector': 'app-seccion-programacion-diaria'},{'name': 'SeccionRetiroMaterialesEscombrosComponent', 'selector': 'app-seccion-retiro-materiales-escombros'},{'name': 'SegMapaUmvComponent', 'selector': 'app-seg-mapa-umv'},{'name': 'ServicioApiquesComponent', 'selector': 'app-servicio-apiques'},{'name': 'ServicioDensidadComponent', 'selector': 'app-servicio-densidad'},{'name': 'ServicioFormulaComponent', 'selector': 'app-servicio-formula'},{'name': 'ServicioNucleoComponent', 'selector': 'app-servicio-nucleo'},{'name': 'ServicioOtrosComponent', 'selector': 'app-servicio-otros'},{'name': 'SimpleDialogComponent', 'selector': 'app-simple-dialog'},{'name': 'SincroniacionSPIComponent', 'selector': 'app-sincroniacion-spi'},{'name': 'SolicitudDialogComponent', 'selector': 'app-solicitud-dialog'},{'name': 'SolicitudEnsayoLaboratorioComponent', 'selector': 'app-solicitud-ensayo-laboratorio'},{'name': 'SolicitudesApiquesAforosComponent', 'selector': 'app-solicitudes-apiques-aforos'},{'name': 'TablaFiltrosComponent', 'selector': 'app-tabla-filtros'},{'name': 'TablaGestionPendienteComponent', 'selector': 'app-tabla-gestion-pendiente'},{'name': 'TablaPendientesApiquesComponent', 'selector': 'app-tabla-pendientes-apiques'},{'name': 'TablaRadicadoVinculadoComponent', 'selector': 'app-tabla-radicado-vinculado'},{'name': 'TablaSeguimientosComponent', 'selector': 'app-tabla-seguimientos'},{'name': 'TablaVincularComponent', 'selector': 'app-tabla-vincular'},{'name': 'TableDocumentosComponent', 'selector': 'app-table-documentos'},{'name': 'TableEnsayoComponent', 'selector': 'app-table-ensayo'},{'name': 'TableInformeComponent', 'selector': 'app-table-informe'},{'name': 'TableMantenimientosActivosComponent', 'selector': 'app-table-mantenimientos-activos'},{'name': 'TableNomenclaturaApiqueComponent', 'selector': 'app-table-nomenclatura-apique'},{'name': 'TableVersionSolicitudComponent', 'selector': 'app-table-version-solicitud'},{'name': 'TabsDistribuidorComponent', 'selector': 'app-tabs-distribuidor'},{'name': 'TabSeccionesComponent', 'selector': 'app-tab-secciones'},{'name': 'TabSeccionesComponent', 'selector': 'app-tab-secciones'},{'name': 'UbicarApiqueComponent', 'selector': 'app-ubicar-apique'},{'name': 'ValidacionVisitaDiagnosticoComponent', 'selector': 'app-validacion-visita-diagnostico'},{'name': 'ValidarDisenoComponent', 'selector': 'app-validar-diseno'},{'name': 'ValidarVisitaDiagnosticoComponent', 'selector': 'app-validar-visita-diagnostico'},{'name': 'VerAlternativaComponent', 'selector': 'app-ver-alternativa'},{'name': 'VerComponent', 'selector': 'app-ver'},{'name': 'VerComponent', 'selector': 'app-ver'},{'name': 'VerComponent', 'selector': 'app-ver'},{'name': 'VerComponent', 'selector': 'app-ver'},{'name': 'VerComponent', 'selector': 'app-ver'},{'name': 'VerDetalleMantenimientoComponent', 'selector': 'app-ver-detalle-mantenimiento'},{'name': 'VerEquipoComponent', 'selector': 'app-ver-equipo'},{'name': 'VerFallasComponent', 'selector': 'app-ver-fallas'},{'name': 'VerFotosComponent', 'selector': 'app-ver-fotos'},{'name': 'VerGrupoComponent', 'selector': 'app-ver-grupo'},{'name': 'VerLugarComponent', 'selector': 'app-ver-lugar'},{'name': 'VerOtroFactorComponent', 'selector': 'app-ver-otro-factor'},{'name': 'VerParametrosDisenioComponent', 'selector': 'app-ver-parametros-disenio'},{'name': 'VerPersonaComponent', 'selector': 'app-ver-persona'},{'name': 'VincularPeticionarioComponent', 'selector': 'app-vincular-peticionario'},{'name': 'VisorFotosComponent', 'selector': 'app-visor-fotos'},{'name': 'WebMapaUmvComponent', 'selector': 'app-web-mapa-umv'},{'name': 'WelcomeComponent', 'selector': 'app-welcome'}];
+    var DIRECTIVES = [{'name': 'DndDirective', 'selector': '[appDnd]'},{'name': 'MsgErrorDirective', 'selector': '[msg-error]'},{'name': 'MsgErrorDirective', 'selector': '[msg-error]'}];
+    var ACTUAL_COMPONENT = {'name': 'SeccionProgramacionDiariaComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SeccionProgramacionDiariaComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

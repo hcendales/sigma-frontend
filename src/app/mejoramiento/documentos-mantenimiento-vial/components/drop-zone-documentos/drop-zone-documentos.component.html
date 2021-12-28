@@ -1,0 +1,56 @@
+<mat-card>
+    <div class="container" appDnd (fileDropped)="onFileDropped($event)">
+        <input type="file" #fileDropRef id="fileDropRef" multiple (change)="fileBrowseHandler($event)" />
+        <h3>Arrastra y suelta el archivo aquí o</h3>
+        <button mat-flat-button color="primary" for="fileDropRef">
+            Buscar archivo
+            <mat-icon>search</mat-icon>
+        </button>
+    </div>
+
+    <mat-grid-list [cols]="breakpoint" [rowHeight]="rowHeight" [gutterSize]="gutterSize" (window:resize)="onResize($event)" responsive="true" >
+        <mat-grid-tile class="single-files padding" *ngFor="let file of files; let i = index">
+            <mat-card >
+                <mat-card-header>
+                    <mat-card-title>
+                        <mat-form-field class="campo">
+                            <input matInput class="name" value="{{ file?.name }}" disabled>
+                        </mat-form-field>
+                    </mat-card-title>
+                    <mat-card-subtitle style="position: center;">
+                        <p class="size" > TAMAÑO: {{ formatBytes(file?.size) }} </p>
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <mat-form-field appearance="outline" class="campo">
+                        <mat-label>TIPO DOCUMENTO</mat-label>
+                        <mat-select [(ngModel)]="file.idTipoDocumento">
+                            <mat-option>SELECCIONE</mat-option>
+                            <mat-option *ngFor="let tipo of tipoDocumento[134]" [value]="tipo.valor">
+                                {{ tipo.descripcion | titlecase }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="campo">
+                        <mat-label>DESCRIPCION</mat-label>
+                        <textarea matInput [(ngModel)]="file.descripcion"></textarea>
+                    </mat-form-field> 
+                </mat-card-content>
+                <mat-card-actions>
+                    &nbsp;&nbsp;&nbsp;
+                    <button mat-flat-button color="primary" alt="file" (click)="isInvalid(file,i)">
+                        Subir <mat-icon>file_upload</mat-icon>
+                    </button>
+                    <button mat-flat-button color="primary" alt="file" style="margin-left: 20px;" matTooltip="Eliminar"
+                        (click)="deleteFile(i)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                    <br><br>
+                    <app-progress [progress]="file?.progress"></app-progress>
+                    <br>
+                </mat-card-actions>
+            </mat-card>
+
+        </mat-grid-tile>
+    </mat-grid-list>
+</mat-card>

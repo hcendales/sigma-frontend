@@ -1,0 +1,107 @@
+<div *ngIf="loading" class="loading">Loading&#8230;</div>
+<mat-card>
+    <mat-card-header class="mat-card-header-umv">
+        <div class="mat-card-header-text">
+            <mat-card-subtitle>
+                <h2>Programacion Diaria PK {{ pk_id_calzada }}</h2>
+            </mat-card-subtitle>
+        </div>
+    </mat-card-header> 
+
+    <app-map *ngIf="pk_id_calzada > 0" [pk_id_calzada]="pk_id_calzada" ></app-map>
+
+    <br>
+    <app-seccion-programacion-diaria *ngIf="ready" (viewForm)="multiplexor($event)" [listas]="listas" [persona]="persona" ></app-seccion-programacion-diaria>
+    <br>
+    <mat-card-header class="mat-card-header-umv" *ngIf="reCargar">
+        <div class="mat-card-header-text">
+            <mat-card-subtitle>
+                <h2>
+                    <button (click)="accordion.openAll()" mat-icon-button matTooltip="Expandir">
+                        <mat-icon>unfold_more</mat-icon>
+                    </button>
+                    <button (click)="accordion.closeAll()" mat-icon-button matTooltip="Contraer">
+                        <mat-icon>unfold_less</mat-icon>
+                    </button>
+                </h2>
+            </mat-card-subtitle>
+        </div>
+    </mat-card-header>
+    <mat-accordion class="headers-align" multi dynamicHeight *ngIf="reCargar">
+
+    
+        <mat-expansion-panel>
+            <mat-expansion-panel-header class="disable_ripple">
+                <mat-panel-title>
+                    <mat-icon>looks_one</mat-icon> &nbsp; UNIDAD EJECUTORA 
+                </mat-panel-title>
+                <mat-panel-description>
+                &nbsp; <mat-icon>supervisor_account</mat-icon>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <app-seccion-inspeccion-y-oficial-cuadrilla *ngIf="ready" [programacion_diaria]="reCargar" [listas]="listas" (unidadEjecutora)="getUnidadEjecutora($event)" ></app-seccion-inspeccion-y-oficial-cuadrilla>
+        </mat-expansion-panel> 
+   
+
+        <!-- <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Personal
+                </mat-panel-title>
+                <mat-panel-description>
+                &nbsp; <mat-icon>engineering</mat-icon>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <app-seccion-personal *ngIf="ready" [programacion_diaria]="reCargar" [listas]="listas" ></app-seccion-personal>
+        </mat-expansion-panel> -->
+
+
+        <!-- PANEL 4 INI -->
+        <mat-expansion-panel>
+            <mat-expansion-panel-header class="disable_ripple">
+                <mat-panel-title>
+                    <mat-icon>looks_two</mat-icon> &nbsp; MAQUINARIA 
+                </mat-panel-title>
+                <mat-panel-description>
+                &nbsp;  <mat-icon>precision_manufacturing</mat-icon>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!-- CONTENT INI -->
+            <app-seccion-maquinaria *ngIf="ready" [programacion_diaria]="reCargar" [listas]="listas" [unidadEjecutora]="unidadEjecutora" ></app-seccion-maquinaria>
+            <!-- CONTENT FIN -->
+        </mat-expansion-panel>
+        <!-- PANEL 4 FIN -->
+
+        <!-- PANEL 5 INI -->
+        <mat-expansion-panel>
+            <mat-expansion-panel-header class="disable_ripple">
+                <mat-panel-title>
+                    <mat-icon>looks_3</mat-icon> &nbsp; MATERIAL 
+                </mat-panel-title>
+                <mat-panel-description>
+                &nbsp;  <mat-icon>handyman</mat-icon>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!-- CONTENT INI -->
+            <app-seccion-material *ngIf="ready" [programacion_diaria]="reCargar" [listas]="listas" [unidadEjecutora]="unidadEjecutora"></app-seccion-material>
+            <!-- CONTENT FIN -->
+        </mat-expansion-panel>
+        <!-- PANEL 5 FIN -->
+
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header class="disable_ripple">
+                <mat-panel-title>
+                    <mat-icon>looks_4</mat-icon> &nbsp; EQUIPO PORTATIL 
+                </mat-panel-title>
+                <mat-panel-description>
+                &nbsp;  <mat-icon>home_repair_service</mat-icon>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <app-seccion-equipo-portatil  *ngIf="ready" [programacion_diaria]="reCargar" [listas]="listas" [unidadEjecutora]="unidadEjecutora" ></app-seccion-equipo-portatil>
+        </mat-expansion-panel>
+
+
+    </mat-accordion>
+</mat-card>
+<br>

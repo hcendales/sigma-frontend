@@ -1,0 +1,234 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+@import "app/theme/styles/base";
+@import "app/theme/styles/variables";
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+
+
+
+//$sigma2-frontend-primary: mat-palette($mat-indigo);
+$sigma2-frontend-primary: mat-palette($umv-primary-pallete);
+//$sigma2-frontend-accent: mat-palette($mat-pink, A200, A100, A400);
+$sigma2-frontend-accent: mat-palette($umv-secondary-pallete);
+
+// The warn palette is optional (defaults to red).
+$sigma2-frontend-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$sigma2-frontend-theme: mat-light-theme((
+  color: (
+    primary: $sigma2-frontend-primary,
+    accent: $sigma2-frontend-accent,
+    warn: $sigma2-frontend-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($sigma2-frontend-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.success-snackbar {
+  background: $dev-color-green !important;
+  color: $dev-color-white !important;
+  margin: 0 !important; 
+  
+  button{
+    color: $dev-color-white !important;
+  }
+  
+}
+
+.warning-snackbar {
+  background: $dev-color-orange !important;
+  color: $dev-color-white !important;
+  margin: 0 !important; 
+  
+  button{
+    color: $dev-color-white !important;
+  }
+  
+}
+
+.error-snackbar {
+  background: $dev-color-red !important;
+  color: $dev-color-white !important;
+  margin: 0 !important; 
+  
+  button{
+    color: $dev-color-white !important;
+  }
+  
+}
+
+.mat-card-header-umv {
+  background-color: $dev-color-dark-blue;
+  place-content: stretch center;
+  align-items: stretch;
+  flex-direction: row;
+  box-sizing: border-box;
+  display: flex;
+  .mat-card-header-text {
+    display: block;
+    .mat-card-subtitle{
+      margin-bottom: 0 !important;
+      h2, h3, h5 {
+        color: #fff;
+        font-weight: 400;
+        margin: 0;
+        padding: 0;
+        font-feature-settings: "liga" 1;
+      }
+    }
+  }
+}
+
+@mixin table-umv {
+  .consolidado .mat-table.col-x { 
+      .mat-cell,
+      .mat-header-cell  {
+          min-width: 250px;
+      }
+      .mat-header-cell {
+          text-transform: capitalize;
+      }
+  }
+  .mat-table.col-x { 
+      .mat-cell,
+      .mat-header-cell  {
+          min-width: 150px;
+      }
+  }
+  .mat-table{  
+      //min-width:inherit;
+      height: max-content; 
+      width: 100%;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch!important;
+      touch-action: auto !important;
+      -ms-touch-action: auto!important;
+      .mat-raised-button {
+          min-width: 40px;
+          padding: 0 8px;
+      }        
+      .mat-cell,
+      .mat-header-cell {
+          padding-right: 1vh!important;
+          word-break: break-word;
+      }
+      .mat-header-cell{
+          text-align: left!important;
+      }
+      .mat-row,
+      .mat-header-row {
+          width: 100%;
+          min-width: fit-content;
+      }
+      .mat-header-row {
+          border-bottom-color:$secondary-color;
+      }
+      .mat-row{
+          border-bottom-color:rgba(0, 0, 0, 0.12);
+      }
+      .mat-header-cell{
+          color: $primary-color;
+          font-size: 1em;
+          font-weight: 700;
+      }
+      .mat-sort-header-button{
+          text-align: left!important;
+      }
+      .mat-sort-header-arrow {
+          color: $secondary-color;
+      }
+  }    
+
+  .mat-row, .mat-header-row {  
+      min-width: 2800px;  
+      width: 100%;  
+   }  
+}
+
+.mat-table{
+  .mat-header-row{
+    border-bottom-color:$secondary-color;
+    .mat-header-cell{
+      color: $primary-color;
+    }
+  }
+}
+
+.color-primary-100{
+  background-color: mat-color($umv-primary-pallete,100) ;
+  color: mat-contrast($umv-primary-pallete,100) ;
+}
+
+.color-warn-800{
+  background-color: mat-color($sigma2-frontend-warn,800);
+  color: mat-contrast($sigma2-frontend-warn,800);
+}
+
+.color-green{
+  background-color: $dev-color-green ;
+  color: mat-contrast($umv-primary-pallete,100) ;
+}
+
+
+.custom-dialog-container .mat-dialog-container {
+  overflow-y: hidden !important;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.special-date {
+  background-color: rgb(197, 215, 243);
+}
+
+.date-resumen{
+  /* background: #1e88e5; */
+  color: white !important;
+  height: 1rem;
+  line-height: 1rem;
+  white-space: nowrap;
+  /* overflow: hidden; */
+  text-overflow: ellipsis;
+  /* padding: 0.2rem; */
+  /* margin: 0.05rem; */
+  /* margin-top: 0.1rem; */
+  display: block;
+  text-align: left;
+  /* position: absolute; */
+  /* left: 10px; */
+  font-size: 8px;
+}
+
+.asignados{
+  top:4.5rem;
+  width: 50%;
+}
+
+.libres{
+  bottom:3rem;
+}
+
+.disableclicking {
+  pointer-events:none;
+}

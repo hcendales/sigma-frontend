@@ -1,0 +1,14 @@
+<mat-card>
+    <mat-card-header class="mat-card-header-umv">
+      <div class="mat-card-header-text">
+        <mat-card-subtitle>
+          <h2>{{titulo}}</h2>
+        </mat-card-subtitle>
+      </div>
+    </mat-card-header>
+    <app-gestion-masiva [cargueAutomatico] = "true" [idActividad] = "idActividad" *ngIf="idActividad != null && routeReady" (ready)="componenteListo()" [acciones]="acciones" [mostrarOpcionDefaultTabla] = "mostrarOpcionDefaultTabla" (onOpcionSelected)="onOpcionSelectedEvt($event)" (gestionRealizada) = "gestionRealizadaEvt($event)">
+    </app-gestion-masiva>
+    <div *ngIf="cargandoComponente" class="nota-cargando">
+    <h2 >Cargando </h2> <mat-spinner diameter="20"></mat-spinner>
+    </div>
+</mat-card>

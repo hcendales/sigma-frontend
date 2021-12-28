@@ -1,0 +1,47 @@
+@import "../../../theme/styles/variables";
+.opciones{
+    display: flex;
+    align-items: center;
+    
+    mat-form-field{
+        margin-left:0.5rem;
+        width: 50%;
+    }
+    
+}
+
+button{
+    margin: 0.5rem;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+form{
+    margin-right: 0.5rem;
+}
+
+.btn-text-spiner-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.bajo{
+    color: $dev-color-green;
+}
+
+.medio{
+    color: $dev-color-orange;
+}
+
+.alto{
+    color: $dev-color-red;
+}
+
+.mat-progress-spinner circle, .mat-spinner circle {
+    stroke: $dev-color-white;
+}
+

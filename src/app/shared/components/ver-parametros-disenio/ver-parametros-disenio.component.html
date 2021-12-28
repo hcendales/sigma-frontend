@@ -1,0 +1,39 @@
+<mat-card-header class="mat-card-header-umv">
+  <div class="mat-card-header-text">
+    <mat-card-subtitle>
+      <h2>{{titulo}}</h2>
+    </mat-card-subtitle>
+  </div>
+</mat-card-header>
+<mat-card-content *ngIf="entity">
+  <div class="contenido-seccion">
+    <div class="campo">
+      <div class="nombre"><strong>Clasificación Subrasante: </strong></div>
+      <div class="valor">{{entity.descripcion_tipo_clasificacion_subrasant}}</div>
+    </div>
+
+    <div class="campo">
+      <div class="nombre"><strong>NEE</strong></div>
+      <div class="valor">{{entity.nee_disenio}}</div>
+    </div>
+
+    <div class="campo">
+      <div class="nombre"><strong>CBR Diseño(%)</strong></div>
+      <div class="valor">{{entity.cbr_disenio_pct}}</div>
+    </div>
+
+    <div class="campo">
+      <div class="nombre"><strong>TPDvc</strong></div>
+      <div class="valor">{{entity.tpdvc_disenio}}</div>
+    </div>
+
+    <div class="campo">
+      <div class="nombre"><strong>Ks (Mpa/m)</strong></div>
+      <div class="valor">{{entity.ks_disenio}}</div>
+    </div>
+    <div class="campo">
+      <div class="nombre"><strong>Número Estructural Efectivo (Sne)</strong></div>
+      <div class="valor">{{entity.numero_estructural_efectivo_disenio}}</div>
+    </div>
+  </div>
+</mat-card-content>

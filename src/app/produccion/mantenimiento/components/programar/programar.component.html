@@ -1,0 +1,45 @@
+<ng-container *ngIf="modo == 'salida'">
+  <mat-card>
+      <mat-card-header class="mat-card-header-umv">
+        <div class="mat-card-header-text">
+          <mat-card-subtitle>
+            <h2>Mantenimientos de Maquinaria o Equipos</h2>
+          </mat-card-subtitle>
+        </div>
+      </mat-card-header>
+      <app-lista-maquinaria-equipos
+        (opcionSeleccionada)="opcionSeleccionadaEvt($event)"
+        (registroSeleccionado)="registroSeleccionadoEvt($event)"
+        [actualizador]="updateSubject.asObservable()">
+      </app-lista-maquinaria-equipos>
+      <div>
+        <button 
+          mat-flat-button 
+          class="nuevo-btn color-primary-100" 
+          (click)="nuevo()"
+          [disabled]="!row_selected">
+          <mat-icon>add</mat-icon>
+          Nuevo
+        </button>
+      </div>
+      <div *ngIf="cargandoComponente" class="nota-cargando">
+        <h2 >Cargando</h2> <mat-spinner diameter="20"></mat-spinner>
+      </div>
+  </mat-card>
+</ng-container>
+<ng-container *ngIf="modo == 'nuevo'">
+  <app-editar-programacion 
+    [edit_flag]=false 
+    [reg]="row"
+    (almacenadoEvent)="almacenado($event)"
+    (regresarEvent)="modo = 'salida'"
+  ></app-editar-programacion>
+</ng-container>
+<ng-container *ngIf="modo == 'editar'">
+  <app-editar-programacion 
+    [edit_flag]=true
+    [reg]="row" 
+    (almacenadoEvent)="almacenado($event)"
+    (regresarEvent)="modo = 'salida'"
+  ></app-editar-programacion>
+</ng-container>
